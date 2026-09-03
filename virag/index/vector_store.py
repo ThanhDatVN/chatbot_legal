@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import logging
+import uuid
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -25,6 +26,9 @@ import numpy as np
 from virag.schemas import Chunk
 
 logger = logging.getLogger(__name__)
+
+#: Fixed namespace so a chunk_id always maps to the same point id.
+_POINT_NAMESPACE = uuid.UUID("6f9619ff-8b86-d011-b42d-00c04fc964ff")
 
 _EPOCH = date(1970, 1, 1)
 #: Sentinels for an unknown bound: "in force since forever / until further notice".
@@ -112,22 +116,51 @@ class NumpyVectorStore:
         self.ids: list[str] = []
         self.payloads: list[dict[str, Any]] = []
         self.matrix: np.ndarray | None = None
+        #: chunk_id -> row, rebuilt lazily; keeps upsert O(1) per chunk.
+        self._position: dict[str, int] | None = None
 
     def recreate(self, dim: int) -> None:
         self.ids, self.payloads, self.matrix = [], [], np.zeros((0, dim), dtype=np.float32)
+        self._position = {}
+
+    def _index_of(self) -> dict[str, int]:
+        if self._position is None or len(self._position) != len(self.ids):
+            self._position = {chunk_id: i for i, chunk_id in enumerate(self.ids)}
+        return self._position
 
     def upsert(self, chunks: list[Chunk], vectors: np.ndarray) -> None:
+        """Insert or **replace** by ``chunk_id``.
+
+        Qdrant overwrites by point id, so this store must too (D-10). Appending
+        blindly produced duplicate rows for a re-ingested chunk, which changed
+        recall and ranking between the two backends and made a fallback run
+        incomparable to a real one - defeating the purpose of the fallback.
+        """
         if not chunks:
             return
-        payloads = [chunk_payload(chunk) for chunk in chunks]
-        ids = [chunk.chunk_id for chunk in chunks]
+        vectors = np.asarray(vectors, dtype=np.float32)
+        position = self._index_of()
+
+        fresh_vectors: list[np.ndarray] = []
+        for chunk, vector in zip(chunks, vectors, strict=True):
+            payload = chunk_payload(chunk)
+            existing = position.get(chunk.chunk_id)
+            if existing is not None:
+                self.matrix[existing] = vector
+                self.payloads[existing] = payload
+                continue
+            position[chunk.chunk_id] = len(self.ids)
+            self.ids.append(chunk.chunk_id)
+            self.payloads.append(payload)
+            fresh_vectors.append(vector)
+
+        if not fresh_vectors:
+            return
+        block = np.vstack(fresh_vectors)
         if self.matrix is None or self.matrix.size == 0:
-            self.matrix = np.asarray(vectors, dtype=np.float32)
-            self.ids, self.payloads = list(ids), payloads
+            self.matrix = block
         else:
-            self.matrix = np.vstack([self.matrix, np.asarray(vectors, dtype=np.float32)])
-            self.ids.extend(ids)
-            self.payloads.extend(payloads)
+            self.matrix = np.vstack([self.matrix, block])
 
     def search(
         self, vector: np.ndarray, top_k: int, filters: SearchFilters | None = None
@@ -168,6 +201,7 @@ class NumpyVectorStore:
             payload = json.loads(self.payloads_path.read_text(encoding="utf-8"))
             self.ids = payload["ids"]
             self.payloads = payload["payloads"]
+        self._position = None
         return self
 
 
@@ -275,9 +309,16 @@ class QdrantVectorStore:
             return 0
 
 
-def _point_id(chunk_id: str) -> int:
-    """Qdrant point ids must be uint64 or UUID; chunk ids are 16 hex chars."""
-    return int(chunk_id[:15], 16)
+def _point_id(chunk_id: str) -> str:
+    """The Qdrant point id for a chunk - a UUID derived from the whole id.
+
+    Qdrant accepts uint64 or UUID. An earlier version took `int(chunk_id[:15],
+    16)`, discarding part of the id and giving the two vector backends
+    different notions of identity (D-11): the NumPy store keyed on the full
+    string while Qdrant keyed on 60 truncated bits. Deriving a UUID5 from the
+    complete chunk_id keeps both stores addressing the same thing.
+    """
+    return str(uuid.uuid5(_POINT_NAMESPACE, chunk_id))
 
 
 def build_vector_store(url: str, collection: str, fallback_root: Path) -> VectorStore:
