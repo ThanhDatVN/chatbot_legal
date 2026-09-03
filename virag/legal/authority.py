@@ -135,13 +135,19 @@ def tier_for_consolidated(instrument_number: str | None, title: str | None) -> i
     """
     folded_title = _fold(title or "")
     marker = "hop nhat"
-    if marker in folded_title:
-        after = folded_title.split(marker, 1)[1]
+    # The phrase occurs twice: once in the document type itself ("Văn bản hợp
+    # nhất số N ...") and again before the consolidated instrument ("... hợp
+    # nhất Luật Thuế ..."). Only the occurrence followed by a legal type names
+    # the target, so every occurrence is tried.
+    position = folded_title.find(marker)
+    while position != -1:
+        after = folded_title[position + len(marker) :].lstrip()
         for pattern, tier in _TYPE_PATTERNS:
             # Only the leading phrase names the consolidated instrument; text
             # further in usually cites what that instrument implements.
-            if after.lstrip().startswith(pattern):
+            if after.startswith(pattern):
                 return tier
+        position = folded_title.find(marker, position + 1)
 
     folded_number = _fold(instrument_number or "")
     if "vbhn" in folded_number:
