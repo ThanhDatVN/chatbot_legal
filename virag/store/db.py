@@ -210,6 +210,24 @@ def reset_db(engine: Engine | None = None) -> Engine:
     return engine
 
 
+#: Rows read back from SQLite lose tzinfo; normalise before comparing.
+_EPOCH_AWARE = datetime(1970, 1, 1, tzinfo=UTC)
+
+
+def _as_aware(value) -> datetime | None:
+    """Coerce a stored timestamp to an aware UTC datetime, or None."""
+    if value is None:
+        return None
+    if isinstance(value, str):
+        try:
+            value = datetime.fromisoformat(value)
+        except ValueError:
+            return None
+    if not isinstance(value, datetime):
+        return None
+    return value if value.tzinfo else value.replace(tzinfo=UTC)
+
+
 def _as_date(value: str | None):
     if not value:
         return None
@@ -430,24 +448,69 @@ def versions_of(engine: Engine, document_id: str) -> list[dict]:
     return [dict(row) for row in rows]
 
 
-def version_as_of(engine: Engine, document_id: str, as_of: str) -> dict | None:
-    """The version that was in force (valid time) on ``as_of``."""
+def version_as_of(
+    engine: Engine,
+    document_id: str,
+    as_of: str,
+    as_known_at: str | datetime | None = None,
+) -> dict | None:
+    """The version in force on ``as_of``, optionally as the system knew it.
+
+    Two independent time axes (ADR-010):
+
+    * ``as_of`` is **valid time** - when the rule bound taxpayers.
+    * ``as_known_at`` is **transaction time** - what this system had ingested at
+      that moment.
+
+    Passing only ``as_of`` answers "which version applied on that date, as far
+    as we know now". Passing both answers "which version would we have said
+    applied, had you asked us on that date" - the query needed to audit an
+    answer issued months ago, and the reason both axes are stored.
+    """
     target = _as_date(as_of)
     if target is None:
         return None
+
+    known_at: datetime | None = None
+    if as_known_at is not None:
+        if isinstance(as_known_at, datetime):
+            known_at = as_known_at
+        else:
+            parsed = _as_date(as_known_at)
+            if parsed is None:
+                return None
+            # A bare date means "as known at the end of that day".
+            known_at = datetime.combine(parsed, datetime.max.time())
+        if known_at.tzinfo is None:
+            known_at = known_at.replace(tzinfo=UTC)
+
     with engine.connect() as conn:
         rows = conn.execute(
             select(document_versions).where(document_versions.c.document_id == document_id)
         ).mappings().all()
+
+    def visible(row) -> bool:
+        if known_at is None:
+            return True
+        ingested = _as_aware(row["ingested_at"])
+        if ingested is None or ingested > known_at:
+            return False  # not yet ingested at that moment
+        superseded = _as_aware(row["superseded_at"])
+        return superseded is None or superseded > known_at
+
     candidates = [
         dict(row)
         for row in rows
-        if (row["effective_from"] is None or row["effective_from"] <= target)
+        if visible(row)
+        and (row["effective_from"] is None or row["effective_from"] <= target)
         and (row["effective_to"] is None or row["effective_to"] >= target)
     ]
     if not candidates:
         return None
-    return max(candidates, key=lambda r: (r["effective_from"] or target, r["ingested_at"]))
+    return max(
+        candidates,
+        key=lambda r: (r["effective_from"] or target, _as_aware(r["ingested_at"]) or _EPOCH_AWARE),
+    )
 
 
 def recent_changes(engine: Engine, limit: int = 50, since: str | None = None) -> list[dict]:
