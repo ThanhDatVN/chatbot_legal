@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "vat-invoice-2026-08-11",
+  "scope": "Chuỗi văn bản thuế GTGT và hóa đơn có liên quan trực tiếp đến tư vấn doanh nghiệp",
+  "user_agent": "TaxLegalWorkspacePilot/0.1 (selective legal research crawler)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 30,
+  "max_redirects": 3,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 31457280,
+  "max_attachments_per_document": 2,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ/Công báo điện tử"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_reference",
+      "robots_url": "https://thuvienphapluat.vn/robots.txt",
+      "allowed_hosts": ["thuvienphapluat.vn"],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 500,
+      "content_signal_policy": {
+        "required_search": "yes",
+        "forbidden_ai_train": true,
+        "maximum_use": "reference"
+      }
+    }
+  },
+  "documents": [
+    {
+      "id": "VAT-LAW-48-2024",
+      "instrument_number": "48/2024/QH15",
+      "document_type_expected": "Luật",
+      "title_short": "Luật Thuế giá trị gia tăng 2024",
+      "topic": ["vat", "governing_law"],
+      "promulgation_date_expected": "2024-11-26",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/luat-so-48-2024-qh15-43576.htm",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Luat-Thue-gia-tri-gia-tang-2024-so-48-2024-QH15-556390.aspx",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "OMNIBUS-LAW-90-2025",
+      "instrument_number": "90/2025/QH15",
+      "document_type_expected": "Luật",
+      "title_short": "Luật sửa đổi nhiều luật, gồm Luật Thuế GTGT",
+      "topic": ["vat", "amendment"],
+      "promulgation_date_expected": "2025-06-25",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=214558&orggroupid=1&pageid=27160",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Dau-tu/Luat-sua-doi-Luat-Dau-thau-Luat-Dau-tu-theo-phuong-thuc-doi-tac-cong-tu-2025-so-90-2025-QH15-662379.aspx",
+      "download_attachments": false,
+      "relations": [{"type": "amends", "target": "VAT-LAW-48-2024"}]
+    },
+    {
+      "id": "VAT-LAW-149-2025",
+      "instrument_number": "149/2025/QH15",
+      "document_type_expected": "Luật",
+      "title_short": "Luật sửa đổi Luật Thuế giá trị gia tăng",
+      "topic": ["vat", "amendment"],
+      "promulgation_date_expected": "2025-12-11",
+      "effective_date_expected": "2026-01-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=216588&orggroupid=1&pageid=27160",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Luat-Thue-gia-tri-gia-tang-sua-doi-2025-so-149-2025-QH15-679698.aspx",
+      "download_attachments": true,
+      "relations": [{"type": "amends", "target": "VAT-LAW-48-2024"}]
+    },
+    {
+      "id": "TAX-LAW-09-2026",
+      "instrument_number": "09/2026/QH16",
+      "document_type_expected": "Luật",
+      "title_short": "Luật sửa đổi bốn luật thuế",
+      "topic": ["vat", "pit", "cit", "excise", "amendment"],
+      "promulgation_date_expected": "2026-04-24",
+      "effective_date_expected": "2026-04-24",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=218095&pageid=27160&typegroupid=3",
+      "discovery_url": "https://thuvienphapluat.vn/page/tim-van-ban.aspx?keyword=09%2F2026%2FQH16",
+      "official_attachment_urls": [
+        {
+          "url": "https://congbaocdn.chinhphu.vn/180507251028987904/2026/5/27/cong-bao-so-286-639149513405530832-ngay-27-05-47205_1779843218_signed.pdf",
+          "label": "Công báo số 286 chứa Luật 09/2026/QH16"
+        }
+      ],
+      "download_attachments": true,
+      "relations": [{"type": "amends", "target": "VAT-LAW-48-2024"}]
+    },
+    {
+      "id": "VAT-DECREE-181-2025",
+      "instrument_number": "181/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định hướng dẫn Luật Thuế GTGT",
+      "topic": ["vat", "implementation"],
+      "promulgation_date_expected": "2025-07-01",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=214336&pageid=27160&typegroupid=4",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Nghi-dinh-181-2025-ND-CP-huong-dan-Luat-Thue-gia-tri-gia-tang-646124.aspx",
+      "download_attachments": true,
+      "relations": [{"type": "implements", "target": "VAT-LAW-48-2024"}]
+    },
+    {
+      "id": "VAT-DECREE-359-2025",
+      "instrument_number": "359/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định sửa đổi Nghị định 181/2025/NĐ-CP",
+      "topic": ["vat", "amendment", "implementation"],
+      "promulgation_date_expected": "2025-12-31",
+      "effective_date_expected": "2026-01-01",
+      "official_url": "https://vanban.chinhphu.vn/?docid=216388&pageid=27160&typegroupid=4",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Decree-359-2025-ND-CP-amendments-to-Decree-181-2025-ND-CP-elaborating-the-Law-on-Value-added-Tax-687583.aspx",
+      "download_attachments": false,
+      "relations": [{"type": "amends", "target": "VAT-DECREE-181-2025"}]
+    },
+    {
+      "id": "VAT-DECREE-144-2026",
+      "instrument_number": "144/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định sửa đổi Nghị định 181/2025/NĐ-CP",
+      "topic": ["vat", "amendment", "implementation"],
+      "promulgation_date_expected": "2026-05-05",
+      "effective_date_expected": "2026-06-20",
+      "official_url": "https://chinhphu.vn/?classid=0&docid=218020&pageid=27160",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Van-ban-hop-nhat-18-VBHN-BTC-2026-Nghi-dinh-huong-dan-thi-hanh-Luat-Thue-gia-tri-gia-tang-708369.aspx",
+      "download_attachments": true,
+      "relations": [
+        {"type": "amends", "target": "VAT-DECREE-181-2025"},
+        {"type": "references", "target": "VAT-DECREE-359-2025"}
+      ]
+    },
+    {
+      "id": "VAT-CIRCULAR-69-2025",
+      "instrument_number": "69/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Thông tư hướng dẫn Luật Thuế GTGT và Nghị định 181",
+      "topic": ["vat", "guidance"],
+      "promulgation_date_expected": "2025-07-01",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=214417&pageid=27160&typegroupid=6",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Thong-tu-69-2025-TT-BTC-huong-dan-Luat-Thue-gia-tri-gia-tang-663356.aspx",
+      "download_attachments": false,
+      "relations": [
+        {"type": "implements", "target": "VAT-LAW-48-2024"},
+        {"type": "implements", "target": "VAT-DECREE-181-2025"}
+      ]
+    },
+    {
+      "id": "VAT-RESOLUTION-204-2025",
+      "instrument_number": "204/2025/QH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết giảm thuế GTGT đến hết năm 2026",
+      "topic": ["vat", "tax_reduction"],
+      "promulgation_date_expected": "2025-06-17",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=214209&pageid=27160",
+      "download_attachments": false,
+      "relations": [{"type": "temporary_policy_for", "target": "VAT-LAW-48-2024"}]
+    },
+    {
+      "id": "VAT-REDUCTION-DECREE-174-2025",
+      "instrument_number": "174/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định thực hiện giảm thuế GTGT",
+      "topic": ["vat", "tax_reduction", "implementation"],
+      "promulgation_date_expected": "2025-06-30",
+      "effective_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=214310&orggroupid=2&pageid=27160",
+      "download_attachments": false,
+      "relations": [{"type": "implements", "target": "VAT-RESOLUTION-204-2025"}]
+    },
+    {
+      "id": "TAX-ADMIN-LAW-38-2019",
+      "instrument_number": "38/2019/QH14",
+      "document_type_expected": "Luật",
+      "title_short": "Luật Quản lý thuế",
+      "topic": ["tax_administration", "governing_law"],
+      "promulgation_date_expected": "2019-06-13",
+      "effective_date_expected": "2020-07-01",
+      "official_url": "https://vanban.chinhphu.vn/?docid=197312&pageid=27160",
+      "download_attachments": false,
+      "relations": []
+    },
+    {
+      "id": "TAX-ADMIN-LAW-108-2025",
+      "instrument_number": "108/2025/QH15",
+      "document_type_expected": "Luật",
+      "title_short": "Luật Quản lý thuế 2025",
+      "topic": ["tax_administration", "governing_law", "transition"],
+      "promulgation_date_expected": "2025-12-10",
+      "effective_date_expected": "2026-07-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=216541&pageid=27160&typegroupid=3",
+      "download_attachments": false,
+      "relations": [{"type": "replaces_with_transition", "target": "TAX-ADMIN-LAW-38-2019"}]
+    },
+    {
+      "id": "INVOICE-DECREE-123-2020",
+      "instrument_number": "123/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định về hóa đơn, chứng từ",
+      "topic": ["invoice", "tax_administration"],
+      "promulgation_date_expected": "2020-10-19",
+      "effective_date_expected": "2022-07-01",
+      "official_url": "https://chinhphu.vn/default.aspx?docid=201365&pageid=27160",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Ke-toan-Kiem-toan/Nghi-dinh-123-2020-ND-CP-quy-dinh-hoa-don-chung-tu-445980.aspx",
+      "download_attachments": false,
+      "relations": [{"type": "implements", "target": "TAX-ADMIN-LAW-38-2019"}]
+    },
+    {
+      "id": "INVOICE-DECREE-70-2025",
+      "instrument_number": "70/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Nghị định sửa đổi quy định về hóa đơn, chứng từ",
+      "topic": ["invoice", "tax_administration", "amendment"],
+      "promulgation_date_expected": "2025-03-20",
+      "effective_date_expected": "2025-06-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=213179&pageid=27160&typegroupid=4",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Nghi-dinh-70-2025-ND-CP-sua-doi-Nghi-dinh-123-2020-ND-CP-hoa-don-chung-tu-577816.aspx",
+      "download_attachments": true,
+      "relations": [{"type": "amends", "target": "INVOICE-DECREE-123-2020"}]
+    },
+    {
+      "id": "INVOICE-CIRCULAR-32-2025",
+      "instrument_number": "32/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Thông tư hướng dẫn về hóa đơn, chứng từ",
+      "topic": ["invoice", "tax_administration", "guidance"],
+      "promulgation_date_expected": "2025-05-31",
+      "effective_date_expected": "2025-06-01",
+      "official_url": "https://chinhphu.vn/?classid=1&docid=213855&pageid=27160&typegroupid=6",
+      "discovery_url": "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Thong-tu-32-2025-TT-BTC-huong-dan-thuc-hien-Luat-Quan-ly-thue-ve-hoa-don-chung-tu-659105.aspx",
+      "download_attachments": false,
+      "relations": [
+        {"type": "implements", "target": "INVOICE-DECREE-123-2020"},
+        {"type": "implements", "target": "INVOICE-DECREE-70-2025"}
+      ]
+    }
+  ]
+}

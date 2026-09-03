@@ -1,0 +1,1767 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0099",
+  "scope": "Toàn bộ source record trong sáu nhóm văn bản chính thức của cửa sổ 10 năm; từ khóa tiêu đề chỉ xếp lịch, mọi record đều chờ sàng lọc toàn văn",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GAZETTE-CONSOLIDATED-28245",
+      "instrument_number": "09/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 09/VBHN-BTC hợp nhất Nghị định về kinh doanh trò chơi điện tử có thưởng dành cho người nước ngoài.",
+      "promulgation_date_expected": "2019-01-18",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-09-vbhn-btc-28245.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRbrS4IvY_0pYaglmfOL1awuBbaXPYV9g0WfPO2yjGkDo0yhrv2_3h0taUQ3kyMphx&file_name=2019_135+%2b+136_09-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 09/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28228",
+      "instrument_number": "08/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 08/VBHN-BTC hợp nhất Nghị định quy định chi tiết thi hành Luật kinh doanh bảo hiểm và Luật sửa đổi, bổ sung một số điều của Luật kinh doanh bảo hiểm.",
+      "promulgation_date_expected": "2019-01-18",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-08-vbhn-btc-28228.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRQnTKuiJIdCnP9h6uEEMIHtUPXgsG0hyhrX5j-tMyds2X3pzlaYEqgJDRjvcXXi5r&file_name=2019_125+%2b+126_08-VBHN-BTC..pdf",
+          "label": "Tệp chính thức 08/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196293",
+      "instrument_number": "01/2019/TT-BVHTTDL",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về đánh giá phong trào thể dục, thể thao quần chúng",
+      "promulgation_date_expected": "2019-01-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196293&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/01-bvhttdl.signed.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BVHTTDL"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196289",
+      "instrument_number": "01/2019/TT-BTP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn một số nội dung về đăng ký biện pháp bảo đảm bằng tàu bay, tàu biển",
+      "promulgation_date_expected": "2019-01-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196289&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/01-btp.signed.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BTP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28225",
+      "instrument_number": "07/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 07/VBHN-BTC hợp nhất Nghị định về kinh doanh đặt cược đua ngựa, đua chó và bóng đá quốc tế.",
+      "promulgation_date_expected": "2019-01-17",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-07-vbhn-btc-28225.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRSHYdmmMxTatzJVoNFopjrqIM-mkE2-d9QpI9K__v3rIPdcW_GMdKuAUGqK-haB-o&file_name=2019_123+%2b+124_07-VBHN-BTC..pdf",
+          "label": "Tệp chính thức 07/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28221",
+      "instrument_number": "06/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 06/VBHN-BTC hợp nhất Nghị định về kinh doanh casino.",
+      "promulgation_date_expected": "2019-01-17",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-06-vbhn-btc-28221.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRmBtZG6hH1Y2PoOE5_FUZHQ2uP0dzJ7Qa1m_YoulNnMp-Wf31zjUr8Quhug82_LSs&file_name=2019_121+%2b+122_06-VBHN-BTC..pdf",
+          "label": "Tệp chính thức 06/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195992",
+      "instrument_number": "03/2019/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành tiêu chí xác định xã, thôn hoàn thành mục tiêu Dự án 2 (Chương trình 135) thuộc Chương trình mục tiêu quốc gia Giảm nghèo bền vững giai đoạn 2016 - 2020",
+      "promulgation_date_expected": "2019-01-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195992&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/03.signed_02.pdf",
+          "label": "Tệp chính thức 03/2019/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196456",
+      "instrument_number": "02/2019/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định thực hiện phát triển dự án điện gió và Hợp đồng mua bán điện mẫu cho các dự án điện gió",
+      "promulgation_date_expected": "2019-01-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196456&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02-bct.signed.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196272",
+      "instrument_number": "03/2019/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về nguồn kinh phí, nội dung và mức chi từ ngân sách nhà nước để thực hiện hoạt động sáng kiến",
+      "promulgation_date_expected": "2019-01-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196272&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/03-btc.signed.pdf",
+          "label": "Tệp chính thức 03/2019/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196330",
+      "instrument_number": "04/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định về hệ số điều chỉnh giá đất năm 2019 trên địa bàn tỉnh Vĩnh Phúc",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196330&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/04vp.signed.pdf",
+          "label": "Tệp chính thức 04/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196455",
+      "instrument_number": "02/2019/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định Chế độ báo cáo thống kê ngành Tài chính",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196455&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02-btc.signed.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BTC"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02-btc-kem1.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BTC"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02-btc-kem2.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28220",
+      "instrument_number": "05/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 05/VBHN-BTC hợp nhất Nghị định về tiêu chuẩn, điều kiện đối với kiểm toán viên hành nghề, tổ chức kiểm toán được chấp thuận kiểm toán cho đơn vị có lợi ích công chúng.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-05-vbhn-btc-28220.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR_REkfzawgamlC00LP2hh6QkpFmKY04E8TxB1zT9byXkU-7yn96q19WDdXBOZNfke&file_name=2019_121+%2b+122_05-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 05/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28215",
+      "instrument_number": "02/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 02/VBHN-BGTVT hợp nhất Thông tư quy định chi tiết về quản lý, khai thác cảng hàng không, sân bay.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-02-vbhn-bgtvt-28215.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbROvnEfDaSHUUDhCjO29-LqJYGxglnotOLE_6njcZXCUR6G9fMcpAZ4OZkIAWP6GA3kwvYaWZbusN1S7IK029Knw~~&file_name=2019_115+%2b+116_02-VBHN-BGTVT..pdf",
+          "label": "Tệp chính thức 02/VBHN-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28212",
+      "instrument_number": "01/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-BGTVT hợp nhất Thông tư quy định về việc vận chuyển hàng không và hoạt động hàng không chung.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-bgtvt-28212.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRNm2uj8jIw7wWa2rdSMxEEqYcAcMm1vn1MaEbQabI4nxB1tpfpq0Y0xcKrmoHSbnHdnRwxznZSlxfORWpsvGyGA~~&file_name=2019_113+%2b+114_01-VBHN-BGTVT..pdf",
+          "label": "Tệp chính thức 01/VBHN-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28201",
+      "instrument_number": "04/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 04/VBHN-BTC hợp nhất Nghị định quy định chi tiết thi hành một số điều của Luật giá về thẩm định giá.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-04-vbhn-btc-28201.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR1atGKNpZctPAGAJ44kh4V7q4wdDF2a57HMR6OMoFI8egnZZDhS3mp3aQ7bYaPLr1&file_name=2019_109+%2b+110_04-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 04/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28197",
+      "instrument_number": "03/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 03/VBHN-BTC hợp nhất Nghị định quy định chi tiết và hướng dẫn thi hành một số điều của Luật Kiểm toán độc lập.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-03-vbhn-btc-28197.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR_0PTqs19_x_nPBpSDBamimw6DHpZtVTFp5EZdAgRzagiC6U5wVM8jbDb-U_brdFq&file_name=2019_107+%2b+108_03-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 03/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28196",
+      "instrument_number": "02/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 02/VBHN-BTC hợp nhất Nghị định quy định chi tiết một số điều của Luật kế toán.",
+      "promulgation_date_expected": "2019-01-14",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-02-vbhn-btc-28196.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRnqoZJQa3jQ4vTxWG2jfEUJzgSuqxOlL7qI14ePaaD2qCLplCAyAY6hY9oxaJJbGf&file_name=2019_107+%2b+108_02-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 02/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28502",
+      "instrument_number": "01/VBHN-BXD",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-BXD hợp nhất Thông tư quy định về việc đào tạo, bồi dưỡng kiến thức chuyên môn, nghiệp vụ quản lý vận hành nhà chung cư.",
+      "promulgation_date_expected": "2019-01-12",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-bxd-28502.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRzjpWzA_DzxgOdjAZ1VNN1dU7r5h3W3QPKHq1FGtxRjXhb_0DcEZ-SsuJrI0gnuaw&file_name=2019_249+%2b+250_01-VBHN-BXD..pdf",
+          "label": "Tệp chính thức 01/VBHN-BXD"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-196046",
+      "instrument_number": "04/2019/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định tiêu chuẩn, định mức sử dụng xe ô tô",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196046&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/04.signed_01.pdf",
+          "label": "Tệp chính thức 04/2019/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196341",
+      "instrument_number": "03/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc sửa đổi Khoản 4 Điều 3 Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Sở Nông nghiệp và Phát triển nông thôn ban hành kèm theo Quyết định số 51/2015/QĐ-UBND ngày 08/10/2015 của Ủy ban nhân dân tỉnh",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196341&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/03ht.signed.pdf",
+          "label": "Tệp chính thức 03/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196388",
+      "instrument_number": "02/2019/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Công bố vùng nước cảng biển thuộc địa phận thành phố Đà Nẵng và khu vực quản lý của Cảng vụ hàng hải Đà Nẵng",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196388&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196347",
+      "instrument_number": "03/2019/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phòng, chống và khắc phục hậu quả thiên tai trong lĩnh vực đường bộ",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196347&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/03-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 03/2019/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196256",
+      "instrument_number": "01/2019/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý và bảo trì công trình đường thủy nội địa",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196256&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/01-bgtvt.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28517",
+      "instrument_number": "01/2019/NQ-HĐTP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 01/2019/NQ-HĐTP hướng dẫn áp dụng một số quy định của pháp luật về lãi, lãi suất, phạt vi phạm.",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-01-2019-nq-hdtp-28517.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRAA0lt0_AiQI9JryyGvF2rlM2wNI2Pb6ZME3_vuMq3aUk6Ab3EH0uhhdKMp-yR8eyilheXBORaj64degoufGuEQ~~&file_name=2019_253+%2b+254_01-2019-NQ-H%c4%90TP.pdf",
+          "label": "Tệp chính thức 01/2019/NQ-HĐTP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28509",
+      "instrument_number": "02/2019/NQ-HĐTP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 02/2019/NQ-HĐTP hướng dẫn áp dụng Điều 150 về tội mua bán người và Điều 151 về tội mua bán người dưới 16 tuổi của Bộ luật Hình sự.",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-02-2019-nq-hdtp-28509.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRuHDlRRptyXRs8G0Yre_wrjxDmRhdCxaH-33Tu7U9cMCN6M45RzSQ7FLHJdFAppuSPilVMt3A2nn2GmJffswtUQ~~&file_name=2019_255+%2b+256_02-2019-NQ-H%c4%90TP.pdf",
+          "label": "Tệp chính thức 02/2019/NQ-HĐTP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28150",
+      "instrument_number": "06/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 06/VBHN-NHNN hợp nhất Thông tư quy định cho vay bằng ngoại tệ của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng vay là người cư trú.",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-06-vbhn-nhnn-28150.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRC2HCP5OdGveXat09qulk3IcIr2w-QkylPZf-6u-QzU3u46X1zxppikC6cLl3W2Q8&file_name=2019_97+%2b+98_06-VBHN-NHNN.pdf",
+          "label": "Tệp chính thức 06/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28149",
+      "instrument_number": "05/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 05/VBHN-NHNN hợp nhất Thông tư hướng dẫn thi hành Nghị định số 10/2010/NĐ-CP ngày 12/02/2010 của Chính phủ về hoạt động thông tin tín dụng ngày 12/02/2010 của Chính phủ về hoạt động thông tin tín dụng.",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-05-vbhn-nhnn-28149.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRHtJq17mLwG8wvN8gyRRLPoL2r5nDlzwx0oRTQQr3mKTB-dAUUkxXOiyQm1Fh8KdH&file_name=2019_97+%2b+98_05-VBHN-NHNN.pdf",
+          "label": "Tệp chính thức 05/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28148",
+      "instrument_number": "04/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 04/VBHN-NHNN hợp nhất Thông tư quy định về trang bị, quản lý, vận hành và đảm bảo an toàn hoạt động của máy giao dịch tự động.",
+      "promulgation_date_expected": "2019-01-11",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-04-vbhn-nhnn-28148.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRXCyA8z2QaaJiekv83xGqGEjJp2GkQerGgt7BdrYK6t_t70sihMGxY64nLtoehU9X&file_name=2019_97+%2b+98_04-VBHN-NHNN.pdf",
+          "label": "Tệp chính thức 04/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196363",
+      "instrument_number": "01/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định mức trích, nội dung chi và mức chi cho công tác tổ chức thực hiện bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất trên địa bàn tỉnh Ninh Bình",
+      "promulgation_date_expected": "2019-01-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196363&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/01nb.signed.pdf",
+          "label": "Tệp chính thức 01/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196361",
+      "instrument_number": "03/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc sửa đổi, bổ sung một số điều của Quy định chi tiết một số nội dung về bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất trên địa bàn thành phố Hải Phòng ban hành kèm theo Quyết định số 2680/2014/QĐ-UBND ngày 03/12/2014 của Ủy ban nhân dân thành phố",
+      "promulgation_date_expected": "2019-01-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196361&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/03hp.signed.pdf",
+          "label": "Tệp chính thức 03/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196577",
+      "instrument_number": "03/2019/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định công tác quản lý báo chí trong Bộ Quốc phòng",
+      "promulgation_date_expected": "2019-01-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196577&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/03-bqp.pdf",
+          "label": "Tệp chính thức 03/2019/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28329",
+      "instrument_number": "625/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 625/NQ-UBTVQH14 về việc thành lập thị trấn Thường Thới Tiền thuộc huyện Hồng Ngự, tỉnh Đồng Tháp.",
+      "promulgation_date_expected": "2019-01-10",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-625-nq-ubtvqh14-28329.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRFY3PlzKE1YKU2m-fViZQaQR24jRev14YZ3AEiE4m9F4EWMCict0U_bI3N5c10W_xh7VciJVARCooyMGUi-e8TA~~&file_name=2019_161+%2b+162_625-NQ-UBTVQH14.pdf",
+          "label": "Tệp chính thức 625/NQ-UBTVQH14"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28328",
+      "instrument_number": "623/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 623/NQ-UBTVQH14 về việc nhập 02 đơn vị hành chính cấp xã, thành lập 06 phường thuộc thị xã Chí Linh và thành lập thành phố Chí Linh thuộc tỉnh Hải Dương.",
+      "promulgation_date_expected": "2019-01-10",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-623-nq-ubtvqh14-28328.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR3xsCWkKXHDNjpgtBghYPvgPgeSVl1_dIbiARIIpq43mJxapJ1QJ74CMAT7wddVod0ZPe6b568phKIWhIb3JuBg~~&file_name=2019_161+%2b+162_623-NQ-UBTVQH14.pdf",
+          "label": "Tệp chính thức 623/NQ-UBTVQH14"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196338",
+      "instrument_number": "02/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc sửa đổi Khoản 2, Khoản 3 Điều 3 Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Sở Khoa học và Công nghệ ban hành kèm theo Quyết định số 37/2015/QĐ-UBND ngày 12/8/2015 của Ủy ban nhân dân tỉnh",
+      "promulgation_date_expected": "2019-01-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196338&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02ht.signed.pdf",
+          "label": "Tệp chính thức 02/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196110",
+      "instrument_number": "01/2019/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định cửa khẩu nhập khẩu phế liệu",
+      "promulgation_date_expected": "2019-01-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196110&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/01-bct.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28331",
+      "instrument_number": "622/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 622/NQ-UBTVQH14 điều động, phê chuẩn Ủy viên Thường trực Hội đồng Dân tộc của Quốc hội khóa XIV",
+      "promulgation_date_expected": "2019-01-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-622-nq-ubtvqh14-28331.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRZ14IDvveJ-td7OPpSGako1hbieTjMl7xipUiuzUizFnYuhXZdM1evmbrfRL3VUgK884lHDGsdRwD-3X68asW1g~~&file_name=2019_161+%2b+162_622-NQ-UBTVQH14.pdf",
+          "label": "Tệp chính thức 622/NQ-UBTVQH14"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195869",
+      "instrument_number": "02/2019/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Quyết định số 11/2017/QĐ-TTg ngày 11 tháng 4 năm 2017 của Thủ tướng Chính phủ về cơ chế khuyến khích phát triển các dự án điện mặt trời tại Việt Nam",
+      "promulgation_date_expected": "2019-01-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195869&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/02.signed_02.pdf",
+          "label": "Tệp chính thức 02/2019/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196069",
+      "instrument_number": "02/2019/TT-BKHĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 20/2015/TT-BKHĐT ngày 01 tháng 12 năm 2015 của Bộ Kế hoạch và Đầu tư hướng dẫn về đăng ký doanh nghiệp",
+      "promulgation_date_expected": "2019-01-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196069&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/02-bkhdt.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BKHĐT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/02-bkhdt-kem.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BKHĐT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28456",
+      "instrument_number": "109/VBHN-BTP",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 109/VBHN-BTP hợp nhất Thông tư hướng dẫn một số nội dung quản lý công chức, viên chức, người lao động thuộc hệ thống tổ chức thi hành án dân sự.",
+      "promulgation_date_expected": "2019-01-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-109-vbhn-btp-28456.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRT_Qxw_ZoxWnCej7HJd89UuMW7lZKjB-RjkhE0x3-EQMSSJhqNCZtXtFBBqZneKiH&file_name=2019_231+%2b+232_109-VBHN-BTP..pdf",
+          "label": "Tệp chính thức 109/VBHN-BTP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28271",
+      "instrument_number": "01/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-BTC hợp nhất Thông tư hướng dẫn nhập, xuất, mua, bán hàng dự trữ quốc gia.",
+      "promulgation_date_expected": "2019-01-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-btc-28271.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRooauXZD0y1SuVr84kwam7PDvC6d5BJaDxRzRBuDmRN7LQETONEkdRkiE6VaGHQiJ&file_name=2019_145+%2b+146_01-VBHN-BTC.pdf",
+          "label": "Tệp chính thức 01/VBHN-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-195977",
+      "instrument_number": "02/2019/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hoạt động đo lường trong lĩnh vực quân sự, quốc phòng",
+      "promulgation_date_expected": "2019-01-07",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195977&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/02-bqp.signed.pdf",
+          "label": "Tệp chính thức 02/2019/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28107",
+      "instrument_number": "03/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 03/VBHN-NHNN hợp nhất Thông tư quy định về xác định, trích lập, quản lý và sử dụng khoản dự phòng rủi ro của Ngân hàng Nhà nước Việt Nam.",
+      "promulgation_date_expected": "2019-01-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-03-vbhn-nhnn-28107.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRLw2Nn6pEdFS-V-J1Zfg3SMYrjWChk91lMnqimsmeatnqvtTPuAIZzPT5m438_Mfp&file_name=2019_75+%2b+76_03-VBHN-NHNN..pdf",
+          "label": "Tệp chính thức 03/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28100",
+      "instrument_number": "02/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 02/VBHN-NHNN hợp nhất Thông tư quy định về hoạt động thẻ ngân hàng",
+      "promulgation_date_expected": "2019-01-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-02-vbhn-nhnn-28100.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRYN1oyZW3f9PAW2yj9MySzxCiF7tCqtpOkj-9BLsaKGT3pwhdM5X7Sh9-iOiSe7YX&file_name=2019_73+%2b+74_02-VBHN-NHNN..pdf",
+          "label": "Tệp chính thức 02/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28095",
+      "instrument_number": "01/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-NHNN hợp nhất Thông tư quy định về hệ thống kiểm soát nội bộ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.",
+      "promulgation_date_expected": "2019-01-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-nhnn-28095.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRuPURLGVNQJyRYPL-RpRSnuj40CB6SN0fDJR_TahVDiozlbYRbsjjzM1O-tOpCY5b&file_name=2019_71+%2b+72_01-VBHN-NHNN..pdf",
+          "label": "Tệp chính thức 01/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196370",
+      "instrument_number": "01/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi Khoản 2, Điều 3 Quyết định số 31/2016/QĐ-UBND ngày 27/5/2016 của Ủy ban nhân dân tỉnh quy định vị trí, chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Sở Giao thông vận tải tỉnh Vĩnh Phúc",
+      "promulgation_date_expected": "2019-01-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196370&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/01vp.signed.pdf",
+          "label": "Tệp chính thức 01/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195844",
+      "instrument_number": "01/2019/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Bộ tiêu chí chất lượng thống kê nhà nước đến năm 2030",
+      "promulgation_date_expected": "2019-01-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195844&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/01.signed_03.pdf",
+          "label": "Tệp chính thức 01/2019/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-195814",
+      "instrument_number": "03/2019/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về hoạt động viễn thám",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195814&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/03-nd.signed.pdf",
+          "label": "Tệp chính thức 03/2019/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196344",
+      "instrument_number": "02/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc ban hành Quy chế quản lý và sử dụng kinh phí phát triển ngành công nghiệp hỗ trợ trên địa bàn tỉnh Bến Tre",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196344&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/02btre.signed.pdf",
+          "label": "Tệp chính thức 02/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-195951",
+      "instrument_number": "01/2019/TT-BKHĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định Chế độ báo cáo thống kê Ngành Thống kê",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195951&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/01-bkhdt.signed.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BKHĐT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28611",
+      "instrument_number": "03/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 03/VBHN-VPQH hợp nhất Pháp lệnh Quản lý thị trường.",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-03-vbhn-vpqh-28611.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRObRZpYsO_Bh2TaazSOwGUmbzwoXXckgpNOBwPOWmB7Dmd2RQD3Faa3f4nAgpYbkUQ6wWD-VD1soBXnG_bSGaNQ~~&file_name=2019_305+%2b+306_03-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 03/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28610",
+      "instrument_number": "02/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 02/VBHN-VPQH hợp nhất Pháp lệnh Ưu đãi người có công với cách mạng.",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-02-vbhn-vpqh-28610.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR7NkTqNzfEAk1YX5K1k8oiyFr5XK4HpREbtmJMx90rfKVbY1oV5zYJbmYz-ybgtqaHEs0RsT7cKWSGLdLfc94DQ~~&file_name=2019_305+%2b+306_02-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 02/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28606",
+      "instrument_number": "04/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 04/VBHN-VPQH hợp nhất Pháp lệnh Thư viện.",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-04-vbhn-vpqh-28606.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRQFRxrxnGd9U5bUaTqBN-XVF3kYf_UIg-izKSC-LM-SkBZHFeV1H6ZA5lSaz7C8kwzoJhYKsLd4103hJEViPerA~~&file_name=2019_303+%2b+304_04-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 04/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-28605",
+      "instrument_number": "01/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-VPQH hợp nhất Pháp lệnh Công nghiệp quốc phòng.",
+      "promulgation_date_expected": "2019-01-04",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-vpqh-28605.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR_oNWnBpby-EyUV5phErSB3k5YnaYh02bN_zW4VvBnPbHMpT0wSX2TYw7EpmgE9KzEaMkCSkvrp1_jgmy0xmgCw~~&file_name=2019_303+%2b+304_01-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 01/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196342",
+      "instrument_number": "01/2019/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế quản lý và sử dụng nguồn vốn ngân sách địa phương ủy thác qua Ngân hàng Chính sách xã hội để cho vay đối với người nghèo và các đối tượng chính sách khác trên địa bàn tỉnh Bến Tre",
+      "promulgation_date_expected": "2019-01-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196342&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/01btre.signed.pdf",
+          "label": "Tệp chính thức 01/2019/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196273",
+      "instrument_number": "01/2019/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chế độ báo cáo công tác của Ngành Thi hành án Quân đội",
+      "promulgation_date_expected": "2019-01-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196273&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/01-bqp.signed.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28327",
+      "instrument_number": "621/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 621/NQ-UBTVQH14 phê chuẩn việc miễn nhiệm chức vụ Phó chủ nhiệm và cho thôi làm thành viên Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội.",
+      "promulgation_date_expected": "2019-01-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-621-nq-ubtvqh14-28327.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR8PmfbwqGgPgI6v27UHDeWTHeGC8VZXX41jNM2bOfCAXy7S3hWwk-TVK7hllnMljGcoazZQ--d6z1VzJ4R70_Fw~~&file_name=2019_161+%2b+162_621-NQ-UBTVQH14.pdf",
+          "label": "Tệp chính thức 621/NQ-UBTVQH14"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-195796",
+      "instrument_number": "02/2019/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về phòng thủ dân sự",
+      "promulgation_date_expected": "2019-01-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195796&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/02.signed_01.pdf",
+          "label": "Tệp chính thức 02/2019/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196549",
+      "instrument_number": "01/2019/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về việc xác định mức độ khuyết tật do Hội đồng xác định mức độ khuyết tật thực hiện",
+      "promulgation_date_expected": "2019-01-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196549&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/01-bldtbxh.pdf",
+          "label": "Tệp chính thức 01/2019/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-195793",
+      "instrument_number": "01/2019/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về Kiểm lâm và Lực lượng chuyên trách bảo vệ rừng",
+      "promulgation_date_expected": "2019-01-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195793&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/01.signed_02.pdf",
+          "label": "Tệp chính thức 01/2019/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-27986",
+      "instrument_number": "01/NQ-CP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 01/NQ-CP về nhiệm vụ, giải pháp chủ yếu thực hiện Kế hoạch phát triển kinh tế - xã hội và Dự toán ngân sách nhà nước năm 2019.",
+      "promulgation_date_expected": "2019-01-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-01-nq-cp-27986.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRH8uEypYKcMv_LQg7PavajapbhzUADUBDL2-rjJpN3Jv-EubH3YfNO37WiSE4pEFH&file_name=2019_29+%2b+30_01-NQ-CP..pdf",
+          "label": "Tệp chính thức 01/NQ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-195866",
+      "instrument_number": "169/2018/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 36/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ về quản lý trang thiết bị y tế",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195866&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/169.signed.pdf",
+          "label": "Tệp chính thức 169/2018/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/169-2.pdf",
+          "label": "Tệp chính thức 169/2018/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196401",
+      "instrument_number": "173/2018/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Công bố danh mục cụ thể hàng hóa cấm xuất khẩu, cấm nhập khẩu thuộc diện quản lý chuyên ngành của Bộ Quốc phòng theo quy định tại Nghị định số 69/2018/NĐ-CP ngày 15 tháng 5 năm 2018 của Chính phủ",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196401&classid=1&typegroupid=6",
+      "selection_rationale": "customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/173-bqp.signed.pdf",
+          "label": "Tệp chính thức 173/2018/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196364",
+      "instrument_number": "52/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định xếp hạng tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196364&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/10/1121-nhnn.pdf",
+          "label": "Tệp chính thức 52/2018/TT-NHNN"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/52-nhnn.signed.pdf",
+          "label": "Tệp chính thức 52/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196351",
+      "instrument_number": "53/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về mạng lưới hoạt động của tổ chức tín dụng phi ngân hàng",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196351&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/53-nhnn.signed.pdf",
+          "label": "Tệp chính thức 53/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196097",
+      "instrument_number": "49/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về tiền gửi có kỳ hạn",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196097&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/49-nhnn.pdf",
+          "label": "Tệp chính thức 49/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196081",
+      "instrument_number": "48/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về tiền gửi tiết kiệm",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196081&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/48-nhnn.pdf",
+          "label": "Tệp chính thức 48/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28112",
+      "instrument_number": "162/NQ-CP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 162/NQ-CP hội nghị Chính phủ với địa phương và Phiên họp Chính phủ thường kỳ tháng 12 năm 2018.",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-162-nq-cp-28112.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRFSKH7jTDx_7WxIMDWliF4EBD7d_zEIJz49UResJJjTBeGRm_WAAIaz3FEbcpvm3q&file_name=2019_77+%2b+78_162-NQ-CP.pdf",
+          "label": "Tệp chính thức 162/NQ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-28005",
+      "instrument_number": "161/NQ-CP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 161/NQ-CP về việc phê duyệt Điều chỉnh Quy hoạch sử dụng đất quốc phòng đến năm 2020 và kế hoạch sử dụng đất quốc phòng kỳ cuối (2016 - 2020).",
+      "promulgation_date_expected": "2018-12-31",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-161-nq-cp-28005.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRlNdUQRWR9gAQ8usaTfbzn0FggNB7Lgs8CqFuDpnm96g4wvrDsG0BCv4kXUPwbJ0s&file_name=2019_35+%2b+36_161-NQ-CP.pdf",
+          "label": "Tệp chính thức 161/NQ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-195712",
+      "instrument_number": "168/2018/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về công tác quốc phòng ở Bộ, ngành trung ương, địa phương",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195712&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/168.signed.pdf",
+          "label": "Tệp chính thức 168/2018/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/23.signed.pdf",
+          "label": "Tệp chính thức 168/2018/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196557",
+      "instrument_number": "58/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định về đấu giá quyền sử dụng đất để giao đất có thu tiền sử dụng đất hoặc cho thuê đất và biện pháp thi hành Luật đấu giá tài sản trên địa bàn tỉnh Cà Mau",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196557&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/58cm.signed.pdf",
+          "label": "Tệp chính thức 58/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196530",
+      "instrument_number": "59/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định diện tích tối thiểu được phép tách thửa đối với một số loại đất trên địa bàn tỉnh Cà Mau",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196530&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/59cm.signed.pdf",
+          "label": "Tệp chính thức 59/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196461",
+      "instrument_number": "47/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế thu thập, quản lý, cập nhật khai thác, chia sẻ và sử dụng thông tin, dữ liệu tài nguyên và môi trường tỉnh Bến Tre",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196461&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/47btre.signed.pdf",
+          "label": "Tệp chính thức 47/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196366",
+      "instrument_number": "49/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế phối hợp quản lý cụm công nghiệp trên địa bàn tỉnh Cà Mau",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196366&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/49cm.signed.pdf",
+          "label": "Tệp chính thức 49/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-196365",
+      "instrument_number": "31/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc phân cấp thẩm quyền ban hành tiêu chuẩn, định mức sử dụng máy móc, thiết bị chuyên dùng của các cơ quan, tổ chức, đơn vị thuộc phạm vi quản lý của tỉnh Đăk Lắk",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196365&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/03/31dl.signed.pdf",
+          "label": "Tệp chính thức 31/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195946",
+      "instrument_number": "48/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung điểm b, Khoản 3 Điều 7 của Quy định chi tiết hướng dẫn thi hành Nghị quyết số 26/2017/NQ-HĐND ngày 08 tháng 12 năm 2017 của Hội đồng nhân dân tỉnh Cà Mau quy định chính sách hỗ trợ đào tạo, khuyến khích đạo tạo cán bộ, công chức, viên chức tỉnh Cà Mau ban hành kèm theo Quyết định số 12/2018/QĐ-UBND ngày 26 tháng 6 năm 2018 của Ủy ban nhân dân tỉnh Cà Mau",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195946&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/48cm.signed.pdf",
+          "label": "Tệp chính thức 48/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195942",
+      "instrument_number": "50/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Đơn giá hoạt động quan trắc và phân tích môi trường trên địa bàn tỉnh Cà Mau",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195942&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/50cm.signed.pdf",
+          "label": "Tệp chính thức 50/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195891",
+      "instrument_number": "57/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành bộ \"Đơn giá bồi thường các loại nhà cửa, vật kiến trúc, mồ mả, tàu thuyền, máy móc thiết bị, nông cụ, ngư cụ, cây cối, hoa màu và nuôi trồng thủy hải sản\" khi Nhà nước thu hồi đất trên địa bàn tỉnh Hà Tĩnh",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195891&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/57ht.signed.pdf",
+          "label": "Tệp chính thức 57/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195873",
+      "instrument_number": "24/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành quy định về tổ chức, quản lý, công bố hoạt động của bãi đỗ xe trên địa bàn tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195873&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/24ld.signed.pdf",
+          "label": "Tệp chính thức 24/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-195846",
+      "instrument_number": "30/2018/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế thu hồi vốn đầu tư xây dựng công trình ngầm hạ tầng kỹ thuật đô thị sử dụng chung (cống cáp, hào và tuy nen kỹ thuật) trên địa bàn thành phố Hà Nội",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195846&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/30hn.signed.pdf",
+          "label": "Tệp chính thức 30/2018/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196746",
+      "instrument_number": "38/2018/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chuẩn, định mức sử dụng diện tích công trình sự nghiệp thuộc lĩnh vực giáo dục nghề nghiệp",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196746&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/04/38-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 38/2018/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196286",
+      "instrument_number": "132/2018/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn Chế độ kế toán cho doanh nghiệp siêu nhỏ",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196286&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/132-btc.signed.pdf",
+          "label": "Tệp chính thức 132/2018/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196283",
+      "instrument_number": "133/2018/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn lập Báo cáo tài chính nhà nước",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196283&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/133-btc.signed.pdf",
+          "label": "Tệp chính thức 133/2018/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196282",
+      "instrument_number": "42/2018/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định định mức kinh tế - kỹ thuật về huấn luyện an toàn, vệ sinh lao động",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196282&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/42-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 42/2018/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196277",
+      "instrument_number": "42/2018/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ Thông tư số 31/2016/TT-BNNPTNT ngày 05/10/2016 của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn quy định về trình tự sử dụng vốn sự nghiệp có tính chất đầu tư; mua sắm tài sản, hàng hóa, dịch vụ nhằm duy trì hoạt động thường xuyên; xử lý tài sản Nhà nước tại cơ quan hành chính, đơn vị sự nghiệp công lập do Bộ Nông nghiệp và Phát triển nông thôn quản lý",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196277&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/42-bnnptnt.pdf",
+          "label": "Tệp chính thức 42/2018/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196276",
+      "instrument_number": "136/2018/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 13/2017/TT-BTC ngày 15 tháng 02 năm 2017 của Bộ Tài chính quy định quán lý thu, chi bằng tiền mặt qua hệ thống Kho bạc Nhà nước",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196276&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/136-btc.pdf",
+          "label": "Tệp chính thức 136/2018/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196270",
+      "instrument_number": "34/2018/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định Chương trình giáo dục thường xuyên về tiếng Nhật thực hành",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196270&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/34-bgddt.signed.pdf",
+          "label": "Tệp chính thức 34/2018/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196259",
+      "instrument_number": "135/2018/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc quản lý đối với tiền mặt, giấy tờ có giá, tài sản quý tạm gửi, tạm giữ do Kho bạc Nhà nước nhận bảo quản",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196259&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/02/135-btc.pdf",
+          "label": "Tệp chính thức 135/2018/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196107",
+      "instrument_number": "44/2018/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Kiểm tra nhà nước về an toàn thực phẩm đối với thực phẩm có nguồn gốc thực vật xuất khẩu",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196107&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/44-bnnptnt.signed.pdf",
+          "label": "Tệp chính thức 44/2018/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196101",
+      "instrument_number": "35/2018/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chí xác định và ban hành Danh mục loài ngoại lai xâm hại",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196101&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/35-btnmt.pdf",
+          "label": "Tệp chính thức 35/2018/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196094",
+      "instrument_number": "45/2018/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư liên tịch số 07/2016/TTLT-BYT-BTC-BLĐTBXH ngày 15 tháng 4 năm 2016 quy định chi tiết Nghị định số 39/2015/NĐ-CP ngày 27 tháng 4 năm 2015 của Chính phủ quy định chính sách hỗ trợ cho phụ nữ thuộc hộ nghèo là người dân tộc thiểu số khi sinh con đúng chính sách dân số",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196094&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/45-byt.signed.pdf",
+          "label": "Tệp chính thức 45/2018/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196093",
+      "instrument_number": "61/2018/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều Quy chế công tác lưu trữ của Bộ Giao thông vận tải ban hành kèm theo Thông tư số 74/2014/TT-BGTVT ngày 19 tháng 12 năm 2014 của Bộ trưởng Bộ Giao thông vận tải",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196093&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/61-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 61/2018/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196087",
+      "instrument_number": "47/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục hàng hóa xuất khẩu, nhập khẩu kèm theo mã HS thuộc phạm vi quản lý của Ngân hàng Nhà nước Việt Nam trong lĩnh vực vàng",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196087&classid=1&typegroupid=6",
+      "selection_rationale": "customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/47-nhnn.pdf",
+          "label": "Tệp chính thức 47/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196083",
+      "instrument_number": "46/2018/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về thời hạn, trình tự, thủ tục chuyển tiếp đối với trường hợp cổ đông lớn của một tổ chức tín dụng và người có liên quan của cổ đông đó sở hữu cổ phần từ 5% trở lên vốn điều lệ của một tổ chức tín dụng khác",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196083&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/46-nhnn.pdf",
+          "label": "Tệp chính thức 46/2018/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196077",
+      "instrument_number": "23/2018/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện Chương trình mục tiêu Công nghệ thông tin giai đoạn 2016-2020",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196077&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/23-btttt.pdf",
+          "label": "Tệp chính thức 23/2018/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-196067",
+      "instrument_number": "09/2018/TT-BKHĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện một số điều của Nghị định số 63/2018/NĐ-CP ngày 04 tháng 5 năm 2018 của Chính phủ về đầu tư theo hình thức đối tác công tư",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=196067&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/09-bkhdt.pdf",
+          "label": "Tệp chính thức 09/2018/TT-BKHĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-195976",
+      "instrument_number": "22/2018/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục hàng hóa nhập khẩu, xuất khẩu trong lĩnh vực in, phát hành xuất bản phẩm",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195976&classid=1&typegroupid=6",
+      "selection_rationale": "customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/22-btttt.signed.pdf",
+          "label": "Tệp chính thức 22/2018/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-195975",
+      "instrument_number": "41/2018/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn về tổ chức và hoạt động của Hội đồng quản lý trong đơn vị sự nghiệp công lập thuộc ngành Nông nghiệp và Phát triển nông thôn",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195975&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/41-bnnptnt.signed.pdf",
+          "label": "Tệp chính thức 41/2018/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-195751",
+      "instrument_number": "43/2018/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định một số nội dung về xuất khẩu, nhập khẩu giống cây trồng, giống vật nuôi, nguồn gen cây trồng; nhập khẩu thuốc bảo vệ thực vật và nhập khẩu vật thể trong Danh mục vật thể thuộc diện kiểm dịch thực vật phải phân tích nguy cơ dịch hại trước khi nhập khẩu vào Việt Nam",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=195751&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/01/43-bnnptnt.pdf",
+          "label": "Tệp chính thức 43/2018/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-27985",
+      "instrument_number": "160/NQ-CP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 160/NQ-CP về việc sử dụng tài sản công để thanh toán cho Nhà đầu tư thực hiện dự án đầu tư xây dựng công trình theo hình thức Hợp đồng Xây dựng - Chuyển giao.",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-160-nq-cp-27985.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRXW9NBgLL5-6Az_duS16EgcD1AkrfTaEoHvy0jkTgeKumP1mPUbWLEBmPI-YkqCft&file_name=2019_29+%2b+30_160-NQ-CP.pdf",
+          "label": "Tệp chính thức 160/NQ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-27984",
+      "instrument_number": "619/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 619/NQ-UBTVQH14 về việc bổ sung kinh phí mua bù hàng dự trữ quốc gia đã xuất cấp.",
+      "promulgation_date_expected": "2018-12-28",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-619-nq-ubtvqh14-27984.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRsTxak-adRJhpYZQ5BfnweqbnCj0qsVvMfr-m689K2rrKdyrhB_WOBNvKZyroA-TEe-Qkx_2sZ1KBKBzD06Qwlw~~&file_name=2019_29+%2b+30_619-NQ-UBTVQH14.pdf",
+          "label": "Tệp chính thức 619/NQ-UBTVQH14"
+        }
+      ]
+    }
+  ],
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "shard_number": 99,
+  "shard_start_index": 9800
+}

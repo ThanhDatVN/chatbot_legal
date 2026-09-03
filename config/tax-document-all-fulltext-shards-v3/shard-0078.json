@@ -1,0 +1,1439 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0078",
+  "scope": "Toàn bộ source record trong sáu nhóm văn bản chính thức của cửa sổ 10 năm; từ khóa tiêu đề chỉ xếp lịch, mọi record đều chờ sàng lọc toàn văn",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GAZETTE-RESOLUTION-32785",
+      "instrument_number": "1103/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1103/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Quảng Bình khóa XVII, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1103-nq-ubtvqh14-32785.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-201921",
+      "instrument_number": "44/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về việc tạm ngừng kinh doanh tạm nhập, tái xuất mặt hàng khẩu trang y tế, găng tay y tế và bộ trang phục phòng, chống dịch",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201921&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/44-bct.pdf",
+          "label": "Tệp chính thức 44/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33469",
+      "instrument_number": "38/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 38/VBHN-VPQH hợp nhất Luật Đầu tư.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-38-vbhn-vpqh-33469.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33468",
+      "instrument_number": "37/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 37/VBHN-VPQH hợp nhất Luật Phí và lệ phí.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-37-vbhn-vpqh-33468.htm",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33463",
+      "instrument_number": "34/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 34/VBHN-VPQH hợp nhất Luật Tài nguyên nước.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-34-vbhn-vpqh-33463.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33459",
+      "instrument_number": "36/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 36/VBHN-VPQH hợp nhất Luật Đầu tư công.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-36-vbhn-vpqh-33459.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33457",
+      "instrument_number": "35/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 35/VBHN-VPQH hợp nhất Luật Thủy lợi.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-35-vbhn-vpqh-33457.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33454",
+      "instrument_number": "33/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 33/VBHN-VPQH hợp nhất Luật Phòng, chống nhiễm vi rút gây ra hội chứng suy giảm miễn dịch mắc phải ở người (HIV/AIDS).",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-33-vbhn-vpqh-33454.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33452",
+      "instrument_number": "31/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 31/VBHN-VPQH hợp nhất Luật Xử lý vi phạm hành chính.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-31-vbhn-vpqh-33452.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33451",
+      "instrument_number": "30/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 30/VBHN-VPQH hợp nhất Luật Lý lịch tư pháp.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-30-vbhn-vpqh-33451.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33445",
+      "instrument_number": "29/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 29/VBHN-VPQH hợp nhất Luật Thủ đô.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-29-vbhn-vpqh-33445.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33444",
+      "instrument_number": "28/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 28/VBHN-VPQH hợp nhất Luật Bảo hiểm y tế.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-28-vbhn-vpqh-33444.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-33442",
+      "instrument_number": "26/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 26/VBHN-VPQH hợp nhất Luật Biên giới quốc gia.",
+      "promulgation_date_expected": "2020-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-26-vbhn-vpqh-33442.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-201920",
+      "instrument_number": "43/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc nhập khẩu thuốc lá nguyên liệu theo hạn ngạch thuế quan năm 2021",
+      "promulgation_date_expected": "2020-12-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201920&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/43-bct.pdf",
+          "label": "Tệp chính thức 43/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32627",
+      "instrument_number": "17/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 17/VBHN-BGTVT hợp nhất Thông tư quy định chi tiết về quản lý, khai thác cảng hàng không, sân bay.",
+      "promulgation_date_expected": "2020-12-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-17-vbhn-bgtvt-32627.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32624",
+      "instrument_number": "16/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 16/VBHN-BGTVT hợp nhất Thông tư quy định việc báo cáo hoạt động và báo cáo số liệu trong ngành hàng không dân dụng Việt Nam.",
+      "promulgation_date_expected": "2020-12-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-16-vbhn-bgtvt-32624.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECISION-202184",
+      "instrument_number": "39/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ Quyết định số 08/2015/QĐ-UBND ngày 30/01/2015 của UBND tỉnh ban hành quy định về điều kiện chuyển nhượng, nhận chuyển nhượng, tặng cho, nhận tặng cho, cho thuê, thuê quyền sử dụng đất của hộ gia đình, cá nhân là đồng bào dân tộc thiểu số trên địa bàn tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2020-12-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202184&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/39ld.signed.pdf",
+          "label": "Tệp chính thức 39/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201896",
+      "instrument_number": "06/2020/TT-BNV",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chế tổ chức thi tuyển, xét tuyển công chức, viên chức, thi nâng ngạch công chức, thi hoặc xét thăng hạng chức danh nghề nghiệp viên chức; Nội quy thi tuyển, xét tuyển công chức, viên chức, thi nâng ngạch công chức, thi hoặc xét thăng hạng chức danh nghề nghiệp viên chức",
+      "promulgation_date_expected": "2020-12-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201896&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/06-bnv.pdf",
+          "label": "Tệp chính thức 06/2020/TT-BNV"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/06-bnv-kem1.pdf",
+          "label": "Tệp chính thức 06/2020/TT-BNV"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/06-bnv-kem2.pdf",
+          "label": "Tệp chính thức 06/2020/TT-BNV"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32599",
+      "instrument_number": "13/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 13/VBHN-NHNN hợp nhất Thông tư ban hành Biểu phí dịch vụ thanh toán qua Ngân hàng Nhà nước Việt Nam.",
+      "promulgation_date_expected": "2020-12-02",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-13-vbhn-nhnn-32599.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECISION-201895",
+      "instrument_number": "23/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế tuyển dụng công chức xã, phường, thị trấn trên địa bàn tỉnh Kiên Giang",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201895&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/23kg.signed.pdf",
+          "label": "Tệp chính thức 23/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201893",
+      "instrument_number": "22/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định trình độ chuyên môn, nghiệp vụ và ngành đào tạo phù hợp với yêu cầu nhiệm vụ của từng chức danh công chức cấp xã trên địa bàn tỉnh KIên Giang",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201893&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/22kg.signed_01.pdf",
+          "label": "Tệp chính thức 22/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201891",
+      "instrument_number": "21/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Giao số lượng và bố trí cán bộ, công chức cấp xã trên địa bàn tỉnh Kiên Giang",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201891&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/21kg.signed.pdf",
+          "label": "Tệp chính thức 21/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201889",
+      "instrument_number": "17/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành bảng giá tính thuế tài nguyên trên địa bàn tỉnh Quảng Nam",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201889&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/17qnam.signed.pdf",
+          "label": "Tệp chính thức 17/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201930",
+      "instrument_number": "126/2020/TT-BCA",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc thực hiện dân chủ trong hoạt động điều tra của lực lượng Công an nhân dân",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201930&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/126-bca.signed.pdf",
+          "label": "Tệp chính thức 126/2020/TT-BCA"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32653",
+      "instrument_number": "1096/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1096/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Bạc Liêu khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1096-nq-ubtvqh14-32653.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32652",
+      "instrument_number": "1095/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1095/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Quảng Nam khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1095-nq-ubtvqh14-32652.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32636",
+      "instrument_number": "1102/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1102/NQ-UBTVQH14 phê chuẩn việc cho thôi làm Ủy viên Thường trực Ủy ban Pháp luật của Quốc hội khóa XIV đối với đại biểu Trần Hồng Hà.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1102-nq-ubtvqh14-32636.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32635",
+      "instrument_number": "1101/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1101/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Quảng Trị khóa VII, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1101-nq-ubtvqh14-32635.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32634",
+      "instrument_number": "1100/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1100/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Chủ tịch Hội đồng nhân dân tỉnh Phú Yên khóa VII, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1100-nq-ubtvqh14-32634.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32633",
+      "instrument_number": "1099/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1099/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Sóc Trăng khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1099-nq-ubtvqh14-32633.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32632",
+      "instrument_number": "1098/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1098/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Bạc Liêu khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1098-nq-ubtvqh14-32632.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32631",
+      "instrument_number": "1097/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1097/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Bạc Liêu khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-12-01",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1097-nq-ubtvqh14-32631.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECREE-201820",
+      "instrument_number": "140/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 126/2017/NĐ-CP ngày 16 tháng 11 năm 2017 của Chính phủ về chuyển doanh nghiệp nhà nước và công ty trách nhiệm hữu hạn một thành viên do doanh nghiệp nhà nước đầu tư 100% vốn điều lệ thành công ty cổ phần; Nghị định số 91/2015/NĐ-CP ngày 13 tháng 10 năm 2015 của Chính phủ về đầu tư vốn nhà nước vào doanh nghiệp và quản lý, sử dụng vốn, tài sản tại doanh nghiệp và Nghị định số 32/2018/NĐ-CP ngày 08 tháng 3 năm 2018 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 91/2015/NĐ-CP",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201820&classid=1&typegroupid=4",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/140.signed.pdf",
+          "label": "Tệp chính thức 140/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201887",
+      "instrument_number": "23/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc bãi bỏ Quyết định số 11/2012/QĐ-UBND ngày 15/3/2012 của UBND tỉnh quy định về quản lý, khai thác đất đắp nền công trình xây dựng trên địa bàn tỉnh Phú Thọ",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201887&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/23pt.signed.pdf",
+          "label": "Tệp chính thức 23/2020/QĐ-UBND"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/5420.signed.pdf",
+          "label": "Tệp chính thức 23/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-202350",
+      "instrument_number": "31/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 13/2018/TT-BCT ngày 15 tháng 6 năm 2018 của Bộ trượng Bộ Công Thương quy định về quản lý, sử dụng vật liệu nổ công nghiệp, tiền chất thuốc nổ sử dụng để sản xuất vật liệu nổ công nghiệp",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202350&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/01/31-bct.pdf",
+          "label": "Tệp chính thức 31/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-202121",
+      "instrument_number": "42/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc khai báo, quản lý và sử dụng cơ sở dữ liệu môi trường ngành Công Thương",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202121&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/42-bct.signed.pdf",
+          "label": "Tệp chính thức 42/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-202120",
+      "instrument_number": "40/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 11/2019/TT-BCT ngày 30 tháng 7 năm 2019 của Bộ trưởng Bộ Công Thương hướng dẫn thực hiện hoạt động xúc tiến thương mại phát triển ngoại thương thuộc Chương trình cấp quốc gia về xúc tiến thương mại",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202120&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/40-bct.signed.pdf",
+          "label": "Tệp chính thức 40/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201928",
+      "instrument_number": "40/2020/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chí xác định sản phẩm, dịch vụ công nghệ thông tin sản xuất trong nước được ưu tiên đầu tư, thuê, mua sắm",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201928&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/40-btttt.signed.pdf",
+          "label": "Tệp chính thức 40/2020/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201926",
+      "instrument_number": "39/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về an toàn điện",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201926&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/39-bct.signed.pdf",
+          "label": "Tệp chính thức 39/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201924",
+      "instrument_number": "38/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về an toàn đối với máy phát điện phòng nổ sử dụng trong mỏ hầm lò",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201924&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/38-bct.signed_01.pdf",
+          "label": "Tệp chính thức 38/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201922",
+      "instrument_number": "37/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định Danh mục hàng hóa nguy hiểm phải đóng gói trong quá trình vận chuyển và vận chuyển hàng hóa nguy hiểm bằng phương tiện giao thông cơ giới đường bộ, đường sắt và đường thủy nội địa",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201922&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/37-bct.pdf",
+          "label": "Tệp chính thức 37/2020/TT-BCT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/37-bct-kem.pdf",
+          "label": "Tệp chính thức 37/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201919",
+      "instrument_number": "41/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý vận hành hồ chứa quặng đuôi trong hoạt động khai thác và chế biến khoáng sản",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201919&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/41-bct.pdf",
+          "label": "Tệp chính thức 41/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201917",
+      "instrument_number": "36/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về thuốc nổ nhũ tương an toàn dùng cho mỏ hầm lò có khí nổ",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201917&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/36-bct.pdf",
+          "label": "Tệp chính thức 36/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201916",
+      "instrument_number": "35/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về thuốc nổ nhũ tương an toàn dùng cho mỏ hầm lò có độ thoát khí mê tan siêu hạng",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201916&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/35-bct.pdf",
+          "label": "Tệp chính thức 35/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201915",
+      "instrument_number": "34/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về thuốc nổ nhũ tương dùng cho lộ thiên",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201915&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/34-bct.pdf",
+          "label": "Tệp chính thức 34/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201914",
+      "instrument_number": "33/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về thuốc nổ nhũ tương năng lượng cao dùng cho lộ thiên",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201914&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/33-bct.pdf",
+          "label": "Tệp chính thức 33/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201913",
+      "instrument_number": "32/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về an toàn bồn chứa khí dầu mỏ hóa lỏng",
+      "promulgation_date_expected": "2020-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201913&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/32-bct.pdf",
+          "label": "Tệp chính thức 32/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-202760",
+      "instrument_number": "14/2020/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn việc thực hiện các quy định về chăm sóc thay thế cho trẻ em",
+      "promulgation_date_expected": "2020-11-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202760&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/03/14-bldtbxh.pdf",
+          "label": "Tệp chính thức 14/2020/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-201778",
+      "instrument_number": "138/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về tuyển dụng, sử dụng và quản lý công chức",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201778&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/138.signed.pdf",
+          "label": "Tệp chính thức 138/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-201769",
+      "instrument_number": "139/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 13/2014/NĐ-CP ngày 25 tháng 02 năm 2014 của Chính phủ quy định chi tiết và biện pháp thi hành Luật Giáo dục quốc phòng và an ninh",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201769&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/139.signed.pdf",
+          "label": "Tệp chính thức 139/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-201733",
+      "instrument_number": "137/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về quản lý, sử dụng pháo",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201733&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/137.signed.pdf",
+          "label": "Tệp chính thức 137/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201888",
+      "instrument_number": "35/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ Quyết định số 48/2015/QĐ-UBND ngày 16/12/2015 của Ủy ban nhân dân tỉnh",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201888&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/35dl.signed.pdf",
+          "label": "Tệp chính thức 35/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201894",
+      "instrument_number": "09/2020/TT-BKHĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết lập hồ sơ mời thầu mua sắm hàng hóa đối với gói thầu thuộc phạm vi điều chỉnh của Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201894&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/09-bkhdt.pdf",
+          "label": "Tệp chính thức 09/2020/TT-BKHĐT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32651",
+      "instrument_number": "1094/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1094/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Đắk Nông khóa III, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1094-nq-ubtvqh14-32651.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32650",
+      "instrument_number": "1093/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1093/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Đắk Nông khóa III, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1093-nq-ubtvqh14-32650.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32649",
+      "instrument_number": "1092/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1092/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Chủ tịch Hội đồng nhân dân tỉnh Hậu Giang khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1092-nq-ubtvqh14-32649.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32648",
+      "instrument_number": "1091/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1091/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Hậu Giang khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1091-nq-ubtvqh14-32648.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32647",
+      "instrument_number": "1090/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1090/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Hậu Giang khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1090-nq-ubtvqh14-32647.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32646",
+      "instrument_number": "1089/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1089/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1089-nq-ubtvqh14-32646.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32645",
+      "instrument_number": "1088/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1088/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1088-nq-ubtvqh14-32645.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32644",
+      "instrument_number": "1087/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1087/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1087-nq-ubtvqh14-32644.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32643",
+      "instrument_number": "1086/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1086/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1086-nq-ubtvqh14-32643.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32642",
+      "instrument_number": "1085/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1085/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1085-nq-ubtvqh14-32642.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32641",
+      "instrument_number": "1084/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1084/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Hòa Bình khóa XVI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1084-nq-ubtvqh14-32641.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECISION-201721",
+      "instrument_number": "34/2020/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Danh mục nghề nghiệp Việt Nam",
+      "promulgation_date_expected": "2020-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201721&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/34-2020.signed.pdf",
+          "label": "Tệp chính thức 34/2020/QĐ-TTg"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/34-2.pdf",
+          "label": "Tệp chính thức 34/2020/QĐ-TTg"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/34-3.pdf",
+          "label": "Tệp chính thức 34/2020/QĐ-TTg"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/34-4.pdf",
+          "label": "Tệp chính thức 34/2020/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201925",
+      "instrument_number": "30/2020/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện Hiệp định Thương mại tự do giữa Cộng hòa xã hội chủ nghĩa Việt Nam và Liên minh châu Âu về phòng vệ thương mại",
+      "promulgation_date_expected": "2020-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201925&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/30-bct.signed.pdf",
+          "label": "Tệp chính thức 30/2020/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201904",
+      "instrument_number": "103/2020/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Tài chính ban hành và liên tịch ban hành trong lĩnh vực thuế, quản lý tài sản công và quản lý nợ công",
+      "promulgation_date_expected": "2020-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201904&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/103-btc.pdf",
+          "label": "Tệp chính thức 103/2020/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201898",
+      "instrument_number": "14/2020/TTLT-BNNPTNT-BTP-BCA-VKSNDTC-TANDTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ Thông tư liên tịch số 19/2007/TTLT-BNN-BTP-BCA-VKSNDTC-TANDTC ngày 08/3/2007 của Bộ Nông nghiệp và Phát triển nông thôn, Bộ Tư pháp, Bộ Công an, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao hướng dẫn áp dụng một số điều của Bộ luật Hình sự về các tội phạm trong lĩnh vực quản lý rừng, bảo vệ rừng và quản lý lâm sản",
+      "promulgation_date_expected": "2020-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201898&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/ttlt-14.pdf",
+          "label": "Tệp chính thức 14/2020/TTLT-BNNPTNT-BTP-BCA-VKSNDTC-TANDTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201827",
+      "instrument_number": "22/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định tiêu chuẩn, định mức xe ô tô chuyên dùng trang bị cho các cơ quan, tổ chức, đơn vị thuộc phạm vi quản lý của tỉnh Phú Thọ",
+      "promulgation_date_expected": "2020-11-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201827&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/22pt.signed.pdf",
+          "label": "Tệp chính thức 22/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-201688",
+      "instrument_number": "136/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết một số điều và biện pháp thi hành Luật Phòng cháy và chữa cháy và Luật sửa đổi, bổ sung một số điều của Luật Phòng cháy và chữa cháy",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201688&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/136.signed.pdf",
+          "label": "Tệp chính thức 136/2020/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/11/136-2.pdf",
+          "label": "Tệp chính thức 136/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201927",
+      "instrument_number": "46/2020/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Chương trình môn Giáo dục quốc phòng và an ninh cấp trung học phổ thông",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201927&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/46-bgddt.signed.pdf",
+          "label": "Tệp chính thức 46/2020/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201783",
+      "instrument_number": "39/2020/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý đài truyền thanh cấp xã ứng dụng công nghệ thông tin - viễn thông",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201783&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/39-btttt.pdf",
+          "label": "Tệp chính thức 39/2020/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32575",
+      "instrument_number": "15/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 15/VBHN-BGTVT hợp nhất Thông tư quy định về việc vận chuyển hàng không và hoạt động hàng không chung.",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-15-vbhn-bgtvt-32575.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32574",
+      "instrument_number": "14/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 14/VBHN-BGTVT hợp nhất Thông tư quy định về việc bồi thường ứng trước không hoàn lại trong vận chuyển hành khách bằng đường hàng không.",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-14-vbhn-bgtvt-32574.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32539",
+      "instrument_number": "46/VBHN-BTC",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 46/VBHN-BTC hợp nhất Thông tư quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí, lệ phí trong lĩnh vực xuất cảnh, nhập cảnh, quá cảnh, cư trú tại Việt Nam.",
+      "promulgation_date_expected": "2020-11-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-46-vbhn-btc-32539.htm",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-202123",
+      "instrument_number": "101/2020/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý phí, lệ phí trong công tác thú y",
+      "promulgation_date_expected": "2020-11-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=202123&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/101-btc.signed.pdf",
+          "label": "Tệp chính thức 101/2020/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201929",
+      "instrument_number": "102/2020/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí bầu cử đại biểu Quốc hội khóa XV và đại biểu Hội đồng nhân dân các cấp nhiệm kỳ 2021-2026",
+      "promulgation_date_expected": "2020-11-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201929&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/102-btc.signed.pdf",
+          "label": "Tệp chính thức 102/2020/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201826",
+      "instrument_number": "19/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ các Quyết định của Ủy ban nhân dân tỉnh quy định về quản lý mặt nước biển để nuôi trồng thủy sản trên địa bàn tỉnh Kiên Giang",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201826&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/19kg.signed.pdf",
+          "label": "Tệp chính thức 19/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-201825",
+      "instrument_number": "20/2020/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định phân cấp quản lý và bảo vệ công trình thủy lợi trên địa bàn tỉnh Kiên Giang",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201825&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/20kg.signed.pdf",
+          "label": "Tệp chính thức 20/2020/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-201890",
+      "instrument_number": "142/2020/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định nội dung và phương pháp tổ chức kiểm tra đánh giá nâng bậc trình độ kỹ năng nghề; cấp chứng chỉ kỹ năng nghề, điều kiện miễn kiểm tra đánh giá trình độ kỹ năng nghề đối với công nhân quốc phòng",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201890&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-201781",
+      "instrument_number": "15/2020/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 26/2013/TT-NHNN ngày 05 tháng 12 năm 2013 của Ngân hàng Nhà nước Việt Nam ban hành Biểu phí dịch vụ thanh toán qua Ngân hàng Nhà nước Việt Nam",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201781&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/15-nhnn.pdf",
+          "label": "Tệp chính thức 15/2020/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32571",
+      "instrument_number": "1083/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1083/NQ-UBTVQH14 phê chuẩn kết quả bầu Chủ tịch Hội đồng nhân dân tỉnh Kiên Giang khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1083-nq-ubtvqh14-32571.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32570",
+      "instrument_number": "1082/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1082/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Kiên Giang khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1082-nq-ubtvqh14-32570.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32569",
+      "instrument_number": "1081/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1081/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Chủ tịch Hội đồng nhân dân tỉnh Long An khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1081-nq-ubtvqh14-32569.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32568",
+      "instrument_number": "1080/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1080/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Long An khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1080-nq-ubtvqh14-32568.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32567",
+      "instrument_number": "1079/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1079/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1079-nq-ubtvqh14-32567.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32566",
+      "instrument_number": "1078/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1078/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1078-nq-ubtvqh14-32566.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32559",
+      "instrument_number": "1077/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1077/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1077-nq-ubtvqh14-32559.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32558",
+      "instrument_number": "1076/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1076/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1076-nq-ubtvqh14-32558.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32557",
+      "instrument_number": "1075/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1075/NQ-UBTVQH14 phê chuẩn kết quả bầu chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1075-nq-ubtvqh14-32557.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32556",
+      "instrument_number": "1074/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1074/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Lào Cai khóa XV, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1074-nq-ubtvqh14-32556.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-201903",
+      "instrument_number": "100/2020/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Tài chính ban hành và liên tịch ban hành trong các lĩnh vực: hải quan; thuế xuất khẩu, thuế nhập khẩu; phí, lệ phí và hướng dẫn về chế độ tài chính, thủ tục hải quan áp dụng tại các khu kinh tế, khu thương mại và công nghiệp thuộc Khu kinh tế cửa khẩu",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=201903&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term, fee_or_charge_term, customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/100-btc.pdf",
+          "label": "Tệp chính thức 100/2020/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32555",
+      "instrument_number": "1073/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1073/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Phó Chủ tịch Hội đồng nhân dân tỉnh Gia Lai khóa XI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1073-nq-ubtvqh14-32555.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32554",
+      "instrument_number": "1072/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1072/NQ-UBTVQH14 phê chuẩn kết quả bầu Chủ tịch Hội đồng nhân dân tỉnh Trà Vinh khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1072-nq-ubtvqh14-32554.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32553",
+      "instrument_number": "1071/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1071/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Trà Vinh khóa IX, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1071-nq-ubtvqh14-32553.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-32552",
+      "instrument_number": "1070/NQ-UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1070/NQ-UBTVQH14 phê chuẩn kết quả miễn nhiệm chức vụ Chủ tịch Hội đồng nhân dân tỉnh Bà Rịa - Vũng Tàu khóa VI, nhiệm kỳ 2016 - 2021.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1070-nq-ubtvqh14-32552.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32534",
+      "instrument_number": "13/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 13/VBHN-BGTVT hợp nhất Thông tư quy định về phòng, chống, khắc phục hậu quả lụt, bão; ứng phó sự cố, thiên tai và cứu nạn trong hoạt động đường sắt.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-13-vbhn-bgtvt-32534.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32529",
+      "instrument_number": "12/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 12/VBHN-BGTVT hợp nhất Thông tư quy định về xây dựng biểu đồ chạy tàu và điều hành giao thông vận tải đường sắt.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-12-vbhn-bgtvt-32529.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32528",
+      "instrument_number": "11/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 11/VBHN-BGTVT hợp nhất Thông tư quy định về đăng ký phương tiện giao thông đường sắt, di chuyển phương tiện giao thông đường sắt trong trường hợp đặc biệt.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-11-vbhn-bgtvt-32528.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-32503",
+      "instrument_number": "12/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 12/VBHN-NHNN ngày 24 tháng 4 năm 2020 của Thủ tướng Chính phủ quy định về việc thực hiện các chính sách hỗ trợ người dân gặp khó khăn do đại dịch COVID-19.",
+      "promulgation_date_expected": "2020-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-12-vbhn-nhnn-32503.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    }
+  ],
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "shard_number": 78,
+  "shard_start_index": 7700
+}

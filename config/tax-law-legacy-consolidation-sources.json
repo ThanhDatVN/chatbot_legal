@@ -1,0 +1,81 @@
+{
+  "pilot_id": "tax-law-legacy-consolidation-chain-2026-08-11",
+  "scope": "Năm văn bản hợp nhất dùng để dựng chuỗi luật thuế áp dụng trong giai đoạn lịch sử 10 năm; không thay thế văn bản gốc",
+  "user_agent": "TaxLegalWorkspacePilot/0.2 (official legacy consolidation chain discovery)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 30,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 41943040,
+  "max_attachments_per_document": 2,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://congbao.chinhphu.vn/robots.txt",
+      "allowed_hosts": ["congbao.chinhphu.vn", "g7.cdnchinhphu.vn"],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Công báo điện tử Chính phủ/Văn phòng Quốc hội"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": ["thuvienphapluat.vn"],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "LEGACY-CONSOLIDATED-PIT-103-2025",
+      "instrument_number": "103/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế thu nhập cá nhân trước Luật 109/2025",
+      "promulgation_date_expected": "2025-08-27",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-103-vbhn-vpqh-46034.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "LEGACY-CONSOLIDATED-CIT-61-2026",
+      "instrument_number": "61/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế thu nhập doanh nghiệp trước Luật 67/2025",
+      "promulgation_date_expected": "2026-03-23",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-61-vbhn-vpqh-469191.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "LEGACY-CONSOLIDATED-VAT-93-2025",
+      "instrument_number": "93/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế giá trị gia tăng và điều khoản thay thế luật cũ",
+      "promulgation_date_expected": "2025-08-22",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-93-vbhn-vpqh-45990.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "LEGACY-CONSOLIDATED-SCT-08-2022",
+      "instrument_number": "08/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế tiêu thụ đặc biệt trước Luật 66/2025",
+      "promulgation_date_expected": "2022-01-25",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-08-vbhn-vpqh-38331.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "LEGACY-CONSOLIDATED-TAX-ADMIN-29-2025",
+      "instrument_number": "29/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Quản lý thuế 38/2019",
+      "promulgation_date_expected": "2025-02-26",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-29-vbhn-vpqh-44473.htm",
+      "download_attachments": true,
+      "relations": []
+    }
+  ]
+}

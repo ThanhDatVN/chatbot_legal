@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Pilot crawl outputs are evidence artifacts, not source code.
+data/crawl/**/quarantine/

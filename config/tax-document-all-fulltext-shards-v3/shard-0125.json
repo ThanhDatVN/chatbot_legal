@@ -1,0 +1,1725 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0125",
+  "scope": "Toàn bộ source record trong sáu nhóm văn bản chính thức của cửa sổ 10 năm; từ khóa tiêu đề chỉ xếp lịch, mọi record đều chờ sàng lọc toàn văn",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-DECISION-188547",
+      "instrument_number": "57/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung một số nội dung quy định ban hành kèm theo Quyết định số 72/2014/QĐ-UBND ngày 24/10/2014 của UBND tỉnh",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188547&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/57-ht.signed.pdf",
+          "label": "Tệp chính thức 57/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188790",
+      "instrument_number": "03/2016/TT-TTCP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về trang phục đối với cán bộ, công chức làm nhiệm vụ tiếp công dân thường xuyên tại Trụ sở tiếp công dân",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188790&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/03-ttcp.signed.pdf",
+          "label": "Tệp chính thức 03/2016/TT-TTCP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188457",
+      "instrument_number": "220/2016/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định hạ sĩ quan, binh sĩ có trình độ chuyên môn, kỹ thuật khi thực hiện nghĩa vụ quân sự được ưu tiên sử dụng vào vị trí công tác phù hợp với nhu cầu của Quân đội",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188457&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/220-bqp.signed.pdf",
+          "label": "Tệp chính thức 220/2016/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188405",
+      "instrument_number": "35/2016/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về an toàn, bảo mật cho việc cung cấp dịch vụ ngân hàng trên Internet",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188405&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/35-nhnn.signed.pdf",
+          "label": "Tệp chính thức 35/2016/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188314",
+      "instrument_number": "46/2016/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định cấp kỹ thuật đường thủy nội địa",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188314&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/46-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 46/2016/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-22190",
+      "instrument_number": "325/2016/UBTVQH14",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 325/2016/UBTVQH14 quy định chế độ đối với cán bộ, công chức của Kiểm toán nhà nước.",
+      "promulgation_date_expected": "2016-12-29",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-325-2016-ubtvqh14-22190.htm",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECISION-188614",
+      "instrument_number": "105/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "V/v bãi bỏ văn bản quy phạm pháp luật do Ủy ban nhân dân tỉnh ban hành có liên quan lĩnh vực tư pháp",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188614&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/105ag.signed.pdf",
+          "label": "Tệp chính thức 105/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188546",
+      "instrument_number": "41/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Điều chỉnh, bổ sung Bảng giá đất 05 năm (2015-2019) trên địa bàn tỉnh Phú Thọ ban hành kèm theo Quyết định số 24/2014/QĐ-UBND ngày 29/12/2014 của UBND tỉnh Phú Thọ",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188546&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/41-pt.signed.pdf",
+          "label": "Tệp chính thức 41/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-187832",
+      "instrument_number": "58/2016/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về Tiêu chí phân loại doanh nghiệp nhà nước, doanh nghiệp có vốn nhà nước và Danh mục doanh nghiệp nhà nước thực hiện sắp xếp giai đoạn 2016 - 2020",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187832&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/58.signed.pdf",
+          "label": "Tệp chính thức 58/2016/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189354",
+      "instrument_number": "337/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về lập dự toán, quản lý, sử dụng và quyết toán kinh phí bảo đảm hoạt động giám sát, phản biện xã hội của Ủy ban Mặt trận Tổ quốc Việt Nam và các tổ chức chính trị - xã hội",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189354&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/337-btc.signed.pdf",
+          "label": "Tệp chính thức 337/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189324",
+      "instrument_number": "44/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chính sách đào tạo nghề nghiệp, tạo việc làm cho người chấp hành xong án phạt tù",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189324&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/44-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 44/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189316",
+      "instrument_number": "53/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục các loại máy, thiết bị, vật tư, chất có yêu cầu nghiêm ngặt về an toàn, vệ sinh lao động",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189316&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/53-bldtbxh-.signed.pdf",
+          "label": "Tệp chính thức 53/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189289",
+      "instrument_number": "338/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm cho công tác xây dựng văn bản quy phạm pháp luật và hoàn thiện hệ thống pháp luật",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189289&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/338-btc.signed.pdf",
+          "label": "Tệp chính thức 338/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189287",
+      "instrument_number": "34/2016/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết hoạt động mua bán hàng hóa qua biên giới của thương nhân tại Quyết định số 52/2015/QĐ-TTg ngày 20 tháng 10 năm 2015 của Thủ tướng Chính phủ về việc quản lý hoạt động thương mại biên giới với các nước có chung biên giới",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189287&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/34-bct.signed.pdf",
+          "label": "Tệp chính thức 34/2016/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189160",
+      "instrument_number": "46/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về Điều lệ trường cao đẳng",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189160&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/46-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 46/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188942",
+      "instrument_number": "45/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện quản lý lao động, tiền lương, thù lao, tiền thưởng đối với Quỹ đầu tư phát triển địa phương",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188942&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/45-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 45/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188932",
+      "instrument_number": "42/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức điều chỉnh tiền lương và thu nhập tháng đã đóng bảo hiểm xã hội",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188932&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/42-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 42/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188913",
+      "instrument_number": "339/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định lập dự toán, quản lý, sử dụng và quyết toán kinh phí đảm bảo hoạt động của Ban Chỉ đạo chống buôn lậu, gian lận thương mại và hàng giả",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188913&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/339-btc.signed.pdf",
+          "label": "Tệp chính thức 339/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188857",
+      "instrument_number": "38/2016/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức tiêu hao năng lượng trong ngành nhựa",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188857&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/38-bct.signed.pdf",
+          "label": "Tệp chính thức 38/2016/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188855",
+      "instrument_number": "35/2016/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc xác định người lao động nước ngoài di chuyển trong nội bộ doanh nghiệp thuộc phạm vi mười một ngành dịch vụ trong Biểu cam kết cụ thể về dịch vụ của Việt Nam với Tổ chức Thương mại thế giới không thuộc diện cấp giấy phép lao động",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188855&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/35-bct.signed.pdf",
+          "label": "Tệp chính thức 35/2016/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188839",
+      "instrument_number": "43/2016/TT-BLĐTBXH",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện chính sách hỗ trợ đào tạo nghề cho các đối tượng quy định tại Điều 14 Nghị định số 61/2015/NĐ-CP ngày 09 tháng 7 năm 2017 của Chính phủ về chính sách hỗ trợ tạo việc làm và Quỹ quốc gia về việc làm",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188839&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/43-bldtbxh.signed.pdf",
+          "label": "Tệp chính thức 43/2016/TT-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188835",
+      "instrument_number": "36/2016/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định dán nhãn năng lượng cho các phương tiện, thiết bị sử dụng năng lượng thuộc phạm vi quản lý của Bộ Công Thương",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188835&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/36-bct.signed.pdf",
+          "label": "Tệp chính thức 36/2016/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188798",
+      "instrument_number": "48/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định kỹ thuật cơ sở dữ liệu địa lý tỷ lệ 1:250.000",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188798&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-188783",
+      "instrument_number": "49/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về công tác giám sát, kiểm tra, thẩm định và nghiệm thu công trình, sản phẩm trong lĩnh vực quản lý đất đai",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188783&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/49-btnmt.signed.pdf",
+          "label": "Tệp chính thức 49/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188750",
+      "instrument_number": "47/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành định mức kinh tế - kỹ thuật lưới trọng lực quốc gia",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188750&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/47-btnmt.signed.pdf",
+          "label": "Tệp chính thức 47/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188052",
+      "instrument_number": "45/2016/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 76/2015/TT-BGTVT ngày 01 tháng 12 năm 2015 của Bộ trưởng Bộ Giao thông vận tải quy định về quản lý sát hạch, cấp mới, cấp lại, thu hồi giấy phép lái tàu trên đường sắt và Thông tư số 38/2010/TT-GTVT ngày 17 tháng 12 năm 2010 của Bộ trưởng Bộ Giao thông vận tải quy định tiêu chuẩn các chức danh nhân viên đường sắt trực tiếp phục vụ chạy tàu, điều kiện cơ sở đào tạo và nội dung, chương trình đào tạo nhân viên đường sắt trực tiếp phục vụ chạy tàu",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188052&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/45gtvt.signed.pdf",
+          "label": "Tệp chính thức 45/2016/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188035",
+      "instrument_number": "34/2016/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc cung cấp thông tin giữa Ngân hàng Nhà nước Việt Nam và Bảo hiểm tiền gửi Việt Nam",
+      "promulgation_date_expected": "2016-12-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188035&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/34-nhnn.signed.pdf",
+          "label": "Tệp chính thức 34/2016/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187979",
+      "instrument_number": "167/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về kinh doanh hàng miễn thuế",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187979&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/167.signed.pdf",
+          "label": "Tệp chính thức 167/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187871",
+      "instrument_number": "168/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về khoán rừng, vườn cây và diện tích mặt nước trong các Ban quản lý rừng đặc dụng, rừng phòng hộ và Công ty trách nhiệm hữu hạn một thành viên nông, lâm nghiệp Nhà nước",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187871&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/168.signed.pdf",
+          "label": "Tệp chính thức 168/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187865",
+      "instrument_number": "169/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về xử lý hàng hóa do người vận chuyển lưu giữ tại cảng biển Việt Nam",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187865&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/169.signed.pdf",
+          "label": "Tệp chính thức 169/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187861",
+      "instrument_number": "171/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về đăng ký, xóa đăng ký và mua, bán, đóng mới tàu biển",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187861&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/171.signed.pdf",
+          "label": "Tệp chính thức 171/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187860",
+      "instrument_number": "170/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về việc công bố, tiếp nhận, xử lý và truyền phát thông tin an ninh hàng hải",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187860&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/170.signed.pdf",
+          "label": "Tệp chính thức 170/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187859",
+      "instrument_number": "173/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về tổ chức và hoạt động của Thanh tra ngành Văn hóa, Thể thao và Du lịch",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187859&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/173..signed.pdf",
+          "label": "Tệp chính thức 173/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187858",
+      "instrument_number": "172/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi Nghị định số 67/2014/NĐ-CP ngày 07 tháng 7 năm 2014 của Chính phủ về một số chính sách phát triển thủy sản",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187858&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/172.signed.pdf",
+          "label": "Tệp chính thức 172/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188353",
+      "instrument_number": "104/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ Quyết định số 33/2011/QĐ-UBND ngày 01 tháng 08 năm 2011 của Ủy ban nhân dân tỉnh An Giang về việc ban hành Quy định phân cấp quản lý hoạt động thoát nước đô thị, Khu Kinh tế, các Khu Công nghiệp trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188353&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/104ag.signed.pdf",
+          "label": "Tệp chính thức 104/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189156",
+      "instrument_number": "334/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung và thay thế phụ lục 02 và 04 của Thông tư 210/2014/TT-BTC ngày 30/12/2014 của Bộ Tài chính hướng dẫn kế toán áp dụng đối với công ty chứng khoán",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189156&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-188909",
+      "instrument_number": "335/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí đấu giá tài sản, phí tham gia đấu giá tài sản",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188909&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/335-btc.signed.pdf",
+          "label": "Tệp chính thức 335/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188789",
+      "instrument_number": "46/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định thời hạn bảo quản hồ sơ, tài liệu chuyên ngành tài nguyên và môi trường",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188789&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/46-btnmt.signed.pdf",
+          "label": "Tệp chính thức 46/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188389",
+      "instrument_number": "16/2016/TT-BVHTTDL",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện Quyết định số 650/QĐ-TTg ngày 25 tháng 4 năm 2016 của Thủ tướng Chính phủ phê duyệt Đề án tiếp tục hỗ trợ hoạt động sáng tạo tác phẩm, công trình văn học nghệ thuật, báo chí ở Trung ương và các Hội Văn học nghệ thuật địa phương; hỗ trợ tác phẩm báo chí chất lượng cao ở các Hội Nhà báo địa phương giai đoạn 2016-2020",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188389&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/16-bvhttdl.signed.pdf",
+          "label": "Tệp chính thức 16/2016/TT-BVHTTDL"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188316",
+      "instrument_number": "218/2016/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định cấp, quản lý, sử dụng Giấy chứng minh sĩ quan; Chứng minh quân nhân chuyên nghiệp, công nhân và viên chức quốc phòng; Thẻ hạ sĩ quan, binh sĩ tại ngũ; Thẻ sĩ quan dự bị; Thẻ quân nhân chuyên nghiệp và hạ sĩ quan, binh sĩ dự bị",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188316&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/218-bqp.signed.pdf",
+          "label": "Tệp chính thức 218/2016/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188031",
+      "instrument_number": "33/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về các tỷ lệ khoản thu của Công ty Quản lý tài sản của các tổ chức tín dụng Việt Nam đối với khoản nợ xấu được mua bằng trái phiếu đặc biệt",
+      "promulgation_date_expected": "2016-12-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188031&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/33nhnn.signed.pdf",
+          "label": "Tệp chính thức 33/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188585",
+      "instrument_number": "56/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định sử dụng chung cột để treo cáp viễn thông và chính trang làm gọn cáp viễn thông trên địa bàn tỉnh Hà Tĩnh",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188585&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/56-ht.signed.pdf",
+          "label": "Tệp chính thức 56/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188378",
+      "instrument_number": "55/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc ban hành giá tính thuế tài nguyên khoáng sản trên địa bàn tỉnh Hà Tĩnh",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188378&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/55ht.signed.pdf",
+          "label": "Tệp chính thức 55/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188349",
+      "instrument_number": "54/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Quy định ban hành kèm theo Quyết định số 74/2015/QĐ-UBND ngày 25 tháng 12 năm 2015 của Ủy ban nhân dân tỉnh Bình Thuận quy định mức trợ giúp xã hội đối với đối tượng bảo trợ xã hội trên địa bàn tỉnh Bình Thuận",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188349&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/54bt.signed.pdf",
+          "label": "Tệp chính thức 54/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-187844",
+      "instrument_number": "55/2016/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về Mạng bưu chính phục vụ cơ quan Đảng, Nhà nước",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187844&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/55.signed.pdf",
+          "label": "Tệp chính thức 55/2016/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189342",
+      "instrument_number": "332/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 76/2014/TT-BTC ngày 16 tháng 6 năm 2014 của Bộ Tài chính hướng dẫn một số điều của Nghị định số 45/2014/NĐ-CP ngày 15 tháng 5 năm 2014 của Chính phủ quy định về thu tiền sử dụng đất",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189342&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/332-btc.signed.pdf",
+          "label": "Tệp chính thức 332/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189283",
+      "instrument_number": "44/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định nội dung công tác giám sát thi công Đề án thăm dò khoáng sản",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189283&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/44-btnmt.signed.pdf",
+          "label": "Tệp chính thức 44/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189255",
+      "instrument_number": "47/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết về ưu tiên đầu tư, mua sắm sản phẩm, dịch vụ công nghệ thông tin sản xuất trong nước sử dụng nguồn vốn ngân sách nhà nước",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189255&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/47-btttt.signed.pdf",
+          "label": "Tệp chính thức 47/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189192",
+      "instrument_number": "48/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết và hướng dẫn việc cấp giấy phép hoạt động báo in và báo điện tử, xuất bản thêm ấn phẩm, mở chuyên trang của báo điện tử, xuất bản phụ trương, xuất bản bản tin, xuất bản đặc san",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189192&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/48-btttt.signed_01.pdf",
+          "label": "Tệp chính thức 48/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-189155",
+      "instrument_number": "45/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về đề án thăm dò khai thác, đóng cửa mỏ khoáng sản và mẫu báo cáo kết quả hoạt động khoáng sản, mẫu văn bản trong hồ sơ cấp phép hoạt động khoáng sản, hồ sơ phê duyệt trữ lượng khoáng sản; trình tự, thủ tục đóng cửa mỏ khoáng sản",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189155&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/45-btnmt.signed.pdf",
+          "label": "Tệp chính thức 45/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188949",
+      "instrument_number": "327/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí được trích từ các khoản thu hồi phát hiện qua công tác thanh tra đã thực nộp vào ngân sách nhà nước",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188949&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/327-btc.signed.pdf",
+          "label": "Tệp chính thức 327/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188943",
+      "instrument_number": "49/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết và hướng dẫn về hồ sơ, thủ tục cấp, đổi, cấp lại và thu hồi thẻ nhà báo",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188943&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/49-btttt.signed.pdf",
+          "label": "Tệp chính thức 49/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188915",
+      "instrument_number": "38/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết về việc cung cấp thông tin công cộng qua biên giới",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188915&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/38-btttt.signed.pdf",
+          "label": "Tệp chính thức 38/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188859",
+      "instrument_number": "44/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số nội dung của Thông tư số 27/2010/TT-BTTTT ngày 24 tháng 11 năm 2010 của Bộ trưởng Bộ Thông tin và Truyền thông ban hành Quy hoạch băng tần 2500-2690 MHz cho hệ thống thông tin di động IMT của Việt Nam",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188859&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/44-btttt.signed.pdf",
+          "label": "Tệp chính thức 44/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188836",
+      "instrument_number": "330/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn lập dự toán, cấp phát, thanh toán, quyết toán kinh phí hỗ trợ từ ngân sách nhà nước để bảo vệ diện tích rừng tự nhiên của các công ty lâm nghiệp phải tạm dừng khai thác theo Quyết định số 2242/QĐ-TTg ngày 11/12/2014 của Thủ tướng Chính phủ",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188836&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/330-btc.signed_01.pdf",
+          "label": "Tệp chính thức 330/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188813",
+      "instrument_number": "333/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 77/2014/TT-BTC ngày 16 tháng 6 năm 2014 hướng dẫn một số điều của Nghị định số 46/2014/NĐ-CP ngày 15 tháng 5 năm 2014 của Chính phủ quy định về thu tiền thuê đất, thuê mặt nước",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188813&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/333-btc.signed.pdf",
+          "label": "Tệp chính thức 333/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188805",
+      "instrument_number": "43/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định kỹ thuật về thu thập, thành lập tài liệu nguyên thủy trong điều tra cơ bản địa chất về khoáng sản và thăm dò khoáng sản",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188805&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/43-btnmt.signed.pdf",
+          "label": "Tệp chính thức 43/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188804",
+      "instrument_number": "42/2016/TT-BTNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định kỹ thuật về đánh giá tiềm năng khoáng sản rắn phần đất liền trong điều tra cơ bản địa chất về khoáng sản",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188804&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/42-btnmt.signed.pdf",
+          "label": "Tệp chính thức 42/2016/TT-BTNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188803",
+      "instrument_number": "35/2016/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện tiêu chí huyện đạt chuẩn nông thôn mới giai đoạn 2016-2020",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188803&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/35-bnnptnt.signed.pdf",
+          "label": "Tệp chính thức 35/2016/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188802",
+      "instrument_number": "46/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định danh mục thiết bị vô tuyến điện được miễn giấy phép sử dụng tần số vô tuyến điện, điều kiện kỹ thuật và khai thác kèm theo",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188802&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/46-btttt.signed.pdf",
+          "label": "Tệp chính thức 46/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188751",
+      "instrument_number": "45/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định quản lý nhiệm vụ khoa học và công nghệ cấp Bộ của Bộ Thông tin và Truyền thông",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188751&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/45-btttt.signed.pdf",
+          "label": "Tệp chính thức 45/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188445",
+      "instrument_number": "36/2016/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung Điều 4 Thông tư số 06/2016/TT-BNNPTNT ngày 31/5/2016 ban hành Danh mục, hàm lượng kháng sinh được phép sử dụng trong thức ăn chăn nuôi gia súc, gia cầm với mục đích kích sinh trưởng tại Việt Nam",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188445&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/36-bnnptnt.signed.pdf",
+          "label": "Tệp chính thức 36/2016/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188404",
+      "instrument_number": "43/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục sản phẩm nội dung thông tin số",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188404&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/43-btttt.signed.pdf",
+          "label": "Tệp chính thức 43/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188403",
+      "instrument_number": "37/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quy trình, thủ tục công bố số liệu đo lường khán giả truyền hình phục vụ đánh giá hiệu quả nội dung truyền hình",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188403&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/37-btttt.signed.pdf",
+          "label": "Tệp chính thức 37/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188402",
+      "instrument_number": "42/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định Danh mục sản phẩm, hàng hóa có khả năng gây mất an toàn thuộc trách nhiệm quản lý của Bộ Thông tin và Truyền thông",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188402&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/42-btttt.signed.pdf",
+          "label": "Tệp chính thức 42/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188401",
+      "instrument_number": "41/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 16/2015/TT-BTTTT ngày 17 tháng 6 năm 2015 của Bộ trưởng Bộ Thông tin và Truyền thông quy định chi tiết thi hành Nghị định số 187/2013/NĐ-CP ngày 20 tháng 11 năm 2013 của Chính phủ về xuất khẩu, nhập khẩu hàng hóa trong lĩnh vực in, phát hành xuất bản phẩm",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188401&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/41-btttt.signed.pdf",
+          "label": "Tệp chính thức 41/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188400",
+      "instrument_number": "39/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hợp đồng theo mẫu và điều kiện giao dịch chung trong lĩnh vực viễn thông",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188400&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/39-btttt.signed.pdf",
+          "label": "Tệp chính thức 39/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188399",
+      "instrument_number": "34/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Về Quy hoạch phân kênh tần số vô tuyến điện cho nghiệp vụ Cố định băng tần 57-66 GHz",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188399&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/34-btttt.signed.pdf",
+          "label": "Tệp chính thức 34/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188343",
+      "instrument_number": "33/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành \"Quy chuẩn kỹ thuật quốc gia về thiết bị nhận dạng tự động phát báo tìm kiếm cứu nạn\"",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188343&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/33-btttt.signed.pdf",
+          "label": "Tệp chính thức 33/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188342",
+      "instrument_number": "40/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về đào tạo, cấp, gia hạn, cấp lại, thu hồi chứng chỉ vô tuyến điện viên hàng hải",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188342&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/40-btttt.signed.pdf",
+          "label": "Tệp chính thức 40/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188331",
+      "instrument_number": "32/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành \"Quy chuẩn kỹ thuật quốc gia về phao chỉ báo vị trí cá nhân hoạt động trên băng tần 406,0 MHz đến 406,1 MHz\"",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188331&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/32-btttt.signed.pdf",
+          "label": "Tệp chính thức 32/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188329",
+      "instrument_number": "328/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thu và quản lý các khoản thu ngân sách nhà nước qua Kho bạc Nhà nước",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188329&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/328-btc.signed.pdf",
+          "label": "Tệp chính thức 328/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188327",
+      "instrument_number": "35/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về báo cáo nghiệp vụ bưu chính",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188327&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/35-btttt.signed.pdf",
+          "label": "Tệp chính thức 35/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188326",
+      "instrument_number": "36/2016/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết về việc cấp phép hoạt động và chế độ báo cáo đối với loại hình báo nói, báo hình",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188326&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/36-btttt.signed.pdf",
+          "label": "Tệp chính thức 36/2016/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188275",
+      "instrument_number": "329/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện một số điều của Nghị định số 119/2015/NĐ-CP ngày 13 tháng 11 năm 2015 của Chính phủ quy định bảo hiểm bắt buộc trong hoạt động đầu tư xây dựng",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188275&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/329-btc.signed.pdf",
+          "label": "Tệp chính thức 329/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-187974",
+      "instrument_number": "44/2016/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Công bố vùng nước cảng biển thuộc địa phận tỉnh Thanh Hóa và khu vực quản lý của Cảng vụ Hàng hải Thanh Hóa",
+      "promulgation_date_expected": "2016-12-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187974&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/01/44-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 44/2016/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187853",
+      "instrument_number": "164/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Về phí bảo vệ môi trường đối với khai thác khoáng sản",
+      "promulgation_date_expected": "2016-12-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187853&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/164.signed.pdf",
+          "label": "Tệp chính thức 164/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187814",
+      "instrument_number": "166/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về giao dịch điện tử trong lĩnh vực bảo hiểm xã hội, bảo hiểm y tế và bảo hiểm thất nghiệp",
+      "promulgation_date_expected": "2016-12-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187814&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/166.signed.pdf",
+          "label": "Tệp chính thức 166/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188593",
+      "instrument_number": "103/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định về định mức sử dụng đất trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188593&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/103-ag.signed.pdf",
+          "label": "Tệp chính thức 103/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188367",
+      "instrument_number": "54/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Đơn giá bồi thường nhà, vật kiến trúc, công trình xây dựng khác và di chuyển mồ mả khi Nhà nước thu hồi đất trên địa bàn tỉnh Hà Nam năm 2017",
+      "promulgation_date_expected": "2016-12-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188367&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/54hn.signed.pdf",
+          "label": "Tệp chính thức 54/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188443",
+      "instrument_number": "33/2016/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 36/2015/TT-BCT ngày 28 tháng 10 năm 2015 ban hành Quy chuẩn kỹ thuật quốc gia đối với sản phẩm khăn giấy và giấy vệ sinh",
+      "promulgation_date_expected": "2016-12-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188443&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/33-bct.signed.pdf",
+          "label": "Tệp chính thức 33/2016/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188409",
+      "instrument_number": "34/2016/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chuẩn, điều kiện, nội dung, hình thức thi, xét thăng hạng chức danh nghề nghiệp đối với viên chức chuyên ngành nông nghiệp và phát triển nông thôn",
+      "promulgation_date_expected": "2016-12-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188409&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/34-bnnptnt.signed.pdf",
+          "label": "Tệp chính thức 34/2016/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-188394",
+      "instrument_number": "326/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về tổ chức thực hiện dự toán ngân sách nhà nước năm 2017",
+      "promulgation_date_expected": "2016-12-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188394&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/02/326-btc.signed.pdf",
+          "label": "Tệp chính thức 326/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188760",
+      "instrument_number": "93/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ trông giữ xe trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188760&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/93ag.signed.pdf",
+          "label": "Tệp chính thức 93/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188759",
+      "instrument_number": "89/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ sử dụng cầu Bình Thủy, huyện Châu Phú, tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188759&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/89ag.signed.pdf",
+          "label": "Tệp chính thức 89/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188758",
+      "instrument_number": "90/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ sử dụng cầu Mỹ Luông - Tấn Mỹ, huyện Chợ Mới, tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188758&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/90ag.signed.pdf",
+          "label": "Tệp chính thức 90/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188757",
+      "instrument_number": "87/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Thực hiện Nghị quyết số 45/2016/NQ-HĐND ngày 09 tháng 12 năm 2016 của Hội đồng nhân dân tỉnh về việc quy định mức thu, chế độ thu, nộp các loại lệ phí quản lý nhà nước liên quan đến Quyền và nghĩa vụ công dân; Quyền sở hữu, quyền sử dụng tài sản thuộc thẩm quyền của Hội đồng nhân dân tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188757&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/87ag.signed.pdf",
+          "label": "Tệp chính thức 87/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188756",
+      "instrument_number": "94/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ thu gom, vận chuyển rác thải sinh hoạt trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188756&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/94ag.signed.pdf",
+          "label": "Tệp chính thức 94/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188755",
+      "instrument_number": "92/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ sử dụng phà trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188755&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/92ag.signed.pdf",
+          "label": "Tệp chính thức 92/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188754",
+      "instrument_number": "91/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định giá dịch vụ sử dụng đò trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188754&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/91ag.signed.pdf",
+          "label": "Tệp chính thức 91/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188740",
+      "instrument_number": "86/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Thực hiện Nghị quyết số 43/2016/NQ-HĐND ngày 09 tháng 12 năm 2016 của Hội đồng nhân dân tỉnh về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng các loại phí trong lĩnh vực tư pháp; nông nghiệp, lâm nghiệp; giao thông vận tải thuộc thẩm quyền của Hội đồng nhân dân tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188740&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/86ag.signed.pdf",
+          "label": "Tệp chính thức 86/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188739",
+      "instrument_number": "84/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc bãi bỏ các Quyết định quy định mức thu, chế độ thu, nộp, quản lý và sử dụng các loại phí và lệ phí thuộc thẩm quyền của Hội đồng nhân dân tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188739&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/84ag.signed.pdf",
+          "label": "Tệp chính thức 84/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188736",
+      "instrument_number": "96/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định phân cấp nguồn thu, nhiệm vụ chi thời kỳ ổn định ngân sách 2017 - 2020 của ngân sách các cấp thuộc tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188736&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/96ag.signed.pdf",
+          "label": "Tệp chính thức 96/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188729",
+      "instrument_number": "88/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Thực hiện Nghị quyết số 49/2016/NQ-HĐND ngày 09 tháng 12 năm 2016 của hội đồng nhân dân tỉnh về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng các loại phí trong lĩnh vực tài nguyên và môi trường thuộc thẩm quyền của Hội đồng nhân dân tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188729&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/88ag.signed.pdf",
+          "label": "Tệp chính thức 88/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188728",
+      "instrument_number": "83/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ Quy định tổ chức vận động đóng góp, thu, quản lý và sử dụng Quỹ quốc phòng - an ninh trên địa bàn tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188728&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/83ag.signed.pdf",
+          "label": "Tệp chính thức 83/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188727",
+      "instrument_number": "97/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định địa bàn hạch toán thu ngân sách nhà nước đối với khoản thu khấu trừ thuế Giá trị gia tăng từ các công trình xây dựng cơ bản bằng nguồn vốn ngân sách nhà nước trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188727&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/97ag.signed.pdf",
+          "label": "Tệp chính thức 97/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188726",
+      "instrument_number": "85/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Thực hiện Nghị quyết số 42/2016/NQ-HĐND ngày 09 tháng 12 năm 2016 của Hội đồng nhân dân tỉnh tỉnh về việc quy định mức thu, chế đột thu, nộp, quản lý và sử dụng các loại phí trong lĩnh văn hóa, thể thao và du lịch thuộc thẩm quyền của Hội đồng nhân dân tỉnh",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188726&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/85ag.signed.pdf",
+          "label": "Tệp chính thức 85/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188722",
+      "instrument_number": "95/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về định mức phân bổ dự toán chi thường xuyên ngân sách tỉnh An Giang năm 2017",
+      "promulgation_date_expected": "2016-12-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188722&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/95ag.signed.pdf",
+          "label": "Tệp chính thức 95/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-187772",
+      "instrument_number": "163/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết thi hành một số điều của Luật ngân sách nhà nước",
+      "promulgation_date_expected": "2016-12-21",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=187772&classid=1&typegroupid=4",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/12/163.signed.pdf",
+          "label": "Tệp chính thức 163/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188620",
+      "instrument_number": "63/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc phân cấp nhiệm vụ chi cho các cấp ngân sách trên địa bàn tỉnh Hà Nam giai đoạn 2017 - 2020",
+      "promulgation_date_expected": "2016-12-21",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188620&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/63hn.signed.pdf",
+          "label": "Tệp chính thức 63/2016/QĐ-UBND"
+        }
+      ]
+    }
+  ],
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "shard_number": 125,
+  "shard_start_index": 12400
+}

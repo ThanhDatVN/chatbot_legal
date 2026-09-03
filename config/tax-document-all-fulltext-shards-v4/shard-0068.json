@@ -1,0 +1,1783 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0068",
+  "scope": "Toàn bộ source record trong sáu nhóm văn bản chính thức của cửa sổ 10 năm; từ khóa tiêu đề chỉ xếp lịch, mọi record đều chờ sàng lọc toàn văn",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-CIRCULAR-204723",
+      "instrument_number": "20/2021/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 27/2020/TT-BCT ngày 30 tháng 9 năm 2020 của Bộ trưởng Bộ Công Thương quy định về nội dung, trình tự, thủ tục hoạt động kiểm tra, xử lý vi phạm hành chính và thực hiện các biện pháp nghiệp vụ của lực lượng Quản lý thị trường",
+      "promulgation_date_expected": "2021-12-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204723&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/20-bct.signed.pdf",
+          "label": "Tệp chính thức 20/2021/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34991",
+      "instrument_number": "11/2021/UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 11/2021/UBTVQH15 điều chỉnh Chương trình xây dựng luật, pháp lệnh năm 2022.",
+      "promulgation_date_expected": "2021-12-10",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-11-2021-ubtvqh15-34991.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRaz8XJyQZkwQiFiSCoCoGSYjm2kRePHNMPzn3FsOKG-GIrAUGajDM6YjlIkI4XRPnUoXc70ye0tPR_fMxMOuJdQ~~&file_name=2021_1067+%2b+1068_11-2021-UBTVQH15.pdf",
+          "label": "Tệp chính thức 11/2021/UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204682",
+      "instrument_number": "110/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Bãi bỏ một số văn bản quy phạm pháp luật của Chính phủ",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204682&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/110.signed.pdf",
+          "label": "Tệp chính thức 110/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204681",
+      "instrument_number": "111/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều Nghị định số 43/2017/NĐ-CP ngày 14 tháng 4 năm 2017 của Chính phủ về nhãn hàng hóa",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204681&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/111.signed.pdf",
+          "label": "Tệp chính thức 111/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204802",
+      "instrument_number": "23/2021/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Y tế ban hành",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204802&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/23-byt.pdf",
+          "label": "Tệp chính thức 23/2021/TT-BYT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/23-byt-1.pdf",
+          "label": "Tệp chính thức 23/2021/TT-BYT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/23-byt-2.pdf",
+          "label": "Tệp chính thức 23/2021/TT-BYT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/23-byt-3.pdf",
+          "label": "Tệp chính thức 23/2021/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204740",
+      "instrument_number": "109/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 58/2019/TT-BTC ngày 30 tháng 8 năm 2019 của Bộ trưởng Bộ Tài chính quy định về quản lý và sử dụng tài khoản của Kho bạc Nhà nước mở tại Ngân hàng Nhà nước Việt Nam và các ngân hàng thương mại",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204740&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/109.signed_01.pdf",
+          "label": "Tệp chính thức 109/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-35003",
+      "instrument_number": "434/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 434/NQ-UBTVQH15 bổ nhiệm Phó Trưởng Ban Công tác đại biểu thuộc Ủy ban Thường vụ Quốc hội.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-434-nq-ubtvqh15-35003.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbReE7ofaOc-zU01lc22YFNjOQIWXtypRyBja7mNBQLbDiWf35EhMwQJNrD9G-yvpZhcAtvcUV2g_-SanHkkTdtDQ~~&file_name=2021_1067+%2b+1068_434-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 434/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-35002",
+      "instrument_number": "433/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 433/NQ-UBTVQH15 bổ nhiệm Phó Trưởng Ban Công tác đại biểu thuộc Ủy ban Thường vụ Quốc hội.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-433-nq-ubtvqh15-35002.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRIXaO9EV5eNzQDlff_mODPjEnEfpMNp93ce1Drpfr5h_2ccGG657Yy2njXd2JRV9AKFeZ3KOAEQOBts1P8hapKQ~~&file_name=2021_1067+%2b+1068_433-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 433/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-35001",
+      "instrument_number": "432/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 432/NQ-UBTVQH15 phê chuẩn Ủy viên chuyên trách Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-432-nq-ubtvqh15-35001.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRhn3iyUww61R1Q4viWzzku7G-IQU5PK2cVAdUqC7uGu9E_8bIvqydeVOPM1NIFHEzmUqZ72pTqPCvxdGsWHxrMg~~&file_name=2021_1067+%2b+1068_432-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 432/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-35000",
+      "instrument_number": "431/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 431/NQ-UBTVQH15 phê chuẩn Ủy viên chuyên trách Hội đồng Dân tộc của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-431-nq-ubtvqh15-35000.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRrBLwlTdC7QOfv8RieQJyXRi4dEJLdZUfeZe-1VekwISLdZX_IiaQWSzTPn0nCFNlfK0sieQZYW5FasrsBFz1lA~~&file_name=2021_1067+%2b+1068_431-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 431/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34999",
+      "instrument_number": "430/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 430/NQ-UBTVQH15 phê chuẩn Ủy viên Thường trực Ủy ban Đối ngoại của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-430-nq-ubtvqh15-34999.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRtWstWhTaxlx4XjK6V6VGi2njKRqIykgQIxHE2Xgr25zGNSkDZmRvbVsryzSJIacb6FZfaCkeidS-boDe5oLShA~~&file_name=2021_1067+%2b+1068_430-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 430/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34998",
+      "instrument_number": "429/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 429/NQ-UBTVQH15 phê chuẩn Phó Chủ nhiệm Ủy ban Tài chính, Ngân sách của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-429-nq-ubtvqh15-34998.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRf9hK_DCQWkrW85ANYrKaOMVn0g_MKSl1tAtbFtlvyDfqbS7wJiZkhbufqYA7fA09AQ2x-SSWK4LZj-ffeSD4tQ~~&file_name=2021_1067+%2b+1068_429-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 429/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34997",
+      "instrument_number": "428/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 428/NQ-UBTVQH15 phê chuẩn Phó Chủ nhiệm Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-428-nq-ubtvqh15-34997.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRN-J0aUgeUDzXuLIfe4TGQgOCnjCYHNoINhNG4-KxRvvrp9KATUdjNdE80gbs8VYV5nXta0ALwVZPqrkdm2nMaQ~~&file_name=2021_1067+%2b+1068_428-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 428/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34996",
+      "instrument_number": "427/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 427/NQ-UBTVQH15 về việc bổ nhiệm nhân sự làm nhiệm vụ Trợ lý Ủy viên Bộ Chính trị, Phó Chủ tịch Thường trực Quốc hội.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-427-nq-ubtvqh15-34996.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR-k1v5r_0U9lwMAmKEu36ShAIZb3iz3mUirFCtgsEgd9aqElx5hnzhgQAvGIlxHu35MsiVjHP75oHxz1QNm-cSg~~&file_name=2021_1067+%2b+1068_427-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 427/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34995",
+      "instrument_number": "426/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 426/NQ-UBTVQH15 phê chuẩn Ủy viên Thường trực Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội khóa XV.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-426-nq-ubtvqh15-34995.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR848ceCiaMmBPExNUcwfWMSNzhQCN2OB0DUvWDGTr__e42uzC7dONlNMZZ-s29WdVzg1hIOaJafqQ08N2DtNFKw~~&file_name=2021_1067+%2b+1068_426-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 426/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34983",
+      "instrument_number": "12/VBHN-BQP",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 12/VBHN-BQP hợp nhất Thông tư quy định hoạt động kiểm định kỹ thuật an toàn máy, thiết bị, vật tư có yêu cầu nghiêm ngặt về an toàn lao động trong Bộ Quốc phòng.",
+      "promulgation_date_expected": "2021-12-09",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-12-vbhn-bqp-34983.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRycywkp-grneF9iOZhoYKN8-_I5pOfJ3_o6tAagengv31ugY0GJBTFzjNRucrGnHnsIa1hloVMC5uGsmUxDnp2w~~&file_name=2021_1063+%2b+1064_12-VBHN-BQP.pdf",
+          "label": "Tệp chính thức 12/VBHN-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204677",
+      "instrument_number": "109/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định cơ sở y tế đủ điều kiện xác định tình trạng nghiện ma túy và hồ sơ, trình tự, thủ tục xác định tình trạng nghiện ma túy",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204677&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/109.signed.pdf",
+          "label": "Tệp chính thức 109/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204769",
+      "instrument_number": "19/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung khoản 2 Điều 3 Quyết định số 30/2018/QĐ-UBND ngày 22 tháng 10 năm 2018 của Ủy ban nhân dân tỉnh Phú Thọ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức bộ máy của Văn phòng Ủy ban nhân dân tỉnh Phú Thọ",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204769&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/19pt.signed.pdf",
+          "label": "Tệp chính thức 19/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204768",
+      "instrument_number": "20/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Sở Tư pháp tỉnh Phú Thọ",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204768&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/20pt.signed.pdf",
+          "label": "Tệp chính thức 20/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-205340",
+      "instrument_number": "108/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý, sử dụng các khoản thu từ hoạt động tư vấn, quản lý dự án của các chủ đầu tư, ban quản lý dự án sử dụng vốn đầu tư công",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=205340&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/02/108-btc.signed.pdf",
+          "label": "Tệp chính thức 108/2021/TT-BTC"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/11/12066.signed.pdf",
+          "label": "Tệp chính thức 108/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204748",
+      "instrument_number": "21/2021/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 24/2015/TT-BTTTT ngày 18 tháng 8 năm 2015 của Bộ trưởng Bộ Thông tin và Truyền thông quy định về quản lý và sử dụng tài nguyên Internet",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204748&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/21.signed.pdf",
+          "label": "Tệp chính thức 21/2021/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34990",
+      "instrument_number": "10/2021/UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 10/2021/UBTVQH15 về việc gia hạn thời gian lưu giữ hàng hóa tại cửa hàng miễn thuế, kho của doanh nghiệp bán hàng miễn thuế, hàng hóa gửi kho ngoại quan đáp ứng yêu cầu phòng, chống dịch COVID-19.",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-10-2021-ubtvqh15-34990.htm",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR9dydVUabdIjxDEd3xC3hjQQ4YazwckNfZcitNfYjwhTbhLHgrmVRVlyljO6VjTUIjIFxnj2p6Ucm2C4g8dFQ7w~~&file_name=2021_1067+%2b+1068_10-2021-UBTVQH15.pdf",
+          "label": "Tệp chính thức 10/2021/UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34989",
+      "instrument_number": "09/2021/UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 09/2021/UBTVQH15 về chi phí quản lý bảo hiểm xã hội, bảo hiểm thất nghiệp giai đoạn 2022 - 2024.",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-09-2021-ubtvqh15-34989.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR4MJ7wvYWsBBrldKgQWC8Oc3v6GHjFAcqRnZcltYtk_HpFX1eI72MOj5H_1bsEDimA0-QMX-cZoKQs97pA2YRoA~~&file_name=2021_1067+%2b+1068_09-2021-UBTVQH15.pdf",
+          "label": "Tệp chính thức 09/2021/UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34962",
+      "instrument_number": "155/NQ-CP",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 155/NQ-CP phiên họp Chính phủ thường kỳ tháng 11 năm 2021.",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-155-nq-cp-34962.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRYxG1nl11VRxhOblUm1RTKh0d6zwIAzL_f5SyzAshSIzcsOvn4v-b9BiKaEHj_HB_ZV585_SFBrSOb0DmAMvnyw~~&file_name=2021_1053+%2b+1054_155-NQ-CP.pdf",
+          "label": "Tệp chính thức 155/NQ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34984",
+      "instrument_number": "4641/VBHN-BTP",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 4641/VBHN-BTP hợp nhất Thông tư quy định chức danh, mã số ngạch và tiêu chuẩn nghiệp vụ các ngạch công chức chuyên ngành Thi hành án dân sự.",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-4641-vbhn-btp-34984.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRCEc_t9UWP1wEXFd-ta3O9Y18e_9RVg_TtjHxhOhQOzH58whAFpyzkuJwGM1yCTpPTPn7o4SmUifhEIzIwFLvkA~~&file_name=2021_1063+%2b+1064_4641-VBHN-BTP.pdf",
+          "label": "Tệp chính thức 4641/VBHN-BTP"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34978",
+      "instrument_number": "4640/VBHN-BTP",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 4640/VBHN-BTP hợp nhất Thông tư hướng dẫn một số nội dung quản lý công chức, viên chức, người lao động thuộc hệ thống tổ chức thi hành án dân sự.",
+      "promulgation_date_expected": "2021-12-08",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-4640-vbhn-btp-34978.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRiO4BmIXzqqU99T90aYYkxzdhQ6-R_yu8mgXU_zTkZe4hD7tRFRhjgqipb9MdlYKaDdzX53KrIU02q0Jptz1VJA~~&file_name=2021_1061+%2b+1062_4640-VBHN-BTP.pdf",
+          "label": "Tệp chính thức 4640/VBHN-BTP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204658",
+      "instrument_number": "108/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Điều chỉnh lương hưu, trợ cấp bảo hiểm xã hội và trợ cấp hằng tháng",
+      "promulgation_date_expected": "2021-12-07",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204658&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/108.signed.pdf",
+          "label": "Tệp chính thức 108/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204786",
+      "instrument_number": "31/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Giao thông vận tải ban hành, liên tịch ban hành",
+      "promulgation_date_expected": "2021-12-07",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204786&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/31-bgtvt.pdf",
+          "label": "Tệp chính thức 31/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34949",
+      "instrument_number": "18/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 18/VBHN-BGTVT hợp nhất Thông tư quy định về tiêu chuẩn, nhiệm vụ, quyền hạn đối với các chức danh nhân viên đường sắt trực tiếp phục vụ chạy tàu; nội dung, chương trình đào tạo chức danh nhân viên đường sắt trực tiếp phục vụ chạy tàu; điều kiện, nội dung, quy trình sát hạch và cấp, cấp lại, thu hồi giấy phép lái tàu trên đường sắt.",
+      "promulgation_date_expected": "2021-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-18-vbhn-bgtvt-34949.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRqMyU6Yl6fb9k54ZGpZx6gbOfEmkHChYIk0QRPOhjFFsyWRHMJRvAy7-vJqzMfTjIUysJIWzymniQFyKlmzuStw~~&file_name=2021_1049+%2b+1050_18-VBHN-BGTVT.pdf",
+          "label": "Tệp chính thức 18/VBHN-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34942",
+      "instrument_number": "15/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 15/VBHN-NHNN hợp nhất Thông tư quy định về hoạt động thẻ ngân hàng.",
+      "promulgation_date_expected": "2021-12-07",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-15-vbhn-nhnn-34942.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRV54soQXySBn3evrpo1NlRXeHf5xJJfQgodkjoSNBz_sX0qzcTHyP9gTtimRu1njJTGdUiq0CX074id5tMh8Zdw~~&file_name=2021_1045+%2b+1046_15-VBHN-NHNN.pdf",
+          "label": "Tệp chính thức 15/VBHN-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204659",
+      "instrument_number": "107/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 61/2018/NĐ-CP ngày 23 tháng 4 năm 2018 của Chính phủ về thực hiện cơ chế một cửa, một cửa liên thông trong giải quyết thủ tục hành chính",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204659&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/107.signed.pdf",
+          "label": "Tệp chính thức 107/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204642",
+      "instrument_number": "106/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết một số điều Luật Biên phòng Việt Nam",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204642&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/106.signed.pdf",
+          "label": "Tệp chính thức 106/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-205065",
+      "instrument_number": "35/2021/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định việc biên soạn, lựa chọn, thẩm định, duyệt và sử dụng tài liệu giảng dạy, giáo trình giáo dục đại học",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=205065&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/01/35-bgddt.pdf",
+          "label": "Tệp chính thức 35/2021/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204667",
+      "instrument_number": "15/2021/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 05/2015/TT-BNNPTNT ngày 12 tháng 02 năm 2015 quy định về trình tự, thủ tục cấp Giấy chứng nhận hành nghề xử lý vật thể thuộc diện kiểm dịch thực vật và Thông tư số 33/2014/TT-BNNPTNT ngày 30 tháng 10 năm 2014 quy định trình tự, thủ tục kiểm dịch thực vật nhập khẩu, xuất khẩu, quá cảnh và sau nhập khẩu vật thể thuộc diện kiểm dịch thực vật của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204667&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/15.signed_01.pdf",
+          "label": "Tệp chính thức 15/2021/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34936",
+      "instrument_number": "4496/VBHN-BLĐTBXH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 4496/VBHN-BLĐTBXH hợp nhất Quyết định quy định về việc thực hiện một số chính sách hỗ trợ người lao động và người sử dụng lao động gặp khó khăn do đại dịch COVID-19.",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-4496-vbhn-bldtbxh-34936.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRgdLt7nFQMXYRPsna6gjOACCL3gys9qWQ1K3lNUn7p8n3glSdhxGXNOX5yNPs8hrlcA_wqFi3I7cdl-_GScKKQA~~&file_name=2021_1043+%2b+1044_4496-VBHN-BL%c4%90TBXH.pdf",
+          "label": "Tệp chính thức 4496/VBHN-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34931",
+      "instrument_number": "17/VBHN-BGTVT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 17/VBHN-BGTVT hợp nhất Thông tư quy định về công tác phòng, chống thiên tai trong lĩnh vực đường thủy nội địa.",
+      "promulgation_date_expected": "2021-12-06",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-17-vbhn-bgtvt-34931.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRQkm2-S6KWQof0zQgOGF9I1-g1bsjw1y3o943xKiAS7pinvUst8EhIMPgNOXWMM0zCqdwews2lNerOLMUshVB4w~~&file_name=2021_1041+%2b+1042_17-VBHN-BGTVT.pdf",
+          "label": "Tệp chính thức 17/VBHN-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204678",
+      "instrument_number": "105/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết và hướng dẫn thi hành một số điều của Luật phòng, chống ma túy",
+      "promulgation_date_expected": "2021-12-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204678&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/105.signed_02.pdf",
+          "label": "Tệp chính thức 105/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204643",
+      "instrument_number": "104/2020/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Gia hạn thời hạn nộp thuế tiêu thụ đặc biệt đối với ô tô sản xuất hoặc lắp ráp trong nước",
+      "promulgation_date_expected": "2021-12-04",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204643&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/104.signed.pdf",
+          "label": "Tệp chính thức 104/2020/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204852",
+      "instrument_number": "107/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định quản lý, sử dụng và thanh quyết toán kinh phí sự nghiệp thực hiện nhiệm vụ Phát triển sản xuất giống trong Chương trình Phát triển nghiên cứu, sản xuất giống phục vụ cơ cấu lại ngành nông nghiệp giai đoạn 2021 - 2030",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204852&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/107-btc.signed.pdf",
+          "label": "Tệp chính thức 107/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204666",
+      "instrument_number": "19/2021/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục sản phẩm công nghệ thông tin trọng điểm",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204666&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/19.signed.pdf",
+          "label": "Tệp chính thức 19/2021/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204665",
+      "instrument_number": "20/2021/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung Thông tư số 09/2013/TT-BTTTT ngày 08 tháng 4 năm 2013 của Bộ trưởng Bộ Thông tin và Truyền thông ban hành Danh mục sản phẩm phần mềm và phần cứng, điện tử",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204665&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/20.signed.pdf",
+          "label": "Tệp chính thức 20/2021/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-37562",
+      "instrument_number": "05/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 05/VBHN-VPQH hợp nhất Bộ luật Tố tụng hình sự.",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-05-vbhn-vpqh-37562.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbREuJZKiqMAsRyXCbaoZahN1w-NywT_pxEimvShk0kc8qNp_knLWbbvSNRZCAxXFPxafxpdgt4YObYv8YubZYjKw~~&file_name=2022_615+%2b+616_05-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 05/VBHN-VPQH"
+        },
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbREuJZKiqMAsRyXCbaoZahN3IdjwAsOFj9kNvNyvh5gaD2-pORZVvzkTHowee1Wx-POr2eve5QABc5nBF9mUESHQ~~&file_name=2022_617+%2b+618_05-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 05/VBHN-VPQH"
+        },
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbREuJZKiqMAsRyXCbaoZahNygo8SHP-zyM58wSErDYeLfRCP-uuB-F6WkQxS1ZXP5SVFUf3VM3_Cwa2mGn7w8tMg~~&file_name=2022_619+%2b+620_05-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 05/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-37556",
+      "instrument_number": "06/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 06/VBHN-VPQH hợp nhất Luật Tổ chức cơ quan điều tra hình sự.",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-06-vbhn-vpqh-37556.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRIKWy7uqQMbSPAijx9HyP44kFyfbxqzNdrCqErAr6O941vFrXQbAF24wU783K_h5RpVtxMx92d2HnhH-KOeeH8Q~~&file_name=2022_613+%2b+614_06-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 06/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-37555",
+      "instrument_number": "04/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 04/VBHN-VPQH hợp nhất Luật Thống kê.",
+      "promulgation_date_expected": "2021-12-03",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-04-vbhn-vpqh-37555.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRIGcYdssPAMxLs9lqh9UpP1CDEjOhTxgrY2Ab_queS0EstYbgigiKKzJQf-8nCheUyIJTjqeWvvc8wbTdy4AD2w~~&file_name=2022_613+%2b+614_04-VBHN-VPQH.pdf",
+          "label": "Tệp chính thức 04/VBHN-VPQH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204654",
+      "instrument_number": "35/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ Quyết định số 13/2019/QĐ-UBND ngày 29/8/2019 của UBND tỉnh quy định đơn giá đối với các loại cây trồng, hoa màu, các loại con vật nuôi; mật độ cây trồng; mức hỗ trợ đối với tài sản khai thác nghề biển, nghề sông để thực hiện bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất trên địa bàn tỉnh Quảng Nam",
+      "promulgation_date_expected": "2021-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204654&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/35qnam.signed.pdf",
+          "label": "Tệp chính thức 35/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204651",
+      "instrument_number": "41/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bổ sung Hệ số điều chỉnh giá đất năm 2021 vào Quyết định số 31/2020/QĐ-UBND ngày 22/12/2020 của Ủy ban nhân dân tỉnh Quy định Hệ số điều chỉnh giá đất năm 2021 trên địa bàn tỉnh Cà Mau",
+      "promulgation_date_expected": "2021-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204651&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/41cm.signed.pdf",
+          "label": "Tệp chính thức 41/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204834",
+      "instrument_number": "117/2021/TT-BCA",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về thực hiện dân chủ trong công tác thanh tra, giải quyết khiếu nại, tố cáo, tiếp công dân và phòng, chống tham nhũng của Công an nhân dân",
+      "promulgation_date_expected": "2021-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204834&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/117-bca.signed.pdf",
+          "label": "Tệp chính thức 117/2021/TT-BCA"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204668",
+      "instrument_number": "14/2021/TT-BNNPTNT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật Quốc gia về giống thủy sản",
+      "promulgation_date_expected": "2021-12-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204668&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/14.signed.pdf",
+          "label": "Tệp chính thức 14/2021/TT-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-205125",
+      "instrument_number": "40/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc ban hành Quy định phân cấp thẩm định dự án, thiết kế xây dựng triển khai sau thiết kế cơ sở của dự án đầu tư xây dựng dựng trên địa bàn tỉnh Hà Nam",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=205125&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/01/40hnam.signed.pdf",
+          "label": "Tệp chính thức 40/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204649",
+      "instrument_number": "41/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Quyết định số 27/2020/QĐ-UBND ngày 18/12/2020 của Ủy ban nhân dân tỉnh Quy định về quản lý đầu tư, xây dựng bằng nguồn vốn đầu tư công trên địa bàn tỉnh Hà Nam",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204649&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/41hnam.signed.pdf",
+          "label": "Tệp chính thức 41/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204857",
+      "instrument_number": "30/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 36/2019/TT-BGTVT ngày 12 tháng 9 năm 2019 của Bộ trưởng Bộ Giao thông vận tải sửa đổi, bổ sung các Thông tư của Bộ trưởng Bộ Giao thông vận tải quy định về quản lý tuyến vận tải thủy từ bờ ra đảo trong vùng biển Việt Nam",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204857&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/30-bgtvt.signed.pdf",
+          "label": "Tệp chính thức 30/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204821",
+      "instrument_number": "34/2021/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chuẩn, điều kiện thi hoặc xét thăng hạng; nội dung, hình thức và việc xác định người trúng tuyển trong kỳ xét thăng hạng chức danh nghề nghiệp giáo viên mầm non, phổ thông công lập",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204821&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/34-bgddt.pdf",
+          "label": "Tệp chính thức 34/2021/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204816",
+      "instrument_number": "27/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 35/2019/TT-BGTVT ngày 09 tháng 9 năm 2019 của Bộ trưởng Bộ Giao thông vận tải quy định về hoạt động nạo vét trong vùng nước cảng biển và Thông tư số 42/2019/TT-BGTVT ngày 30 tháng 10 năm 2019 của Bộ trưởng Bộ Giao thông vận tải quy định tiêu chí, kiểm tra, giám sát, đánh giá, nghiệm thu chất lượng dịch vụ sự nghiệp công bảo đảm an toàn hàng hải",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204816&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/27-bgtvt.pdf",
+          "label": "Tệp chính thức 27/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204788",
+      "instrument_number": "20/2021/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 25/2015/TT-NHNN ngày 09 tháng 12 năm 2015 của Thống đốc Ngân hàng Nhà nước Việt Nam hướng dẫn cho vay vốn ưu đãi thực hiện chính sách nhà ở xã hội",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204788&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/20-nhnn.pdf",
+          "label": "Tệp chính thức 20/2021/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204784",
+      "instrument_number": "28/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 35/2016/TT-BGTVT ngày 15 tháng 11 năm 2016 của Bộ trưởng Bộ Giao thông vận tải quy định mức giá tối đa dịch vụ sử dụng đường bộ các dự án đầu tư xây dựng đường bộ để kinh doanh do Bộ Giao thông vận tải quản lý",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204784&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/28-bgtvt.pdf",
+          "label": "Tệp chính thức 28/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204749",
+      "instrument_number": "29/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết về quản lý, khai thác cảng hàng không, sân bay",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204749&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/29-bgtvt.pdf",
+          "label": "Tệp chính thức 29/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204739",
+      "instrument_number": "18/2021/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Định mức kinh tế - kỹ thuật hoạt động báo in, báo điện tử",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204739&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/18-btttt.signed.pdf",
+          "label": "Tệp chính thức 18/2021/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204645",
+      "instrument_number": "17/2021/TT-BTTTT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều Thông tư số 11/2015/TT-BTTTT ngày 05 tháng 5 năm 2015 của Bộ Thông tin và Truyền thông Quy định Chuẩn kỹ năng nhân lực công nghệ thông tin chuyên nghiệp",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204645&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/17-btttt.signed.pdf",
+          "label": "Tệp chính thức 17/2021/TT-BTTTT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34927",
+      "instrument_number": "02/VBHN-BNNPTNT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 02/VBHN-BNNPTNT hợp nhất Thông tư quy định về quản lý thuốc thú y.",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-02-vbhn-bnnptnt-34927.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRsyDlgCtJoMw0MzOz1t9c0DSMWsERU_qAQR7rU3EhWIg9pcR9pF568rAJdb9rjfqrTsRHu7aUGrIEiUdaTzVQiA~~&file_name=2021_1037+%2b+1038_02-VBHN-BNNPTNT.pdf",
+          "label": "Tệp chính thức 02/VBHN-BNNPTNT"
+        },
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRsyDlgCtJoMw0MzOz1t9c0IGHdd4_-LvSTY6tRnqmss886gftYVPePUhQLHWnZd67xfBWZ-3R0HwOKY3ToYp3mQ~~&file_name=2021_1039+%2b+1040_02-VBHN-BNNPTNT.pdf",
+          "label": "Tệp chính thức 02/VBHN-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34917",
+      "instrument_number": "03/VBHN-BNNPTNT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 03/VBHN-BNNPTNT hợp nhất Nghị định về quản lý thực vật rừng, động vật rừng nguy cấp, quý, hiếm và thực thi Công ước về buôn bán quốc tế các loài động vật, thực vật hoang dã nguy cấp.",
+      "promulgation_date_expected": "2021-11-30",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-03-vbhn-bnnptnt-34917.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRAg8EWeG-x64YgX4zUjOIFbxi3QNSc0Ut68sXSuFYCq9E0Jzcbk3WBiJ_dXvwpsxX9DaM3UDADaVqGrypb9PgtA~~&file_name=2021_1031+%2b+1032_03-VBHN-BNNPTNT.pdf",
+          "label": "Tệp chính thức 03/VBHN-BNNPTNT"
+        },
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRAg8EWeG-x64YgX4zUjOIFThO_G1COQShgP6hUAnz3CYePWHv2qkMMcTH8UdTrL5_D1RLIVGZA8FIAyPVVxoRcQ~~&file_name=2021_1033+%2b+1034_03-VBHN-BNNPTNT.pdf",
+          "label": "Tệp chính thức 03/VBHN-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204627",
+      "instrument_number": "26/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 23/2012/TT-BGTVT ngày 29 tháng 6 năm 2012 của Bộ trưởng Bộ Giao thông vận tải hướng dẫn thực hiện Hiệp định, Nghị định thư về vận tải đường bộ giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ Cộng hòa nhân dân Trung Hoa",
+      "promulgation_date_expected": "2021-11-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204627&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/26.signed.pdf",
+          "label": "Tệp chính thức 26/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204626",
+      "instrument_number": "25/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 33/2018/TT-BGTVT ngày 15 tháng 5 năm 2018 của Bộ trưởng Bộ Giao thông vận tải quy định về tiêu chuẩn, nhiệm vụ, quyền hạn đối với các chức danh nhân viên đường sắt trực tiếp phục vụ chạy tàu; nội dung, chương trình đào tạo chức danh nhân viên đường sắt trực tiếp phục vụ chạy tàu; điều kiện, nội dung, quy trình sát hạch và cấp, cấp lại, thu hồi giấy phép lái tàu trên đường sắt; Thông tư số 05/2021/TT-BGTVT ngày 01 tháng 3 năm 2021 của Bộ trưởng Bộ Giao thông vận tải sửa đổi, bổ sung một số điều của Thông tư số 33/2018/TT-BGTVT ngày 15 tháng 5 năm 2018 và Thông tư số 24/2020/TT-BGTVT ngày 13 tháng 10 năm 2020 của Bộ trưởng Bộ Giao thông vận tải sửa đổi, bổ sung một số điều của các Thông tư quy định về chế độ báo cáo định kỳ trong lĩnh vực đường sắt",
+      "promulgation_date_expected": "2021-11-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204626&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/25.signed.pdf",
+          "label": "Tệp chính thức 25/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204562",
+      "instrument_number": "103/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định mức thu lệ phí trước bạ đối với ô tô, rơ moóc hoặc sơ mi rơ moóc được kéo bởi ô tô và các loại xe tương tự ô tô sản xuất, lắp ráp trong nước",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204562&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/103.signed.pdf",
+          "label": "Tệp chính thức 103/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204718",
+      "instrument_number": "57/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế xét tặng Giải thưởng khoa học và công nghệ tỉnh An Giang",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204718&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/57ag.pdf",
+          "label": "Tệp chính thức 57/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204650",
+      "instrument_number": "33/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế làm việc của Ủy ban nhân dân tỉnh Quảng Nam",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204650&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/33qnam.signed.pdf",
+          "label": "Tệp chính thức 33/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204820",
+      "instrument_number": "33/2021/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Chương trình Xóa mù chữ",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204820&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/33-bgddt.pdf",
+          "label": "Tệp chính thức 33/2021/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204801",
+      "instrument_number": "21/2021/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về vệ sinh trong mai táng, hỏa táng",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204801&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/21-byt.pdf",
+          "label": "Tệp chính thức 21/2021/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204797",
+      "instrument_number": "20/2021/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý chất thải y tế trong phạm vi khuôn viên cơ sở y tế",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204797&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/20-byt.pdf",
+          "label": "Tệp chính thức 20/2021/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34891",
+      "instrument_number": "08/2021/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 08/2021/NQ-UBTVQH15 giải thích khoản 1 Điều 289 của Bộ luật Hình sự.",
+      "promulgation_date_expected": "2021-11-26",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-08-2021-nq-ubtvqh15-34891.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR_SaY_SsiuASg3hu_vGTUspTsg-HiyfjfG5uKr2Q7-frxQV0x8KkBt3V7XzGb9Lwb3e0Rofo4u3vI7_vu23OuBg~~&file_name=2021_1025+%2b+1026_08-2021-NQ-UBTVQH15.pdf",
+          "label": "Tệp chính thức 08/2021/NQ-UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204664",
+      "instrument_number": "105/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn việc trích lập, quản lý tiền lương, thù lao, tiền thưởng đối với Trưởng ban kiểm soát, Kiểm soát viên tại công ty trách nhiệm hữu hạn một thành viên do Nhà nước nắm giữ 100% vốn điều lệ",
+      "promulgation_date_expected": "2021-11-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204664&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/105.signed.pdf",
+          "label": "Tệp chính thức 105/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204624",
+      "instrument_number": "12/2021/TT-BVHTTDL",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chức năng, nhiệm vụ, quyền hạn, cơ cấu tổ chức và quy chế hoạt động của Hội đồng quản lý trong đơn vị sự nghiệp công lập thuộc lĩnh vực văn hóa, gia đình, thể thao và du lịch",
+      "promulgation_date_expected": "2021-11-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204624&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/12.signed.pdf",
+          "label": "Tệp chính thức 12/2021/TT-BVHTTDL"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-34890",
+      "instrument_number": "07/2021/UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 07/2021/UBTVQH15 điều chỉnh Chương trình xây dựng luật, pháp lệnh năm 2022.",
+      "promulgation_date_expected": "2021-11-25",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-07-2021-ubtvqh15-34890.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRvUY6xUWOaelqP3qFQjZje4pQl0-IZVXJk6xFBTC_wVGkJMOJDzdvUYsiDhoXhViScSIFXGe0TF7uKPadZ97R7A~~&file_name=2021_1025+%2b+1026_07-2021-UBTVQH15.pdf",
+          "label": "Tệp chính thức 07/2021/UBTVQH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204542",
+      "instrument_number": "35/2021/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bãi bỏ một số văn bản quy pham pháp luật của Thủ tướng Chính phủ",
+      "promulgation_date_expected": "2021-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204542&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/35.signed.pdf",
+          "label": "Tệp chính thức 35/2021/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204819",
+      "instrument_number": "19/2021/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 01/2014/TT-NHNN ngày 06/01/2014 của Thống đốc Ngân hàng Nhà nước Việt Nam quy định về giao nhận, bảo quản, vận chuyển tiền mặt, tài sản quý, giấy tờ có giá",
+      "promulgation_date_expected": "2021-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204819&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/19-nhnn.pdf",
+          "label": "Tệp chính thức 19/2021/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34873",
+      "instrument_number": "4246/VBHN-BLĐTBXH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 4246/VBHN-BLĐTBXH hợp nhất Thông tư hướng dẫn về bảo vệ việc làm của người tố cáo là người làm việc theo hợp đồng lao động.",
+      "promulgation_date_expected": "2021-11-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-4246-vbhn-bldtbxh-34873.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR3-CtjtfGim_RmrvAtWHJyt-6lzGZjD0PB13Uz1eW9W7m3-sUpYkWsn_-prsYEUaOLqh3VBGm-0YvTuuYyG7mog~~&file_name=2021_1021+%2b+1022_4246-VBHN-BL%c4%90TBXH.pdf",
+          "label": "Tệp chính thức 4246/VBHN-BLĐTBXH"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204629",
+      "instrument_number": "153/2021/TT-BQP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn về hồ sơ, quy trình và trách nhiệm giải quyết kinh phí hỗ trợ chuyển đổi nghề nghiệp, các hoạt động phòng ngừa, chia sẻ rủi ro về tai nạn lao động, bệnh nghề nghiệp và kế hoạch kinh phí hỗ trợ các hoạt động phòng ngừa, chia sẻ rủi ro về tai nạn lao động, bệnh nghề nghiệp trong Bộ Quốc phòng",
+      "promulgation_date_expected": "2021-11-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204629&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/153.signed.pdf",
+          "label": "Tệp chính thức 153/2021/TT-BQP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204544",
+      "instrument_number": "19/2021/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung Thông tư số 55/2015/TT-BCT ngày 30 tháng 12 năm 2015 quy định trình tự, thủ tục xác nhận ưu đãi và hậu kiểm ưu đãi đối với các Dự án sản xuất sản phẩm công nghiệp hỗ trợ thuộc Danh mục sản phẩm công nghiệp hỗ trợ ưu tiên phát triển",
+      "promulgation_date_expected": "2021-11-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204544&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/19.signed.pdf",
+          "label": "Tệp chính thức 19/2021/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-36376",
+      "instrument_number": "17/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 17/VBHN-BCT hợp nhất Nghị định về kinh doanh xăng dầu.",
+      "promulgation_date_expected": "2021-11-23",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-17-vbhn-bct-36376.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbREylp25fYsYeoL9BPr6_QYzEFk1DSQKEwLnwIYvkjSMVO7gze-IHqqnWy5GvrpmhD&file_name=2022_19+%2b+20_17-VBHN-BCT.pdf",
+          "label": "Tệp chính thức 17/VBHN-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-36373",
+      "instrument_number": "16/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 16/VBHN-BCT hợp nhất Thông tư quy định chi tiết một số điều của Nghị định số 83/2014/ NĐ-CP ngày 03 tháng 9 năm 2014 của Chính phủ về kinh doanh xăng dầu.",
+      "promulgation_date_expected": "2021-11-23",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-16-vbhn-bct-36373.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRL0o4Y18cZia-W6wQJn3afhP2GRD98YRjURq3vsQAEH8HFSPDjQ78ZKMiA1vsvxiv&file_name=2022_17+%2b+18_16-VBHN-BCT.pdf",
+          "label": "Tệp chính thức 16/VBHN-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-36372",
+      "instrument_number": "15/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 15/VBHN-BCT hợp nhất Thông tư hướng dẫn thi hành công tác thi đua, khen thưởng trong ngành Công Thương.",
+      "promulgation_date_expected": "2021-11-23",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-15-vbhn-bct-36372.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRKNVAypsvp_UGk1w1j-zNPRVJAoA5ltqJPuVqWWXN_WG3KNRuoIPQfGdpWz064KxZ&file_name=2022_17+%2b+18_15-VBHN-BCT.pdf",
+          "label": "Tệp chính thức 15/VBHN-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204815",
+      "instrument_number": "24/2021/TT-BGTVT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về quản lý, bảo trì công trình hàng không",
+      "promulgation_date_expected": "2021-11-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204815&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/24-bgtvt.pdf",
+          "label": "Tệp chính thức 24/2021/TT-BGTVT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204628",
+      "instrument_number": "32/2021/TT-BGDĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện một số điều Nghị định số 82/2010/NĐ-CP ngày 15 tháng 7 năm 2010 của Chính phủ quy định việc dạy và học tiếng nói, chữ viết của dân tộc thiểu số trong các cơ sở giáo dục phổ thông và trung tâm giáo dục thường xuyên",
+      "promulgation_date_expected": "2021-11-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204628&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/32.signed.pdf",
+          "label": "Tệp chính thức 32/2021/TT-BGDĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204719",
+      "instrument_number": "25/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định về quản lý tổ chức bộ máy, biên chế, cán bộ, công chức, viên chức, người lao động trong tổ chức hành chính, đơn vị sự nghiệp công lập, doanh nghiệp có vốn nhà nước thuộc thẩm quyền quản lý của Ủy ban nhân dân thành phố Hà Nội",
+      "promulgation_date_expected": "2021-11-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204719&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/25hnoi.pdf",
+          "label": "Tệp chính thức 25/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204653",
+      "instrument_number": "39/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định về tạo quỹ đất sạch để khai thác, thu hút đầu tư phát triển kinh tế - xã hội trên địa bàn tỉnh Bến Tre",
+      "promulgation_date_expected": "2021-11-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204653&classid=1&typegroupid=5",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/39btre.signed.pdf",
+          "label": "Tệp chính thức 39/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34860",
+      "instrument_number": "14/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 14/VBHN-BCT hợp nhất Nghị định về thương mại điện tử.",
+      "promulgation_date_expected": "2021-11-19",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-14-vbhn-bct-34860.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbR9-1mgt3YmJA5nMYru_QFq-WxPpP92Gp4Why-iYKcqJEyjF4fugHeJqRCSgjOq5EnMyhed82UzprDgwHcDT-qlg~~&file_name=2021_1019+%2b+1020_14-VBHN-BCT.pdf",
+          "label": "Tệp chính thức 14/VBHN-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204975",
+      "instrument_number": "11/2021/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết xây dựng và áp dụng tiêu chuẩn",
+      "promulgation_date_expected": "2021-11-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204975&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/01/11-bkhcn.pdf",
+          "label": "Tệp chính thức 11/2021/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204555",
+      "instrument_number": "104/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn phương pháp xác định yếu tố cấu thành trong công thức giá cơ sở xăng dầu",
+      "promulgation_date_expected": "2021-11-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204555&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/104-btc.pdf",
+          "label": "Tệp chính thức 104/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204554",
+      "instrument_number": "103/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn phương thức trích lập, chi sử dụng, quản lý Quỹ bình ổn giá xăng dầu",
+      "promulgation_date_expected": "2021-11-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204554&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/103-btc.pdf",
+          "label": "Tệp chính thức 103/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204479",
+      "instrument_number": "18/2021/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hoạt động tái chiết khấu công cụ chuyển nhượng giữa các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+      "promulgation_date_expected": "2021-11-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204479&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/18.signed.pdf",
+          "label": "Tệp chính thức 18/2021/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204655",
+      "instrument_number": "39/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định chức danh, số lượng, mức phụ cấp, mức phụ cấp kiêm nhiệm đối với người hoạt động không chuyên trách ở cấp xã, thôn, tổ dân phố; chức danh, mức phụ cấp, hỗ trợ đối với người thực hiện nhiệm vụ khác ở cấp xã, thôn, tổ dân phố; mức hỗ trợ hoạt động cho các tổ chức chính trị - xã hội ở cấp xã, hoạt động của thôn, tổ dân phố và một số chế độ, chính sách khác trên địa bàn tỉnh Hà Nam",
+      "promulgation_date_expected": "2021-11-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204655&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/12/39hnam.signed.pdf",
+          "label": "Tệp chính thức 39/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204550",
+      "instrument_number": "10/2021/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định biện pháp thi hành một số điều của Nghị định số 13/2019/NĐ-CP ngày 01 tháng 02 năm 2019 của Chính phủ về doanh nghiệp khoa học và công nghệ",
+      "promulgation_date_expected": "2021-11-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204550&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/10-bkhcn.pdf",
+          "label": "Tệp chính thức 10/2021/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204548",
+      "instrument_number": "101/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định giá dịch vụ trong lĩnh vực chứng khoán áp dụng tại Sở giao dịch chứng khoán và Tổng công ty lưu ký và bù trừ chứng khoán Việt Nam",
+      "promulgation_date_expected": "2021-11-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204548&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/101.signed_01.pdf",
+          "label": "Tệp chính thức 101/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204547",
+      "instrument_number": "102/2021/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định giá dịch vụ trong lĩnh vực chứng khoán áp dụng tại các tổ chức kinh doanh chứng khoán, ngân hàng thương mại tham gia vào thị trường chứng khoán Việt Nam",
+      "promulgation_date_expected": "2021-11-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204547&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/102.signed_01.pdf",
+          "label": "Tệp chính thức 102/2021/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204477",
+      "instrument_number": "102/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Nghị định về xử phạt vi phạm hành chính trong lĩnh vực thuế, hóa đơn; hải quan; kinh doanh bảo hiểm, kinh doanh xổ số; quản lý, sử dụng tài sản công; thực hành tiết kiệm, chống lãng phí; dự trữ quốc gia; kho bạc nhà nước; kế toán, kiểm toán độc lập",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204477&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term, fee_or_charge_term, customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/102.signed.pdf",
+          "label": "Tệp chính thức 102/2021/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204506",
+      "instrument_number": "27/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy định đơn giá thuê đất, thuê mặt nước trên địa bàn tỉnh Quảng Nam",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204506&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/27qnam.signed.pdf",
+          "label": "Tệp chính thức 27/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-204505",
+      "instrument_number": "38/2021/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành \"Danh mục cây trồng, cây cấm trồng, cây trồng hạn chế tại đô thị và khu chức năng trên địa bàn tỉnh Hà Nam\"",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204505&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/38hnam.signed.pdf",
+          "label": "Tệp chính thức 38/2021/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204515",
+      "instrument_number": "09/2021/TT-BKHĐT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn lựa chọn nhà đầu tư thực hiện dự án đầu tư theo phương thức đối tác công tư và dự án đầu tư có sử dụng đất",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204515&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/09-bkhdt.signed.pdf",
+          "label": "Tệp chính thức 09/2021/TT-BKHĐT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/09-bkhdt-kem1.pdf",
+          "label": "Tệp chính thức 09/2021/TT-BKHĐT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/09-bkhdt-kem2.pdf",
+          "label": "Tệp chính thức 09/2021/TT-BKHĐT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-204486",
+      "instrument_number": "18/2021/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chuẩn chuẩn đoán và quy trình chuyên môn để xác định tình trạng nghiện ma túy",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204486&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/18-byt.pdf",
+          "label": "Tệp chính thức 18/2021/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-34847",
+      "instrument_number": "01/VBHN-BNNPTNT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 01/VBHN-BNNPTNT hợp nhất Thông tư quy định về phòng, chống dịch bệnh động vật trên cạn.",
+      "promulgation_date_expected": "2021-11-16",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-01-vbhn-bnnptnt-34847.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://g7.cdnchinhphu.vn/api/download/stream?Url=tm-8mq6BhNw0NbrKRhTDAQWsKg3tuqaY0aWypnY78U6M2BY68Ekp0Gvvr483flbRkiCGLKFliM2GRmczaxjC7k8mCmZMNECP27N75nHoyMTdWBjkdhqpg5zXMu25pUn6LtX-CNY94FOzp3vXKOdWcA~~&file_name=2021_1003+%2b+1004_01-VBHN-BNNPTNT.pdf",
+          "label": "Tệp chính thức 01/VBHN-BNNPTNT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-204475",
+      "instrument_number": "101/2021/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 122/2016/NĐ-CP ngày 01 tháng 9 năm 2016 của Chính phủ và Nghị định số 57/2020/NĐ-CP ngày 25 tháng 5 năm 2020 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 122/2016/NĐ-CP ngày 01 tháng 9 năm 2016 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan và Nghị định số 125/2017/NĐ-CP ngày 16 tháng 11 năm 2017 sửa đổi, bổ sung một số điều của Nghị định số 122/2016/NĐ-CP",
+      "promulgation_date_expected": "2021-11-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=204475&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term, customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/11/101.signed.pdf",
+          "label": "Tệp chính thức 101/2021/NĐ-CP"
+        }
+      ]
+    }
+  ],
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "shard_number": 68,
+  "shard_start_index": 6700
+}

@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.0",
+  "source_manifest": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/manifest.jsonl",
+  "document_count": 6,
+  "documents": [
+    {
+      "document_id": "TAX-LAW-09-2026",
+      "instrument_number": "09/2026/QH16",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/tax-law-09-2026-1.pdf",
+      "pdf_sha256": "020d48792da1876713929bff7d81ff02fafb75885b798e771c951659a625a265",
+      "pdf_page_count": 104,
+      "document_span": {
+        "start_pdf_page": 45,
+        "end_pdf_page": 46,
+        "candidate_pages": [
+          2,
+          45
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2026-04-24",
+      "effective_date_value": "2026-04-24",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 0,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 46,
+          "clause_text": "Điều 5. Hiệu lực thi hành 1. Luật này có hiệu lực thi hành từ ngày được thông qua, trừ quy định tại khoản 2 Điều này. 2. Quy định tại các điều 1, 2 và 3 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026. Luật này được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam khóa XVI, Kỳ họp thứ Nhất thông qua ngày 24 tháng 4 năm 2026. CHỦ TỊCH QUỐC HỘI Trần Thanh Mẫn",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-04-24",
+          "date_resolution": "relative_content_clause_plus_promulgation_date"
+        },
+        {
+          "kind": "provision_effective",
+          "pdf_page": 46,
+          "clause_text": "Điều 5. Hiệu lực thi hành 1. Luật này có hiệu lực thi hành từ ngày được thông qua, trừ quy định tại khoản 2 Điều này. 2. Quy định tại các điều 1, 2 và 3 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026. Luật này được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam khóa XVI, Kỳ họp thứ Nhất thông qua ngày 24 tháng 4 năm 2026. CHỦ TỊCH QUỐC HỘI Trần Thanh Mẫn",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-01-01",
+          "date_resolution": "explicit_content_date"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    },
+    {
+      "document_id": "TAX-ADMIN-LAW-108-2025",
+      "instrument_number": "108/2025/QH15",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/tax-admin-law-108-2025-1.pdf",
+      "pdf_sha256": "ce2ec36223b931f0754d15f23aecd83405b386f36fbd4cbd83d300b45b117662",
+      "pdf_page_count": 145,
+      "document_span": {
+        "start_pdf_page": 80,
+        "end_pdf_page": 144,
+        "candidate_pages": [
+          2,
+          80
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2026-07-01",
+      "effective_date_value": "2026-07-01",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 0,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 143,
+          "clause_text": "Điều 52. Điều khoản thi hành 1. Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026, trừ quy định tại khoản 2 Điều này. 2. Quy định tại Điều 13 và việc sử dụng hóa đơn điện tử của hộ kinh doanh, cá nhân kinh doanh quy định tại Điều 26 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026. 3. Luật Quản lý thuế số 38/2019/QH14 đã được sửa đổi, bổ sung một số điều theo Luật số 56/2024/QH15 (sau đây gọi là Luật Quản lý thuế số 38/2019/QH14) hết hiệu lực thi hành kể từ ngày Luật này có hiệu lực thi hành, trừ quy định tại khoản 1 và khoản 3 Điều 53 của Luật này; riêng quy định tại Điều 51 của Luật Quản lý thuế số 38/2019/QH14 hết hiệu lực thi hành kể từ ngày 01 tháng 01 năm 2026. 4. Cơ quan thuế có trách nhiệm tổ chức xây dựng, nâng cấp và hoàn thiện hệ thống thông tin phục vụ việc thực hiện đầy đủ các giao dịch điện tử trong quản lý thuế. Việc áp dụng toàn bộ các hình thức giao dịch điện tử trong lĩnh vực quản lý thuế được thực hiện theo lộ trình do Bộ trưởng Bộ Tài chính quy định, bảo đảm hoàn thành trước ngày 01 tháng 01 năm 2027. 5. Chính phủ quy định chi tiết các điều, khoản được giao tại Luật này và hướng dẫn thực hiện Luật này theo chức năng, nhiệm vụ đảm bảo yêu cầu quản lý; quy định về quản lý thuế đối với các giao dịch liên kết của những doanh nghiệp có quan hệ liên kết; quy định việc xử phạt vi phạm hành chính về phí, lệ phí trong lĩnh vực quản lý thuế. ",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-07-01",
+          "date_resolution": "explicit_content_date"
+        },
+        {
+          "kind": "provision_effective",
+          "pdf_page": 143,
+          "clause_text": "Điều 52. Điều khoản thi hành 1. Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026, trừ quy định tại khoản 2 Điều này. 2. Quy định tại Điều 13 và việc sử dụng hóa đơn điện tử của hộ kinh doanh, cá nhân kinh doanh quy định tại Điều 26 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026. 3. Luật Quản lý thuế số 38/2019/QH14 đã được sửa đổi, bổ sung một số điều theo Luật số 56/2024/QH15 (sau đây gọi là Luật Quản lý thuế số 38/2019/QH14) hết hiệu lực thi hành kể từ ngày Luật này có hiệu lực thi hành, trừ quy định tại khoản 1 và khoản 3 Điều 53 của Luật này; riêng quy định tại Điều 51 của Luật Quản lý thuế số 38/2019/QH14 hết hiệu lực thi hành kể từ ngày 01 tháng 01 năm 2026. 4. Cơ quan thuế có trách nhiệm tổ chức xây dựng, nâng cấp và hoàn thiện hệ thống thông tin phục vụ việc thực hiện đầy đủ các giao dịch điện tử trong quản lý thuế. Việc áp dụng toàn bộ các hình thức giao dịch điện tử trong lĩnh vực quản lý thuế được thực hiện theo lộ trình do Bộ trưởng Bộ Tài chính quy định, bảo đảm hoàn thành trước ngày 01 tháng 01 năm 2027. 5. Chính phủ quy định chi tiết các điều, khoản được giao tại Luật này và hướng dẫn thực hiện Luật này theo chức năng, nhiệm vụ đảm bảo yêu cầu quản lý; quy định về quản lý thuế đối với các giao dịch liên kết của những doanh nghiệp có quan hệ liên kết; quy định việc xử phạt vi phạm hành chính về phí, lệ phí trong lĩnh vực quản lý thuế. ",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-01-01",
+          "date_resolution": "explicit_content_date"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    },
+    {
+      "document_id": "HOUSEHOLD-TAX-DECREE-68-2026",
+      "instrument_number": "68/2026/NĐ-CP",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/household-tax-decree-68-2026-1.pdf",
+      "pdf_sha256": "f8147144a80318b29e23dc73fc17e800b67eeeb8228f455b6ef6915e280bca2d",
+      "pdf_page_count": 100,
+      "document_span": {
+        "start_pdf_page": 3,
+        "end_pdf_page": 39,
+        "candidate_pages": [
+          1,
+          3
+        ],
+        "location_confidence": "medium"
+      },
+      "metadata_effective_date": "2026-03-05",
+      "effective_date_value": "2026-03-05",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 0,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 21,
+          "clause_text": "Điều 19. Hiệu lực thi hành Nghị định này có hiệu lực thi hành kể từ ngày ký ban hành. TM. CHÍNH PHỦ KT. THỦ TƯỚNG PHÓ THỦ TƯỚNG Hồ Đức Phớc",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-03-05",
+          "date_resolution": "relative_content_clause_plus_promulgation_date"
+        },
+        {
+          "kind": "general_effective",
+          "pdf_page": 37,
+          "clause_text": "Điều 5. Điều khoản thi hành 1. Thông tư này có hiệu lực thi hành từ ngày 03 tháng 3 năm 2026. 2. Trong quá trình thực hiện, nếu có khó khăn, vướng mắc, đề nghị cơ quan, tổ chức, cá nhân phản ánh về Bộ Nông nghiệp và Môi trường (qua Cục Chăn nuôi và Thú y) để xem xét, sửa đổi, bổ sung./. KT. BỘ TRƯỞNG THỨ TRƯỞNG Phùng Đức Tiến",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-03-03",
+          "date_resolution": "explicit_content_date"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    },
+    {
+      "document_id": "HOUSEHOLD-TAX-CIRCULAR-18-2026",
+      "instrument_number": "18/2026/TT-BTC",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/household-tax-circular-18-2026-1.pdf",
+      "pdf_sha256": "43c44617f8c7bf25b64f5434f0bd742259dc4db0f2150135638156f19516bf21",
+      "pdf_page_count": 44,
+      "document_span": {
+        "start_pdf_page": 1,
+        "end_pdf_page": 44,
+        "candidate_pages": [
+          1,
+          7,
+          8,
+          11,
+          15,
+          22,
+          27,
+          31,
+          32,
+          34,
+          35,
+          37,
+          39,
+          41,
+          43,
+          44
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2026-03-05",
+      "effective_date_value": "2026-03-05",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 0,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 5,
+          "clause_text": "Điều 9. Hiệu lực thi hành 1. Thông tư này có hiệu lực thi hành kể từ ngày ký ban hành. 2. Thông tư này thay th ế Thông tư s ố 40/2021/TT-BTC ngày 01 tháng 6 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thuế giá trị gia tăng, thuế thu nhập cá nhân và quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh; Thông tư số 100/2021/TT-BTC ngày 15 tháng 11 năm 2021 của Bộ trưởng Bộ Tài chính sửa đổi, bổ sung một số điều của Thông tư số 40/2021/TT-BTC ngày 01/6/2021 hướng dẫn thuế giá trị gia tăng, thuế thu nhập cá nhân và quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2026-03-05",
+          "date_resolution": "relative_content_clause_plus_promulgation_date"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    },
+    {
+      "document_id": "VAT-RESOLUTION-174-2024",
+      "instrument_number": "174/2024/QH15",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/vat-resolution-174-2024-1.pdf",
+      "pdf_sha256": "5b5417314d7fdfd624dbe681cc78e60f7eb2351623f9a36ec1879868e8c69b32",
+      "pdf_page_count": 11,
+      "document_span": {
+        "start_pdf_page": 1,
+        "end_pdf_page": 11,
+        "candidate_pages": [
+          1
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2024-11-30",
+      "effective_date_value": null,
+      "effective_date_source": "unresolved",
+      "content_match_status": "temporal_clauses_found_but_general_effective_unresolved",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "not_confirmed_by_content",
+      "application_period_count": 1,
+      "temporal_evidence": [
+        {
+          "kind": "application_period",
+          "pdf_page": 5,
+          "clause_text": "1 khoản 1 Điều 3 của Nghị quyết số 43/2022/QH15 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội trong thời gian từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "start_date": "2025-01-01",
+          "end_date": "2025-06-30"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    },
+    {
+      "document_id": "VAT-REDUCTION-DECREE-180-2024",
+      "instrument_number": "180/2024/NĐ-CP",
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-10y-canonical-2026-08-11-complete/quarantine/official-attachments/vat-reduction-decree-180-2024-1.pdf",
+      "pdf_sha256": "8f6346b8ef96d9748e9f319a02ba04990271362aac721b7340130b1e7638edcc",
+      "pdf_page_count": 64,
+      "document_span": {
+        "start_pdf_page": 1,
+        "end_pdf_page": 64,
+        "candidate_pages": [
+          1,
+          5
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2025-01-01",
+      "effective_date_value": "2025-01-01",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 3,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 3,
+          "clause_text": "Điều 2. Hiệu lực thi hành và tổ chức thực hiện 1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025. 2. Các bộ theo chức năng, nhiệm vụ và Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương chỉ đạo các cơ quan liên quan triển khai tuyên truyền, hướng dẫn, kiểm tra, giám sát để người tiêu dùng hiểu và được thụ hưởng lợi ích từ việc giảm thuế giá trị gia tăng quy định tại Điều 1 Nghị định này, trong đó tập trung các giải pháp ổn định cung cầu hàng hóa, dịch vụ thuộc đối tượng giảm thuế giá trị gia tăng nhằm giữ bình ổn mặt bằng giá cả thị trường (giá chưa có thuế giá trị gia tăng) từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2025-01-01",
+          "date_resolution": "explicit_content_date"
+        },
+        {
+          "kind": "application_period",
+          "pdf_page": 3,
+          "clause_text": "Điều 2. Hiệu lực thi hành và tổ chức thực hiện 1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025. 2. Các bộ theo chức năng, nhiệm vụ và Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương chỉ đạo các cơ quan liên quan triển khai tuyên truyền, hướng dẫn, kiểm tra, giám sát để người tiêu dùng hiểu và được thụ hưởng lợi ích từ việc giảm thuế giá trị gia tăng quy định tại Điều 1 Nghị định này, trong đó tập trung các giải pháp ổn định cung cầu hàng hóa, dịch vụ thuộc đối tượng giảm thuế giá trị gia tăng nhằm giữ bình ổn mặt bằng giá cả thị trường (giá chưa có thuế giá trị gia tăng) từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "start_date": "2025-01-01",
+          "end_date": "2025-06-30"
+        },
+        {
+          "kind": "general_effective",
+          "pdf_page": 3,
+          "clause_text": "Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2025-01-01",
+          "date_resolution": "explicit_content_date"
+        },
+        {
+          "kind": "application_period",
+          "pdf_page": 3,
+          "clause_text": "Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025.",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "start_date": "2025-01-01",
+          "end_date": "2025-06-30"
+        },
+        {
+          "kind": "general_effective",
+          "pdf_page": 3,
+          "clause_text": "CÔNG BÁO/Số 87 + 88/Ngày 16-01-2025 35 b) Đối với cơ sở kinh doanh quy định tại điểm b khoản 2 Điều này, khi lập hoá đơn bán hàng cun g cấp hàng hóa, dịch vụ thuộc đối tượng giảm thuế giá trị gia tăng, tại cột “Thành tiền” ghi đầy đủ tiền hàng hóa, dịch vụ trước khi giảm, tại dòng “Cộng tiền hàng hóa, dịch vụ” ghi theo số đã giảm 20% mức tỷ lệ % trên doanh thu, đồng thời ghi chú: “đã giảm… (số tiền) tương ứng 20% mức tỷ lệ % để tính thuế giá trị gia tăng theo Nghị quyết số 174/2024/QH15”. 4. Trường hợp cơ sở kinh doanh theo quy định tại điểm a khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ áp dụng các mức thuế suất khác nhau thì trê n hóa đơn giá trị gia tăng phải ghi rõ thuế suất của từng hàng hóa, dịch vụ theo quy định tại khoản 3 Điều này. Trường hợp cơ sở kinh doanh theo quy định tại điểm b khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ thì trên hóa đơn bán hàng phải ghi rõ s ố tiền được giảm theo quy định tại khoản 3 Điều này. 5. Trường hợp cơ sở kinh doanh đã lập hóa đơn và đã kê khai theo mức thu ế suất hoặc mức tỷ lệ % để tính thuế giá trị gia tăng chưa được giảm theo quy định tại Nghị định này thì người bán và người mua xử lý hóa đơn đã lập theo quy định pháp luật về hóa đơn, chứng từ. Căn cứ vào hóa đơn sau khi xử lý, người bán kê khai điều chỉnh thuế đầu ra, người mua kê khai điều chỉnh thuế đầu vào (nếu có). 6. Cơ sở kinh doanh quy định tại Điều này thự c hiện kê khai các hàng hóa, dịch vụ được giảm thuế giá trị gia tăng theo M ẫu số 01 tại Phụ lục IV ban hành kèm theo Nghị định này cùng với Tờ khai thuế giá trị gia tăng. Điều 2. Hiệu lực thi hành và tổ chức thực hiện 1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025. 2. Các bộ theo chức năng, nhiệm vụ và Ủy ban nhân dân tỉnh, thành phố trực thuộc T",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2025-01-01",
+          "date_resolution": "explicit_content_date"
+        },
+        {
+          "kind": "application_period",
+          "pdf_page": 3,
+          "clause_text": "CÔNG BÁO/Số 87 + 88/Ngày 16-01-2025 35 b) Đối với cơ sở kinh doanh quy định tại điểm b khoản 2 Điều này, khi lập hoá đơn bán hàng cun g cấp hàng hóa, dịch vụ thuộc đối tượng giảm thuế giá trị gia tăng, tại cột “Thành tiền” ghi đầy đủ tiền hàng hóa, dịch vụ trước khi giảm, tại dòng “Cộng tiền hàng hóa, dịch vụ” ghi theo số đã giảm 20% mức tỷ lệ % trên doanh thu, đồng thời ghi chú: “đã giảm… (số tiền) tương ứng 20% mức tỷ lệ % để tính thuế giá trị gia tăng theo Nghị quyết số 174/2024/QH15”. 4. Trường hợp cơ sở kinh doanh theo quy định tại điểm a khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ áp dụng các mức thuế suất khác nhau thì trê n hóa đơn giá trị gia tăng phải ghi rõ thuế suất của từng hàng hóa, dịch vụ theo quy định tại khoản 3 Điều này. Trường hợp cơ sở kinh doanh theo quy định tại điểm b khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ thì trên hóa đơn bán hàng phải ghi rõ s ố tiền được giảm theo quy định tại khoản 3 Điều này. 5. Trường hợp cơ sở kinh doanh đã lập hóa đơn và đã kê khai theo mức thu ế suất hoặc mức tỷ lệ % để tính thuế giá trị gia tăng chưa được giảm theo quy định tại Nghị định này thì người bán và người mua xử lý hóa đơn đã lập theo quy định pháp luật về hóa đơn, chứng từ. Căn cứ vào hóa đơn sau khi xử lý, người bán kê khai điều chỉnh thuế đầu ra, người mua kê khai điều chỉnh thuế đầu vào (nếu có). 6. Cơ sở kinh doanh quy định tại Điều này thự c hiện kê khai các hàng hóa, dịch vụ được giảm thuế giá trị gia tăng theo M ẫu số 01 tại Phụ lục IV ban hành kèm theo Nghị định này cùng với Tờ khai thuế giá trị gia tăng. Điều 2. Hiệu lực thi hành và tổ chức thực hiện 1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025 đến hết ngày 30 tháng 6 năm 2025. 2. Các bộ theo chức năng, nhiệm vụ và Ủy ban nhân dân tỉnh, thành phố trực thuộc T",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "start_date": "2025-01-01",
+          "end_date": "2025-06-30"
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    }
+  ]
+}

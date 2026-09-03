@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.1",
+  "status": "verified_completed_with_resume_artifacts",
+  "completed_at": "2026-08-11T07:42:00Z",
+  "canonical_config": "config/tax-document-all-fulltext-shards-v4/shard-0006.json",
+  "canonical_config_sha256": "3e7535b4ce1ab973e5f9adf3e777a733670bdc628fa79277d63a48065c42c6bf",
+  "base_manifest": "data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0006/manifest.jsonl",
+  "base_manifest_sha256": "ce53a6fd957c7aa24f178e061916bd322f97969dcd199c84d0490c06ea7fc313",
+  "recovery_artifacts": [
+    {
+      "document_id": "GOV-DECREE-218157",
+      "instrument_number": "167/2026/ND-CP",
+      "config": "config/tax-document-shard-0006-resume.json",
+      "config_sha256": "5f8b128101db2249a50f4ec0c426dbaee60f42823d4b79f78d77a3d411607379",
+      "manifest": "data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0006-resume/manifest.jsonl",
+      "manifest_sha256": "d7cb215786f957954bbd6771c282eb1ab617aee68f64efcdac242d9dda19174b"
+    },
+    {
+      "document_id": "GOV-CIRCULAR-218200",
+      "instrument_number": "08/2026/TT-BNV",
+      "config": "config/tax-document-shard-0006-resume-2.json",
+      "config_sha256": "6d428f5bc1c4f77921d60ca1cd01084b05b3eb2d1956c92dcd559e20069ecde2",
+      "manifest": "data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0006-resume-4/manifest.jsonl",
+      "manifest_sha256": "16725da49587cf36e9d4b0f5906b9f0202d2816d2ae6a0eea335e4a8227dd8c9",
+      "pdf_content_length": 8188494,
+      "pdf_sha256": "e14a80342e6914629d7f34f3cfafc827c1685d728f511f03859a376acc3b3999"
+    }
+  ],
+  "base_page_attempts": 100,
+  "base_page_successes": 99,
+  "base_attachment_attempts": 126,
+  "base_attachment_successes": 125,
+  "combined_source_pages_expected": 100,
+  "combined_source_pages_fetched": 100,
+  "combined_attachment_urls_expected": 127,
+  "combined_attachment_urls_fetched": 127,
+  "missing_source_pages": 0,
+  "missing_attachment_urls": 0,
+  "audit_report": "data/analysis/crawl-completeness-shards-0001-0006-2026-08-11.json",
+  "audit_report_sha256": "cdbb679a1dfa6d421ea2776ba9b40625af97885d151ef4e64102f2e4c61ee26d"
+}

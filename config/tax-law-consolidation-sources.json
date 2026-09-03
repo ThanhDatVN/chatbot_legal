@@ -1,0 +1,74 @@
+{
+  "pilot_id": "tax-law-consolidation-chain-2026-08-11",
+  "scope": "Bốn văn bản hợp nhất chính thức dùng để phát hiện chuỗi luật sửa đổi thuế; không thay thế văn bản gốc",
+  "user_agent": "TaxLegalWorkspacePilot/0.2 (official consolidation chain discovery)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 30,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 31457280,
+  "max_attachments_per_document": 1,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://congbao.chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "congbao.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Công báo điện tử Chính phủ/Văn phòng Quốc hội"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": ["thuvienphapluat.vn"],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "CONSOLIDATED-SCT-111-2026",
+      "instrument_number": "111/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế tiêu thụ đặc biệt",
+      "promulgation_date_expected": "2026-05-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-111-vbhn-vpqh-469594.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "CONSOLIDATED-PIT-112-2026",
+      "instrument_number": "112/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế thu nhập cá nhân",
+      "promulgation_date_expected": "2026-05-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-112-vbhn-vpqh-469595.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "CONSOLIDATED-CIT-113-2026",
+      "instrument_number": "113/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế thu nhập doanh nghiệp",
+      "promulgation_date_expected": "2026-05-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-113-vbhn-vpqh-469596.htm",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "CONSOLIDATED-VAT-114-2026",
+      "instrument_number": "114/VBHN-VPQH",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Hợp nhất Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2026-05-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-114-vbhn-vpqh-469597.htm",
+      "download_attachments": true,
+      "relations": []
+    }
+  ]
+}

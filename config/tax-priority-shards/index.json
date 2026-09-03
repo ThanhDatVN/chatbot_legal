@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "source_config": "config/tax-priority-crawl.json",
+  "source_config_sha256": "b674834ccc364b43c057cf9a98e55127c050a7988dea1d0aabbe4aaa8ff76879",
+  "parent_pilot_id": "tax-priority-2026-09-03",
+  "document_count": 757,
+  "shard_size": 100,
+  "shard_count": 8,
+  "shards": [
+    {
+      "shard_number": 1,
+      "config_path": "shard-0001.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-217588",
+      "last_document_id": "GOV-DECREE-212714",
+      "sha256": "d7ff3cda58cf3bc84b26345d06aec02051667b8c2df05909e41a7dc796032c6a",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 2,
+      "config_path": "shard-0002.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-213118",
+      "last_document_id": "GOV-CIRCULAR-208041",
+      "sha256": "a9b0d237d525279d9d152d7bcde4b1cf092ba14f387971963dc69f64759834d2",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 3,
+      "config_path": "shard-0003.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-207981",
+      "last_document_id": "GOV-DECREE-203379",
+      "sha256": "882310684165dde87094aba2524825d19257b4576ec29751968aa4cc96cae876",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 4,
+      "config_path": "shard-0004.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-203395",
+      "last_document_id": "GOV-CIRCULAR-199457",
+      "sha256": "d2ef24121fa5d47d3b36238007ae7bbb4e649902ae6ad0870360deed23f0854f",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 5,
+      "config_path": "shard-0005.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-199049",
+      "last_document_id": "GOV-CIRCULAR-193431",
+      "sha256": "09fde9924bf23fb407a0e36accaf343de99c4678b8ba16baa97b6313596ec5c0",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 6,
+      "config_path": "shard-0006.json",
+      "document_count": 100,
+      "first_document_id": "GOV-DECISION-193315",
+      "last_document_id": "GOV-CIRCULAR-188423",
+      "sha256": "c641fc91d4abf422c2448424d9d573836d01d8efa9c872c1eeff28d5413aae36",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 7,
+      "config_path": "shard-0007.json",
+      "document_count": 100,
+      "first_document_id": "GOV-CIRCULAR-188414",
+      "last_document_id": "GOV-CIRCULAR-187536",
+      "sha256": "e835412508a2aef5b783c308149bef67ed15614e910b624bbf322705be09a608",
+      "run_status": "pending"
+    },
+    {
+      "shard_number": 8,
+      "config_path": "shard-0008.json",
+      "document_count": 57,
+      "first_document_id": "GOV-CIRCULAR-187802",
+      "last_document_id": "GOV-CIRCULAR-186807",
+      "sha256": "63cf2a26045fa8e45346c176dde5c19d036f058be4fb3daf2fc80dcd80b937e0",
+      "run_status": "pending"
+    }
+  ]
+}

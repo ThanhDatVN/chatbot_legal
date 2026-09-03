@@ -1,0 +1,1755 @@
+{
+  "pilot_id": "tax-priority-2026-09-03-shard-0001",
+  "scope": "Tax-priority slice of the full-text screening queue: classes direct_tax_title. Title terms schedule the work only; no record is excluded from the queue before full-text screening.",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-CIRCULAR-217588",
+      "instrument_number": "36/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn về việc quản lý, sử dụng chi phí và định mức cho hoạt động quy hoạch",
+      "promulgation_date_expected": "2026-03-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217588&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/36-btc.signed.pdf",
+          "label": "Tệp chính thức 36/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217566",
+      "instrument_number": "03/2026/TT-NHNN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định định mức khoán chi trong công tác xây dựng Thông tư của Thống đốc Ngân hàng Nhà nước Việt Nam và Thông tư liên tịch do Ngân hàng Nhà nước Việt Nam chủ trì xây dựng và việc lập dự toán, quản lý, sử dụng, thanh toán, quyết toán chi phí cho công tác xây dựng văn bản quy phạm pháp luật tại Ngân hàng Nhà nước Việt Nam",
+      "promulgation_date_expected": "2026-03-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217566&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/03-nhnn.pdf",
+          "label": "Tệp chính thức 03/2026/TT-NHNN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217446",
+      "instrument_number": "39/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí, lệ phí áp dụng tại cảng, bến thủy nội địa",
+      "promulgation_date_expected": "2026-03-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217446&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/39-btc.pdf",
+          "label": "Tệp chính thức 39/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217367",
+      "instrument_number": "28/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí, lệ phí trong lĩnh vực xuất cảnh, nhập cảnh, quá cảnh, cư trú tại Việt Nam",
+      "promulgation_date_expected": "2026-03-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217367&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/28-btc.signed.pdf",
+          "label": "Tệp chính thức 28/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217366",
+      "instrument_number": "29/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, miễn một số khoản phí, lệ phí để hỗ trợ việc kết nối, khai thác, sử dụng dữ liệu và khuyến khích thực hiện dịch vụ công trên ứng dụng VNeID",
+      "promulgation_date_expected": "2026-03-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217366&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/29-btc.signed.pdf",
+          "label": "Tệp chính thức 29/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217365",
+      "instrument_number": "30/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí thẩm định cấp giấy phép hoạt động điện lực",
+      "promulgation_date_expected": "2026-03-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217365&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/30-btc.signed.pdf",
+          "label": "Tệp chính thức 30/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217241",
+      "instrument_number": "21/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Quản lý thuế",
+      "promulgation_date_expected": "2026-03-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217241&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/21-btc.pdf",
+          "label": "Tệp chính thức 21/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217191",
+      "instrument_number": "20/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định số 320/2025/NĐ-CP ngày 15 tháng 12 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Thuế thu nhập doanh nghiệp",
+      "promulgation_date_expected": "2026-03-12",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217191&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/20-btc.pdf",
+          "label": "Tệp chính thức 20/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-217144",
+      "instrument_number": "72/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi mức thuế suất thuế nhập khẩu ưu đãi đối với một số mặt hàng xăng, dầu, nguyên liệu sản xuất xăng, dầu tại Biểu thuế nhập khẩu ưu đãi ban hành kèm theo Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2026-03-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217144&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/72-ndcp.signed.pdf",
+          "label": "Tệp chính thức 72/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-217111",
+      "instrument_number": "68/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về chính sách thuế và quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "promulgation_date_expected": "2026-03-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217111&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/68-ndcp.signed.pdf",
+          "label": "Tệp chính thức 68/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217174",
+      "instrument_number": "18/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hồ sơ, thủ tục quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "promulgation_date_expected": "2026-03-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217174&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/18-btc.signed.pdf",
+          "label": "Tệp chính thức 18/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-217019",
+      "instrument_number": "08/2026/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 04/2020/TT-BCT ngày 22 tháng 01 năm 2020 của Bộ trưởng Bộ Công Thương quy định về đấu giá hạn ngạch thuế quan nhập khẩu ô tô đã qua sử dụng theo Hiệp định Đối tác Toàn diện và Tiến bộ Xuyên Thái Bình Dương",
+      "promulgation_date_expected": "2026-02-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=217019&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/08-bct.pdf",
+          "label": "Tệp chính thức 08/2026/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216953",
+      "instrument_number": "56/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam để thực hiện Bản Thỏa thuận thúc đẩy thương mại song phương giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ Vương quốc Campuchia giai đoạn 2025 - 2026",
+      "promulgation_date_expected": "2026-02-12",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216953&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/56-nd.signed.pdf",
+          "label": "Tệp chính thức 56/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216994",
+      "instrument_number": "06/2026/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hạn ngạch thuế quan nhập khẩu để thực hiện Bản Thỏa thuận thúc đẩy thương mại song phương giữa Chính phủ nước Cộng hòa Xã hội Chủ nghĩa Việt Nam và Chính phủ Vương quốc Campuchia giai đoạn 2025 - 2026",
+      "promulgation_date_expected": "2026-02-12",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216994&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/06-bct.pdf",
+          "label": "Tệp chính thức 06/2026/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216997",
+      "instrument_number": "12/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định trình tự, thủ tục giám định chi phí khám bệnh, chữa bệnh bảo hiểm y tế, biểu mẫu tổng hợp thanh toán, quyết toán và biện pháp thi hành Nghị định số 188/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật Bảo hiểm y tế",
+      "promulgation_date_expected": "2026-02-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216997&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/12-btc.pdf",
+          "label": "Tệp chính thức 12/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216933",
+      "instrument_number": "11/2026/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí thuộc lĩnh vực đường sắt",
+      "promulgation_date_expected": "2026-02-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216933&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/11-btc.pdf",
+          "label": "Tệp chính thức 11/2026/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216927",
+      "instrument_number": "55/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 63/2019/NĐ-CP ngày 11 tháng 7 năm 2019 của Chính phủ quy định xử phạt vi phạm hành chính trong lĩnh vực quản lý tài sản công; thực hành tiết kiệm, chống lãng phí; dự trữ quốc gia; kho bạc nhà nước đã được sửa đổi, bổ sung một số điều bởi Nghị định số 102/2021/NĐ-CP ngày 16 tháng 11 năm 2021 của Chính phủ",
+      "promulgation_date_expected": "2026-02-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216927&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/02/55-ndcp.signed.pdf",
+          "label": "Tệp chính thức 55/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216866",
+      "instrument_number": "51/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 143/2013/NĐ-CP ngày 24 tháng 10 năm 2013 của Chính phủ quy định về bồi hoàn học bổng và chi phí đào tạo",
+      "promulgation_date_expected": "2026-02-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216866&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/51-ndcp.signed.pdf",
+          "label": "Tệp chính thức 51/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216802",
+      "instrument_number": "04/2026/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hạn ngạch thuế quan nhập khẩu thuốc lá nguyên liệu năm 2026",
+      "promulgation_date_expected": "2026-01-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216802&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/04-bct.pdf",
+          "label": "Tệp chính thức 04/2026/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216801",
+      "instrument_number": "03/2026/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hạn ngạch thuế quan nhập khẩu mặt hàng muối, trứng gia cầm năm 2026",
+      "promulgation_date_expected": "2026-01-26",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216801&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/03-bct.pdf",
+          "label": "Tệp chính thức 03/2026/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216847",
+      "instrument_number": "05/2026/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 38/2025/TT-BNNMT ngày 02 tháng 7 năm 2025 của Bộ Nông nghiệp và Môi trường quy định về phương pháp xác định chi phí đánh giá tiềm năng khoáng sản, thăm dò khoáng sản phải hoàn trả; mẫu văn bản trong hồ sơ xác định, phê duyệt chi phí đánh giá tiềm năng khoáng sản, thăm dò khoáng sản phải hoàn trả; mẫu văn bản trong hồ sơ xác định, phê duyệt, quyết toán tiền cấp quyền khai thác khoáng sản; mẫu văn bản trong đấu giá quyền khai thác khoáng sản",
+      "promulgation_date_expected": "2026-01-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216847&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/05-bnnmt.pdf",
+          "label": "Tệp chính thức 05/2026/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216406",
+      "instrument_number": "02/2026/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định xử phạt vi phạm hành chính trong lĩnh vực phí và lệ phí",
+      "promulgation_date_expected": "2026-01-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216406&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/02-nd.signed.pdf",
+          "label": "Tệp chính thức 02/2026/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216685",
+      "instrument_number": "373/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Quản lý thuế",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216685&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/373ndcp.signed.pdf",
+          "label": "Tệp chính thức 373/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216486",
+      "instrument_number": "364/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, miễn, quản lý và sử dụng phí sử dụng đường bộ thu qua đầu phương tiện đối với xe ô tô",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216486&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/364-ndcp.signed.pdf",
+          "label": "Tệp chính thức 364/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216390",
+      "instrument_number": "360/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết thi hành một số điều của Luật Thuế tiêu thụ đặc biệt",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216390&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/360-ndcp.signed.pdf",
+          "label": "Tệp chính thức 360/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216389",
+      "instrument_number": "362/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Phí và lệ phí",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216389&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/362-nd.signed.pdf",
+          "label": "Tệp chính thức 362/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216388",
+      "instrument_number": "359/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 181/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216388&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/359-nd.signed.pdf",
+          "label": "Tệp chính thức 359/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-216602",
+      "instrument_number": "056/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Bảng giá tính thuế tài nguyên đối với nhóm, loại tài nguyên có tính chất lý, hóa giống nhau trên địa bàn tỉnh Đắk Lắk",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216602&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/056-ubnd.pdf",
+          "label": "Tệp chính thức 056/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216877",
+      "instrument_number": "101/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn các loại máy chuyên dùng khác phục vụ cho sản xuất nông nghiệp chưa được quy định tại khoản 6 Điều 19 Nghị định số 181/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216877&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/101-bnnmt.pdf",
+          "label": "Tệp chính thức 101/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216546",
+      "instrument_number": "155/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, miễn lệ phí đăng ký, cấp biển phương tiện giao thông",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216546&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/155-btc.signed.pdf",
+          "label": "Tệp chính thức 155/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216544",
+      "instrument_number": "154/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí sát hạch lái xe, lệ phí cấp bằng, chứng chỉ được hoạt động trên các loại phương tiện và lệ phí đăng ký, cấp biển xe máy chuyên dùng",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216544&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/154-btc.signed.pdf",
+          "label": "Tệp chính thức 154/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216542",
+      "instrument_number": "153/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp một số khoản phí, lệ phí thuộc lĩnh vực văn hóa, thể thao, du lịch",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216542&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/153-btc.signed.pdf",
+          "label": "Tệp chính thức 153/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216477",
+      "instrument_number": "158/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết một số điều của Nghị định số 360/2025/NĐ-CP ngày 31 tháng 12 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều của Luật Thuế tiêu thụ đặc biệt",
+      "promulgation_date_expected": "2025-12-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216477&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/158-btc.pdf",
+          "label": "Tệp chính thức 158/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216439",
+      "instrument_number": "140/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chế độ công tác phí đi công tác ngắn hạn ở nước ngoài do ngân sách nhà nước bảo đảm kinh phí",
+      "promulgation_date_expected": "2025-12-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216439&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/140-btc.pdf",
+          "label": "Tệp chính thức 140/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216436",
+      "instrument_number": "60/2025/TT-BXD",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số nội dung các Thông tư số 11/2021/TT-BXD ngày 31 tháng 8 năm 2021 của Bộ trưởng Bộ Xây dựng hướng dẫn một số nội dung xác định và quản lý chi phí đầu tư xây dựng; Thông tư số 12/2021/TT-BXD ngày 31 tháng 8 năm 2021 của Bộ trưởng Bộ Xây dựng ban hành định mức xây dựng; Thông tư số 13/2021/TT-BXD ngày 31 tháng 8 năm 2021 của Bộ trưởng Bộ Xây dựng hướng dẫn phương pháp xác định các chỉ tiêu kinh tế kỹ thuật và đo bóc khối lượng công trình và Thông tư số 14/2021/TT-BXD ngày 08 tháng 9 năm 2021 của Bộ trưởng Bộ Xây dựng hướng dẫn xác định chi phí bảo trì công trình xây dựng",
+      "promulgation_date_expected": "2025-12-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216436&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/60-bxd.pdf",
+          "label": "Tệp chính thức 60/2025/TT-BXD"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216402",
+      "instrument_number": "346/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định phí bảo vệ môi trường đối với nước thải",
+      "promulgation_date_expected": "2025-12-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216402&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/346-ndcp.signed.pdf",
+          "label": "Tệp chính thức 346/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216623",
+      "instrument_number": "121/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư quy định về thủ tục hải quan, kiểm tra, giám sát hải quan, thuế xuất khẩu, thuế nhập khẩu và quản lý thuế đối với hàng hóa xuất khẩu, nhập khẩu",
+      "promulgation_date_expected": "2025-12-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216623&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/121-btc.pdf",
+          "label": "Tệp chính thức 121/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216219",
+      "instrument_number": "320/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Thuế thu nhập doanh nghiệp",
+      "promulgation_date_expected": "2025-12-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216219&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/320-ndcp.signed.pdf",
+          "label": "Tệp chính thức 320/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-216588",
+      "instrument_number": "149/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật sửa đổi, bổ sung một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-12-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216588&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat149.signed.pdf",
+          "label": "Tệp chính thức 149/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216200",
+      "instrument_number": "45/2025/TT-BXD",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn phương pháp xác định chi phí bảo trì kết cấu hạ tầng đường thủy nội địa",
+      "promulgation_date_expected": "2025-12-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216200&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/45-bxd.pdf",
+          "label": "Tệp chính thức 45/2025/TT-BXD"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/2317bxd.signed.pdf",
+          "label": "Tệp chính thức 45/2025/TT-BXD"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-216541",
+      "instrument_number": "108/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật Quản lý thuế",
+      "promulgation_date_expected": "2025-12-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216541&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/108-qh15.signed.pdf",
+          "label": "Tệp chính thức 108/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-216495",
+      "instrument_number": "109/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật Thuế thu nhập cá nhân",
+      "promulgation_date_expected": "2025-12-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216495&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat109-2025.pdf",
+          "label": "Tệp chính thức 109/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216238",
+      "instrument_number": "113/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về biên lai thu thuế đối với hàng hóa xuất khẩu, nhập khẩu, phí hải quan, lệ phí hàng hóa, phương tiện vận tải quá cảnh",
+      "promulgation_date_expected": "2025-12-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216238&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term,fee_or_charge_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/113-btc.signed.pdf",
+          "label": "Tệp chính thức 113/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-216102",
+      "instrument_number": "310/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 125/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định xử phạt vi phạm hành chính về thuế, hóa đơn",
+      "promulgation_date_expected": "2025-12-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216102&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/310-cp.signed.pdf",
+          "label": "Tệp chính thức 310/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216126",
+      "instrument_number": "61/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hạn ngạch thuế quan nhập khẩu để thực hiện Hiệp định Thương mại giữa Chính phủ nước Cộng hòa Xã hội chủ nghĩa Việt Nam và Chính phủ nước Cộng hòa Dân chủ Nhân dân Lào giai đoạn 2025 - 2030",
+      "promulgation_date_expected": "2025-12-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216126&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/12/61-bct.pdf",
+          "label": "Tệp chính thức 61/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216036",
+      "instrument_number": "111/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ Thông tư số 73/2017/TT-BTC ngày 17 tháng 7 năm 2017 của Bộ trưởng Bộ Tài chính quy định quản lý và sử dụng nguồn ngân sách nhà nước bảo đảm, hỗ trợ chi phí khám sức khỏe và chi phí điều trị nghiện các chất dạng thuốc phiện bằng thuốc thay thế",
+      "promulgation_date_expected": "2025-11-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216036&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/111-btc.pdf",
+          "label": "Tệp chính thức 111/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215931",
+      "instrument_number": "110/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp phí thẩm định cấp giấy phép kinh doanh karaoke, vũ trường",
+      "promulgation_date_expected": "2025-11-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215931&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/110-btc.pdf",
+          "label": "Tệp chính thức 110/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215930",
+      "instrument_number": "109/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp lệ phí cấp Chứng chỉ hành nghề môi giới bất động sản",
+      "promulgation_date_expected": "2025-11-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215930&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/109-btc.pdf",
+          "label": "Tệp chính thức 109/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-216021",
+      "instrument_number": "33/2025/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định tiêu chí doanh nghiệp thực hiện dự án sản xuất thiết bị điện tử được hưởng ưu đãi về thuế thu nhập doanh nghiệp",
+      "promulgation_date_expected": "2025-11-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=216021&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/33-bkhcn.pdf",
+          "label": "Tệp chính thức 33/2025/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-215809",
+      "instrument_number": "292/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết và hướng dẫn thi hành Nghị quyết số 216/2025/QH15 ngày 26 tháng 6 năm 2025 của Quốc hội về việc kéo dài thời hạn miễn thuế sử dụng đất nông nghiệp",
+      "promulgation_date_expected": "2025-11-06",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215809&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/292-nd.signed.pdf",
+          "label": "Tệp chính thức 292/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215644",
+      "instrument_number": "94/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Quản lý thuế và sửa đổi, bổ sung một số mẫu biểu của Thông tư số 40/2021/TT-BTC ngày 01 tháng 6 năm 2021 của Bộ Tài chính hướng dẫn thuế giá trị gia tăng, thuế thu nhập cá nhân và quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "promulgation_date_expected": "2025-10-14",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215644&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/94-btc.signed.pdf",
+          "label": "Tệp chính thức 94/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-215575",
+      "instrument_number": "260/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi mức thuế suất thuế xuất khẩu đối với một số mặt hàng thuộc nhóm 71.13, 71.14 và 71.15 tại Biểu thuế xuất khẩu theo Danh mục mặt hàng chịu thuế ban hành kèm theo Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2025-10-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215575&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/260nd.signed.pdf",
+          "label": "Tệp chính thức 260/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215458",
+      "instrument_number": "90/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí thăm quan Bảo tàng Lịch sử Quân sự Việt Nam",
+      "promulgation_date_expected": "2025-09-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215458&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/90-btc.pdf",
+          "label": "Tệp chính thức 90/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-215169",
+      "instrument_number": "238/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về chính sách học phí, miễn, giảm, hỗ trợ học phí, hỗ trợ chi phí học tập và giá dịch vụ trong lĩnh vực giáo dục, đào tạo",
+      "promulgation_date_expected": "2025-09-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215169&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/238-ndcp.signed.pdf",
+          "label": "Tệp chính thức 238/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215200",
+      "instrument_number": "48/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 28/2009/TT-BCT ngày 28 tháng 9 năm 2009 của Bộ trưởng Bộ Công Thương xác nhận hạn ngạch thuế quan đối với mật ong tự nhiên nhập khẩu vào Nhật Bản theo Hiệp định giữa nước Cộng hòa xã hội chủ nghĩa Việt Nam và Nhật Bản về Đối tác kinh tế",
+      "promulgation_date_expected": "2025-09-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215200&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/48-vbhnbct.signed.pdf",
+          "label": "Tệp chính thức 48/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-215112",
+      "instrument_number": "236/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết một số điều của Nghị quyết số 107/2023/QH15 ngày 29 tháng 11 năm 2023 của Quốc hội về việc áp dụng thuế thu nhập doanh nghiệp bổ sung theo quy định chống xói mòn cơ sở thuế toàn cầu",
+      "promulgation_date_expected": "2025-08-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215112&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/236-cp.signed.pdf",
+          "label": "Tệp chính thức 236/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-215133",
+      "instrument_number": "86/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí hải quan và lệ phí hàng hóa, phương tiện vận tải quá cảnh",
+      "promulgation_date_expected": "2025-08-28",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=215133&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/86-btc.pdf",
+          "label": "Tệp chính thức 86/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214761",
+      "instrument_number": "77/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết các dịch vụ kinh doanh chứng khoán và chuyển nhượng chứng khoán theo Nghị định số 181/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-07-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214761&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/77-btc.pdf",
+          "label": "Tệp chính thức 77/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214630",
+      "instrument_number": "206/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam để thực hiện Hiệp định thương mại giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Cộng hòa dân chủ nhân dân Lào giai đoạn 2025-2030",
+      "promulgation_date_expected": "2025-07-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214630&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/206-cp.signed.pdf",
+          "label": "Tệp chính thức 206/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214546",
+      "instrument_number": "204/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết trình tự, thủ tục lập dự toán, thanh toán kinh phí chi trả chi phí tố tụng",
+      "promulgation_date_expected": "2025-07-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214546&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/204-ndcp.signed.pdf",
+          "label": "Tệp chính thức 204/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214494",
+      "instrument_number": "199/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hành hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2025-07-08",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214494&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/199-ndcp.signed.pdf",
+          "label": "Tệp chính thức 199/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214551",
+      "instrument_number": "38/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phương pháp xác định chi phí đánh giá tiềm năng khoáng sản, thăm dò khoáng sản phải hoàn trả; mẫu văn bản trong hồ sơ xác định, phê duyệt chi phí đánh giá tiềm năng khoáng sản, thăm dò khoáng sản phải hoàn trả; mẫu văn bản trong hồ sơ xác định, phê duyệt, quyết toán tiền cấp quyền khai thác khoáng sản; mẫu văn bản trong đấu giá quyền khai thác khoáng sản",
+      "promulgation_date_expected": "2025-07-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214551&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/38-bnnmt.pdf",
+          "label": "Tệp chính thức 38/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214336",
+      "instrument_number": "181/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết thi hành một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214336&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/181nd.signed.pdf",
+          "label": "Tệp chính thức 181/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214329",
+      "instrument_number": "182/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 134/2016/NĐ-CP ngày 01 tháng 9 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Thuế xuất khẩu, thuế nhập khẩu đã được sửa đổi, bổ sung theo Nghị định số 18/2021/NĐ-CP ngày 11 tháng 3 năm 2021 của Chính phủ",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214329&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/182nd.signed.pdf",
+          "label": "Tệp chính thức 182/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214421",
+      "instrument_number": "71/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư của Bộ trưởng Bộ Tài chính quy định về phí, lệ phí",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214421&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/71-btc.pdf",
+          "label": "Tệp chính thức 71/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214420",
+      "instrument_number": "70/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí thẩm định phê duyệt thiết kế phòng cháy và chữa cháy",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214420&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/70-btc.pdf",
+          "label": "Tệp chính thức 70/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214417",
+      "instrument_number": "69/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định chi tiết một số điều của Luật Thuế giá trị gia tăng và hướng dẫn thực hiện Nghị định số 181/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều của Luật Thuế giá trị gia tăng",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214417&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/69-btc.signed.pdf",
+          "label": "Tệp chính thức 69/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214363",
+      "instrument_number": "67/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 13/2022/TT-BTC ngày 28 tháng 02 năm 2022 của Bộ trưởng Bộ Tài chính quy định chi tiết một số điều của Nghị định số 10/2022/NĐ-CP ngày 15 tháng 01 năm 2022 của Chính phủ về lệ phí trước bạ",
+      "promulgation_date_expected": "2025-07-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214363&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/67-btc.pdf",
+          "label": "Tệp chính thức 67/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214313",
+      "instrument_number": "175/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 10/2022/NĐ-CP ngày 15 tháng 01 năm 2022 của Chính phủ quy định về lệ phí trước bạ",
+      "promulgation_date_expected": "2025-06-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214313&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/175-cp.signed.pdf",
+          "label": "Tệp chính thức 175/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-214310",
+      "instrument_number": "174/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chính sách giảm thuế giá trị gia tăng theo Nghị quyết số 204/2025/QH15 ngày 17 tháng 6 năm 2025 của Quốc hội",
+      "promulgation_date_expected": "2025-06-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214310&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/174nd.signed.pdf",
+          "label": "Tệp chính thức 174/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214425",
+      "instrument_number": "17/2025/TT-BXD",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành định mức, phương pháp lập và quản lý chi phí cho hoạt động quy hoạch đô thị và nông thôn",
+      "promulgation_date_expected": "2025-06-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214425&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/17-bxd.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BXD"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/17-bxd-1.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BXD"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/17-bxd-2.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BXD"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214419",
+      "instrument_number": "65/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 265/2016/TT-BTC ngày 14 tháng 11 năm 2016 của Bộ trưởng Bộ Tài chính quy định mức thu, chế độ thu, nộp, quản lý và sử dụng lệ phí cấp giấy phép sử dụng tần số vô tuyến điện và phí sử dụng tần số vô tuyến điện đã được sửa đổi, bổ sung một số điều tại Thông tư số 11/2022/TT-BTC ngày 21 tháng 02 năm 2022",
+      "promulgation_date_expected": "2025-06-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214419&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/65-btc.pdf",
+          "label": "Tệp chính thức 65/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214418",
+      "instrument_number": "64/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, miễn một số khoản phí, lệ phí nhằm hỗ trợ cho doanh nghiệp, người dân",
+      "promulgation_date_expected": "2025-06-30",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214418&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/64-btc.pdf",
+          "label": "Tệp chính thức 64/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214408",
+      "instrument_number": "59/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư về thuế sử dụng đất nông nghiệp do Bộ trưởng Bộ Tài chính ban hành",
+      "promulgation_date_expected": "2025-06-27",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214408&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/59-btc.pdf",
+          "label": "Tệp chính thức 59/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214558",
+      "instrument_number": "90/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật sửa đổi, bổ sung một số điều của Luật Đấu thầu, Luật Đầu tư theo phương thức đối tác công tư, Luật Hải quan, Luật Thuế giá trị gia tăng, Luật Thuế xuất khẩu, thuế nhập khẩu, Luật Đầu tư, Luật Đầu tư công, Luật Quản lý, sử dụng tài sản công",
+      "promulgation_date_expected": "2025-06-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214558&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/90qh.signed.pdf",
+          "label": "Tệp chính thức 90/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214341",
+      "instrument_number": "55/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, miễn, chế độ thu, nộp, quản lý và sử dụng lệ phí phân bổ và phí sử dụng mã, số viễn thông",
+      "promulgation_date_expected": "2025-06-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214341&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/55-btc.signed.pdf",
+          "label": "Tệp chính thức 55/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214339",
+      "instrument_number": "52/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, miễn, chế độ thu, nộp, quản lý và sử dụng phí quyền hoạt động viễn thông, lệ phí cấp giấy phép kinh doanh dịch vụ viễn thông và giấy phép nghiệp vụ viễn thông",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214339&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/52-btc.pdf",
+          "label": "Tệp chính thức 52/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-214168",
+      "instrument_number": "34/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quyết định Quy định Bảng giá tính thuế tài nguyên khai thác năm 2025 trên địa bàn tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214168&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/34-ubnd-ld-1-.pdf",
+          "label": "Tệp chính thức 34/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214607",
+      "instrument_number": "67/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật Thuế thu nhập doanh nghiệp",
+      "promulgation_date_expected": "2025-06-14",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214607&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/67qh.signed.pdf",
+          "label": "Tệp chính thức 67/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214598",
+      "instrument_number": "66/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật Thuế tiêu thụ đặc biệt",
+      "promulgation_date_expected": "2025-06-14",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214598&classid=1&typegroupid=3",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/66qhm.signed.pdf",
+          "label": "Tệp chính thức 66/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214405",
+      "instrument_number": "40/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư thuộc lĩnh vực quản lý thuế để phân định thẩm quyền của chính quyền địa phương theo mô hình tổ chức chính quyền địa phương 02 cấp",
+      "promulgation_date_expected": "2025-06-13",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214405&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/40-btc.pdf",
+          "label": "Tệp chính thức 40/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213892",
+      "instrument_number": "122/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định về phân quyền, phân cấp trong lĩnh vực quản lý thuế",
+      "promulgation_date_expected": "2025-06-11",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213892&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/122-ndcp.signed.pdf",
+          "label": "Tệp chính thức 122/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213883",
+      "instrument_number": "117/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định quản lý thuế đối với hoạt động kinh doanh trên nền tảng thương mại điện tử, nền tảng số của hộ, cá nhân",
+      "promulgation_date_expected": "2025-06-09",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213883&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/117-ndcp.signed.pdf",
+          "label": "Tệp chính thức 117/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213846",
+      "instrument_number": "33/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí khai thác, sử dụng nguồn nước do cơ quan trung ương thực hiện",
+      "promulgation_date_expected": "2025-06-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213846&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/33-btc.pdf",
+          "label": "Tệp chính thức 33/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213855",
+      "instrument_number": "32/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn thực hiện một số điều của Luật Quản lý thuế ngày 13 tháng 6 năm 2019, Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ, Nghị định số 70/2025/NĐ-CP ngày 20 tháng 3 năm 2025 sửa đổi, bổ sung một số điều của Nghị định số 123/2020/NĐ-CP",
+      "promulgation_date_expected": "2025-05-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213855&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/32-btc.pdf",
+          "label": "Tệp chính thức 32/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213700",
+      "instrument_number": "108/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2025-05-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213700&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/108-cp.signed.pdf",
+          "label": "Tệp chính thức 108/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213616",
+      "instrument_number": "23/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 05/2018/TT-BCT ngày 03 tháng 4 năm 2018 của Bộ trưởng Bộ Công Thương quy định về xuất xứ hàng hóa và Thông tư số 38/2018/TT-BCT ngày 30 tháng 10 năm 2018 của Bộ trưởng Bộ Công Thương quy định thực hiện chứng nhận xuất xứ hàng hóa theo chế độ thuế quan phổ cập của Liên minh châu Âu, Na Uy, Thụy Sỹ và Thổ Nhĩ Kỳ",
+      "promulgation_date_expected": "2025-05-05",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213616&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/23-bct.signed.pdf",
+          "label": "Tệp chính thức 23/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213475",
+      "instrument_number": "16/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí cung cấp thông tin lý lịch tư pháp",
+      "promulgation_date_expected": "2025-04-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213475&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/16-btc.pdf",
+          "label": "Tệp chính thức 16/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213476",
+      "instrument_number": "20/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về hạn ngạch thuế quan nhập khẩu thuốc lá nguyên liệu năm 2025",
+      "promulgation_date_expected": "2025-04-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213476&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/20-bct.pdf",
+          "label": "Tệp chính thức 20/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213490",
+      "instrument_number": "15/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp lệ phí cấp Chứng chỉ hành nghề lưu trữ",
+      "promulgation_date_expected": "2025-04-16",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213490&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/15-btc.pdf",
+          "label": "Tệp chính thức 15/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213262",
+      "instrument_number": "82/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Gia hạn thời hạn nộp thuế giá trị gia tăng, thuế thu nhập doanh nghiệp, thuế thu nhập cá nhân và tiền thuê đất trong năm 2025",
+      "promulgation_date_expected": "2025-04-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213262&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/82-ndcp.signed.pdf",
+          "label": "Tệp chính thức 82/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213261",
+      "instrument_number": "81/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Gia hạn thời hạn nộp thuế tiêu thụ đặc biệt đối với ô tô sản xuất hoặc lắp ráp trong nước",
+      "promulgation_date_expected": "2025-04-02",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213261&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/81-ndcp.signed.pdf",
+          "label": "Tệp chính thức 81/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213245",
+      "instrument_number": "73/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung mức thuế nhập khẩu ưu đãi của một số mặt hàng tại Biểu thuế nhập khẩu ưu đãi theo Danh mục mặt hàng chịu thuế ban hành kèm theo Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2025-03-31",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213245&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/73-cp.signed.pdf",
+          "label": "Tệp chính thức 73/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213179",
+      "instrument_number": "70/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ",
+      "promulgation_date_expected": "2025-03-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213179&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/70-nd-cp.signed.pdf",
+          "label": "Tệp chính thức 70/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213222",
+      "instrument_number": "13/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí dịch vụ duy trì hệ thống kiểm tra trạng thái chứng thư chữ ký số",
+      "promulgation_date_expected": "2025-03-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213222&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/13-btc.pdf",
+          "label": "Tệp chính thức 13/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-213221",
+      "instrument_number": "10/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí duy trì sử dụng tài nguyên Internet, lệ phí phân bổ, cấp tài nguyên Internet",
+      "promulgation_date_expected": "2025-03-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213221&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/10-btc.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-213052",
+      "instrument_number": "60/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 116/2020/NĐ-CP ngày 25 tháng 9 năm 2020 của Chính phủ quy định về chính sách hỗ trợ tiền đóng học phí, chi phí sinh hoạt đối với sinh viên sư phạm",
+      "promulgation_date_expected": "2025-03-03",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=213052&classid=1&typegroupid=4",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/60-nd.signed.pdf",
+          "label": "Tệp chính thức 60/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-212984",
+      "instrument_number": "51/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 10/2022/NĐ-CP ngày 15 tháng 01 năm 2022 của Chính phủ quy định về lệ phí trước bạ",
+      "promulgation_date_expected": "2025-03-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=212984&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/3/51-nd.signed.pdf",
+          "label": "Tệp chính thức 51/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-212716",
+      "instrument_number": "20/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung một số điều của Nghị định số 132/2020/NĐ-CP ngày 05 tháng 11 năm 2020 của Chính phủ quy định về quản lý thuế đối với doanh nghiệp có giao dịch liên kết",
+      "promulgation_date_expected": "2025-02-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=212716&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/01/20-cp.signed.pdf",
+          "label": "Tệp chính thức 20/2025/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-212714",
+      "instrument_number": "21/2025/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Sửa đổi, bổ sung Điều 9 của Nghị định số 26/2023/NĐ-CP ngày 31 tháng 5 năm 2023 của Chính phủ về Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2025-02-10",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=212714&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/01/21-cp.signed.pdf",
+          "label": "Tệp chính thức 21/2025/NĐ-CP"
+        }
+      ]
+    }
+  ],
+  "parent_pilot_id": "tax-priority-2026-09-03",
+  "shard_number": 1,
+  "shard_start_index": 0
+}

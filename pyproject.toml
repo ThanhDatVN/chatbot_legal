@@ -1,0 +1,52 @@
+[project]
+name = "tax-legal-workspace-tools"
+version = "0.1.0"
+description = "Data acquisition and validation tools for the Vietnamese tax-law workspace"
+requires-python = ">=3.11"
+# Acquisition tools only - deliberately light so `tools/` stays installable
+# without the ML stack.
+dependencies = [
+  "pypdf>=6,<7",
+  "truststore>=0.10,<0.11",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9.0",
+  "ruff>=0.9,<1.0",
+]
+# Runtime for the virag application (no ML models).
+app = [
+  "numpy>=1.26,<3",
+  "sqlalchemy>=2.0,<3",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "redis>=5,<7",
+  "qdrant-client>=1.9,<2",
+  "langgraph>=0.2,<1",
+  "anthropic>=1,<2",
+  "python-docx>=1.1,<2",
+]
+# Local encoders and reranker.  Large; optional by design (ADR-016).
+ml = [
+  "sentence-transformers>=3,<6",
+]
+# OCR fallback for image-only PDFs.  Requires the Tesseract binary plus the
+# `vie` traineddata installed separately.
+ocr = [
+  "pytesseract>=0.3.10,<1",
+  "pymupdf>=1.24,<2",
+  "pillow>=10,<12",
+]
+ 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+extend-exclude = ["data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]

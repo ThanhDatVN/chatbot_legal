@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "tax-priority-2026-09-03-shard-0001",
+  "generated_at": "2026-09-03T15:17:49Z",
+  "config_path": "D:\\GitHub\\chatbot-legal-tax\\config\\tax-priority-shards\\shard-0001.json",
+  "scope": "Tax-priority slice of the full-text screening queue: classes direct_tax_title. Title terms schedule the work only; no record is excluded from the queue before full-text screening.",
+  "selection_window": null,
+  "document_count": 100,
+  "documents_by_coverage_class": {
+    "unspecified": 100
+  },
+  "documents_by_topic": {},
+  "known_source_discrepancy_count": 0,
+  "page_fetches": {
+    "attempted": 100,
+    "succeeded": 99,
+    "failed": 1,
+    "skipped": 0
+  },
+  "official_pages_succeeded": 99,
+  "discovery_pages_succeeded": 0,
+  "attachments": {
+    "attempted": 102,
+    "succeeded": 97,
+    "failed": 5
+  },
+  "validation_issue_count": 6,
+  "quarantine_notice": "Không index vào RAG trước khi reviewer xác nhận số hiệu, ngày, checksum và quan hệ hiệu lực."
+}

@@ -1,0 +1,287 @@
+{
+  "pilot_id": "tax-priority-2026-09-03-shard-0008-resume",
+  "scope": "Tax-priority slice of the full-text screening queue: classes direct_tax_title. Title terms schedule the work only; no record is excluded from the queue before full-text screening.",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-DECREE-186261",
+      "instrument_number": "125/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam để thực hiện Hiệp định giữa Cộng hòa xã hội chủ nghĩa Việt Nam và Nhật Bản về Đối tác kinh tế giai đoạn 2016 - 2019",
+      "promulgation_date_expected": "2016-09-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186261&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/125-1.signed.pdf",
+          "label": "Tệp chính thức 125/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/125-2.pdf",
+          "label": "Tệp chính thức 125/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/125-3.pdf",
+          "label": "Tệp chính thức 125/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-186238",
+      "instrument_number": "122/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Biểu thuế xuất khẩu, Biểu thuế nhập khẩu ưu đãi, Danh mục hàng hóa và mức thuế tuyệt đối, thuế hỗn hợp, thuế nhập khẩu ngoài hạn ngạch thuế quan",
+      "promulgation_date_expected": "2016-09-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186238&classid=1&typegroupid=4",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/122.signed.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/pl-1.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/pl-2.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/pl-3.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/pl-4.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/pl-5.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/plii-1.pdf",
+          "label": "Tệp chính thức 122/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-186234",
+      "instrument_number": "36/2016/QĐ-TTg",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định việc áp dụng thuế suất thông thường đối với hàng hóa nhập khẩu",
+      "promulgation_date_expected": "2016-09-01",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186234&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term,customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/36-1.signed.pdf",
+          "label": "Tệp chính thức 36/2016/QĐ-TTg"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/36-2.pdf",
+          "label": "Tệp chính thức 36/2016/QĐ-TTg"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/36-3.pdf",
+          "label": "Tệp chính thức 36/2016/QĐ-TTg"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-186266",
+      "instrument_number": "54/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc bãi bỏ Quyết định quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí sử dụng đường bộ đối với xe mô tô trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-08-29",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186266&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/09/54.signed.pdf",
+          "label": "Tệp chính thức 54/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-189346",
+      "instrument_number": "51/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng lệ phí hộ tịch trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-08-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=189346&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/51-ag.signed.pdf",
+          "label": "Tệp chính thức 51/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188911",
+      "instrument_number": "49/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí thẩm định báo cáo đánh giá tác động môi trường, đề án bảo vệ môi trường chi tiết trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-08-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188911&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/49ag.signed.pdf",
+          "label": "Tệp chính thức 49/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188907",
+      "instrument_number": "50/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí tham gia đấu giá quyền khai thác khoáng sản thuộc thẩm quyền cấp phép của Ủy ban nhân dân tỉnh An Giang",
+      "promulgation_date_expected": "2016-08-25",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188907&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/50ag.signed.pdf",
+          "label": "Tệp chính thức 50/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECREE-186072",
+      "instrument_number": "120/2016/NĐ-CP",
+      "document_type_expected": "Nghị định",
+      "title_short": "Quy định chi tiết và hướng dẫn thi hành một số điều của Luật phí và lệ phí",
+      "promulgation_date_expected": "2016-08-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186072&classid=1&typegroupid=4",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/08/120.signed.pdf",
+          "label": "Tệp chính thức 120/2016/NĐ-CP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188851",
+      "instrument_number": "47/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc bãi bỏ Quyết định số 49/2014/QĐ-UBND ngày 31 tháng 12 năm 2014 của Ủy ban nhân dân tỉnh ban hành quy định mức thu, chế độ thu, nộp, quản lý và sử dụng lệ phí cấp bản sao, lệ phí chứng thực trên địa bàn tỉnh An Giang",
+      "promulgation_date_expected": "2016-08-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188851&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/47ag.signed.pdf",
+          "label": "Tệp chính thức 47/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-188874",
+      "instrument_number": "45/2016/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Về việc quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí qua cầu Mỹ Luông - Tấn Mỹ, huyện Chợ Mới, tỉnh An Giang (công trình đầu tư theo hình thức BOT)",
+      "promulgation_date_expected": "2016-08-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=188874&classid=1&typegroupid=5",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/03/45ag.signed.pdf",
+          "label": "Tệp chính thức 45/2016/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-186876",
+      "instrument_number": "130/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn Nghị định số 100/2016/NĐ-CP ngày 01 tháng 7 năm 2016 của Chính phủ quy định chi tiết thi hành Luật sửa đổi, bổ sung một số điều của Luật Thuế giá trị gia tăng, Luật Thuế tiêu thụ đặc biệt và Luật Quản lý thuế và sửa đổi một số điều tại các Thông tư về thuế",
+      "promulgation_date_expected": "2016-08-12",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186876&classid=1&typegroupid=6",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/10/130-btc.signed.pdf",
+          "label": "Tệp chính thức 130/2016/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-186807",
+      "instrument_number": "129/2016/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi Thông tư số 136/2015/TT-BTC ngày 31/08/2015 của Bộ trưởng Bộ Tài chính quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí sử dụng đường bộ trạm thu phí cầu Cổ Chiên quốc lộ 60, tỉnh Trà Vinh",
+      "promulgation_date_expected": "2016-08-12",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=186807&classid=1&typegroupid=6",
+      "selection_rationale": "fee_or_charge_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2016/10/129-btc.signed.pdf",
+          "label": "Tệp chính thức 129/2016/TT-BTC"
+        }
+      ]
+    }
+  ],
+  "parent_pilot_id": "tax-priority-2026-09-03",
+  "shard_number": 8,
+  "shard_start_index": 700
+}

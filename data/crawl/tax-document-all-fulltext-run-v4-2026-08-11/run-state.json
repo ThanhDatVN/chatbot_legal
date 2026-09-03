@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "source_index": "D:/GitHub/chatbot-legal-tax/config/tax-document-all-fulltext-shards-v4/index.json",
+  "source_index_sha256": "d00683c159e79831fe538dd9ba287afd2305cb663b0ac20970e76948bd4c3ab4",
+  "selected_range": {
+    "start": 3,
+    "end": 131
+  },
+  "updated_at": "2026-08-11T07:50:00+00:00",
+  "execution_status": "paused",
+  "pause_requested_after_shard": 6,
+  "next_shard": 7,
+  "resume_note": "Shard 0007 has an interrupted partial artifact. Audit it and write only missing records to shard-0007-resume; do not overwrite the partial directory.",
+  "shards": {
+    "shard-0001": {
+      "status": "completed",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0001",
+      "returncode": 0,
+      "summary_sha256": "e643084a93216bed95884a3ab0906ef7653768915e4e9efdf5fb36af9bdcd17a",
+      "gap_count": 0,
+      "skipped_existing": false
+    },
+    "shard-0002": {
+      "status": "completed",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0002",
+      "returncode": 0,
+      "summary_sha256": "970fa7f397f67a2ea962f7a68cd1ee1e3af179450e26bd75a176df775ab8b6c7",
+      "gap_count": 0,
+      "skipped_existing": false
+    },
+    "shard-0003": {
+      "status": "completed",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0003",
+      "returncode": 0,
+      "summary_sha256": "5374b0e46b25335bce79db0bf5364749902fe14cd7ebd794d3b8111be1278fdc",
+      "gap_count": 0,
+      "skipped_existing": false
+    },
+    "shard-0004": {
+      "status": "completed",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0004",
+      "returncode": 0,
+      "summary_sha256": "e55ffb9e86a04bf0d46c5b8f8d75cecb08831aa2e054fae40c7a7071b138b77b",
+      "gap_count": 0,
+      "skipped_existing": false
+    },
+    "shard-0005": {
+      "status": "completed",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0005",
+      "returncode": 0,
+      "summary_sha256": "e777163a8482370ca713701007e5cde39e1fe81e1d2779b5b9538ef9b8aea24f",
+      "gap_count": 0,
+      "skipped_existing": false
+    },
+    "shard-0006": {
+      "status": "verified_completed_with_recovery",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0006",
+      "returncode": 0,
+      "summary_sha256": "072228385660844f38bf85ab0e7719053cc2a851bb1262a0ac866a8217cada68",
+      "gap_count": 0,
+      "skipped_existing": false,
+      "combined_completion_sha256": "0b71e0327455311c74783d7405cf2beb4050137629802e661bda4d62199f62ec",
+      "audit_report": "D:/GitHub/chatbot-legal-tax/data/analysis/crawl-completeness-shards-0001-0006-2026-08-11.json"
+    },
+    "shard-0007": {
+      "status": "interrupted_partial_preserved",
+      "output": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-document-all-fulltext-run-v4-2026-08-11/shard-0007",
+      "source_pages_fetched": 94,
+      "attachments_fetched": 108,
+      "attachments_failed": 1,
+      "missing_source_pages": 6,
+      "missing_attachment_urls": 1,
+      "summary_exists": false,
+      "manifest_sha256": "036ed6e757db043edca6b7161100a2e7832ebac01f8f92c27085f2336faa557a",
+      "partial_audit_report": "D:/GitHub/chatbot-legal-tax/data/analysis/crawl-completeness-shard-0007-partial-2026-08-11.json",
+      "partial_audit_sha256": "8c11800040689c5a80b9d1cf0e99ca0a2d322c9f455a592729a30ed4ce74d7e2"
+    }
+  }
+}

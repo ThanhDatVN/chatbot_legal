@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "tax-law-register-2026-08-11",
+  "generated_at": "2026-08-11T05:17:38Z",
+  "config_path": "D:\\GitHub\\chatbot-legal-tax\\config\\tax-law-expanded-allowlist.generated.json",
+  "scope": "Tier A/B/C tax-law register with historical dependencies and official signed PDFs where available",
+  "selection_window": null,
+  "document_count": 43,
+  "documents_by_coverage_class": {
+    "core_current": 23,
+    "dependency_exception": 20
+  },
+  "documents_by_topic": {
+    "agricultural_land_tax": 1,
+    "cit": 13,
+    "customs": 1,
+    "environmental_tax": 1,
+    "excise_tax": 7,
+    "fees": 1,
+    "import_export_tax": 4,
+    "land_tax": 2,
+    "non_agricultural_land_tax": 1,
+    "pit": 11,
+    "resource_tax": 2,
+    "tax_administration": 7,
+    "vat": 8
+  },
+  "known_source_discrepancy_count": 1,
+  "page_fetches": {
+    "attempted": 43,
+    "succeeded": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "official_pages_succeeded": 43,
+  "discovery_pages_succeeded": 0,
+  "attachments": {
+    "attempted": 23,
+    "succeeded": 23,
+    "failed": 0
+  },
+  "validation_issue_count": 16,
+  "quarantine_notice": "Không index vào RAG trước khi reviewer xác nhận số hiệu, ngày, checksum và quan hệ hiệu lực."
+}

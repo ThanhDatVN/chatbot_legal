@@ -1,0 +1,49 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0006-resume-2",
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0006",
+  "scope": "Resume the one attachment still missing after the shard 0006 audit; do not run shard 0007",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 300,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 268435456,
+  "max_attachments_per_document": 256,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguon: Cong Thong tin dien tu Chinh phu"
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-CIRCULAR-218200",
+      "instrument_number": "08/2026/TT-BNV",
+      "document_type_expected": "Thong tu",
+      "title_short": "Quy dinh chi tiet va huong dan thi hanh mot so dieu cua Nghi dinh so 337/2025/ND-CP ve hop dong lao dong dien tu",
+      "promulgation_date_expected": "2026-05-15",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=218200&classid=1&typegroupid=6",
+      "selection_rationale": "resume_missing_attachment_from_shard_0006_audit",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/08-bnv.pdf",
+          "label": "Tep chinh thuc 08/2026/TT-BNV"
+        }
+      ]
+    }
+  ]
+}

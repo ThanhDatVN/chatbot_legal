@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0006-resume",
+  "generated_at": "2026-08-11T07:21:59Z",
+  "config_path": "D:\\GitHub\\chatbot-legal-tax\\config\\tax-document-shard-0006-resume.json",
+  "scope": "Resume đúng attachment còn thiếu của shard 0006; không chạy shard 0007",
+  "selection_window": null,
+  "document_count": 1,
+  "documents_by_coverage_class": {
+    "unspecified": 1
+  },
+  "documents_by_topic": {},
+  "known_source_discrepancy_count": 0,
+  "page_fetches": {
+    "attempted": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "official_pages_succeeded": 1,
+  "discovery_pages_succeeded": 0,
+  "attachments": {
+    "attempted": 1,
+    "succeeded": 1,
+    "failed": 0
+  },
+  "validation_issue_count": 0,
+  "quarantine_notice": "Không index vào RAG trước khi reviewer xác nhận số hiệu, ngày, checksum và quan hệ hiệu lực."
+}

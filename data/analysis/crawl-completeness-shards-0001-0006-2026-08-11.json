@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-11T07:43:26.400897+00:00",
+  "scope": {
+    "start_shard": 1,
+    "end_shard": 6,
+    "transport_completeness_only": true
+  },
+  "limitations": [
+    "Hash/length/EOF/page-tree checks prove the downloaded response is internally complete; they cannot prove the publisher's scan omitted no physical page.",
+    "Printed page-number sequence cannot be checked reliably for image-only PDFs without OCR and a document-boundary model.",
+    "One Official Gazette PDF can contain several legal instruments, so PDF page count is not an instrument page count."
+  ],
+  "summary": {
+    "shard_count": 6,
+    "configured_documents": 600,
+    "fetched_source_pages": 600,
+    "missing_source_pages": 0,
+    "expected_attachment_urls": 726,
+    "fetched_attachment_urls": 726,
+    "missing_attachment_urls": 0,
+    "page_artifact_issue_count": 0,
+    "pdf_file_count": 726,
+    "pdf_page_count": 33527,
+    "encrypted_pdf_count": 0,
+    "pdf_integrity_issue_count": 0
+  },
+  "shards": [
+    {
+      "shard": "shard-0001",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 119,
+      "fetched_attachment_urls": 119,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 119,
+      "pdf_page_count": 8384,
+      "pdf_integrity_issue_count": 0
+    },
+    {
+      "shard": "shard-0002",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 113,
+      "fetched_attachment_urls": 113,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 113,
+      "pdf_page_count": 6707,
+      "pdf_integrity_issue_count": 0
+    },
+    {
+      "shard": "shard-0003",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 140,
+      "fetched_attachment_urls": 140,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 140,
+      "pdf_page_count": 5761,
+      "pdf_integrity_issue_count": 0
+    },
+    {
+      "shard": "shard-0004",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 108,
+      "fetched_attachment_urls": 108,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 108,
+      "pdf_page_count": 5611,
+      "pdf_integrity_issue_count": 0
+    },
+    {
+      "shard": "shard-0005",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 119,
+      "fetched_attachment_urls": 119,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 119,
+      "pdf_page_count": 2936,
+      "pdf_integrity_issue_count": 0
+    },
+    {
+      "shard": "shard-0006",
+      "configured_documents": 100,
+      "fetched_source_pages": 100,
+      "missing_source_page_ids": [],
+      "unexpected_source_page_ids": [],
+      "expected_attachment_urls": 127,
+      "fetched_attachment_urls": 127,
+      "missing_attachment_urls": [],
+      "unexpected_attachment_urls": [],
+      "page_artifact_issues": [],
+      "pdf_file_count": 127,
+      "pdf_page_count": 4128,
+      "pdf_integrity_issue_count": 0
+    }
+  ],
+  "pdf_integrity_issues": []
+}

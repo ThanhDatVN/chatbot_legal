@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "tax-law-selective-10y-2026-08-11",
+  "generated_at": "2026-08-11T04:05:08Z",
+  "config_path": "D:\\GitHub\\chatbot-legal-tax\\config\\tax-law-10y-allowlist.json",
+  "scope": "Văn bản pháp luật thuế Việt Nam có chọn lọc trong 10 năm gần nhất, chỉ lấy từ Cổng Chính phủ và Công báo điện tử",
+  "selection_window": {
+    "start": "2016-08-11",
+    "end": "2026-08-11",
+    "date_basis": "promulgation_date",
+    "outside_window_policy": "explicit_dependency_exception"
+  },
+  "document_count": 50,
+  "documents_by_coverage_class": {
+    "core_current": 9,
+    "dependency_exception": 1,
+    "direct_implementation": 24,
+    "historical_temporal": 6,
+    "time_bounded_policy": 10
+  },
+  "documents_by_topic": {
+    "amendment": 15,
+    "cit": 7,
+    "digital_platform": 1,
+    "ecommerce": 1,
+    "excise": 5,
+    "global_minimum_tax": 2,
+    "governing_law": 7,
+    "guidance": 6,
+    "household_business": 2,
+    "implementation": 14,
+    "import_export_tax": 4,
+    "invoice": 8,
+    "penalty": 4,
+    "pit": 6,
+    "tariff": 1,
+    "tax_administration": 17,
+    "tax_reduction": 11,
+    "transition": 2,
+    "vat": 22
+  },
+  "page_fetches": {
+    "attempted": 50,
+    "succeeded": 50,
+    "failed": 0,
+    "skipped": 0
+  },
+  "official_pages_succeeded": 50,
+  "discovery_pages_succeeded": 0,
+  "attachments": {
+    "attempted": 4,
+    "succeeded": 1,
+    "failed": 3
+  },
+  "validation_issue_count": 1,
+  "quarantine_notice": "Không index vào RAG trước khi reviewer xác nhận số hiệu, ngày, checksum và quan hệ hiệu lực."
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "source_manifest": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/manifest.jsonl",
+  "document_count": 1,
+  "documents": [
+    {
+      "extraction_status": "extracted",
+      "document_id": "LAW-31-2024-QH15-ORIGINAL",
+      "instrument_number": "31/2024/QH15",
+      "source_page_url": "https://chinhphu.vn/?pageid=27160&docid=211189&classid=1&typegroupid=3",
+      "pdf_parts": [
+        {
+          "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-1.pdf",
+          "pdf_sha256": "2558044082ee768192a311aee548eb9fae4daada546013aa5181eb91c8842637",
+          "pdf_page_count": 94
+        },
+        {
+          "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-2.pdf",
+          "pdf_sha256": "651797458d2399fd70cd5b4d3edb3845d223540fa34d82f826718c248aca619e",
+          "pdf_page_count": 95
+        },
+        {
+          "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-3.pdf",
+          "pdf_sha256": "6f679f5043ac94fec88ec6f565131faf7aacc819290191069f80799b60d294d0",
+          "pdf_page_count": 66
+        }
+      ],
+      "pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-1.pdf",
+      "pdf_sha256": "2558044082ee768192a311aee548eb9fae4daada546013aa5181eb91c8842637",
+      "pdf_page_count": 255,
+      "substantive_text_page_count": 253,
+      "text_layer_coverage_ratio": 0.9922,
+      "document_span": {
+        "start_pdf_page": 1,
+        "end_pdf_page": 255,
+        "candidate_pages": [
+          1,
+          95,
+          190,
+          241
+        ],
+        "location_confidence": "high"
+      },
+      "metadata_effective_date": "2025-01-01",
+      "effective_date_value": "2025-01-01",
+      "effective_date_source": "content_clause",
+      "content_match_status": "general_effective_clause_found",
+      "metadata_content_conflict": false,
+      "metadata_content_status": "confirmed",
+      "application_period_count": 0,
+      "temporal_evidence": [
+        {
+          "kind": "general_effective",
+          "pdf_page": 246,
+          "clause_text": "Điều 252. Hiệu lực thi hành 1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025, trừ trường hợp quy định tại khoản 2 và khoản 3 Điều này. 2. Điều 190 và Điều 248 của Luật này có hiệu lực thi hành từ ngày 01 tháng 4 năm 2024. 3. Việc lập, phê duyệt quy hoạch sử dụng đất được tiếp tục thực hiện theo quy định của Nghị quyết số 61/2022/QH15 ngày 16 tháng 6 năm 2022 của Quốc hội về tiếp tục tăng cường hiệu lực, hiệu quả thực hiện chính sách, pháp lu ật về quy hoạch và một số giải pháp tháo gỡ khó khăn, vướng mắc, đẩy nhanh tiến độ lập và nâng cao chất lượng quy hoạch thời kỳ 2021 - 2030. Kho ản 9 Điều 60 của Lu ật này có hiệu l ực thi hành từ ngày Ngh ị quy ết số 61/2022/QH15 hết hiệu lực. 4. Luật Đất đai số 45/2013/QH13 đã được sửa đổi, bổ sung m ột số điều theo Luật số 35/2018/QH14 (sau đây gọi là Luật Đất đai số 45/2013/QH13) hết hiệu lực kể từ ngày Luật này có hiệu lực thi hành. ",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2025-01-01",
+          "date_resolution": "explicit_content_date",
+          "source_pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-3.pdf",
+          "source_pdf_page": 57
+        },
+        {
+          "kind": "provision_effective",
+          "pdf_page": 246,
+          "clause_text": "Điều 252. Hiệu lực thi hành 1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025, trừ trường hợp quy định tại khoản 2 và khoản 3 Điều này. 2. Điều 190 và Điều 248 của Luật này có hiệu lực thi hành từ ngày 01 tháng 4 năm 2024. 3. Việc lập, phê duyệt quy hoạch sử dụng đất được tiếp tục thực hiện theo quy định của Nghị quyết số 61/2022/QH15 ngày 16 tháng 6 năm 2022 của Quốc hội về tiếp tục tăng cường hiệu lực, hiệu quả thực hiện chính sách, pháp lu ật về quy hoạch và một số giải pháp tháo gỡ khó khăn, vướng mắc, đẩy nhanh tiến độ lập và nâng cao chất lượng quy hoạch thời kỳ 2021 - 2030. Kho ản 9 Điều 60 của Lu ật này có hiệu l ực thi hành từ ngày Ngh ị quy ết số 61/2022/QH15 hết hiệu lực. 4. Luật Đất đai số 45/2013/QH13 đã được sửa đổi, bổ sung m ột số điều theo Luật số 35/2018/QH14 (sau đây gọi là Luật Đất đai số 45/2013/QH13) hết hiệu lực kể từ ngày Luật này có hiệu lực thi hành. ",
+          "content_match_status": "found_in_pdf_text",
+          "confidence": "high",
+          "review_status": "pending_human_review",
+          "effective_date": "2024-04-01",
+          "date_resolution": "explicit_content_date",
+          "source_pdf_path": "D:/GitHub/chatbot-legal-tax/data/crawl/tax-law-land-original-effective-date-2026-08-11-v2/quarantine/official-attachments/law-31-2024-qh15-original-3.pdf",
+          "source_pdf_page": 57
+        }
+      ],
+      "temporal_review_status": "pending_human_review"
+    }
+  ]
+}

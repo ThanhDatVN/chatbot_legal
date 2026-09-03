@@ -1,0 +1,1437 @@
+{
+  "pilot_id": "tax-document-all-fulltext-2026-08-11-shard-0026",
+  "scope": "Toàn bộ source record trong sáu nhóm văn bản chính thức của cửa sổ 10 năm; từ khóa tiêu đề chỉ xếp lịch, mọi record đều chờ sàng lọc toàn văn",
+  "user_agent": "TaxLegalWorkspaceFullInventory/0.1 (official tax document screening)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 45,
+  "max_redirects": 4,
+  "max_html_bytes": 5242880,
+  "max_attachment_bytes": 41943040,
+  "max_attachments_per_document": 4,
+  "sources": {
+    "chinhphu": {
+      "role": "authoritative",
+      "robots_url": "https://chinhphu.vn/robots.txt",
+      "allowed_hosts": [
+        "chinhphu.vn",
+        "vanban.chinhphu.vn",
+        "datafiles.chinhphu.vn",
+        "congbao.chinhphu.vn",
+        "congbaocdn.chinhphu.vn",
+        "g7.cdnchinhphu.vn"
+      ],
+      "store_raw_html": true,
+      "store_visible_text": true,
+      "excerpt_chars": 2000,
+      "attribution": "Nguồn: Cổng Thông tin điện tử Chính phủ"
+    },
+    "thuvienphapluat": {
+      "role": "discovery_only",
+      "allowed_hosts": [
+        "thuvienphapluat.vn"
+      ],
+      "store_raw_html": false,
+      "store_visible_text": false,
+      "excerpt_chars": 0
+    }
+  },
+  "documents": [
+    {
+      "id": "GOV-CIRCULAR-214164",
+      "instrument_number": "09/2025/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Thông tư quy định chi tiết điều kiện chuyển mạng, thủ tục chuyển mạng; trách nhiệm của các bên tham gia chuyển mạng; quy trình kỹ thuật thực hiện chuyển mạng",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214164&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/09-bkhcn.signed.pdf",
+          "label": "Tệp chính thức 09/2025/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45394",
+      "instrument_number": "205/2025/QH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 205/2025/QH15 về việc thí điểm Viện kiểm sát nhân dân khởi kiện vụ án dân sự để bảo vệ quyền dân sự của các chủ thể là nhóm dễ bị tổn thương hoặc bảo vệ lợi ích công.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-205-2025-qh15-45394.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45290",
+      "instrument_number": "1740/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1740/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Cà Mau nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1740-nq-ubtvqh15-45290.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45289",
+      "instrument_number": "1739/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1739/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Đồng Tháp nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1739-nq-ubtvqh15-45289.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45288",
+      "instrument_number": "1738/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1738/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân thành phố Cần Thơ nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1738-nq-ubtvqh15-45288.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45287",
+      "instrument_number": "1737/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1737/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Vĩnh Long nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1737-nq-ubtvqh15-45287.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45286",
+      "instrument_number": "1736/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1736/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh An Giang nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1736-nq-ubtvqh15-45286.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45285",
+      "instrument_number": "1735/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1735/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân Thành phố Hồ Chí Minh nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1735-nq-ubtvqh15-45285.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45284",
+      "instrument_number": "1734/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1734/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Tây Ninh nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1734-nq-ubtvqh15-45284.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45283",
+      "instrument_number": "1733/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1733/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Đồng Nai nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1733-nq-ubtvqh15-45283.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45282",
+      "instrument_number": "1732/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1732/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Lâm Đồng nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1732-nq-ubtvqh15-45282.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45276",
+      "instrument_number": "1731/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1731/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Đắk Lắk nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1731-nq-ubtvqh15-45276.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45275",
+      "instrument_number": "1730/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1730/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Khánh Hòa nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1730-nq-ubtvqh15-45275.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45274",
+      "instrument_number": "1729/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1729/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Bắc Ninh nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1729-nq-ubtvqh15-45274.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45273",
+      "instrument_number": "1728/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1728/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Hưng Yên nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1728-nq-ubtvqh15-45273.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45272",
+      "instrument_number": "1727/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1727/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Gia Lai nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1727-nq-ubtvqh15-45272.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45271",
+      "instrument_number": "1726/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1726/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Ninh Bình nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1726-nq-ubtvqh15-45271.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45270",
+      "instrument_number": "1725/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1725/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Quảng Ngãi nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1725-nq-ubtvqh15-45270.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45269",
+      "instrument_number": "1724/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1724/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân thành phố Đà Nẵng nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1724-nq-ubtvqh15-45269.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45268",
+      "instrument_number": "1723/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1723/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Quảng Trị nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1723-nq-ubtvqh15-45268.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45267",
+      "instrument_number": "1722/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1722/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân thành phố Hải Phòng nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1722-nq-ubtvqh15-45267.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45266",
+      "instrument_number": "1721/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1721/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Phú Thọ nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1721-nq-ubtvqh15-45266.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45265",
+      "instrument_number": "1720/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1720/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Tuyên Quang nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1720-nq-ubtvqh15-45265.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45264",
+      "instrument_number": "1719/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1719/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Thái Nguyên nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1719-nq-ubtvqh15-45264.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45263",
+      "instrument_number": "1718/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1718/NQ-UBTVQH15 chỉ định Chủ tịch, Phó Chủ tịch, Trưởng các Ban của Hội đồng nhân dân tỉnh Lào Cai nhiệm kỳ 2021 - 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1718-nq-ubtvqh15-45263.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45262",
+      "instrument_number": "1717/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1717/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Cà Mau.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1717-nq-ubtvqh15-45262.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45261",
+      "instrument_number": "1716/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1716/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV thành phố Cần Thơ.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1716-nq-ubtvqh15-45261.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45260",
+      "instrument_number": "1715/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1715/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Đồng Tháp.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1715-nq-ubtvqh15-45260.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45259",
+      "instrument_number": "1714/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1714/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Vĩnh Long.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1714-nq-ubtvqh15-45259.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45258",
+      "instrument_number": "1713/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1713/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh An Giang.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1713-nq-ubtvqh15-45258.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45257",
+      "instrument_number": "1712/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1712/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV Thành phố Hồ Chí Minh.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1712-nq-ubtvqh15-45257.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45256",
+      "instrument_number": "1711/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1711/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Tây Ninh.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1711-nq-ubtvqh15-45256.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45255",
+      "instrument_number": "1710/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1710/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Đồng Nai.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1710-nq-ubtvqh15-45255.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45251",
+      "instrument_number": "1709/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1709/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Hưng Yên.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1709-nq-ubtvqh15-45251.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45250",
+      "instrument_number": "1708/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1708/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Đắk Lắk.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1708-nq-ubtvqh15-45250.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45249",
+      "instrument_number": "1707/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1707/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Khánh Hòa.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1707-nq-ubtvqh15-45249.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45248",
+      "instrument_number": "1706/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1706/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Quảng Trị.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1706-nq-ubtvqh15-45248.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45247",
+      "instrument_number": "1705/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1705/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Quảng Ngãi.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1705-nq-ubtvqh15-45247.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45246",
+      "instrument_number": "1704/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1704/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV thành phố Đà Nẵng.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1704-nq-ubtvqh15-45246.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45245",
+      "instrument_number": "1703/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1703/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Gia Lai.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1703-nq-ubtvqh15-45245.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45244",
+      "instrument_number": "1702/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1702/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Ninh Bình.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1702-nq-ubtvqh15-45244.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45243",
+      "instrument_number": "1701/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1701/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Lâm Đồng.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1701-nq-ubtvqh15-45243.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45242",
+      "instrument_number": "1700/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1700/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV thành phố Hải Phòng.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1700-nq-ubtvqh15-45242.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45241",
+      "instrument_number": "1699/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1699/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Bắc Ninh.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1699-nq-ubtvqh15-45241.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45237",
+      "instrument_number": "1698/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1698/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Phú Thọ.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1698-nq-ubtvqh15-45237.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45236",
+      "instrument_number": "1697/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1697/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Thái Nguyên.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1697-nq-ubtvqh15-45236.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45235",
+      "instrument_number": "1696/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1696/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Lào Cai.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1696-nq-ubtvqh15-45235.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45234",
+      "instrument_number": "1695/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1695/NQ-UBTVQH15 về Đoàn đại biểu Quốc hội và chỉ định Trưởng Đoàn, Phó Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Tuyên Quang.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1695-nq-ubtvqh15-45234.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45221",
+      "instrument_number": "207/2025/QH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 207/2025/QH15 về Chương trình giám sát của Quốc hội năm 2026.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-207-2025-qh15-45221.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45220",
+      "instrument_number": "206/2025/QH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 206/2025/QH15 về cơ chế đặc biệt xử lý khó khăn, vướng mắc do quy định của pháp luật.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-206-2025-qh15-45220.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-45303",
+      "instrument_number": "08/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 08/VBHN-NHNN hợp nhất Thông tư quy định về tổ chức và hoạt động của phòng giao dịch bưu điện trực thuộc Ngân hàng thương mại cổ phần Lộc Phát Việt Nam.",
+      "promulgation_date_expected": "2025-06-24",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-08-vbhn-nhnn-45303.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-CIRCULAR-214190",
+      "instrument_number": "20/2025/TT-BYT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chức năng, nhiệm vụ, quyền hạn của cơ quan chuyên môn về y tế thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc Trung ương",
+      "promulgation_date_expected": "2025-06-23",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214190&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/20-byt.pdf",
+          "label": "Tệp chính thức 20/2025/TT-BYT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214398",
+      "instrument_number": "40/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về cấp Giấy chứng nhận xuất xứ hàng hóa và chấp thuận bằng văn bản cho thương nhân tự chứng nhận xuất xứ hàng hóa xuất khẩu theo khoản 6 Điều 28 Nghị định số 146/2025/NĐ-CP ngày 12 tháng 6 năm 2025 của Chính phủ quy định về phân quyền, phân cấp trong lĩnh vực công nghiệp và thương mại",
+      "promulgation_date_expected": "2025-06-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214398&classid=1&typegroupid=6",
+      "selection_rationale": "customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/40-bct.pdf",
+          "label": "Tệp chính thức 40/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214163",
+      "instrument_number": "41/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Quy chuẩn kỹ thuật quốc gia về an toàn điện",
+      "promulgation_date_expected": "2025-06-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214163&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/41-bct.pdf",
+          "label": "Tệp chính thức 41/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214100",
+      "instrument_number": "42/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành Danh mục sản phẩm, hàng hóa, dịch vụ phải đăng ký hợp đồng theo mẫu, điều kiện giao dịch chung",
+      "promulgation_date_expected": "2025-06-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214100&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/42-bct.pdf",
+          "label": "Tệp chính thức 42/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214098",
+      "instrument_number": "39/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định hạn mức tối đa về giá trị của hàng hóa, dịch vụ dùng để khuyến mại, mức giảm giá tối đa đối với hàng hóa, dịch vụ được khuyến mại mà thương nhân được thực hiện trong hoạt động khuyến mại",
+      "promulgation_date_expected": "2025-06-22",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214098&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/39-bct.pdf",
+          "label": "Tệp chính thức 39/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214066",
+      "instrument_number": "08/2025/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về việc phân cấp trong thực hiện thủ tục chứng nhận doanh nghiệp thành lập mới từ dự án đầu tư sản xuất sản phẩm công nghệ cao và chứng nhận cơ sở ươm tạo công nghệ cao, ươm tạo doanh nghiệp công nghệ cao",
+      "promulgation_date_expected": "2025-06-21",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214066&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/08-bkhcn.pdf",
+          "label": "Tệp chính thức 08/2025/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-214321",
+      "instrument_number": "36/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Ban hành Quy chế quản lý kiến trúc thị trấn Đạ M'ri, huyện Đạ Huoai, tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214321&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/36-ubnd-ld.pdf",
+          "label": "Tệp chính thức 36/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214891",
+      "instrument_number": "11/2025/TT-BXD",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành quy chuẩn kỹ thuật quốc gia về hệ thống thiết bị phòng vệ đường ngang cảnh báo tự động",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214891&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/11-bxd.pdf",
+          "label": "Tệp chính thức 11/2025/TT-BXD"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/11-bxd-kem.pdf",
+          "label": "Tệp chính thức 11/2025/TT-BXD"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214426",
+      "instrument_number": "25/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 48/2014/TT-BTNMT ngày 22 tháng 8 năm 2014 của Bộ trưởng Bộ Tài nguyên và Môi trường quy định kỹ thuật về xác định đường địa giới hành chính, cắm mốc địa giới và lập hồ sơ địa giới hành chính các cấp",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214426&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/25-bnnmt.pdf",
+          "label": "Tệp chính thức 25/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/25-bnnmt-kem.pdf",
+          "label": "Tệp chính thức 25/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214348",
+      "instrument_number": "10/2025/TT-BTP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 10/2020/TT-BTP ngày 28 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp ban hành, hướng dẫn việc ghi chép, sử dụng, quản lý và lưu trữ Sổ, mẫu giấy tờ, hồ sơ nuôi con nuôi được sửa đổi, bô sung một số điều theo Thông tư số 07/2023/TT-BTP",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214348&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/10-btp.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BTP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214192",
+      "instrument_number": "46/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung, bãi bỏ các Thông tư của Bộ trưởng Bộ Tài chính trong lĩnh vực kế toán, kiểm toán để đẩy mạnh phân cấp, phân quyền và sắp xếp tổ chức chính quyền địa phương 02 cấp",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214192&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/46-btc.pdf",
+          "label": "Tệp chính thức 46/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214103",
+      "instrument_number": "47/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ các Thông tư quy định về thủ tục hải quan đối với hàng hóa xuất khẩu, nhập khẩu của Bộ trưởng Bộ Tài chính ban hành trong bối cảnh dịch Covid-19",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214103&classid=1&typegroupid=6",
+      "selection_rationale": "customs_or_tariff_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/47-btc.pdf",
+          "label": "Tệp chính thức 47/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214096",
+      "instrument_number": "24/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư trong lĩnh vực đo đạc, bản đồ và thông tin địa lý",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214096&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/24-bnnmt.pdf",
+          "label": "Tệp chính thức 24/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214094",
+      "instrument_number": "23/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định phân cấp, phân định thẩm quyền quản lý nhà nước trong lĩnh vực đất đai",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214094&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/23-bnnmt.pdf",
+          "label": "Tệp chính thức 23/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/23-bnnmt-kem.pdf",
+          "label": "Tệp chính thức 23/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214065",
+      "instrument_number": "07/2025/TT-BKHCN",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phân cấp, phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp trong lĩnh vực tiêu chuẩn, đo lường., chất lượng thuộc phạm vi quản lý nhà nước của Bộ Khoa học và Công nghệ",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214065&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/07-bkhcn.pdf",
+          "label": "Tệp chính thức 07/2025/TT-BKHCN"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45233",
+      "instrument_number": "1692/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1692/NQ-UBTVQH15 về việc giao Phó Trưởng Đoàn đại biểu Quốc hội chuyên trách phụ trách Đoàn ĐBQH khóa XV Hà Tĩnh.",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1692-nq-ubtvqh15-45233.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45232",
+      "instrument_number": "1691/NQ-UBTVQH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 1691/NQ-UBTVQH15 về phê chuẩn cho thôi giữ chức vụ Trưởng Đoàn đại biểu Quốc hội khóa XV tỉnh Hà Tĩnh.",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-1691-nq-ubtvqh15-45232.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-45337",
+      "instrument_number": "11/VBHN-BNNMT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 11/VBHN-BNNMT hợp nhất Thông tư quy định chi tiết thi hành Luật Bảo vệ môi trường về ứng phó với biến đổi khí hậu.",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-11-vbhn-bnnmt-45337.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-45217",
+      "instrument_number": "07/VBHN-NHNN",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 07/VBHN-NHNN hợp nhất Thông tư quy định về giao nhận, bảo quản, vận chuyển tiền mặt, tài sản quý, giấy tờ có giá.",
+      "promulgation_date_expected": "2025-06-20",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-07-vbhn-nhnn-45217.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-DECISION-214168",
+      "instrument_number": "34/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quyết định Quy định Bảng giá tính thuế tài nguyên khai thác năm 2025 trên địa bàn tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214168&classid=1&typegroupid=5",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/34-ubnd-ld-1-.pdf",
+          "label": "Tệp chính thức 34/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-214166",
+      "instrument_number": "35/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định áp dụng các hệ số K thành phần để chi trả tiền dịch vụ môi trường rừng trên địa bàn tỉnh Lâm Đồng",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214166&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/35-ubnd-ld.pdf",
+          "label": "Tệp chính thức 35/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214338",
+      "instrument_number": "01/2025/TT-TTCP",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định thời hạn lưu trữ hồ sơ, tài liệu ngành Thanh tra",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214338&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/01-ttcp.pdf",
+          "label": "Tệp chính thức 01/2025/TT-TTCP"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214183",
+      "instrument_number": "10/2025/TT-BVHTTDL",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chức năng, nhiệm vụ, quyền hạn của Sở Văn hóa, Thể thao và Du lịch, Sở Văn hóa và Thể thao, Sở Du lịch thuộc Ủy ban nhân dân cấp tỉnh; chức năng, nhiệm vụ, quyền hạn của Phòng Văn hóa - Xâ hội thuộc Ủy ban nhân dân cấp xã trong các lĩnh vực thuộc phạm vi quản lý nhà nước của Bộ Văn hóa, Thể thao và Du lịch",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214183&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/10-bvhttdl.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BVHTTDL"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214182",
+      "instrument_number": "10/2025/TT-BNV",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chức năng, nhiệm vụ, quyền hạn của Sở Nội vụ thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và lĩnh vực nội vụ của phòng chuyên môn thuộc Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214182&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/10-bnv.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BNV"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214175",
+      "instrument_number": "22/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của các Thông tư quy định chế độ báo cáo định kỳ thuộc phạm vi quản lý nhà nước của Bộ Nông nghiệp và Môi trường",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214175&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/22-bnnmt.pdf",
+          "label": "Tệp chính thức 22/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214173",
+      "instrument_number": "19/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn chức năng, nhiệm vụ, quyền hạn của cơ quan chuyên môn về Nông nghiệp và Môi trường thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214173&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/19-bnnmt.pdf",
+          "label": "Tệp chính thức 19/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214165",
+      "instrument_number": "01/2025/TT-BDTTG",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ các thông tư liên tịch, quyết định do Bộ trưởng Bộ Dân tộc và Tôn giáo ban hành, liên tịch ban hành",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214165&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/01-tt-bdttg.signed.pdf",
+          "label": "Tệp chính thức 01/2025/TT-BDTTG"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214097",
+      "instrument_number": "38/2025/TT-BCT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số quy định về phân cấp thực hiện thủ tục hành chính trong các lĩnh vực thuộc phạm vi quản lý của Bộ Công Thương",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214097&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/38-bct.pdf",
+          "label": "Tệp chính thức 38/2025/TT-BCT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/38-bct-kem.pdf",
+          "label": "Tệp chính thức 38/2025/TT-BCT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214092",
+      "instrument_number": "21/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Thông tư quy định phân cấp, phân định thẩm quyền quản lý nhà nước trong lĩnh vực khí tượng thủy văn",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214092&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/21-bnnmt.pdf",
+          "label": "Tệp chính thức 21/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214091",
+      "instrument_number": "17/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phân cấp quản lý nhà nước trong lĩnh vực quản lý chất lượng nông lâm sản và thủy sản",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214091&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/17-bnnmt.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/17-bnnmt-1.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/17-bnnmt-2.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/17-bnnmt-3.pdf",
+          "label": "Tệp chính thức 17/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214090",
+      "instrument_number": "16/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phân quyền, phân cấp, phân định thẩm quyền quản lý nhà nước và một số nội dung trong lĩnh vực lâm nghiệp và kiểm lâm",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214090&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/16-bnnmt.pdf",
+          "label": "Tệp chính thức 16/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214089",
+      "instrument_number": "15/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định phân quyền, phân cấp, phân định thẩm quyền và sửa đổi, bổ sung một số điều của các thông tư trong lĩnh vực biển và hải đảo",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214089&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/15-bnnmt.pdf",
+          "label": "Tệp chính thức 15/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214088",
+      "instrument_number": "13/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định phân định thẩm quyền quản lý nhà nước trong lĩnh vực kinh tế hợp tác và phát triển nông thôn và lĩnh vực giảm nghèo",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214088&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/13-bnnmt.pdf",
+          "label": "Tệp chính thức 13/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214087",
+      "instrument_number": "12/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định phân cấp, phân định thẩm quyền quản lý nhà nước trong lĩnh vực trồng trọt và bảo vệ thực vật",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214087&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/12-bnnmt.pdf",
+          "label": "Tệp chính thức 12/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/12-bnnmt-kem.pdf",
+          "label": "Tệp chính thức 12/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214086",
+      "instrument_number": "10/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phân quyền, phân cấp, phân định thẩm quyền quản lý nhà nước trong lĩnh vực thủy sản và kiểm ngư",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214086&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/10-bnnmt.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BNNMT"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/10-bnnmt-kem.pdf",
+          "label": "Tệp chính thức 10/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214085",
+      "instrument_number": "09/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định phân quyền, phân cấp và phân định thẩm quyền trong lĩnh vực quản lý nhà nước về chăn nuôi và thú y",
+      "promulgation_date_expected": "2025-06-19",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214085&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/09-bnnmt.pdf",
+          "label": "Tệp chính thức 09/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214606",
+      "instrument_number": "78/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật sửa đổi, bổ sung một số điều của Luật Chất lượng sản phẩm, hàng hóa",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214606&classid=1&typegroupid=3",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/78qh.signed.pdf",
+          "label": "Tệp chính thức 78/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214600",
+      "instrument_number": "77/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật sửa đổi, bổ sung một số điều của Luật Sử dụng năng lượng tiết kiệm và hiệu quả",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214600&classid=1&typegroupid=3",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/77qh.signed.pdf",
+          "label": "Tệp chính thức 77/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214102",
+      "instrument_number": "45/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Hướng dẫn việc lập dự toán, phân bổ, sử dụng và thanh quyết toán kinh phí ngân sách nhà nước hỗ trợ Chương trình cấp quốc gia về xúc tiến thương mại và Chương trình cấp quốc gia về xây dựng, phát triển thương hiệu",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214102&classid=1&typegroupid=6",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/45-btc.pdf",
+          "label": "Tệp chính thức 45/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214101",
+      "instrument_number": "44/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 29/2024/TT-BTC ngày 16 tháng 5 năm 2024 của Bộ trưởng Bộ Tài chính quy định về công tác tổng hợp, phân tích dự báo giá thị trường và kinh phí bảo đảm cho công tác tổng hợp, phân tích, dự báo giá thị trường",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214101&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/44-btc.pdf",
+          "label": "Tệp chính thức 44/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214074",
+      "instrument_number": "09/2025/TT-BNV",
+      "document_type_expected": "Thông tư",
+      "title_short": "Quy định về phân định thẩm quyền và phân cấp thực hiện nhiệm vụ quản lý nhà nước trong lĩnh vực nội vụ",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214074&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/09-bnv.pdf",
+          "label": "Tệp chính thức 09/2025/TT-BNV"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-45216",
+      "instrument_number": "15/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 15/VBHN-BCT hợp nhất Thông tư quy định chi tiết Danh mục hàng hóa mua bán, trao đổi của cư dân biên giới.",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-15-vbhn-bct-45216.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GAZETTE-CONSOLIDATED-45213",
+      "instrument_number": "14/VBHN-BCT",
+      "document_type_expected": "Văn bản hợp nhất",
+      "title_short": "Văn bản hợp nhất số 14/VBHN-BCT hợp nhất Thông tư quy định chi tiết hàng hóa mua bán, trao đổi qua cửa khẩu phụ, lối mở biên giới của thương nhân.",
+      "promulgation_date_expected": "2025-06-18",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-14-vbhn-bct-45213.htm",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": []
+    },
+    {
+      "id": "GOV-LAW_OR_ORDINANCE-214562",
+      "instrument_number": "76/2025/QH15",
+      "document_type_expected": "Luật - Pháp lệnh",
+      "title_short": "Luật sửa đổi, bổ sung một số điều của Luật Doanh nghiệp",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214562&classid=1&typegroupid=3",
+      "selection_rationale": "adjacent_legal_domain_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/76qh.signed.pdf",
+          "label": "Tệp chính thức 76/2025/QH15"
+        }
+      ]
+    },
+    {
+      "id": "GOV-DECISION-214194",
+      "instrument_number": "47/2025/QĐ-UBND",
+      "document_type_expected": "Quyết định",
+      "title_short": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Chi cục Tiêu chuẩn đo lường chất lượng trực thuộc Sở Khoa học và Công nghệ tỉnh Phú Thọ",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214194&classid=1&typegroupid=5",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/47-ptho.signed.pdf",
+          "label": "Tệp chính thức 47/2025/QĐ-UBND"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214084",
+      "instrument_number": "08/2025/TT-BNNMT",
+      "document_type_expected": "Thông tư",
+      "title_short": "Sửa đổi, bổ sung một số điều của Thông tư số 01/2022/TT-BTNMT ngày 07 tháng 01 năm 2022 của Bộ trưởng Bộ Tài nguyên và Môi trường quy định chi tiết thi hành Luật Bảo vệ môi trường về ứng phó với biến đổi khí hậu",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214084&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/08-bnnmt.pdf",
+          "label": "Tệp chính thức 08/2025/TT-BNNMT"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214067",
+      "instrument_number": "42/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Bãi bỏ một số Thông tư của Bộ trưởng Bộ Tài chính",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214067&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/42-btc.pdf",
+          "label": "Tệp chính thức 42/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GOV-CIRCULAR-214033",
+      "instrument_number": "43/2025/TT-BTC",
+      "document_type_expected": "Thông tư",
+      "title_short": "Ban hành biểu mẫu sử dụng trong lĩnh vực quản lý nhà nước đối với hộ kinh doanh, tổ hợp tác, hợp tác xã, liên hiệp hợp tác xã khi tổ chức chính quyền địa phương 02 cấp",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://chinhphu.vn/?pageid=27160&docid=214033&classid=1&typegroupid=6",
+      "selection_rationale": "no_high_precision_title_term",
+      "download_attachments": true,
+      "relations": [],
+      "official_attachment_urls": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/43-tt-btc.signed.pdf",
+          "label": "Tệp chính thức 43/2025/TT-BTC"
+        }
+      ]
+    },
+    {
+      "id": "GAZETTE-RESOLUTION-45219",
+      "instrument_number": "204/2025/QH15",
+      "document_type_expected": "Nghị quyết",
+      "title_short": "Nghị quyết số 204/2025/QH15 về giảm thuế giá trị gia tăng.",
+      "promulgation_date_expected": "2025-06-17",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-quyet-so-204-2025-qh15-45219.htm",
+      "selection_rationale": "direct_tax_or_invoice_term",
+      "download_attachments": true,
+      "relations": []
+    }
+  ],
+  "parent_pilot_id": "tax-document-all-fulltext-2026-08-11",
+  "shard_number": 26,
+  "shard_start_index": 2500
+}
