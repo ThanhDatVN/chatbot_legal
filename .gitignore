@@ -18,3 +18,14 @@
 /data/pilot/*/qa/
 /data/pilot/*/tessdata/
 /data/pilot/*/tessdata_best/
+# built corpus snapshots: keep manifests and quality reports, not the extracted legal text
+/data/snapshots/*/chunks.jsonl
+/data/snapshots/*/sections.jsonl
+/data/snapshots/*/amendment_notes.jsonl
+/data/snapshots/*/texts/
+# runtime state and model caches
+/data/runtime/
+/data/indexes/
+/.env
+*.sqlite3
+/reports/*.tmp

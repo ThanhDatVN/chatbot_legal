@@ -1,0 +1,35 @@
+[project]
+name = "citeagent-vn"
+version = "0.1.0"
+description = "Evidence-grounded Vietnamese labour-law QA with citations and abstention"
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "pydantic>=2.13",
+    "pydantic-settings>=2.6",
+    "pymupdf==1.28.2",
+    "tokenizers>=0.23",
+    "huggingface-hub>=0.35",
+    "numpy>=2.0",
+    "rank-bm25==0.2.2",
+    "qdrant-client>=1.15",
+    "fastapi>=0.141",
+    "uvicorn>=0.52",
+    "httpx>=0.28",
+]
+
+[project.optional-dependencies]
+models = ["torch>=2.4", "transformers>=4.56"]
+llm = ["anthropic>=0.69"]
+ui = ["streamlit>=1.50", "requests>=2.32"]
+collect = ["requests>=2.32", "beautifulsoup4>=4.12", "truststore>=0.10"]
+dev = ["pytest>=8.4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = ["slow: loads embedding or reranker models"]
+
+[tool.setuptools]
+packages = ["app", "ingestion", "evaluation"]
