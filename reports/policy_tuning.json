@@ -1,0 +1,516 @@
+{
+ "meta": {
+  "date": "2026-09-30T19:26:04+00:00",
+  "git_commit": "8beb2ae-dirty",
+  "snapshot": "corpus-2026-09-30",
+  "currency_policy": "pilot",
+  "embedding_model": "BAAI/bge-m3",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "dense_top_k": 20,
+  "sparse_top_k": 20,
+  "rrf_k": 60,
+  "dataset": "questions_v1.jsonl",
+  "hardware": {
+   "platform": "Windows-10-10.0.26300-SP0",
+   "python": "3.11.9",
+   "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+   "torch": "2.14.0+cu126",
+   "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "split": "dev",
+  "objective": "(correct - false_answers) / n"
+ },
+ "best": {
+  "params": {
+   "answer_threshold": 0.8,
+   "unverified_threshold": 0.5,
+   "stronger_margin": 0.05
+  },
+  "accuracy": 0.9608,
+  "false_answers": 1,
+  "false_refusals": 1,
+  "objective": 0.9412
+ },
+ "top10": [
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.5,
+    "stronger_margin": 0.05
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.5,
+    "stronger_margin": 0.15
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.5,
+    "stronger_margin": 0.3
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.7,
+    "stronger_margin": 0.05
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.7,
+    "stronger_margin": 0.15
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.7,
+    "stronger_margin": 0.3
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.9,
+    "stronger_margin": 0.05
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.9,
+    "stronger_margin": 0.15
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.8,
+    "unverified_threshold": 0.9,
+    "stronger_margin": 0.3
+   },
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  {
+   "params": {
+    "answer_threshold": 0.7,
+    "unverified_threshold": 0.5,
+    "stronger_margin": 0.05
+   },
+   "accuracy": 0.9608,
+   "false_answers": 2,
+   "false_refusals": 0,
+   "objective": 0.9216
+  }
+ ],
+ "questions": 51,
+ "per_question_best_scores": [
+  {
+   "id": "dir_01",
+   "type": "direct",
+   "best_eligible": 0.9997,
+   "best_ineligible": 0.9997,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_03",
+   "type": "direct",
+   "best_eligible": 0.9993,
+   "best_ineligible": 0.9994,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_05",
+   "type": "direct",
+   "best_eligible": 0.997,
+   "best_ineligible": 0.9974,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_07",
+   "type": "direct",
+   "best_eligible": 0.9964,
+   "best_ineligible": 0.9982,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_09",
+   "type": "direct",
+   "best_eligible": 0.9932,
+   "best_ineligible": 0.9939,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_11",
+   "type": "direct",
+   "best_eligible": 0.9968,
+   "best_ineligible": 0.9977,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_13",
+   "type": "direct",
+   "best_eligible": 0.9728,
+   "best_ineligible": 0.9734,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_15",
+   "type": "direct",
+   "best_eligible": 0.9947,
+   "best_ineligible": 0.9958,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_17",
+   "type": "direct",
+   "best_eligible": 0.9981,
+   "best_ineligible": 0.9981,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_19",
+   "type": "direct",
+   "best_eligible": 0.9989,
+   "best_ineligible": 0.9989,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_21",
+   "type": "direct",
+   "best_eligible": 0.9994,
+   "best_ineligible": 0.9994,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_23",
+   "type": "direct",
+   "best_eligible": 0.9662,
+   "best_ineligible": 0.966,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_25",
+   "type": "direct",
+   "best_eligible": 0.9994,
+   "best_ineligible": 0.9996,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_27",
+   "type": "direct",
+   "best_eligible": 0.9844,
+   "best_ineligible": 0.9858,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_29",
+   "type": "direct",
+   "best_eligible": 0.998,
+   "best_ineligible": 0.9979,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_31",
+   "type": "direct",
+   "best_eligible": 0.9951,
+   "best_ineligible": 0.9971,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_33",
+   "type": "direct",
+   "best_eligible": 0.9998,
+   "best_ineligible": 0.9997,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_35",
+   "type": "direct",
+   "best_eligible": 0.9976,
+   "best_ineligible": 0.998,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_37",
+   "type": "direct",
+   "best_eligible": 0.9997,
+   "best_ineligible": 0.9811,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_39",
+   "type": "direct",
+   "best_eligible": 0.9915,
+   "best_ineligible": 0.281,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_01",
+   "type": "multi",
+   "best_eligible": 0.9283,
+   "best_ineligible": 0.9388,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_03",
+   "type": "multi",
+   "best_eligible": 0.9881,
+   "best_ineligible": 0.9913,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_05",
+   "type": "multi",
+   "best_eligible": 0.999,
+   "best_ineligible": 0.9989,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_07",
+   "type": "multi",
+   "best_eligible": 0.994,
+   "best_ineligible": 0.9952,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_09",
+   "type": "multi",
+   "best_eligible": 0.773,
+   "best_ineligible": 0.7715,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_11",
+   "type": "multi",
+   "best_eligible": 0.9839,
+   "best_ineligible": 0.9858,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_13",
+   "type": "multi",
+   "best_eligible": 0.9972,
+   "best_ineligible": 0.9976,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_15",
+   "type": "multi",
+   "best_eligible": 0.9944,
+   "best_ineligible": 0.9951,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_17",
+   "type": "multi",
+   "best_eligible": 0.9622,
+   "best_ineligible": 0.9553,
+   "scope_rule": null
+  },
+  {
+   "id": "mul_19",
+   "type": "multi",
+   "best_eligible": 0.9943,
+   "best_ineligible": 0.993,
+   "scope_rule": null
+  },
+  {
+   "id": "una_01",
+   "type": "unanswerable",
+   "best_eligible": 0.6106,
+   "best_ineligible": 0.9994,
+   "scope_rule": null
+  },
+  {
+   "id": "una_03",
+   "type": "unanswerable",
+   "best_eligible": 0.4455,
+   "best_ineligible": 0.454,
+   "scope_rule": null
+  },
+  {
+   "id": "una_05",
+   "type": "unanswerable",
+   "best_eligible": 0.7185,
+   "best_ineligible": 0.7097,
+   "scope_rule": null
+  },
+  {
+   "id": "una_07",
+   "type": "unanswerable",
+   "best_eligible": 0.8642,
+   "best_ineligible": 0.8725,
+   "scope_rule": null
+  },
+  {
+   "id": "una_09",
+   "type": "unanswerable",
+   "best_eligible": 0.4394,
+   "best_ineligible": 0.4629,
+   "scope_rule": null
+  },
+  {
+   "id": "una_11",
+   "type": "unanswerable",
+   "best_eligible": 0.6198,
+   "best_ineligible": 0.9927,
+   "scope_rule": null
+  },
+  {
+   "id": "una_13",
+   "type": "unanswerable",
+   "best_eligible": 0.0496,
+   "best_ineligible": 0.0651,
+   "scope_rule": null
+  },
+  {
+   "id": "una_15",
+   "type": "unanswerable",
+   "best_eligible": 0.421,
+   "best_ineligible": 0.4294,
+   "scope_rule": null
+  },
+  {
+   "id": "out_01",
+   "type": "out_of_scope",
+   "best_eligible": 0.0078,
+   "best_ineligible": 0.0082,
+   "scope_rule": "out_of_scope"
+  },
+  {
+   "id": "out_03",
+   "type": "out_of_scope",
+   "best_eligible": 0.0104,
+   "best_ineligible": 0.0052,
+   "scope_rule": null
+  },
+  {
+   "id": "out_05",
+   "type": "out_of_scope",
+   "best_eligible": 0.0044,
+   "best_ineligible": 0.0049,
+   "scope_rule": "out_of_scope"
+  },
+  {
+   "id": "out_07",
+   "type": "out_of_scope",
+   "best_eligible": 0.0027,
+   "best_ineligible": 0.0077,
+   "scope_rule": null
+  },
+  {
+   "id": "out_09",
+   "type": "out_of_scope",
+   "best_eligible": 0.0029,
+   "best_ineligible": 0.0062,
+   "scope_rule": "out_of_scope"
+  },
+  {
+   "id": "amb_01",
+   "type": "ambiguous",
+   "best_eligible": 0.9019,
+   "best_ineligible": 0.9205,
+   "scope_rule": null
+  },
+  {
+   "id": "amb_03",
+   "type": "ambiguous",
+   "best_eligible": 0.9266,
+   "best_ineligible": 0.9387,
+   "scope_rule": null
+  },
+  {
+   "id": "amb_05",
+   "type": "ambiguous",
+   "best_eligible": 0.38,
+   "best_ineligible": 0.3982,
+   "scope_rule": null
+  },
+  {
+   "id": "adv_01",
+   "type": "adversarial",
+   "best_eligible": 0.4037,
+   "best_ineligible": 0.5537,
+   "scope_rule": null
+  },
+  {
+   "id": "adv_03",
+   "type": "adversarial",
+   "best_eligible": 0.9939,
+   "best_ineligible": 0.9474,
+   "scope_rule": null
+  },
+  {
+   "id": "adv_05",
+   "type": "adversarial",
+   "best_eligible": 0.0002,
+   "best_ineligible": 0.0006,
+   "scope_rule": null
+  },
+  {
+   "id": "adv_07",
+   "type": "adversarial",
+   "best_eligible": 0.001,
+   "best_ineligible": 0.0018,
+   "scope_rule": null
+  },
+  {
+   "id": "adv_09",
+   "type": "adversarial",
+   "best_eligible": 0.9952,
+   "best_ineligible": 0.9968,
+   "scope_rule": null
+  }
+ ],
+ "chosen": {
+  "answer_threshold": 0.8,
+  "unverified_threshold": 0.5,
+  "stronger_margin": 0.15,
+  "keep_ratio": 0.85,
+  "notes": [
+   "stronger_margin 0.05/0.15/0.3 tie on dev; kept the middle value",
+   "keep_ratio swept on dev with the full answer pipeline: 0.5/0.7 -> citation precision 0.818, correctness 0.917; 0.85 -> 0.844 / 0.917; 0.95 -> 0.891 / 0.883 (correctness drops). Chose 0.85."
+  ]
+ }
+}

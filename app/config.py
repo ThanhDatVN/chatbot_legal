@@ -1,0 +1,69 @@
+"""Typed runtime configuration read from environment variables or .env."""
+
+from __future__ import annotations
+
+from functools import lru_cache
+from pathlib import Path
+from typing import Literal
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=ROOT / ".env", env_file_encoding="utf-8", extra="ignore")
+
+    # corpus
+    active_snapshot: str = "corpus-2026-09-30"
+    snapshots_dir: Path = ROOT / "data" / "snapshots"
+    index_dir: Path = ROOT / "data" / "indexes"
+    runtime_dir: Path = ROOT / "data" / "runtime"
+
+    # which evidence may support an answer about current law
+    currency_policy: Literal["strict", "pilot"] = "pilot"
+
+    # vector store: QDRANT_URL for a server, otherwise an embedded store under index_dir
+    qdrant_url: str | None = None
+    qdrant_api_key: str | None = None
+
+    # models
+    embedding_model: str = "BAAI/bge-m3"
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
+    model_device: Literal["auto", "cpu", "cuda"] = "auto"
+    hf_offline: bool = True
+
+    # retrieval
+    dense_top_k: int = Field(20, ge=1, le=100)
+    sparse_top_k: int = Field(20, ge=1, le=100)
+    rrf_k: int = 60
+    rerank_top_k: int = Field(5, ge=1, le=20)
+
+    # answering
+    llm_provider: Literal["extractive", "anthropic"] = "extractive"
+    llm_model: str = "claude-opus-5-5"
+    # Claude Opus 5.5 defaults to medium; grounded QA over short sources rarely needs more, and latency counts
+    llm_effort: Literal["low", "medium", "high", "xhigh", "max"] = "medium"
+    llm_server_fallback: bool = True
+    anthropic_api_key: str | None = None
+    llm_timeout_s: float = 60.0
+    max_search_calls: int = 3
+    max_source_calls: int = 8
+    # reranker-score floor under which evidence is treated as insufficient; tuned on the dev split
+    # (reports/policy_tuning.json)
+    refusal_threshold: float = 0.8
+    log_questions: Literal["hash", "plain"] = "hash"
+
+    @property
+    def snapshot_dir(self) -> Path:
+        return self.snapshots_dir / self.active_snapshot
+
+    @property
+    def collection(self) -> str:
+        return "citeagent_" + self.active_snapshot.replace("-", "_")
+
+
+@lru_cache(maxsize=1)
+def get_settings() -> Settings:
+    return Settings()
