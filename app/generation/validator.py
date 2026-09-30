@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from app.schemas import SourceEvidence
 
 NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)*")
+URL_RE = re.compile(r"https?://|www\.|\b[a-z0-9-]+\.(com|net|org|io|vn|xyz)\b", re.IGNORECASE)
 
 
 @dataclass
@@ -51,6 +52,8 @@ def validate_claims(claims: list[DraftClaim], fetched: dict[str, SourceEvidence]
         cited = [fetched.get(cid) for cid in claim.chunk_ids]
         if not claim.chunk_ids:
             problem = "no_citation"
+        elif URL_RE.search(claim.text):
+            problem = "url_in_claim"  # links come from snapshot metadata only
         elif any(src is None for src in cited):
             problem = "citation_not_fetched"
         elif not all(src.eligible for src in cited):

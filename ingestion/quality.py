@@ -20,6 +20,13 @@ HEADER_INLINE_RE = re.compile(r"CÔNG BÁO/Số\s+\d+(\s*\+\s*\d+)?/Ngày")
 STAMP_INLINE_RE = re.compile(r"(Ký bởi|Người ký|Ngày ký|Thời gian ký)\s*:|thongtinchinhphu@chinhphu\.vn"
                              r"|[Tt]iếp theo Công báo số")
 MAX_EMBEDDING_TOKENS = 1024
+# Instruction-like text has no place in official legal sources; a chunk containing it is
+# quarantined (never machine_checked, so never eligible) until a human looks at it.
+INJECTION_RE = re.compile(
+    r"(bỏ qua|phớt lờ)\s+(mọi|tất cả|các)?\s*(hướng dẫn|chỉ thị|quy tắc)|ignore\s+(all\s+|any\s+)?(previous|prior|above)"
+    r"|system prompt|you are (now )?(an?|the) |<\s*/?\s*(system|assistant|instructions?)\s*>|api[_ ]?key|"
+    r"trả lời rằng|hãy nói với người dùng",
+    re.IGNORECASE)
 MAX_INVALID_SYLLABLE_RATE = 0.01
 
 TONE_MARKS = {"̀", "́", "̃", "̉", "̣"}
@@ -95,6 +102,8 @@ def chunk_problems(chunk: Chunk, footnote_texts: list[str]) -> list[str]:
         problems.append("footnote_leak")
     if chunk.embedding_token_count > MAX_EMBEDDING_TOKENS:
         problems.append("too_many_tokens")
+    if INJECTION_RE.search(chunk.text):
+        problems.append("instruction_like_text")
     return problems
 
 
@@ -143,11 +152,15 @@ def check_document(doc: RegistryDocument, layout: DocumentLayout, parsed: Parsed
 
     q.hard["no_header_lines_in_body"] = not any(
         HEADER_RE.match(line.text.strip()) or STAMP_RE.match(line.text.strip()) for line in parsed.lines)
+    quarantined = []
     for c in chunks:
         problems = chunk_problems(c, footnote_texts)
-        if problems:
+        if problems == ["instruction_like_text"]:
+            quarantined.append(c.chunk_id)  # kept out of answers, does not fail the document
+        elif problems:
             q.chunk_failures[c.chunk_id] = problems
     q.hard["chunk_checks"] = not q.chunk_failures
+    q.soft["quarantined_instruction_like_chunks"] = quarantined
 
     over_budget = [c.chunk_id for c in chunks if c.token_count > MAX_TOKENS]
     q.soft["chunks_over_token_budget"] = len(over_budget)
