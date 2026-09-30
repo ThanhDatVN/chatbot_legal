@@ -1,0 +1,239 @@
+{
+  "scope": "selected diagnostic excerpts and identifiers, not a representative sample",
+  "configs": {
+    "fast_200": {
+      "model_sha256": "79df64caf7bcfb2a27df5042ecb6121e196eada34da774956995747636d5bfa1",
+      "dpi": 200,
+      "excerpts": [
+        {
+          "document_id": "45_2019_qh14",
+          "page": 42,
+          "character_error_rate": 0.0251,
+          "word_error_rate": 0.1731
+        },
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.0575,
+          "word_error_rate": 0.2642
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.0244,
+          "word_error_rate": 0.1667
+        },
+        {
+          "document_id": "18_2026_vbhn_vpqh",
+          "page": 2,
+          "character_error_rate": 0.0158,
+          "word_error_rate": 0.1395
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 2,
+          "character_error_rate": 0.0133,
+          "word_error_rate": 0.0588
+        }
+      ],
+      "scored_excerpt_count": 5,
+      "pooled_character_error_rate": 0.0278,
+      "pooled_word_error_rate": 0.1617,
+      "critical_exact_count": 0,
+      "critical_pages": [
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "expected_number": "145/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số:4452020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "135_2020_nd_cp",
+          "page": 1,
+          "expected_number": "135/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số:425/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 1,
+          "expected_number": "152/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số: 452/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 5,
+          "expected_number": "293/2025/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Sỹ(Kèm theo Nghịđịnh số293/2023/NĐ-CP"
+          ]
+        }
+      ]
+    },
+    "best_200": {
+      "model_sha256": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45",
+      "dpi": 200,
+      "excerpts": [
+        {
+          "document_id": "45_2019_qh14",
+          "page": 42,
+          "character_error_rate": 0.0209,
+          "word_error_rate": 0.1346
+        },
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.0354,
+          "word_error_rate": 0.2264
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.0366,
+          "word_error_rate": 0.2222
+        },
+        {
+          "document_id": "18_2026_vbhn_vpqh",
+          "page": 2,
+          "character_error_rate": 0.0158,
+          "word_error_rate": 0.1395
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 2,
+          "character_error_rate": 0.0044,
+          "word_error_rate": 0.0392
+        }
+      ],
+      "scored_excerpt_count": 5,
+      "pooled_character_error_rate": 0.022,
+      "pooled_word_error_rate": 0.1489,
+      "critical_exact_count": 1,
+      "critical_pages": [
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "expected_number": "145/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số: 445/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "135_2020_nd_cp",
+          "page": 1,
+          "expected_number": "135/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số:455/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 1,
+          "expected_number": "152/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số: 45& /2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 5,
+          "expected_number": "293/2025/NĐ-CP",
+          "exact_present": true,
+          "ocr_number_lines": [
+            "Số(Kèm theo Nghịđịnh số293/2025/NĐ-CP"
+          ]
+        }
+      ]
+    },
+    "best_300": {
+      "model_sha256": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45",
+      "dpi": 300,
+      "excerpts": [
+        {
+          "document_id": "45_2019_qh14",
+          "page": 42,
+          "character_error_rate": 0.0293,
+          "word_error_rate": 0.1923
+        },
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.031,
+          "word_error_rate": 0.2075
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 1,
+          "character_error_rate": 0.0244,
+          "word_error_rate": 0.1667
+        },
+        {
+          "document_id": "18_2026_vbhn_vpqh",
+          "page": 2,
+          "character_error_rate": 0.0211,
+          "word_error_rate": 0.1628
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 2,
+          "character_error_rate": 0.0222,
+          "word_error_rate": 0.098
+        }
+      ],
+      "scored_excerpt_count": 5,
+      "pooled_character_error_rate": 0.0259,
+      "pooled_word_error_rate": 0.166,
+      "critical_exact_count": 1,
+      "critical_pages": [
+        {
+          "document_id": "145_2020_nd_cp",
+          "page": 1,
+          "expected_number": "145/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số:44%2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "135_2020_nd_cp",
+          "page": 1,
+          "expected_number": "135/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số:445/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "152_2020_nd_cp",
+          "page": 1,
+          "expected_number": "152/2020/NĐ-CP",
+          "exact_present": false,
+          "ocr_number_lines": [
+            "Số: 45/2020/NĐ-CP"
+          ]
+        },
+        {
+          "document_id": "293_2025_nd_cp",
+          "page": 5,
+          "expected_number": "293/2025/NĐ-CP",
+          "exact_present": true,
+          "ocr_number_lines": [
+            "Số(Kèm theo Nghịđịnh số293/2025/NĐ-CP"
+          ]
+        }
+      ]
+    }
+  }
+}

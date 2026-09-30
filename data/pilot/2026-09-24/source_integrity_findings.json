@@ -1,0 +1,24 @@
+{
+  "inspection_date": "2026-09-25",
+  "method": "Visual inspection of rendered pages from the downloaded official PDF attachment; physical pages are 1-based PDF indexes.",
+  "findings": [
+    {
+      "document_id": "18_2026_vbhn_vpqh",
+      "issue": "pages_out_of_order",
+      "physical_pdf_pages": [15, 16],
+      "printed_page_numbers_in_pdf_order": [16, 15],
+      "confirmed": true,
+      "disposition": "Do not index this attachment as a sequential legal text."
+    },
+    {
+      "document_id": "18_2026_vbhn_vpqh",
+      "issue": "missing_printed_pages",
+      "physical_pdf_pages_around_gap": [32, 33],
+      "printed_page_numbers_around_gap": [32, 35],
+      "missing_printed_page_numbers": [33, 34],
+      "affected_article_numbers": [76, 77, 78, 79],
+      "confirmed": true,
+      "disposition": "Find a complete official version; do not infer missing clauses from OCR or another version."
+    }
+  ]
+}
