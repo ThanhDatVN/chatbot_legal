@@ -1,6 +1,6 @@
 # CiteAgent VN — đặc tả kỹ thuật MVP
 
-Trạng thái: đặc tả gốc 2026-09-24; bản triển khai 2026-10-01 bám theo đặc tả này với các điều chỉnh ghi tại [`ARCHITECTURE.md` ADR-007 → ADR-011](ARCHITECTURE.md#5-các-quyết-định-kiến-trúc) (ví dụ: tập trạng thái hiệu lực mở rộng, `section_kind` thêm `preamble/closing/signature`, rerank top 20). Tài liệu này cụ thể hóa [`ARCHITECTURE.md`](ARCHITECTURE.md); thứ tự thực hiện và tiêu chí từng task ở [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md).
+Trạng thái: đặc tả gốc 2026-09-24; bản triển khai 2026-10-01 bám theo đặc tả này với các điều chỉnh ghi tại [`ARCHITECTURE.md` ADR-007 → ADR-012](ARCHITECTURE.md#5-các-quyết-định-kiến-trúc) (ví dụ: tập trạng thái hiệu lực mở rộng gồm `superseded_by_amendment`, sổ theo dõi hiệu lực cấp điều khoản, `section_kind` thêm `preamble/closing/signature`, rerank top 20). Tài liệu này cụ thể hóa [`ARCHITECTURE.md`](ARCHITECTURE.md); thứ tự thực hiện và tiêu chí từng task ở [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md).
 
 ## 1. Công nghệ và lý do chọn
 

@@ -32,9 +32,9 @@ def git_commit() -> str:
     try:
         sha = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True,
                              check=True).stdout.strip()
-        # evaluation runs write reports/, so only changes elsewhere make the measured code "dirty"
-        dirty = subprocess.run(["git", "status", "--porcelain", "--", ".", ":(exclude)reports"], cwd=ROOT,
-                               capture_output=True, text=True).stdout
+        # evaluation runs write reports/ and docs are edited alongside; neither changes what is measured
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", ".", ":(exclude)reports", ":(exclude)docs",
+                                ":(exclude)*.md"], cwd=ROOT, capture_output=True, text=True).stdout
         return sha + ("-dirty" if dirty.strip() else "")
     except (OSError, subprocess.CalledProcessError):
         return "unknown"

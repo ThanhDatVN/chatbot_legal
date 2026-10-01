@@ -8,8 +8,8 @@ Trợ lý hỏi đáp tiếng Việt về **quan hệ lao động** (Bộ luật
 bản chính thức có nguồn gốc rõ ràng. Mỗi nhận định đều kèm trích dẫn tới Điều/khoản, trang và văn bản gốc; nếu
 căn cứ không đủ, mâu thuẫn hoặc chưa xác minh hiệu lực thì hệ thống **từ chối kết luận**.
 
-> Đây là dự án portfolio, không phải dịch vụ tư vấn pháp lý. Dữ liệu tại ngày **30/09/2026**; nguồn chưa được
-> chuyên gia pháp lý duyệt (xem [Giới hạn](#giới-hạn-đã-biết)).
+> Đây là dự án portfolio, không phải dịch vụ tư vấn pháp lý. Dữ liệu tại ngày **01/10/2026**; nguồn và sổ theo
+> dõi hiệu lực chưa được chuyên gia pháp lý duyệt (xem [Giới hạn](#giới-hạn-đã-biết)).
 
 | Hỏi đáp có trích dẫn | Từ chối khi chưa đủ căn cứ |
 | --- | --- |
@@ -63,15 +63,19 @@ Correctness và citation precision là **chỉ số tự động (proxy)**; nhã
    (SHA-256)       header/chữ ký/footnote/bảng  phụ lục, trích dẫn sửa luật    hiệu lực theo từng chunk
 ```
 
-- **Corpus**: 10 văn bản chính thức tải từ Công báo điện tử (PDF có lớp chữ), khóa SHA-256 trong
+- **Corpus**: 11 văn bản chính thức tải từ Công báo điện tử (PDF có lớp chữ), khóa SHA-256 trong
   [`data/corpus/registry.json`](data/corpus/registry.json). Quy trình chọn nguồn: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 - **Ingestion** ([`ingestion/`](ingestion)): đọc PDF theo bố cục — bỏ header Công báo, tem chữ ký số, khối nối
   trang; footnote của văn bản hợp nhất thành ghi chú sửa đổi gắn đúng khoản; bảng thành từng dòng có nhãn cột
   (kể cả ô gộp vắt qua trang); chia chunk theo Điều → khoản → đoạn với offset chính xác. Build thất bại nếu
   một cổng chất lượng bắt buộc không đạt.
-- **Hiệu lực**: mỗi chunk có `currency_status` và lý do bằng văn bản. Chính sách `pilot` cho phép trả lời từ
-  văn bản hợp nhất chính thức và văn bản được ghi nhận còn hiệu lực; `strict` chỉ cho điều khoản đã được người
-  duyệt. Văn bản hết hiệu lực một phần nhưng chưa lập ánh xạ điều khoản thì **không** dùng để trả lời.
+- **Hiệu lực**: mỗi chunk có `currency_status` và lý do bằng văn bản. [Sổ theo dõi hiệu lực](data/corpus/currency_ledger.json)
+  ghi từng Điều/khoản bị văn bản sau làm hết hiệu lực, sửa đổi hoặc tạm thực hiện theo quy định khác (45 mục từ
+  Nghị định 158/2025, 219/2025, 129/2025, Nghị quyết 66.18/2026, 24/2026…), mỗi mục kèm câu trích nguyên văn được
+  kiểm lại với PDF Công báo khi build. Khoản bị tác động thành chunk riêng nên khoản còn hiệu lực vẫn dùng được.
+  Chính sách `pilot` trả lời từ văn bản hợp nhất chính thức và điều khoản được ghi nhận còn hiệu lực; `strict` chỉ
+  cho điều khoản đã được người duyệt. Nếu điều liên quan nhất đã bị thay thế bởi văn bản không có trong kho, hệ
+  thống **từ chối và nêu văn bản thay thế** thay vì ghép câu trả lời từ điều lân cận.
 - **Agent**: đúng hai tool nghiệp vụ, input kiểm tra bằng Pydantic, giới hạn số lần gọi; `get_source` chỉ mở
   được chunk vừa tìm thấy trong cùng request. Citation do code đánh số từ snapshot, không lấy từ văn bản model.
 - **Kiểm tra citation**: mỗi nhận định phải (1) trích nguồn đã mở trong request, (2) nguồn hợp lệ cho câu hỏi
@@ -97,13 +101,13 @@ Hai model (`BAAI/bge-m3`, `BAAI/bge-reranker-v2-m3`) được đọc từ cache 
 ## Nạp dữ liệu và index
 
 ```powershell
-python scripts/download_sources.py                         # tải 11 tệp PDF chính thức, kiểm SHA-256
-python -X utf8 -m ingestion.build --snapshot-id corpus-2026-09-30   # snapshot + quality_report.json
+python scripts/download_sources.py                         # tải 21 tệp PDF chính thức (corpus + sổ hiệu lực), kiểm SHA-256
+python -X utf8 -m ingestion.build --snapshot-id corpus-2026-10-01   # snapshot + quality_report.json
 python -X utf8 -m app.indexing                             # embedding (có cache) → Qdrant + BM25
 ```
 
-Build hiện tạo 926 chunk, cả 10 văn bản qua mọi cổng bắt buộc
-([`quality_report.json`](data/snapshots/corpus-2026-09-30/quality_report.json)). Text pháp lý trích xuất
+Build hiện tạo 1017 chunk, cả 11 văn bản qua mọi cổng bắt buộc và 45/45 câu trích của sổ hiệu lực khớp PDF
+([`quality_report.json`](data/snapshots/corpus-2026-10-01/quality_report.json)). Text pháp lý trích xuất
 (chunk, section) **không** được commit; chỉ commit manifest, báo cáo chất lượng và metadata.
 
 ## Chạy
@@ -136,7 +140,7 @@ nhận định vẫn qua cùng bộ kiểm tra citation.
 
 | Biến | Mặc định | Ý nghĩa |
 | --- | --- | --- |
-| `ACTIVE_SNAPSHOT` | `corpus-2026-09-30` | snapshot API phục vụ |
+| `ACTIVE_SNAPSHOT` | `corpus-2026-10-01` | snapshot API phục vụ |
 | `CURRENCY_POLICY` | `pilot` | `strict`: chỉ điều khoản đã người duyệt; `pilot`: + văn bản hợp nhất / được ghi nhận còn hiệu lực |
 | `QDRANT_URL` | trống | trống = Qdrant nhúng trong `data/indexes/qdrant` |
 | `MODEL_DEVICE` | `auto` | `cuda` (fp16) / `cpu` (fp32) |
@@ -150,21 +154,22 @@ Danh sách đầy đủ: [`.env.example`](.env.example).
 ## Đánh giá
 
 ```powershell
-python -X utf8 -m evaluation.dataset_v1             # 100 câu, kiểm tra nhãn gold có trong snapshot
+python -X utf8 -m evaluation.dataset_v2             # 104 câu, kiểm tra nhãn gold và dữ kiện có trong snapshot
 python -X utf8 -m evaluation.retrieval_eval --split all     # A/B/C: Hit@5, MRR, Recall
 python -X utf8 -m evaluation.tune_policy            # hiệu chỉnh ngưỡng chỉ trên split dev
 python -X utf8 -m evaluation.answer_eval --split test       # A/B/C/D đầu cuối
 python -X utf8 -m evaluation.security_eval          # 30 ca bảo mật trên hệ thống thật
-python -X utf8 -m evaluation.report                 # reports/benchmark_v1.md
+python -X utf8 -m evaluation.report                 # reports/benchmark_v2.md
 ```
 
-Bộ câu hỏi: 40 trực tiếp, 20 nhiều nguồn, 15 không đủ căn cứ, 10 ngoài phạm vi, 5 mơ hồ, 10 đối kháng; chia
-cố định dev/test. Mỗi báo cáo ghi commit, snapshot, model, tham số và phần cứng.
+Bộ câu hỏi v2: 44 trực tiếp, 20 nhiều nguồn, 15 không đủ căn cứ, 10 ngoài phạm vi, 5 mơ hồ, 10 đối kháng; chia
+cố định dev/test. v2 gắn lại nhãn của v1 theo sổ hiệu lực (thay đổi liệt kê trong
+[`evaluation/dataset_v2.py`](evaluation/dataset_v2.py)). Mỗi báo cáo ghi commit, snapshot, model, tham số và phần cứng.
 
 ## Kiểm thử
 
 ```powershell
-python -m pytest tests            # 86 test: unit, integration (PDF thật, API), security, UI headless
+python -m pytest tests            # 92 test: unit, integration (PDF thật, API), security, UI headless
 ```
 
 Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy hoặc PDF nguồn.
@@ -180,11 +185,15 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
 
 ## Giới hạn đã biết
 
-- **Hiệu lực**: chưa có điều khoản nào được chuyên gia xác minh (`verified_current` = 0). Chế độ `pilot` dựa
-  trên văn bản hợp nhất 18/VBHN-VPQH (xác thực 12/02/2026) và đầu mối VBPL tra cứu gián tiếp; văn bản sửa đổi
-  ban hành sau ngày hợp nhất chưa được đối chiếu. Bốn nghị định hướng dẫn (145, 135, 152/2020, 70/2023) hết
-  hiệu lực một phần nên hiện chỉ dùng để giải thích vì sao từ chối.
-- **Corpus nhỏ**: 10 văn bản, 242 chunk dùng được cho câu hỏi hiện hành; chưa đạt mục tiêu 20–50 văn bản.
+- **Hiệu lực**: chưa có điều khoản nào được chuyên gia xác minh (`verified_current` = 0). Sổ theo dõi hiệu lực do
+  AI hỗ trợ trích xuất từ PDF Công báo (`reviewed_by` trống); danh sách văn bản sửa đổi lấy từ VBPL và tìm kiếm
+  Công báo ngày 01/10/2026, có thể sót văn bản. Văn bản sửa đổi Bộ luật Lao động sau ngày hợp nhất 18/VBHN-VPQH
+  (12/02/2026) chưa được đối chiếu; tên cơ quan sau sắp xếp bộ máy 2025 (Sở Nội vụ thay Sở LĐTBXH, bỏ cấp
+  huyện) chưa được chuẩn hóa trong văn bản cũ. 29 chunk có nội dung còn và hết hiệu lực đan xen được giữ ở
+  `unverified`. Chi tiết: [`docs/DATA_QUALITY_ASSESSMENT.md`](docs/DATA_QUALITY_ASSESSMENT.md#7-sổ-theo-dõi-hiệu-lực-cấp-điều-khoản-2026-10-01).
+- **Corpus nhỏ**: 11 văn bản, 504 chunk dùng được cho câu hỏi hiện hành; chưa đạt mục tiêu 20–50 văn bản. Các
+  văn bản thay thế như Nghị định 129/2025, Nghị quyết 66.18/2026, Luật Bảo hiểm xã hội 2024 chưa có trong kho
+  nên câu hỏi về phần đã bị thay thế bị từ chối kèm tên văn bản thay thế.
 - **Đánh giá**: nhãn gold và câu hỏi do AI soạn từ nguyên văn (chưa được người duyệt) nên dễ trùng từ với
   nguồn; correctness/citation precision là proxy tự động. Chế độ Claude chưa được benchmark vì máy phát triển
   không có API key.
@@ -198,16 +207,16 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
 
 | # | Yêu cầu | Bằng chứng |
 | --- | --- | --- |
-| 1 | Corpus manifest | [`registry.json`](data/corpus/registry.json), [`snapshot.json`](data/snapshots/corpus-2026-09-30/snapshot.json) |
+| 1 | Corpus manifest | [`registry.json`](data/corpus/registry.json), [`currency_ledger.json`](data/corpus/currency_ledger.json), [`snapshot.json`](data/snapshots/corpus-2026-10-01/snapshot.json) |
 | 2 | PDF + HTML ingestion | PDF: [`ingestion/layout.py`](ingestion/layout.py); HTML: [`ingestion/html_parser.py`](ingestion/html_parser.py) + test fixture (snapshot hiện tại chỉ có nguồn PDF) |
 | 3 | Metadata-aware chunking | [`ingestion/chunk.py`](ingestion/chunk.py), test [`tests/unit`](tests/unit) |
-| 4 | Dense baseline | System A trong [`reports/benchmark_v1.md`](reports/benchmark_v1.md) |
+| 4 | Dense baseline | System A trong [`reports/benchmark_v2.md`](reports/benchmark_v2.md) |
 | 5 | Hybrid retrieval | [`app/retrieval/`](app/retrieval), System B |
 | 6 | Reranker | `BgeReranker`, System C |
 | 7 | Two-tool agent | [`app/agent/tools.py`](app/agent/tools.py) |
 | 8 | Citation system | validator + nút trích dẫn/hộp thoại nguồn trong UI |
 | 9 | Evidence refusal | ANSWER/PARTIAL/REFUSE, refusal F1 0.968 |
-| 10 | Evaluation suite | 100 câu, [`evaluation/`](evaluation), [`docs/EVALUATION.md`](docs/EVALUATION.md) |
+| 10 | Evaluation suite | 104 câu, [`evaluation/`](evaluation), [`docs/EVALUATION.md`](docs/EVALUATION.md) |
 | 11 | Security suite | 30 ca, [`reports/security_extractive.json`](reports/security_extractive.json) |
 | 12 | Product demo | FastAPI + Streamlit + Docker Compose + dashboard |
 

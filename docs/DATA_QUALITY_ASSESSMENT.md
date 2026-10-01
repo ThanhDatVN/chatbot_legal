@@ -106,4 +106,24 @@ Package [`ingestion/`](../ingestion) thay các script pilot (ADR-007): đọc t�
 
 **Trạng thái sử dụng:** 926 chunk đều `machine_checked` (chưa `verified` bởi người). Hiệu lực theo chunk (ADR-008): 225 `consolidated_current` (18/VBHN-VPQH), 19 `presumed_current` (293/2025/NĐ-CP), 225 `superseded_by_consolidation` (45/2019/QH14), 18 `historical` (38/2022, 74/2024), 439 `unverified` (145/2020, 135/2020, 152/2020, 70/2023 hết hiệu lực một phần chưa ánh xạ điều khoản; 12/2022 ngoài phạm vi). Ở chính sách `pilot`, 242 chunk dùng được cho câu hỏi về quy định hiện hành; ở `strict`, 0 chunk cho đến khi có người duyệt.
 
-Việc còn lại trước khi coi dữ liệu là "đã xác minh": người duyệt đối chiếu text các Điều dùng trong bộ câu hỏi; lập ánh xạ sửa đổi cấp điều khoản cho 145/2020 (129/2025, 10/2024, 35/2022), 135/2020 (158/2025), 152/2020 và 70/2023 (219/2025); kiểm tra văn bản sửa đổi Bộ luật Lao động ban hành sau 12/02/2026.
+Việc còn lại trước khi coi dữ liệu là "đã xác minh": người duyệt đối chiếu text các Điều dùng trong bộ câu hỏi; lập ánh xạ sửa đổi cấp điều khoản cho 145/2020 (129/2025, 10/2024, 35/2022), 135/2020 (158/2025), 152/2020 và 70/2023 (219/2025); kiểm tra văn bản sửa đổi Bộ luật Lao động ban hành sau 12/02/2026. *(Ánh xạ cấp điều khoản đã làm ở mục 7.)*
+
+## 7. Sổ theo dõi hiệu lực cấp điều khoản (2026-10-01)
+
+**Cách làm.** Danh sách văn bản sửa đổi lấy từ đầu mối VBPL (tra cứu gián tiếp 2026-09-25), bổ sung bằng tìm kiếm toàn văn trên Công báo điện tử (`api-searchcongbao.chinhphu.vn`) ngày 2026-10-01 theo số hiệu từng nghị định và theo chủ đề (giấy phép lao động, cho thuê lại lao động, hòa giải viên, tuổi nghỉ hưu…). Mỗi văn bản tìm được tải PDF chính thức, phân tích bằng chính pipeline của dự án và đọc toàn văn mọi Điều có dẫn chiếu tới văn bản trong kho. Tìm kiếm phát hiện hai nghị quyết năm 2026 mà danh sách VBPL không có: **24/2026/NQ-CP** (thay hồ sơ gia hạn tại Điều 15, 27 Nghị định 219/2025) và **66.18/2026/NQ-CP** (từ 01/07/2026 đến hết 28/02/2027 không thực hiện thủ tục cấp/gia hạn/cấp lại/thu hồi giấy phép cho thuê lại lao động, quy định lại ký quỹ và báo cáo tại Điều 12, 15, 17–20, 31, 33, 35 Nghị định 145/2020).
+
+**Kết quả** ([`currency_ledger.json`](../data/corpus/currency_ledger.json), 45 mục từ 9 văn bản có tác động; 11 PDF nguồn khóa SHA-256):
+
+| Văn bản trong kho | Văn bản tác động | Tác động chính |
+| --- | --- | --- |
+| 135/2020/NĐ-CP | 158/2025/NĐ-CP điểm c khoản 2 Điều 44 | Hết hiệu lực khoản 2 Điều 3, khoản 1 và 3 Điều 7, khoản 2 Điều 8, Phụ lục III (từ 01/07/2025) |
+| 152/2020/NĐ-CP | 219/2025/NĐ-CP khoản 2 Điều 35; 70/2023/NĐ-CP | Hết hiệu lực phần lao động nước ngoài (khoản 1 Điều 1, khoản 1–2 Điều 2, Điều 3–21, khoản 3 Điều 29, Phụ lục I) từ 07/08/2025; Điều 30 hỗn hợp → chưa xác minh; Chương III còn hiệu lực, khoản sửa đổi bởi 70/2023 trỏ sang 70/2023 |
+| 70/2023/NĐ-CP | 219/2025/NĐ-CP | Hết hiệu lực khoản 1–8, 12 Điều 1, khoản 2 Điều 3, Phụ lục; khoản 9–10 Điều 1 (sửa Chương III của 152) còn hiệu lực |
+| 145/2020/NĐ-CP | 35/2022, 10/2024, 129/2025/NĐ-CP; 66.18/2026/NQ-CP | Khoản 2 Điều 4, khoản 2 Điều 31 đã sửa; Điều 91, 93–95, 97, 110–112 thực hiện theo 129/2025 (đến trước 01/03/2027); Điều 12, 15, 17–28, 31, 33, 35 thực hiện theo 66.18/2026; Điều 29, 34, Phụ lục III hỗn hợp → chưa xác minh |
+| 219/2025/NĐ-CP (mới thêm) | 24/2026/NQ-CP | Điều 15, 27 thực hiện theo Nghị quyết (đến trước 01/03/2027) |
+
+Văn bản đã kiểm tra nhưng không tác động thêm: 128/2025/NĐ-CP (Điều 8 đã bị 219/2025 bãi bỏ), 66.7/2025/NQ-CP (chỉ các thủ tục cấp phép đã bị 66.18 dừng), 66.17/2026/NQ-CP (không nhắc tới cho thuê lại lao động).
+
+**Kiểm soát chất lượng.** 45/45 câu trích tìm thấy nguyên văn trong PDF nguồn; mọi Điều/khoản đích tồn tại trong văn bản đã phân tích (khoản được xác định bỏ qua số thứ tự trong ngoặc kép trích dẫn); build `corpus-2026-10-01` qua mọi cổng (1017 chunk). Trạng thái chunk: 286 `presumed_current`, 225 `consolidated_current`, 128 `superseded_by_amendment`, 135 `unverified` (106 thuộc 12/2022 ngoài phạm vi, 29 điều khoản hỗn hợp), 225 `superseded_by_consolidation`, 18 `historical`. Ở chính sách `pilot`, **504 chunk** dùng được (trước: 242).
+
+**Giới hạn còn lại.** Sổ do AI hỗ trợ trích xuất và chưa có người duyệt; tìm kiếm Công báo xếp theo độ liên quan nên có thể sót văn bản; Nghị quyết 66.16/2026/NQ-CP không có trên Công báo điện tử (phần về cho thuê lại lao động đã bị 66.18 bãi bỏ); chưa đối chiếu các văn bản sắp xếp bộ máy năm 2025 nên tên cơ quan (Bộ/Sở Lao động – Thương binh và Xã hội, cấp huyện) trong văn bản có thể đã thay đổi; Phụ lục I của 135/2020 còn cột "thời điểm hưởng lương hưu" dựa trên quy tắc tại khoản 2 Điều 3 đã hết hiệu lực — cần ý kiến chuyên gia. Một dự thảo năm 2026 sửa/thay 145/2020 chưa có hiệu lực nên không đưa vào sổ.

@@ -129,7 +129,7 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 
 ### ADR-007 — Công báo có lớp chữ thay OCR; đọc PDF theo bố cục
 
-**Quyết định:** nguồn chính là PDF Công báo điện tử có lớp chữ (11 tệp, khóa SHA-256 trong `data/corpus/registry.json`); nhánh OCR chỉ còn là thí nghiệm pilot. Parser phân loại từng dòng trước khi ghép: header Công báo, tem chữ ký số, dải chuyên mục và khối nối giữa hai số Công báo bị loại; footnote của văn bản hợp nhất (chữ nhỏ, ký hiệu chỉ số) thành ghi chú sửa đổi gắn đúng Điều/khoản; bảng có đường kẻ dọc được viết lại theo dòng có nhãn cột, ô gộp vắt qua trang được nối lại.
+**Quyết định:** nguồn chính là PDF Công báo điện tử có lớp chữ (11 tệp, khóa SHA-256 trong `data/corpus/registry.json`, nay 12 tệp cho 11 văn bản); nhánh OCR chỉ còn là thí nghiệm pilot. Parser phân loại từng dòng trước khi ghép: header Công báo, tem chữ ký số, dải chuyên mục và khối nối giữa hai số Công báo bị loại; footnote của văn bản hợp nhất (chữ nhỏ, ký hiệu chỉ số) thành ghi chú sửa đổi gắn đúng Điều/khoản; bảng có đường kẻ dọc được viết lại theo dòng có nhãn cột, ô gộp vắt qua trang được nối lại.
 
 **Lý do:** 5/5 đoạn chép tay và 8/8 đoạn lấy ngẫu nhiên khớp nguyên văn với lớp chữ, trong khi OCR có WER ~16% và đọc sai số hiệu. Ghép text trước rồi lọc bằng regex đã làm 49% chunk dính header và 3/4 footnote gắn nhầm Điều. **Hệ quả:** build chạy ~1 phút cho 10 văn bản, tất định (cùng hash chunk qua các lần chạy) và thất bại nếu một cổng chất lượng bắt buộc không đạt.
 
@@ -137,7 +137,7 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 
 **Quyết định:** mỗi chunk mang `currency_status` (`verified_current`, `consolidated_current`, `presumed_current`, `pending_amendment`, `superseded_by_consolidation`, `historical`, `unverified`) và `currency_basis` bằng văn bản. Chính sách `strict` chỉ cho phép `verified_current` + text `verified` (cần người duyệt qua `data/review/*.json`); chính sách `pilot` (mặc định demo) thêm văn bản hợp nhất chính thức và văn bản được ghi nhận còn hiệu lực, với text đã qua mọi cổng tự động. Bản gốc 45/2019 được giữ nhưng chỉ để đối chiếu vì bản hợp nhất 18/VBHN-VPQH chứa nội dung hiện hành.
 
-**Lý do:** cổng chặt của kế hoạch ban đầu chặn 100% corpus cho đến khi có chuyên gia duyệt; chế độ `pilot` cho phép demo trung thực vì mọi câu trả lời hiển thị căn cứ hiệu lực và cảnh báo "chưa được chuyên gia duyệt". **Hệ quả:** 242/926 chunk dùng được; văn bản hết hiệu lực một phần chưa có ánh xạ điều khoản chỉ dùng để giải thích lý do từ chối (`currency_unverified`).
+**Lý do:** cổng chặt của kế hoạch ban đầu chặn 100% corpus cho đến khi có chuyên gia duyệt; chế độ `pilot` cho phép demo trung thực vì mọi câu trả lời hiển thị căn cứ hiệu lực và cảnh báo "chưa được chuyên gia duyệt". **Hệ quả:** 242/926 chunk dùng được trong snapshot `corpus-2026-09-30`; văn bản hết hiệu lực một phần chưa có ánh xạ điều khoản chỉ dùng để giải thích lý do từ chối (`currency_unverified`). ADR-012 thay phần ánh xạ này bằng sổ theo dõi hiệu lực và thêm trạng thái `superseded_by_amendment`.
 
 ### ADR-009 — Hai chế độ trả lời dùng chung tool, chính sách và bộ kiểm tra
 
@@ -157,6 +157,14 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 
 **Lý do:** reranker chiếm >90% độ trễ; trên CPU (container 12 vCPU) một câu đơn mất ~100 s khi chấm toàn bộ ứng viên. **Hệ quả:** p95 GPU ~5 s; CPU ~15–20 s/câu đơn — được công bố trong README.
 
+### ADR-012 — Sổ theo dõi hiệu lực cấp điều khoản, có dẫn chứng kiểm lại khi build
+
+**Quyết định:** hiệu lực của văn bản hướng dẫn được xác định theo từng Điều/khoản bằng [`data/corpus/currency_ledger.json`](../data/corpus/currency_ledger.json). Mỗi mục ghi: điều/khoản bị tác động, loại thay đổi (`expired`, `amended`, `displaced`, `partially_affected`, `added`), văn bản và điều khoản gây ra thay đổi, ngày áp dụng (và ngày hết áp dụng với quy định tạm thời), văn bản trong kho mang nội dung thay thế (nếu có), và **một câu trích nguyên văn** từ PDF Công báo của văn bản đó. Build tải lại 11 PDF nguồn của sổ, kiểm SHA-256 và tìm từng câu trích; sai một câu là build thất bại. Khoản bị tác động được tách thành chunk riêng (cắt theo khoản cấp cao nhất, bỏ qua số thứ tự nằm trong ngoặc kép trích dẫn), nên khoản còn hiệu lực không bị loại theo. Chunk bị tác động có trạng thái mới `superseded_by_amendment` kèm câu giải thích; văn bản đã được đối chiếu (`coverage`) mà không có mục nào tác động thì là `presumed_current` với căn cứ ghi rõ các văn bản đã đối chiếu và giới hạn của việc tra cứu.
+
+Chính sách trả lời thêm một quy tắc: nếu một điều đã hết hiệu lực/bị thay thế **mà văn bản thay thế không có trong kho** xếp hạng cao hơn mọi bằng chứng hợp lệ (`superseded_margin`, chọn 0.0 trên split dev), hệ thống từ chối với lý do `superseded_by_amendment` và nêu văn bản thay thế, thay vì ghép câu trả lời từ các điều lân cận.
+
+**Lý do:** đánh dấu cả văn bản là "chưa xác minh" loại bỏ phần lớn nội dung còn hiệu lực của 145/2020, 135/2020, 152/2020; ngược lại coi cả văn bản là còn hiệu lực sẽ trả lời bằng các điều đã bị Nghị định 158/2025, 219/2025, 129/2025 hay Nghị quyết 66.18/2026 thay đổi. Reranker cho điểm gần 1,0 cả điều đúng lẫn điều lân cận, nên chỉ một ngưỡng điểm không phân biệt được. **Hệ quả:** 504/1017 chunk dùng được ở chính sách `pilot` (trước 242/926); thêm Nghị định 219/2025/NĐ-CP vào kho. Sổ do AI hỗ trợ trích xuất, `reviewed_by` còn trống; độ phủ phụ thuộc danh sách văn bản sửa đổi của VBPL và tìm kiếm Công báo (xếp theo độ liên quan) — giới hạn này được ghi vào `currency_basis` của từng chunk.
+
 ## 6. Yêu cầu phi chức năng
 
 - **Tin cậy:** không có citation ngoài evidence của request; không tự tạo URL/trang/Điều; source lỗi thì `REFUSE` hoặc lỗi phụ thuộc rõ ràng.
@@ -173,7 +181,8 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 | Parser làm mất cấu trúc Điều/khoản | golden fixtures PDF/HTML, kiểm tra thủ công các văn bản dài |
 | PDF chính thức là scan; OCR sai số/ngày hoặc phụ lục | phát hiện ảnh toàn trang, lưu source image, soát OCR theo điều khoản, chặn chunk chưa review |
 | Trang nguồn đổi HTML hoặc chặn request | adapter riêng, test fixture, lỗi có trạng thái; không bỏ qua provenance |
-| Tình trạng hiệu lực thiếu ở mức điều khoản | review thủ công + `currency_unverified`; từ chối kết luận hiện hành |
+| Tình trạng hiệu lực thiếu ở mức điều khoản | sổ theo dõi hiệu lực có câu trích kiểm lại khi build (ADR-012); phần không tách được → `unverified`; người duyệt ghi `reviewed_by` |
+| Văn bản sửa đổi mới ban hành sau lần đối chiếu | ngày đối chiếu ghi trong `coverage` và `currency_basis`; lặp lại tra cứu Công báo trước mỗi snapshot |
 | BM25 tokenizer tiếng Việt kém | benchmark lexical failure trước khi thêm word segmentation |
 | Reranker chậm trên CPU | đo p95, cấu hình batch/top K, công bố hardware |
 | Citation đúng ID nhưng sai ý | kiểm tra claim-support, sample review thủ công, báo cáo citation precision |
@@ -189,5 +198,6 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 | ADR-009 | 2026-10-01 | Chế độ extractive và Claude dùng chung tool/kiểm tra | Accepted; Claude chưa benchmark (thiếu key) |
 | ADR-010 | 2026-10-01 | Qdrant nhúng khi dev, server trong Docker | Accepted |
 | ADR-011 | 2026-10-01 | Giới hạn ứng viên rerank, profile CPU | Accepted |
+| ADR-012 | 2026-10-01 | Sổ theo dõi hiệu lực cấp điều khoản, từ chối khi điều liên quan nhất đã bị thay thế | Accepted; sổ chưa có người duyệt |
 
 Các trang tham khảo kỹ thuật: [Qdrant payload và filtering](https://qdrant.tech/documentation/concepts/payload/), [FastAPI trong Docker](https://fastapi.tiangolo.com/deployment/docker/), [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat), [PyMuPDF text extraction](https://pymupdf.readthedocs.io/en/latest/recipes-text.html).
