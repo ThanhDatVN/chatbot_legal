@@ -4,7 +4,7 @@ Trạng thái: kế hoạch lập 2026-09-24 sau [pilot 10 văn bản](PILOT_10_
 
 ## 0. Trạng thái triển khai (2026-10-01)
 
-Các phase 1–12 đã có mã, test và bằng chứng chạy thật; số liệu ở [`../reports/benchmark_v1.md`](../reports/benchmark_v1.md). Những điểm còn mở được ghi ở cột cuối, không coi là "xong" khi chưa có bằng chứng.
+Các phase 1–12 đã có mã, test và bằng chứng chạy thật; số liệu ở [`../reports/benchmark_v2.md`](../reports/benchmark_v2.md) (v1 giữ để đối chiếu). Những điểm còn mở được ghi ở cột cuối, không coi là "xong" khi chưa có bằng chứng.
 
 | Task | Trạng thái | Bằng chứng | Còn mở |
 | --- | --- | --- | --- |

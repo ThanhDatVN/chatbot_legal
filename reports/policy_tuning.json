@@ -1,15 +1,15 @@
 {
  "meta": {
-  "date": "2026-10-01T02:40:11+00:00",
-  "git_commit": "ecfeb14-dirty",
-  "snapshot": "corpus-2026-09-30",
+  "date": "2026-10-01T08:18:22+00:00",
+  "git_commit": "33f11cc",
+  "snapshot": "corpus-2026-10-01",
   "currency_policy": "pilot",
   "embedding_model": "BAAI/bge-m3",
   "reranker_model": "BAAI/bge-reranker-v2-m3",
   "dense_top_k": 20,
   "sparse_top_k": 20,
   "rrf_k": 60,
-  "dataset": "questions_v1.jsonl",
+  "dataset": "questions_v2.jsonl",
   "hardware": {
    "platform": "Windows-10-10.0.26300-SP0",
    "python": "3.11.9",
@@ -24,140 +24,153 @@
   "params": {
    "answer_threshold": 0.8,
    "unverified_threshold": 0.5,
-   "stronger_margin": 0.05
+   "stronger_margin": 0.05,
+   "superseded_margin": 0.0
   },
-  "accuracy": 0.9608,
+  "accuracy": 0.9623,
   "false_answers": 1,
   "false_refusals": 1,
-  "objective": 0.9412
+  "objective": 0.9434
  },
  "top10": [
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.5,
-    "stronger_margin": 0.05
+    "stronger_margin": 0.05,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.5,
-    "stronger_margin": 0.15
+    "stronger_margin": 0.15,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.5,
-    "stronger_margin": 0.3
+    "stronger_margin": 0.3,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.7,
-    "stronger_margin": 0.05
+    "stronger_margin": 0.05,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.7,
-    "stronger_margin": 0.15
+    "stronger_margin": 0.15,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.7,
-    "stronger_margin": 0.3
+    "stronger_margin": 0.3,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.9,
-    "stronger_margin": 0.05
+    "stronger_margin": 0.05,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.9,
-    "stronger_margin": 0.15
+    "stronger_margin": 0.15,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.8,
     "unverified_threshold": 0.9,
-    "stronger_margin": 0.3
+    "stronger_margin": 0.3,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   {
    "params": {
     "answer_threshold": 0.7,
     "unverified_threshold": 0.5,
-    "stronger_margin": 0.05
+    "stronger_margin": 0.05,
+    "superseded_margin": 0.0
    },
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 2,
    "false_refusals": 0,
-   "objective": 0.9216
+   "objective": 0.9245
   }
  ],
- "questions": 51,
+ "questions": 53,
  "chosen": {
   "answer_threshold": 0.8,
   "keep_ratio": 0.85,
   "stronger_margin": 0.15,
   "unverified_threshold": 0.5,
   "max_sources": 3,
+  "superseded_margin": 0.0,
   "dev_score": {
-   "accuracy": 0.9608,
+   "accuracy": 0.9623,
    "false_answers": 1,
    "false_refusals": 1,
-   "objective": 0.9412
+   "objective": 0.9434
   },
   "notes": [
    "chosen = PolicyConfig defaults used by the service; ties on stronger_margin are broken towards the middle value",
+   "superseded_margin added with dataset v2: None -> 3 false answers on dev, 0.0 -> 1 with no extra false refusal; 0.0 chosen",
    "keep_ratio swept on dev with the full answer pipeline: 0.5/0.7 -> citation precision 0.818, correctness 0.917; 0.85 -> 0.844 / 0.917; 0.95 -> 0.891 / 0.883 (correctness drops). Chose 0.85."
   ]
  },
@@ -186,8 +199,8 @@
   {
    "id": "dir_07",
    "type": "direct",
-   "best_eligible": 0.9964,
-   "best_ineligible": 0.9982,
+   "best_eligible": 0.9982,
+   "best_ineligible": 0.9964,
    "scope_rule": null
   },
   {
@@ -249,8 +262,8 @@
   {
    "id": "dir_25",
    "type": "direct",
-   "best_eligible": 0.9994,
-   "best_ineligible": 0.9996,
+   "best_eligible": 0.9996,
+   "best_ineligible": 0.9993,
    "scope_rule": null
   },
   {
@@ -303,6 +316,20 @@
    "scope_rule": null
   },
   {
+   "id": "dir_41",
+   "type": "direct",
+   "best_eligible": 0.9996,
+   "best_ineligible": 0.9994,
+   "scope_rule": null
+  },
+  {
+   "id": "dir_43",
+   "type": "direct",
+   "best_eligible": 0.9994,
+   "best_ineligible": 0.813,
+   "scope_rule": null
+  },
+  {
    "id": "mul_01",
    "type": "multi",
    "best_eligible": 0.9283,
@@ -312,8 +339,8 @@
   {
    "id": "mul_03",
    "type": "multi",
-   "best_eligible": 0.9881,
-   "best_ineligible": 0.9913,
+   "best_eligible": 0.9913,
+   "best_ineligible": 0.9897,
    "scope_rule": null
   },
   {
@@ -375,8 +402,8 @@
   {
    "id": "una_01",
    "type": "unanswerable",
-   "best_eligible": 0.6106,
-   "best_ineligible": 0.9994,
+   "best_eligible": 0.9447,
+   "best_ineligible": 0.9926,
    "scope_rule": null
   },
   {
@@ -410,15 +437,15 @@
   {
    "id": "una_11",
    "type": "unanswerable",
-   "best_eligible": 0.6198,
-   "best_ineligible": 0.9927,
+   "best_eligible": 0.981,
+   "best_ineligible": 0.9995,
    "scope_rule": null
   },
   {
    "id": "una_13",
    "type": "unanswerable",
-   "best_eligible": 0.0496,
-   "best_ineligible": 0.0651,
+   "best_eligible": 0.0651,
+   "best_ineligible": 0.0462,
    "scope_rule": null
   },
   {
@@ -432,34 +459,34 @@
    "id": "out_01",
    "type": "out_of_scope",
    "best_eligible": 0.0078,
-   "best_ineligible": 0.0082,
+   "best_ineligible": 0.0158,
    "scope_rule": "out_of_scope"
   },
   {
    "id": "out_03",
    "type": "out_of_scope",
-   "best_eligible": 0.0104,
-   "best_ineligible": 0.0052,
+   "best_eligible": 0.0068,
+   "best_ineligible": 0.0031,
    "scope_rule": null
   },
   {
    "id": "out_05",
    "type": "out_of_scope",
-   "best_eligible": 0.0044,
-   "best_ineligible": 0.0049,
+   "best_eligible": 0.0049,
+   "best_ineligible": 0.0034,
    "scope_rule": "out_of_scope"
   },
   {
    "id": "out_07",
    "type": "out_of_scope",
-   "best_eligible": 0.0027,
-   "best_ineligible": 0.0077,
+   "best_eligible": 0.0077,
+   "best_ineligible": 0.0036,
    "scope_rule": null
   },
   {
    "id": "out_09",
    "type": "out_of_scope",
-   "best_eligible": 0.0029,
+   "best_eligible": 0.0058,
    "best_ineligible": 0.0062,
    "scope_rule": "out_of_scope"
   },
@@ -487,8 +514,8 @@
   {
    "id": "adv_01",
    "type": "adversarial",
-   "best_eligible": 0.4037,
-   "best_ineligible": 0.5537,
+   "best_eligible": 0.5537,
+   "best_ineligible": 0.4182,
    "scope_rule": null
   },
   {
@@ -501,22 +528,22 @@
   {
    "id": "adv_05",
    "type": "adversarial",
-   "best_eligible": 0.0002,
-   "best_ineligible": 0.0006,
+   "best_eligible": 0.0006,
+   "best_ineligible": 0.0003,
    "scope_rule": null
   },
   {
    "id": "adv_07",
    "type": "adversarial",
-   "best_eligible": 0.0007,
+   "best_eligible": 0.0018,
    "best_ineligible": 0.0018,
    "scope_rule": null
   },
   {
    "id": "adv_09",
    "type": "adversarial",
-   "best_eligible": 0.9952,
-   "best_ineligible": 0.9968,
+   "best_eligible": 0.9968,
+   "best_ineligible": 0.9944,
    "scope_rule": null
   }
  ]

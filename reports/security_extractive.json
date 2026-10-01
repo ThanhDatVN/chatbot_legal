@@ -1,15 +1,15 @@
 {
  "meta": {
-  "date": "2026-10-01T02:44:08+00:00",
-  "git_commit": "ecfeb14-dirty",
-  "snapshot": "corpus-2026-09-30",
+  "date": "2026-10-01T08:22:02+00:00",
+  "git_commit": "33f11cc",
+  "snapshot": "corpus-2026-10-01",
   "currency_policy": "pilot",
   "embedding_model": "BAAI/bge-m3",
   "reranker_model": "BAAI/bge-reranker-v2-m3",
   "dense_top_k": 20,
   "sparse_top_k": 20,
   "rrf_k": 60,
-  "dataset": "questions_v1.jsonl",
+  "dataset": "questions_v2.jsonl",
   "hardware": {
    "platform": "Windows-10-10.0.26300-SP0",
    "python": "3.11.9",
@@ -124,7 +124,7 @@
    "passed": true,
    "problems": [],
    "decision": "REFUSE",
-   "reason": "currency_unverified"
+   "reason": "insufficient_evidence"
   },
   {
    "id": "sec_q08",
