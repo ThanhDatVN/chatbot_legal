@@ -1,8 +1,8 @@
 {
  "meta": {
-  "date": "2026-10-01T08:16:48+00:00",
-  "git_commit": "33f11cc",
-  "snapshot": "corpus-2026-10-01",
+  "date": "2026-10-01T12:44:22+00:00",
+  "git_commit": "edd90b9",
+  "snapshot": "corpus-2026-10-01-r2",
   "currency_policy": "pilot",
   "embedding_model": "BAAI/bge-m3",
   "reranker_model": "BAAI/bge-reranker-v2-m3",
@@ -29,8 +29,8 @@
    "recall@5": 0.9323,
    "recall@10": 0.9688,
    "all_evidence@5_multi": 0.7,
-   "latency_ms_p50": 53.5,
-   "latency_ms_p95": 70.0,
+   "latency_ms_p50": 53.0,
+   "latency_ms_p95": 66.6,
    "misses": [
     "dir_34"
    ]
@@ -42,8 +42,8 @@
    "recall@5": 0.9531,
    "recall@10": 1.0,
    "all_evidence@5_multi": 0.8,
-   "latency_ms_p50": 61.1,
-   "latency_ms_p95": 68.7,
+   "latency_ms_p50": 63.7,
+   "latency_ms_p95": 75.7,
    "misses": [
     "dir_34"
    ]
@@ -55,8 +55,19 @@
    "recall@5": 0.9609,
    "recall@10": 1.0,
    "all_evidence@5_multi": 0.75,
-   "latency_ms_p50": 933.5,
-   "latency_ms_p95": 980.1,
+   "latency_ms_p50": 929.9,
+   "latency_ms_p95": 999.2,
+   "misses": []
+  },
+  "D_rerank_expanded": {
+   "questions": 64,
+   "hit@5": 1.0,
+   "mrr": 0.9818,
+   "recall@5": 0.9609,
+   "recall@10": 1.0,
+   "all_evidence@5_multi": 0.75,
+   "latency_ms_p50": 944.2,
+   "latency_ms_p95": 997.1,
    "misses": []
   }
  },
@@ -1630,16 +1641,16 @@
      "Điều 120"
     ],
     [
+     "129_2025_nd_cp",
+     "Điều 71"
+    ],
+    [
      "18_2026_vbhn_vpqh",
      "Điều 121"
     ],
     [
      "145_2020_nd_cp",
      "Điều 69"
-    ],
-    [
-     "18_2026_vbhn_vpqh",
-     "Điều 118"
     ]
    ],
    "hit@5": 1,
@@ -1755,8 +1766,8 @@
      "Điều 1"
     ],
     [
-     "145_2020_nd_cp",
-     "Điều 4"
+     "129_2025_nd_cp",
+     "Điều 71"
     ]
    ],
    "hit@5": 1,
@@ -2224,8 +2235,8 @@
      "Điều 189"
     ],
     [
-     "18_2026_vbhn_vpqh",
-     "Điều 188"
+     "129_2025_nd_cp",
+     "Điều 75"
     ]
    ],
    "hit@5": 1,
@@ -2771,8 +2782,8 @@
      "Điều 55"
     ],
     [
-     "18_2026_vbhn_vpqh",
-     "Điều 27"
+     "293_2025_nd_cp",
+     "Điều 4"
     ]
    ],
    "hit@5": 1,
@@ -4359,8 +4370,8 @@
      "Điều 4"
     ],
     [
-     "145_2020_nd_cp",
-     "Điều 1"
+     "129_2025_nd_cp",
+     "Điều 71"
     ]
    ],
    "hit@5": 1,
@@ -7432,8 +7443,8 @@
      "Điều 219"
     ],
     [
-     "18_2026_vbhn_vpqh",
-     "Điều 193"
+     "129_2025_nd_cp",
+     "Điều 75"
     ]
    ],
    "hit@5": 1,
@@ -7832,6 +7843,2610 @@
   },
   {
    "system": "C_rerank",
+   "id": "mul_20",
+   "question": "Mức lương tối thiểu giờ vùng II là bao nhiêu và mức lương tối thiểu giờ được áp dụng thế nào?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_01",
+   "question": "Người lao động làm đủ 12 tháng cho một người sử dụng lao động trong điều kiện bình thường thì được nghỉ hằng năm bao nhiêu ngày?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 66"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 114"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_02",
+   "question": "Thời gian thử việc tối đa đối với công việc cần trình độ chuyên môn từ cao đẳng trở lên là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 25"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 25"
+    ],
+    [
+     "152_2020_nd_cp",
+     "Phụ lục II"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 24"
+    ],
+    [
+     "152_2020_nd_cp",
+     "Phụ lục II"
+    ],
+    [
+     "152_2020_nd_cp",
+     "Phụ lục II"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_03",
+   "question": "Tiền lương trong thời gian thử việc ít nhất phải bằng bao nhiêu phần trăm mức lương của công việc đó?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 26"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 26"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 29"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 25"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Phụ lục V"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_04",
+   "question": "Thời giờ làm việc bình thường tối đa trong một ngày và trong một tuần là bao nhiêu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 60"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 61"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 107"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_05",
+   "question": "Giờ làm việc ban đêm được tính từ mấy giờ đến mấy giờ?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 106"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 106"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 64"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 109"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_06",
+   "question": "Số giờ làm thêm tối đa của người lao động trong một năm là bao nhiêu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 107"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 107"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 60"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 61"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 62"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Phụ lục IV"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_07",
+   "question": "Làm thêm giờ vào ngày nghỉ hằng tuần thì được trả lương ít nhất bằng bao nhiêu phần trăm?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 57"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 57"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_08",
+   "question": "Người lao động được nghỉ bao nhiêu ngày vào dịp Quốc khánh?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 112"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 112"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 111"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 115"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_09",
+   "question": "Khi kết hôn, người lao động được nghỉ việc riêng hưởng nguyên lương mấy ngày?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 115"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 115"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 112"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_10",
+   "question": "Mỗi tuần người lao động được nghỉ ít nhất bao nhiêu giờ liên tục?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 111"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 111"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 109"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 64"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_11",
+   "question": "Người làm việc ban đêm được nghỉ giữa giờ ít nhất bao nhiêu phút?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 64"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 109"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 109"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 64"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 63"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 106"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_12",
+   "question": "Người lao động làm việc theo ca được nghỉ ít nhất bao lâu trước khi chuyển sang ca làm việc khác?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 110"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 110"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 63"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 64"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 109"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_13",
+   "question": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu tháng?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 5"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 36"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 7"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_14",
+   "question": "Trường hợp nào hai bên được giao kết hợp đồng lao động bằng lời nói?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 14"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 14"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 18"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 13"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 162"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_15",
+   "question": "Người làm việc theo hợp đồng không xác định thời hạn muốn nghỉ việc phải báo trước bao nhiêu ngày?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 36"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 7"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_16",
+   "question": "Trợ cấp thôi việc được tính bao nhiêu cho mỗi năm làm việc?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 46"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 46"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 47"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_17",
+   "question": "Trợ cấp mất việc làm ít nhất bằng bao nhiêu tháng tiền lương?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 47"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 47"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 41"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 46"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_18",
+   "question": "Sau khi chấm dứt hợp đồng lao động, hai bên phải thanh toán các khoản tiền liên quan trong thời hạn bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 48"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 48"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 41"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_19",
+   "question": "Tuổi nghỉ hưu của lao động nam trong điều kiện lao động bình thường sẽ là bao nhiêu vào năm 2028?",
+   "gold": [
+    [
+     "135_2020_nd_cp",
+     "Phụ lục I"
+    ],
+    [
+     "135_2020_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 169"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 169"
+    ],
+    [
+     "135_2020_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "135_2020_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "135_2020_nd_cp",
+     "Phụ lục I"
+    ],
+    [
+     "135_2020_nd_cp",
+     "Phụ lục I"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_20",
+   "question": "Lao động nữ sinh con lần đầu được nghỉ thai sản bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 139"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 139"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 80"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 141"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 80"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_21",
+   "question": "Thời hiệu xử lý kỷ luật lao động là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 123"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 123"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 126"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 70"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 125"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 124"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_22",
+   "question": "Có những hình thức xử lý kỷ luật lao động nào?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 124"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 124"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 125"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 122"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_23",
+   "question": "Người sử dụng lao động có được phạt tiền người lao động thay cho việc xử lý kỷ luật không?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 127"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 127"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 70"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 122"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 125"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_24",
+   "question": "Thời hạn tạm đình chỉ công việc của người lao động tối đa là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 128"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 128"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 41"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 155"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_25",
+   "question": "Doanh nghiệp sử dụng từ bao nhiêu người lao động trở lên thì nội quy lao động phải bằng văn bản?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 118"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 118"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 121"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 119"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 18"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_26",
+   "question": "Người hưởng lương theo tháng được trả lương mấy lần mỗi tháng?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 97"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 97"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 54"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 95"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_27",
+   "question": "Mức khấu trừ tiền lương hằng tháng của người lao động tối đa là bao nhiêu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 102"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 102"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 129"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 101"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_28",
+   "question": "Nếu phải ngừng việc do lỗi của người sử dụng lao động thì người lao động được trả lương thế nào?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 99"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 99"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 207"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 29"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 113"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_29",
+   "question": "Lao động chưa thành niên là người lao động bao nhiêu tuổi?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 143"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 143"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 145"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 147"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 3"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_30",
+   "question": "Người chưa đủ 15 tuổi được làm việc tối đa bao nhiêu giờ trong một ngày?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 145"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 143"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 60"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_31",
+   "question": "Thời hạn tối đa của giấy phép lao động cấp cho người lao động nước ngoài là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 155"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 21"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 155"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 21"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 29"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 22"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 17"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_32",
+   "question": "Hợp đồng lao động bị vô hiệu toàn bộ trong những trường hợp nào?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 49"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 49"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 86"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 10"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 11"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_33",
+   "question": "Thời hiệu yêu cầu Tòa án giải quyết tranh chấp lao động cá nhân là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 190"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 190"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 194"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 189"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 188"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 193"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_34",
+   "question": "Công ty có được giữ bản chính căn cước hay văn bằng của người lao động không?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 17"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 17"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 48"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 165"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 5"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Phụ lục V"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_35",
+   "question": "Mức lương tối thiểu giờ ở vùng III là bao nhiêu?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_36",
+   "question": "Mức lương tối thiểu tháng ở vùng IV hiện nay là bao nhiêu?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_37",
+   "question": "Nghị định 293/2025/NĐ-CP về lương tối thiểu có hiệu lực từ ngày nào?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Điều 5"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 5"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_38",
+   "question": "Mức lương tối thiểu tháng được dùng làm cơ sở cho việc gì?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 91"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 50"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 93"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_39",
+   "question": "Phường Hoàn Kiếm ở Hà Nội thuộc vùng lương tối thiểu nào?",
+   "gold": [
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_40",
+   "question": "Sau khi ban hành nội quy lao động, doanh nghiệp phải nộp hồ sơ đăng ký trong bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 119"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 119"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 121"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ],
+    [
+     "152_2020_nd_cp",
+     "Điều 23"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 120"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_41",
+   "question": "Hồ sơ đề nghị cấp giấy phép lao động cho người nước ngoài gồm những giấy tờ gì?",
+   "gold": [
+    [
+     "219_2025_nd_cp",
+     "Điều 18"
+    ]
+   ],
+   "top5": [
+    [
+     "219_2025_nd_cp",
+     "Điều 20"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 18"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 18"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 24"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 0.5,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 2
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_42",
+   "question": "Danh mục các công việc được phép cho thuê lại lao động gồm những công việc nào?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Phụ lục II"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Phụ lục II"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 30"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 13"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 114"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 52"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_43",
+   "question": "Sổ quản lý lao động phải có những thông tin gì theo nghị định hướng dẫn?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 3"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 5"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "dir_44",
+   "question": "Thành viên tổ lái tàu bay muốn đơn phương chấm dứt hợp đồng phải báo trước bao nhiêu ngày?",
+   "gold": [
+    [
+     "145_2020_nd_cp",
+     "Điều 7"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Điều 7"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 36"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 162"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_01",
+   "question": "Thời gian thử việc tối đa với công việc cần trình độ trung cấp là bao lâu và lương thử việc ít nhất bằng bao nhiêu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 25"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 26"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 25"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 26"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 24"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Phụ lục V"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_02",
+   "question": "Người làm việc 10 năm cho cùng một công ty trong điều kiện bình thường được nghỉ hằng năm bao nhiêu ngày?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 114"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 114"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 111"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_03",
+   "question": "Giới hạn làm thêm giờ trong năm là bao nhiêu và lương làm thêm vào ngày thường ít nhất bằng bao nhiêu phần trăm?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 107"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ]
+   ],
+   "top5": [
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 60"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 57"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 0.3333333333333333,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "all_evidence@5": 0,
+   "first_rank": 3
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_04",
+   "question": "Khi nghỉ việc, người lao động được trợ cấp thôi việc thế nào và công ty phải thanh toán trong bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 46"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 48"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 46"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "all_evidence@5": 0,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_05",
+   "question": "Lao động nữ mang thai có quyền đơn phương chấm dứt hợp đồng không, và công ty có được cho người mang thai từ tháng thứ 7 làm thêm giờ không?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 138"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 138"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 35"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 37"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_06",
+   "question": "Có những hình thức kỷ luật lao động nào và thời hiệu xử lý kỷ luật là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 123"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 124"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 123"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 124"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 125"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 126"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 70"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_07",
+   "question": "Làm việc ban đêm được tính từ mấy giờ và được trả thêm ít nhất bao nhiêu phần trăm tiền lương?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 106"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 98"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 57"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 57"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 55"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "all_evidence@5": 0,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_08",
+   "question": "Hợp đồng lao động có những loại nào và phải có những nội dung chủ yếu gì?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 21"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 21"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 44"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 55"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 62"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_09",
+   "question": "Người lao động 16 tuổi được làm việc tối đa bao nhiêu giờ mỗi ngày và bị cấm làm những công việc gì?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 147"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 146"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 147"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 105"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 145"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_10",
+   "question": "Tranh chấp lao động cá nhân do những ai giải quyết và thời hiệu yêu cầu hòa giải viên lao động hòa giải là bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 187"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 190"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 190"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 188"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 194"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 219"
+    ],
+    [
+     "129_2025_nd_cp",
+     "Điều 75"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "all_evidence@5": 0,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_11",
+   "question": "Khi nào người lao động có quyền đình công và khi nào đình công bị coi là bất hợp pháp?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 199"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 204"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 204"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 199"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 217"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 203"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 198"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_12",
+   "question": "Nội quy lao động khi nào phải bằng văn bản và phải đăng ký tại cơ quan nào?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 118"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 119"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 119"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 118"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 69"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 121"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 120"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_13",
+   "question": "Người nước ngoài cần điều kiện gì để làm việc tại Việt Nam và giấy phép lao động có thời hạn bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 151"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 155"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 151"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 22"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 18"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 7"
+    ],
+    [
+     "219_2025_nd_cp",
+     "Điều 21"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 0.5,
+   "recall@10": 1.0,
+   "all_evidence@5": 0,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_14",
+   "question": "Người lao động được nghỉ Tết Âm lịch mấy ngày và được nghỉ bao nhiêu ngày khi cha mẹ mất?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 112"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 115"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 112"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 115"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 111"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 113"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_15",
+   "question": "Người lao động cao tuổi là ai và có được giao kết nhiều lần hợp đồng xác định thời hạn không?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 148"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 149"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 149"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 148"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 151"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 20"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 19"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_16",
+   "question": "Những trường hợp nào được tạm hoãn hợp đồng lao động và hết thời hạn tạm hoãn thì người lao động phải có mặt trong bao lâu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 30"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 31"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 31"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 30"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 36"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 89"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 138"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_17",
+   "question": "Khi doanh nghiệp thay đổi cơ cấu, công nghệ khiến người lao động mất việc thì trợ cấp được tính thế nào?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 42"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 47"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 42"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 8"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 47"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_18",
+   "question": "Mức lương tối thiểu là gì và mức lương tối thiểu tháng vùng I hiện nay là bao nhiêu?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 91"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ]
+   ],
+   "top5": [
+    [
+     "293_2025_nd_cp",
+     "Điều 3"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 91"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Điều 4"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ],
+    [
+     "293_2025_nd_cp",
+     "Phụ lục"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
+   "id": "mul_19",
+   "question": "Lao động nữ sinh con thứ hai được nghỉ thai sản bao lâu và khi quay lại có được bảo đảm việc làm cũ không?",
+   "gold": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 139"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 140"
+    ]
+   ],
+   "top5": [
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 139"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 140"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 137"
+    ],
+    [
+     "145_2020_nd_cp",
+     "Điều 80"
+    ],
+    [
+     "18_2026_vbhn_vpqh",
+     "Điều 141"
+    ]
+   ],
+   "hit@5": 1,
+   "mrr": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "all_evidence@5": 1,
+   "first_rank": 1
+  },
+  {
+   "system": "D_rerank_expanded",
    "id": "mul_20",
    "question": "Mức lương tối thiểu giờ vùng II là bao nhiêu và mức lương tối thiểu giờ được áp dụng thế nào?",
    "gold": [

@@ -17,26 +17,38 @@ căn cứ không đủ, mâu thuẫn hoặc chưa xác minh hiệu lực thì h�
 
 ![Bảng đánh giá](assets/screenshots/evaluation.png)
 
-## Kết quả chính (split test, 51 câu; truy xuất trên 64 câu trả lời được)
+## Kết quả chính
+
+**Câu hỏi sát văn luật** (bộ v2, split test 51 câu; truy xuất trên 64 câu trả lời được):
 
 | Hệ thống | Hit@5 | MRR | Citation precision | Correctness | Refusal accuracy | Trả lời sai | p95 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| A — Dense + RAG đơn giản | 0.984 | 0.922 | 0.529 | 0.578 | 0.681 | 15 | 0.09 s |
-| B — Dense + BM25 + RRF | 0.984 | 0.947 | 0.549 | 0.547 | 0.681 | 15 | 0.09 s |
+| A — Dense + RAG đơn giản | 0.984 | 0.922 | 0.529 | 0.578 | 0.681 | 15 | 0.13 s |
+| B — Dense + BM25 + RRF | 0.984 | 0.947 | 0.549 | 0.547 | 0.681 | 15 | 0.15 s |
 | C — Hybrid + reranker | 1.000 | 0.982 | 0.578 | 0.562 | 0.681 | 15 | 1.0 s |
-| **D — C + từ chối + kiểm tra citation** | **1.000** | **0.982** | **0.634** | **0.891** | **0.957** | **1** | 4.2 s |
+| **D — C + từ chối + kiểm tra citation** | **1.000** | **0.982** | **0.651** | **0.922** | **0.979** | **1** | 4.4 s |
 
-- D: quyết định đúng 49/51, refusal F1 0.933, groundedness 1.000 (mọi nhận định là trích nguyên văn nguồn được
-  trích dẫn), 0 vi phạm đối kháng; 3/4 câu hỏi về điều khoản đã hết hiệu lực/bị thay thế được từ chối với lý do
-  `superseded_by_amendment` và căn cứ nêu văn bản thay thế (ca còn lại: [phân tích lỗi](docs/EVALUATION.md#5-phân-tích-lỗi)).
+**Câu hỏi đời thường** (bộ held-out 40 câu, viết trước khi sửa và không dùng để chỉnh):
+
+| Hệ thống | Quyết định đúng | Trả lời sai | Từ chối nhầm | Correctness |
+| --- | ---: | ---: | ---: | ---: |
+| A — RAG đơn giản | 0.700 | 12 | 0 | 0.536 |
+| D trước khi bổ sung thuật ngữ | 0.775 | 0 | 9 | 0.643 |
+| **D hiện tại** | **0.825** | **1** | **6** | **0.714** |
+
+- D: groundedness 1.000 (mọi nhận định là trích nguyên văn nguồn được trích dẫn), 0 vi phạm đối kháng; câu hỏi về
+  điều khoản đã hết hiệu lực/bị thay thế được từ chối kèm tên văn bản thay thế, hoặc trả lời từ văn bản thay thế khi
+  nó có trong kho (ví dụ Nghị định 129/2025 cho hòa giải viên, đình công).
 - Bộ kiểm thử bảo mật: **30/30** ca đạt (prompt injection, bịa trích dẫn, lạm dụng tool, chèn lệnh qua tài liệu…).
 - Chi phí API LLM: $0 ở chế độ extractive (model chạy cục bộ trên RTX 3050 Laptop; GPU không miễn phí).
-- Số liệu sinh tự động: [`reports/benchmark_v2.md`](reports/benchmark_v2.md) (commit `33f11cc`). Định nghĩa chỉ
-  số, cách lập bộ dữ liệu, thay đổi so với v1 và phân tích lỗi: [`docs/EVALUATION.md`](docs/EVALUATION.md).
+- Số liệu sinh tự động: [`reports/benchmark_v3.md`](reports/benchmark_v3.md) (commit `edd90b9`; chạy lại bằng
+  `python scripts/run_benchmark.py`). Cách lập các bộ câu hỏi, những gì đã thấy trước khi sửa và phân tích lỗi:
+  [`docs/EVALUATION.md`](docs/EVALUATION.md).
 
-Correctness và citation precision là **chỉ số tự động (proxy)**; nhãn gold do AI soạn từ nguyên văn và chưa
-được người duyệt, nên số truy xuất có thể lạc quan. Số v2 không so trực tiếp với v1
-([`benchmark_v1.md`](reports/benchmark_v1.md)): corpus dùng được tăng từ 242 lên 504 chunk và nhãn đã thay đổi.
+Correctness và citation precision là **chỉ số tự động (proxy)**; nhãn do AI soạn từ nguyên văn và chưa được người
+duyệt. Điểm yếu lớn nhất hiện tại là **từ chối nhầm câu hỏi đời thường** (6/28 câu trả lời được trên held-out): chế
+độ extractive dựa vào điểm cross-encoder tuyệt đối. Hai lỗi của lần đo trước được phát hiện trên split test nên mức
+tăng trên test không hoàn toàn khách quan; bộ held-out là thước đo khách quan.
 
 ## Kiến trúc
 
@@ -66,7 +78,7 @@ Correctness và citation precision là **chỉ số tự động (proxy)**; nhã
    (SHA-256)       header/chữ ký/footnote/bảng  phụ lục, trích dẫn sửa luật    hiệu lực theo từng chunk
 ```
 
-- **Corpus**: 11 văn bản chính thức tải từ Công báo điện tử (PDF có lớp chữ), khóa SHA-256 trong
+- **Corpus**: 12 văn bản chính thức tải từ Công báo điện tử (PDF có lớp chữ), khóa SHA-256 trong
   [`data/corpus/registry.json`](data/corpus/registry.json). Quy trình chọn nguồn: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 - **Ingestion** ([`ingestion/`](ingestion)): đọc PDF theo bố cục — bỏ header Công báo, tem chữ ký số, khối nối
   trang; footnote của văn bản hợp nhất thành ghi chú sửa đổi gắn đúng khoản; bảng thành từng dòng có nhãn cột
@@ -105,12 +117,13 @@ Hai model (`BAAI/bge-m3`, `BAAI/bge-reranker-v2-m3`) được đọc từ cache 
 
 ```powershell
 python scripts/download_sources.py                         # tải 21 tệp PDF chính thức (corpus + sổ hiệu lực), kiểm SHA-256
-python -X utf8 -m ingestion.build --snapshot-id corpus-2026-10-01   # snapshot + quality_report.json
+python -X utf8 -m ingestion.build --snapshot-id corpus-2026-10-01-r2   # snapshot + quality_report.json
 python -X utf8 -m app.indexing                             # embedding (có cache) → Qdrant + BM25
 ```
 
-Build hiện tạo 1017 chunk, cả 11 văn bản qua mọi cổng bắt buộc và 45/45 câu trích của sổ hiệu lực khớp PDF
-([`quality_report.json`](data/snapshots/corpus-2026-10-01/quality_report.json)). Text pháp lý trích xuất
+Build hiện tạo 1029 chunk, cả 12 văn bản qua mọi cổng bắt buộc và 46/46 câu trích của sổ hiệu lực khớp PDF
+([`quality_report.json`](data/snapshots/corpus-2026-10-01-r2/quality_report.json)). Snapshot là bất biến: build từ
+chối ghi đè một snapshot đã có nếu nội dung khác (dùng `--snapshot-id` mới). Text pháp lý trích xuất
 (chunk, section) **không** được commit; chỉ commit manifest, báo cáo chất lượng và metadata.
 
 ## Chạy
@@ -132,7 +145,7 @@ docker compose up --build                            # UI: http://localhost:8501
 
 Container API chạy model trên CPU với profile nhẹ hơn (8 ứng viên rerank, 512 token) và đọc cache model của máy
 chủ qua `HF_CACHE` (mặc định `~/.cache/huggingface`). Trên máy phát triển (Docker 12 vCPU) một câu đơn mất
-~15–20 s, câu nhiều vế ~55 s; chạy cục bộ trên GPU nhanh hơn nhiều (p95 4.2 s trên tập test). Số liệu benchmark
+~15–20 s, câu nhiều vế ~55 s; chạy cục bộ trên GPU nhanh hơn nhiều (p95 4.4 s trên tập test). Số liệu benchmark
 dùng cấu hình GPU với 20 ứng viên rerank.
 
 **Dùng Claude thay vì chế độ extractive**: đặt `LLM_PROVIDER=anthropic` và `ANTHROPIC_API_KEY` trong `.env`.
@@ -143,7 +156,7 @@ nhận định vẫn qua cùng bộ kiểm tra citation.
 
 | Biến | Mặc định | Ý nghĩa |
 | --- | --- | --- |
-| `ACTIVE_SNAPSHOT` | `corpus-2026-10-01` | snapshot API phục vụ |
+| `ACTIVE_SNAPSHOT` | `corpus-2026-10-01-r2` | snapshot API phục vụ |
 | `CURRENCY_POLICY` | `pilot` | `strict`: chỉ điều khoản đã người duyệt; `pilot`: + văn bản hợp nhất / được ghi nhận còn hiệu lực |
 | `QDRANT_URL` | trống | trống = Qdrant nhúng trong `data/indexes/qdrant` |
 | `MODEL_DEVICE` | `auto` | `cuda` (fp16) / `cpu` (fp32) |
@@ -157,22 +170,23 @@ Danh sách đầy đủ: [`.env.example`](.env.example).
 ## Đánh giá
 
 ```powershell
-python -X utf8 -m evaluation.dataset_v2             # 104 câu, kiểm tra nhãn gold và dữ kiện có trong snapshot
-python -X utf8 -m evaluation.retrieval_eval --split all     # A/B/C: Hit@5, MRR, Recall
-python -X utf8 -m evaluation.tune_policy            # hiệu chỉnh ngưỡng chỉ trên split dev
-python -X utf8 -m evaluation.answer_eval --split test       # A/B/C/D đầu cuối
-python -X utf8 -m evaluation.security_eval          # 30 ca bảo mật trên hệ thống thật
-python -X utf8 -m evaluation.report                 # reports/benchmark_v2.md
+python scripts/run_benchmark.py      # toàn bộ: bộ câu hỏi, truy xuất, hiệu chỉnh ngưỡng trên dữ liệu phát triển,
+                                     # A/B/C/D trên test, hai bộ câu hỏi đời thường, 30 ca bảo mật, reports/benchmark_v3.md
 ```
 
-Bộ câu hỏi v2: 44 trực tiếp, 20 nhiều nguồn, 15 không đủ căn cứ, 10 ngoài phạm vi, 5 mơ hồ, 10 đối kháng; chia
-cố định dev/test. v2 gắn lại nhãn của v1 theo sổ hiệu lực (thay đổi liệt kê trong
-[`evaluation/dataset_v2.py`](evaluation/dataset_v2.py)). Mỗi báo cáo ghi commit, snapshot, model, tham số và phần cứng.
+Từng bước có thể chạy riêng (`python -X utf8 -m evaluation.retrieval_eval --split all`, `evaluation.answer_eval
+--split test`, `evaluation.answer_eval --split heldout --dataset data/eval/questions_heldout_v1.jsonl`…). Commit mã
+trước khi chạy: mỗi báo cáo ghi commit, snapshot, model, tham số và phần cứng, và đánh dấu `-dirty` nếu mã hoặc dữ
+liệu khác commit.
+
+Bộ câu hỏi: v2 (44 trực tiếp, 20 nhiều nguồn, 15 không đủ căn cứ, 10 ngoài phạm vi, 5 mơ hồ, 10 đối kháng; chia cố
+định dev/test; thay đổi so với v1 liệt kê trong [`evaluation/dataset_v2.py`](evaluation/dataset_v2.py)), bộ
+paraphrase dev 27 câu dùng để chỉnh, và bộ held-out 40 câu chỉ dùng để đo.
 
 ## Kiểm thử
 
 ```powershell
-python -m pytest tests            # 93 test: unit, integration (PDF thật, API), security, UI headless
+python -m pytest tests            # 98 test: unit, integration (PDF thật, API), security, UI headless
 ```
 
 Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy hoặc PDF nguồn.
@@ -194,15 +208,16 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
   (12/02/2026) chưa được đối chiếu; tên cơ quan sau sắp xếp bộ máy 2025 (Sở Nội vụ thay Sở LĐTBXH, bỏ cấp
   huyện) chưa được chuẩn hóa trong văn bản cũ. 29 chunk có nội dung còn và hết hiệu lực đan xen được giữ ở
   `unverified`. Chi tiết: [`docs/DATA_QUALITY_ASSESSMENT.md`](docs/DATA_QUALITY_ASSESSMENT.md#7-sổ-theo-dõi-hiệu-lực-cấp-điều-khoản-2026-10-01).
-- **Corpus nhỏ**: 11 văn bản, 504 chunk dùng được cho câu hỏi hiện hành; chưa đạt mục tiêu 20–50 văn bản. Các
-  văn bản thay thế như Nghị định 129/2025, Nghị quyết 66.18/2026, Luật Bảo hiểm xã hội 2024 chưa có trong kho
-  nên câu hỏi về phần đã bị thay thế bị từ chối kèm tên văn bản thay thế.
+- **Corpus nhỏ**: 12 văn bản, 516 chunk dùng được cho câu hỏi hiện hành; chưa đạt mục tiêu 20–50 văn bản. Nghị định
+  129/2025 mới được nạp phần Điều 71–80; Nghị quyết 66.18/2026, 24/2026 và Luật Bảo hiểm xã hội 2024 chưa có trong
+  kho nên câu hỏi về phần đã bị chúng thay thế bị từ chối kèm tên văn bản thay thế.
 - **Đánh giá**: nhãn gold và câu hỏi do AI soạn từ nguyên văn (chưa được người duyệt) nên dễ trùng từ với
   nguồn; correctness/citation precision là proxy tự động. Chế độ Claude chưa được benchmark vì máy phát triển
   không có API key.
 - **Chế độ extractive** trả lời bằng trích dẫn nguyên văn, không diễn giải hay tính toán (ví dụ cộng ngày phép
-  theo thâm niên); câu hỏi dùng từ khác xa văn bản luật có thể bị từ chối nhầm.
-- **Độ trễ**: reranker chiếm phần lớn p95 (3.8/4.2 s; câu hỏi nhiều vế cần nhiều lượt rerank); trên CPU chậm hơn ~5–10 lần.
+  theo thâm niên). Câu hỏi đời thường được bổ sung thuật ngữ pháp lý trước khi tìm kiếm
+  ([`app/agent/lexicon.py`](app/agent/lexicon.py)), nhưng vẫn bị từ chối nhầm 6/28 câu trên bộ held-out.
+- **Độ trễ**: reranker chiếm phần lớn p95 (3.8/4.4 s; câu hỏi nhiều vế cần nhiều lượt rerank); trên CPU chậm hơn ~5–10 lần.
 - **Giấy phép**: văn bản quy phạm pháp luật không thuộc đối tượng bảo hộ quyền tác giả, nhưng dự án vẫn không
   phân phối lại tệp PDF/text trích xuất; PyMuPDF dùng giấy phép AGPL.
 
@@ -210,16 +225,16 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
 
 | # | Yêu cầu | Bằng chứng |
 | --- | --- | --- |
-| 1 | Corpus manifest | [`registry.json`](data/corpus/registry.json), [`currency_ledger.json`](data/corpus/currency_ledger.json), [`snapshot.json`](data/snapshots/corpus-2026-10-01/snapshot.json) |
+| 1 | Corpus manifest | [`registry.json`](data/corpus/registry.json), [`currency_ledger.json`](data/corpus/currency_ledger.json), [`snapshot.json`](data/snapshots/corpus-2026-10-01-r2/snapshot.json) |
 | 2 | PDF + HTML ingestion | PDF: [`ingestion/layout.py`](ingestion/layout.py); HTML: [`ingestion/html_parser.py`](ingestion/html_parser.py) + test fixture (snapshot hiện tại chỉ có nguồn PDF) |
 | 3 | Metadata-aware chunking | [`ingestion/chunk.py`](ingestion/chunk.py), test [`tests/unit`](tests/unit) |
-| 4 | Dense baseline | System A trong [`reports/benchmark_v2.md`](reports/benchmark_v2.md) |
+| 4 | Dense baseline | System A trong [`reports/benchmark_v3.md`](reports/benchmark_v3.md) |
 | 5 | Hybrid retrieval | [`app/retrieval/`](app/retrieval), System B |
 | 6 | Reranker | `BgeReranker`, System C |
 | 7 | Two-tool agent | [`app/agent/tools.py`](app/agent/tools.py) |
 | 8 | Citation system | validator + nút trích dẫn/hộp thoại nguồn trong UI |
 | 9 | Evidence refusal | ANSWER/PARTIAL/REFUSE, refusal F1 0.968 |
-| 10 | Evaluation suite | 104 câu, [`evaluation/`](evaluation), [`docs/EVALUATION.md`](docs/EVALUATION.md) |
+| 10 | Evaluation suite | 104 câu (v2) + 40 held-out + 27 paraphrase dev, [`evaluation/`](evaluation), [`docs/EVALUATION.md`](docs/EVALUATION.md) |
 | 11 | Security suite | 30 ca, [`reports/security_extractive.json`](reports/security_extractive.json) |
 | 12 | Product demo | FastAPI + Streamlit + Docker Compose + dashboard |
 

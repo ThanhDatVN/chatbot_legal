@@ -165,6 +165,24 @@ Chính sách trả lời thêm một quy tắc: nếu một điều đã hết h
 
 **Lý do:** đánh dấu cả văn bản là "chưa xác minh" loại bỏ phần lớn nội dung còn hiệu lực của 145/2020, 135/2020, 152/2020; ngược lại coi cả văn bản là còn hiệu lực sẽ trả lời bằng các điều đã bị Nghị định 158/2025, 219/2025, 129/2025 hay Nghị quyết 66.18/2026 thay đổi. Reranker cho điểm gần 1,0 cả điều đúng lẫn điều lân cận, nên chỉ một ngưỡng điểm không phân biệt được. **Hệ quả:** 504/1017 chunk dùng được ở chính sách `pilot` (trước 242/926); thêm Nghị định 219/2025/NĐ-CP vào kho. Sổ do AI hỗ trợ trích xuất, `reviewed_by` còn trống; độ phủ phụ thuộc danh sách văn bản sửa đổi của VBPL và tìm kiếm Công báo (xếp theo độ liên quan) — giới hạn này được ghi vào `currency_basis` của từng chunk.
 
+### ADR-013 — Câu hỏi đời thường, nạp chọn lọc điều khoản và snapshot bất biến được kiểm tra
+
+**Quyết định:** (1) truy vấn tìm kiếm được bổ sung thuật ngữ pháp lý tương ứng với từ đời thường
+([`app/agent/lexicon.py`](../app/agent/lexicon.py): "tiếng" → "giờ", "công ty/sếp" → "người sử dụng lao động", "đặt cọc"
+→ "biện pháp bảo đảm bằng tiền"…); câu hỏi của người dùng giữ nguyên, phần bổ sung chỉ phục vụ tìm kiếm và chọn đoạn.
+(2) Nguồn bổ sung (không phải nguồn tốt nhất) chỉ được trích khi một khoản/điểm của nó đạt điểm ≥ `unit_threshold`
+(0.2); khối tiêu đề phụ lục không bao giờ được trích. (3) Văn bản có thể khai báo `section_scope` trong registry để
+chỉ nạp các Điều thuộc phạm vi (Nghị định 129/2025/NĐ-CP: Điều 71–80); cổng chất lượng vẫn phân tích toàn văn. Mục
+sổ hiệu lực có `successor_document_id` khi văn bản thay thế nằm trong kho, nên điều bị thay thế không còn chặn câu
+trả lời từ văn bản thay thế. (4) Build từ chối ghi đè một snapshot đã công bố nếu `chunks_sha256` khác.
+
+**Lý do:** bộ held-out viết theo lối nói thông thường cho thấy D từ chối nhầm 9/28 câu trả lời được dù Điều đúng
+thường đứng hạng 1 — điểm cross-encoder tuyệt đối thấp với cách nói đời thường, trong khi hạ ngưỡng làm tăng trả lời
+sai. Ngưỡng và từ điển được chỉnh trên dev v2 + bộ paraphrase dev; held-out chỉ đo một lần sau khi sửa. Snapshot
+`corpus-2026-10-01` từng bị build đè khi thêm văn bản — chốt chặn ngăn lặp lại; bản có 129/2025 là
+`corpus-2026-10-01-r2`. **Hệ quả:** độ chính xác quyết định trên paraphrase dev 0.556 → 0.815, dev v2 không đổi; từ
+điển là danh sách thủ công cần mở rộng theo phản hồi người dùng.
+
 ## 6. Yêu cầu phi chức năng
 
 - **Tin cậy:** không có citation ngoài evidence của request; không tự tạo URL/trang/Điều; source lỗi thì `REFUSE` hoặc lỗi phụ thuộc rõ ràng.
@@ -199,5 +217,6 @@ Chính sách trả lời thêm một quy tắc: nếu một điều đã hết h
 | ADR-010 | 2026-10-01 | Qdrant nhúng khi dev, server trong Docker | Accepted |
 | ADR-011 | 2026-10-01 | Giới hạn ứng viên rerank, profile CPU | Accepted |
 | ADR-012 | 2026-10-01 | Sổ theo dõi hiệu lực cấp điều khoản, từ chối khi điều liên quan nhất đã bị thay thế | Accepted; sổ chưa có người duyệt |
+| ADR-013 | 2026-10-01 | Mở rộng truy vấn bằng thuật ngữ pháp lý, kiểm tra nguồn bổ sung theo khoản, `section_scope`, chốt chặn snapshot bất biến | Accepted |
 
 Các trang tham khảo kỹ thuật: [Qdrant payload và filtering](https://qdrant.tech/documentation/concepts/payload/), [FastAPI trong Docker](https://fastapi.tiangolo.com/deployment/docker/), [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat), [PyMuPDF text extraction](https://pymupdf.readthedocs.io/en/latest/recipes-text.html).

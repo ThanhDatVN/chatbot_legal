@@ -4,26 +4,26 @@ Trạng thái: kế hoạch lập 2026-09-24 sau [pilot 10 văn bản](PILOT_10_
 
 ## 0. Trạng thái triển khai (2026-10-01)
 
-Các phase 1–12 đã có mã, test và bằng chứng chạy thật; số liệu ở [`../reports/benchmark_v2.md`](../reports/benchmark_v2.md) (v1 giữ để đối chiếu). Những điểm còn mở được ghi ở cột cuối, không coi là "xong" khi chưa có bằng chứng.
+Các phase 1–12 đã có mã, test và bằng chứng chạy thật; số liệu ở [`../reports/benchmark_v3.md`](../reports/benchmark_v3.md) (v1, v2 giữ để đối chiếu). Những điểm còn mở được ghi ở cột cuối, không coi là "xong" khi chưa có bằng chứng.
 
 | Task | Trạng thái | Bằng chứng | Còn mở |
 | --- | --- | --- | --- |
 | INF-001/002 | Xong | `pyproject.toml`, `requirements/`, `docker-compose.yml`, `/health`, `/ready` | Lockfile đầy đủ (hiện pin phiên bản trực tiếp) |
 | COR-000/001 | Một phần | VBPL trả 403 → nguồn Công báo; quan hệ văn bản lập thủ công trong registry (`discovery_mode` thủ công) | Crawler quan hệ BFS khi có endpoint truy cập được |
-| COR-002/003 | Xong cho 11 văn bản | `data/corpus/registry.json`, snapshot bất biến `corpus-2026-10-01` + `quality_report.json`, `scripts/download_sources.py` | Mở rộng 20–50 văn bản (vd. 129/2025, 66.18/2026, Luật BHXH 2024 để trả lời thay vì từ chối) |
+| COR-002/003 | Xong cho 12 văn bản | `data/corpus/registry.json` (hỗ trợ `section_scope`), snapshot bất biến `corpus-2026-10-01-r2` + `quality_report.json`, build từ chối ghi đè snapshot đã công bố, `scripts/download_sources.py` | Mở rộng 20–50 văn bản (vd. Nghị quyết 66.18/2026, 24/2026, Luật Bảo hiểm xã hội 2024) |
 | CUR-001 | Xong (chưa duyệt) | Sổ theo dõi hiệu lực cấp điều khoản `data/corpus/currency_ledger.json` (45 mục, câu trích kiểm lại khi build), ADR-012 | Người duyệt điền `reviewed_by`; lặp lại tra cứu Công báo trước mỗi snapshot |
 | ING-001 | Xong | Parser PDF theo bố cục + parser HTML, test fixture | — |
 | OCR-001 | Thay thế | Không cần cho corpus hiện tại (ADR-007); mã pilot giữ trong `pilot/` | — |
 | ING-002/003 | Xong | `ingestion/chunk.py`, `app/indexing.py`, cổng chất lượng chặn build | Duyệt người (`text_reviews.json`) |
 | BASE-001/002 | Xong | System A, `/api/sources`, UI | — |
-| EVAL-001/002 | Xong | 104 câu (`data/eval/questions_v2.jsonl`, gắn lại nhãn từ v1 theo sổ hiệu lực), dev/test cố định, `reports/retrieval_all.json` | Người duyệt nhãn gold |
+| EVAL-001/002 | Xong | 104 câu v2 (dev/test cố định) + 27 câu paraphrase dev + 40 câu held-out đời thường, `scripts/run_benchmark.py` | Người duyệt nhãn; câu hỏi thật của người dùng; held-out mới sau mỗi vòng sửa |
 | RET-001/002 | Xong | System B, `/api/search` | — |
 | RRK-001 | Xong | System C, rerank hybrid top 20 | — |
 | AGT-001 | Xong | Hai tool, agent extractive + agent Claude | Benchmark chế độ Claude khi có API key |
 | GND-001/002 | Xong | `app/generation/validator.py`, `app/agent/policy.py`, ngưỡng hiệu chỉnh trên dev | — |
 | UI-001/002 | Xong | `ui/`, ảnh trong `assets/screenshots/`, test UI headless | — |
 | SEC-001 | Xong | 30/30 ca (`reports/security_extractive.json`) | — |
-| BEN-001 | Xong (chế độ extractive) | `reports/benchmark_v2.md` (v1 giữ để so sánh), `docs/EVALUATION.md` | Chạy chế độ Claude |
+| BEN-001 | Xong (chế độ extractive) | `reports/benchmark_v3.md` (v1, v2 giữ để so sánh), `docs/EVALUATION.md` | Chạy chế độ Claude; giảm từ chối nhầm câu hỏi đời thường (6/28 held-out) |
 | DOC-001 | Xong | `README.md`, DoD 12/12 kèm bằng chứng | Video demo |
 
 ## 1. Nguyên tắc triển khai

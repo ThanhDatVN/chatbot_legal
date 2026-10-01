@@ -127,3 +127,21 @@ Văn bản đã kiểm tra nhưng không tác động thêm: 128/2025/NĐ-CP (Đ
 **Kiểm soát chất lượng.** 45/45 câu trích tìm thấy nguyên văn trong PDF nguồn; mọi Điều/khoản đích tồn tại trong văn bản đã phân tích (khoản được xác định bỏ qua số thứ tự trong ngoặc kép trích dẫn); build `corpus-2026-10-01` qua mọi cổng (1017 chunk). Trạng thái chunk: 286 `presumed_current`, 225 `consolidated_current`, 128 `superseded_by_amendment`, 135 `unverified` (106 thuộc 12/2022 ngoài phạm vi, 29 điều khoản hỗn hợp), 225 `superseded_by_consolidation`, 18 `historical`. Ở chính sách `pilot`, **504 chunk** dùng được (trước: 242).
 
 **Giới hạn còn lại.** Sổ do AI hỗ trợ trích xuất và chưa có người duyệt; tìm kiếm Công báo xếp theo độ liên quan nên có thể sót văn bản; Nghị quyết 66.16/2026/NQ-CP không có trên Công báo điện tử (phần về cho thuê lại lao động đã bị 66.18 bãi bỏ); chưa đối chiếu các văn bản sắp xếp bộ máy năm 2025 nên tên cơ quan (Bộ/Sở Lao động – Thương binh và Xã hội, cấp huyện) trong văn bản có thể đã thay đổi; Phụ lục I của 135/2020 còn cột "thời điểm hưởng lương hưu" dựa trên quy tắc tại khoản 2 Điều 3 đã hết hiệu lực — cần ý kiến chuyên gia. Một dự thảo năm 2026 sửa/thay 145/2020 chưa có hiệu lực nên không đưa vào sổ.
+
+## 8. Snapshot `corpus-2026-10-01-r2`: văn bản thay thế trong kho (2026-10-01)
+
+Nghị định 129/2025/NĐ-CP (phân định thẩm quyền chính quyền địa phương hai cấp, lĩnh vực nội vụ) được thêm với
+`section_scope` = Điều 71–80: đây là các điều quy định cơ quan và trình tự thay cho Điều 4 khoản 2, 91, 93–95, 97,
+110–112 của Nghị định 145/2020/NĐ-CP; 70 điều còn lại thuộc lĩnh vực khác (người có công, hội, quỹ…) nên không được
+chunk hay index. Toàn văn vẫn qua mọi cổng (Điều 1–81 liên tục, footnote, header). Sổ hiệu lực (v2) trỏ các mục
+"đang thực hiện theo 129/2025" sang `129_2025_nd_cp` và ghi mốc hết hiệu lực của chính nghị định này
+(01/03/2027, khoản 2 Điều 80) như một thay đổi sắp tới; Nghị quyết 24/2026/NQ-CP chỉ dẫn chiếu Điều 4–30 của nó.
+
+Cổng chất lượng phát hiện hai lỗi parser trên văn bản này và cả hai được sửa tại gốc thay vì nới cổng:
+dòng biểu mẫu "Email: ……" trong phụ lục bị coi là tem chữ ký số (tem luôn có giá trị, biểu mẫu là dấu chấm), và một
+ký hiệu footnote lặp lại ba lần trong biểu mẫu tạo ba ghi chú (nay giữ một ký hiệu cho mỗi footnote, ưu tiên cùng
+trang). 11 văn bản còn lại cho text và chunk giống hệt từng byte.
+
+Snapshot `corpus-2026-10-01` đã công bố cùng benchmark v2 được giữ nguyên (1017 chunk, `chunks_sha256` 9ae4b0b9…);
+bản mới là `corpus-2026-10-01-r2` (1029 chunk, 12 văn bản, 516 chunk dùng được ở `pilot`). Build nay từ chối ghi
+đè một snapshot đã có nếu nội dung khác.
