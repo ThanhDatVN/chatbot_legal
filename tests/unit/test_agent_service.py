@@ -47,6 +47,15 @@ def test_unverified_evidence_leads_to_currency_refusal(runtime):
     assert any(s.chunk_id == C3 and not s.eligible for s in result.related_sources)
 
 
+def test_displaced_provision_leads_to_superseded_refusal_with_its_basis(runtime):
+    result = AnswerService(runtime).answer("Hồ sơ rút tiền ký quỹ của doanh nghiệp cho thuê lại lao động gồm gì?")
+    assert result.decision == Decision.REFUSE
+    assert result.reason == RefusalReason.SUPERSEDED_BY_AMENDMENT
+    assert result.citations == []
+    basis = [n for n in result.notices if "66.18/2026/NQ-CP" in n]
+    assert len(basis) == 1  # two chunks of the same article give one notice
+
+
 def test_out_of_scope_is_refused_without_search(runtime):
     result = AnswerService(runtime).answer("Cách tính thuế thu nhập cá nhân?")
     assert result.decision == Decision.REFUSE and result.reason == RefusalReason.OUT_OF_SCOPE

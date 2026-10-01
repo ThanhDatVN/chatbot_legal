@@ -195,8 +195,15 @@ class AnswerService:
             superseded = sorted((s for s in toolbox.retrieved.values()
                                  if s.chunk.currency_status == CurrencyStatus.SUPERSEDED_BY_AMENDMENT),
                                 key=lambda s: -s.score)
-            for item in superseded[:2]:
-                notices.append(f"{item.chunk.section_label} {item.chunk.document_number}: {item.chunk.currency_basis}")
+            seen_sections: set[tuple[str, str]] = set()
+            for item in superseded:
+                key = (item.chunk.document_id, item.chunk.section_label)
+                if key in seen_sections:
+                    continue  # one notice per article, not per chunk
+                seen_sections.add(key)
+                notices.append(f"{item.chunk.document_number}, {item.chunk.section_label}: {item.chunk.currency_basis}")
+                if len(seen_sections) == 2:
+                    break
         seen_docs: set[str] = set()
         for cite in citations:
             src = toolbox.fetched[cite.chunk_id]

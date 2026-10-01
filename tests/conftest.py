@@ -14,7 +14,10 @@ ANNUAL = ("Điều 113. Nghỉ hằng năm\n1. Người lao động làm việc 
           "thì được nghỉ hằng năm như sau:\na) 12 ngày làm việc đối với người làm công việc trong điều kiện bình thường;")
 PROBATION = "Điều 25. Thời gian thử việc\n2. Không quá 60 ngày đối với công việc cần trình độ cao đẳng trở lên;"
 LEDGER = "Điều 3. Sổ quản lý lao động\nSổ quản lý lao động gồm thông tin về họ tên, ngày tháng năm sinh, số sổ bảo hiểm."
-C1, C2, C3, C4 = "1" * 24, "2" * 24, "3" * 24, "4" * 24
+WITHDRAW = ("Điều 18. Rút tiền ký quỹ\n1. Doanh nghiệp cho thuê lại được rút tiền ký quỹ khi chấm dứt hoạt động "
+            "cho thuê lại lao động.", "2. Hồ sơ rút tiền ký quỹ gồm văn bản đề nghị rút tiền ký quỹ.")
+C1, C2, C3, C4, C5, C6 = "1" * 24, "2" * 24, "3" * 24, "4" * 24, "5" * 24, "6" * 24
+DISPLACED = "Điều 18 đang được thực hiện theo khoản C.VII Mục 1 Phụ lục I.4 Nghị quyết 66.18/2026/NQ-CP."
 
 
 @pytest.fixture()
@@ -24,6 +27,9 @@ def runtime(tmp_path):
         make_chunk(C2, PROBATION, section="Điều 25", article=25),
         make_chunk(C3, LEDGER, document_id="145_2020_nd_cp", section="Điều 3", article=3, currency_status="unverified"),
         make_chunk(C4, ANNUAL, document_id="45_2019_qh14", currency_status="superseded_by_consolidation"),
+        *[make_chunk(cid, text, document_id="145_2020_nd_cp", section="Điều 18", article=18,
+                     currency_status="superseded_by_amendment").model_copy(update={"currency_basis": DISPLACED})
+          for cid, text in zip((C5, C6), WITHDRAW)],
     ]
     snap = write_snapshot(tmp_path / "snapshots", chunks)
     settings = Settings(snapshots_dir=tmp_path / "snapshots", active_snapshot="test", index_dir=tmp_path / "idx",

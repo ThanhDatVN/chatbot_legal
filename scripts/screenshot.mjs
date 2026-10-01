@@ -72,7 +72,7 @@ async function shoot(name, path, { question, height = 1000, wait = 9000 } = {}) 
 await send("Page.enable");
 await shoot("chat_empty", "/");
 await shoot("chat_answer", "/", { question: "Lao động nữ sinh con thứ hai được nghỉ thai sản bao lâu?", height: 1400 });
-await shoot("chat_refusal", "/", { question: "Danh mục các công việc được phép cho thuê lại lao động gồm những công việc nào?", height: 1200 });
+await shoot("chat_refusal", "/", { question: "Doanh nghiệp cho thuê lại lao động phải ký quỹ bao nhiêu tiền?", height: 1200 });
 await shoot("evaluation", "/evaluation_page", { height: 1700 });
 await shoot("documents", "/documents_page", { height: 1000 });
 ws.close();

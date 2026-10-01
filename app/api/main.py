@@ -197,7 +197,7 @@ def create_app(runtime_factory: Callable[[], Runtime] = get_runtime, sessions: S
 
     def _failed_cases(limit: int = 30) -> list[dict]:
         traces = ROOT / "reports" / "answers_test_extractive_traces.jsonl"
-        dataset = ROOT / "data" / "eval" / "questions_v1.jsonl"
+        dataset = ROOT / "data" / "eval" / "questions_v2.jsonl"
         if not traces.exists() or not dataset.exists():
             return []
         questions = {}

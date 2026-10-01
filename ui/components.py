@@ -85,6 +85,10 @@ def render_result(result: dict, key: str, n_sources: int, show_details: bool) ->
     follow_up = None
     if result["decision"] == "REFUSE":
         st.warning(result["answer"].replace("⚠ Chưa đủ căn cứ\n\n", ""))
+        if result.get("notices"):  # e.g. which later instrument replaced the provision that matched best
+            st.markdown("**Vì sao nguồn gần nhất chưa dùng được**")
+            for n in result["notices"]:
+                st.markdown(f"- {n}")
         related = result.get("related_sources", [])[:n_sources]
         if related:
             st.markdown("**Nguồn gần nhất**")
