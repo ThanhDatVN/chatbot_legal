@@ -12,9 +12,10 @@ from __future__ import annotations
 
 import argparse
 import time
+from pathlib import Path
 
 from app.runtime import build_runtime
-from evaluation.common import REPORTS, load_dataset, percentile, run_metadata, section_key, write_json
+from evaluation.common import DATASET, REPORTS, load_dataset, percentile, run_metadata, section_key, write_json
 
 SYSTEMS = {"A_dense": "dense", "B_hybrid": "hybrid", "C_rerank": "rerank"}
 
@@ -30,9 +31,10 @@ def metrics_for(ranked: list[tuple[str, str]], gold: set[tuple[str, str]], requi
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", default="all")
+    parser.add_argument("--dataset", type=Path, default=DATASET)
     args = parser.parse_args()
     runtime = build_runtime()
-    questions = [q for q in load_dataset(args.split) if q["type"] in ("direct", "multi")]
+    questions = [q for q in load_dataset(args.split, args.dataset) if q["type"] in ("direct", "multi")]
     runtime.retrieval.search("khởi động mô hình", top_k=1)  # warm-up: exclude model loading from latency
     results: dict[str, dict] = {}
     per_query = []
@@ -60,7 +62,7 @@ def main() -> None:
             "latency_ms_p50": percentile(latencies, 0.5), "latency_ms_p95": percentile(latencies, 0.95),
             "misses": [r["id"] for r in rows if not r["hit@5"]]}
         print(name, {k: v for k, v in results[name].items() if k != "misses"})
-    report = {"meta": run_metadata(runtime.settings, split=args.split, candidate_set="eligible chunks",
+    report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split, candidate_set="eligible chunks",
                                    relevance="article-level (document_id, section)"),
               "systems": results, "per_query": per_query}
     write_json(REPORTS / f"retrieval_{args.split}.json", report)

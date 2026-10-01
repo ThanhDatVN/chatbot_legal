@@ -22,10 +22,11 @@ from __future__ import annotations
 import argparse
 import json
 import unicodedata
+from pathlib import Path
 
 from app.agent.service import AnswerService
 from app.runtime import build_runtime
-from evaluation.common import REPORTS, load_dataset, percentile, run_metadata, write_json
+from evaluation.common import DATASET, REPORTS, load_dataset, percentile, run_metadata, write_json
 
 
 def norm(text: str) -> str:
@@ -113,12 +114,13 @@ def main() -> None:
     parser.add_argument("--split", default="test")
     parser.add_argument("--provider", default=None)
     parser.add_argument("--systems", default="A,B,C,D")
+    parser.add_argument("--dataset", type=Path, default=DATASET, help="e.g. data/eval/questions_heldout_v1.jsonl")
     args = parser.parse_args()
     runtime = build_runtime()
     service = AnswerService(runtime)
-    questions = load_dataset(args.split)
+    questions = load_dataset(args.split, args.dataset)
     runtime.retrieval.search("khởi động mô hình", top_k=1)  # warm models so latency excludes loading
-    report = {"meta": run_metadata(runtime.settings, split=args.split,
+    report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split,
                                    provider=args.provider or runtime.settings.llm_provider,
                                    llm_model=runtime.settings.llm_model, policy=vars(service.policy)),
               "systems": {}}
