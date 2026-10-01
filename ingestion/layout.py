@@ -18,7 +18,8 @@ import pymupdf
 from ingestion.tables import TableBlock, detect_tables, resolve_document_tables
 
 HEADER_RE = re.compile(r"^\s*(\d{1,4}\s+)?CÔNG BÁO/Số\s+\d+(\s*\+\s*\d+)?/Ngày\s+\d{1,2}-\d{1,2}-\d{4}(\s+\d{1,4})?\s*$")
-STAMP_RE = re.compile(r"^(Ký bởi|Người ký|Ngày ký|Email|Cơ quan|Thời gian ký)\s*:")
+# a signature-stamp field has a value; the same label followed by dots is a blank field of a form in an annex
+STAMP_RE = re.compile(r"^(Ký bởi|Người ký|Ngày ký|Email|Cơ quan|Thời gian ký)\s*:(?!\s*[.…_]{3,})")
 GAZETTE_BANNER = "VĂN BẢN QUY PHẠM PHÁP LUẬT"  # Công báo section banner, not part of the act
 CONTINUATION_RE = re.compile(r"^\((Xem )?[Tt]iếp theo Công báo số .*\)$")
 HEADER_ZONE = 75.0  # points from the top edge; Công báo headers sit at y≈29–69

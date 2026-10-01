@@ -43,6 +43,7 @@ class DocumentInfo:
     chunks: int
     main_articles: int
     legal_status_lead: dict | None
+    section_scope: list[str] | None = None
 
 
 class CorpusCatalog:
@@ -71,7 +72,8 @@ class CorpusCatalog:
                     issued_date=d["issued_date"], effective_date=d["effective_date"], source_url=d["source_url"],
                     publisher=d["publisher"], license=d["license"], scope=d["scope"], corpus_use=d["corpus_use"],
                     corpus_use_reason=d["corpus_use_reason"], downloaded_at=d["downloaded_at"], chunks=d["chunks"],
-                    main_articles=d["main_articles"], legal_status_lead=d.get("legal_status_lead"))
+                    main_articles=d["main_articles"], legal_status_lead=d.get("legal_status_lead"),
+                    section_scope=d.get("section_scope"))
 
     # -- eligibility ---------------------------------------------------------------------------
     def is_eligible(self, chunk: Chunk) -> bool:

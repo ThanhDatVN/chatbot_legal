@@ -107,3 +107,19 @@ def test_currency_ledger_is_applied_at_clause_level(snapshot):
     amended = next(c for c in chunks if c["document_id"] == "152_2020_nd_cp" and c["section_label"] == "Điều 9")
     assert amended["currency_entries"] == ["152-219-35-ch2"]
     assert "Nghị định 219/2025/NĐ-CP" in amended["currency_basis"]
+
+
+def test_partial_document_scope_and_successor_links(snapshot):
+    _, chunks, _ = snapshot
+    # only the labour articles of the decentralisation decree are in the corpus
+    assert {c["section_label"] for c in chunks if c["document_id"] == "129_2025_nd_cp"} == \
+        {f"Điều {n}" for n in range(71, 81)}
+    art75 = next(c for c in chunks if c["document_id"] == "129_2025_nd_cp" and c["section_label"] == "Điều 75")
+    assert art75["currency_status"] == "presumed_current" and "01/03/2027" in art75["currency_basis"]
+    # displaced 145/2020 provisions point at the corpus document that now carries the rule
+    displaced = [c for c in chunks if c["document_id"] == "145_2020_nd_cp" and c["section_label"] == "Điều 95"
+                 and c["currency_status"] == "superseded_by_amendment"]
+    assert displaced and {c["successor_document_id"] for c in displaced} == {"129_2025_nd_cp"}
+    # licence procedures displaced by a resolution outside the corpus have no successor
+    licence = next(c for c in chunks if c["document_id"] == "145_2020_nd_cp" and c["section_label"] == "Điều 25")
+    assert licence["successor_document_id"] is None

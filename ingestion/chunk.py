@@ -161,7 +161,7 @@ def chunk_document(parsed: ParsedDocument, doc: RegistryDocument, snapshot_id: s
     source_shas = [part.sha256 for part in doc.source_parts]
     base = f"{doc.short_title} ({doc.document_number})"
     for section in parsed.sections:
-        if section.kind not in INDEXABLE_KINDS:
+        if section.kind not in INDEXABLE_KINDS or (doc.section_scope and section.label not in doc.section_scope):
             continue
         paras = [p for p in parsed.paragraphs if p.start >= section.start and p.end <= section.end]
         spans = section_spans(parsed, section, counter, (breaks or {}).get(section.section_id, frozenset()))

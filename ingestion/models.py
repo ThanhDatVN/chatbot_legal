@@ -82,6 +82,9 @@ class RegistryDocument(Strict):
     legal_status_lead: StatusLead | None = None
     expected_main_articles: int
     downloaded_at: str
+    # Only these sections are chunked and indexed; the rest of the document is outside the corpus scope
+    # (e.g. a decentralisation decree of which only the labour-relations articles are relevant).
+    section_scope: list[str] | None = None
 
 
 class Registry(Strict):

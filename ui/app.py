@@ -183,11 +183,14 @@ def documents_page() -> None:
         detail = api.document(choice)
         st.markdown(f"**{detail['title']}** ({detail['document_number']})")
         st.caption(detail["corpus_use_reason"])
+        if detail.get("section_scope"):
+            st.caption("Chỉ nạp vào kho: " + ", ".join(detail["section_scope"]) + " (phần còn lại ngoài phạm vi).")
         lead = detail.get("legal_status_lead") or {}
         if lead:
             st.caption(f"Đầu mối hiệu lực: {lead.get('status')} — {lead.get('note')} (tra cứu {lead.get('checked_on')})")
         st.dataframe([{"Mục": s["section"], "Tiêu đề": s["title"] or "", "Loại": s["kind"], "Trang": s["page_start"],
-                       "Hiệu lực": STATUS_LABEL.get(s["currency_status"], s["currency_status"]), "Số phần": s["parts"]}
+                       "Hiệu lực": " / ".join(STATUS_LABEL.get(x, x) for x in s.get("currency_statuses") or
+                                             [s["currency_status"]]), "Số phần": s["parts"]}
                       for s in detail["sections"]], hide_index=True, width="stretch")
 
 

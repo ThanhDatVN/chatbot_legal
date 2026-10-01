@@ -130,7 +130,7 @@ def check_document(doc: RegistryDocument, layout: DocumentLayout, parsed: Parsed
     # every indexable paragraph is covered by at least one chunk of its section
     uncovered = 0
     for s in parsed.sections:
-        if s.kind not in INDEXABLE_KINDS:
+        if s.kind not in INDEXABLE_KINDS or (doc.section_scope and s.label not in doc.section_scope):
             continue
         spans = [(c.source_start_char, c.source_end_char) for c in chunks if c.section_id == s.section_id]
         for p in parsed.paragraphs:

@@ -80,4 +80,7 @@ def test_documents_catalog(client):
     assert filtered["total"] >= 1
     detail = client.get("/api/documents/18_2026_vbhn_vpqh").json()
     assert {s["section"] for s in detail["sections"]} == {"Điều 113", "Điều 25"}
+    decree = client.get("/api/documents/145_2020_nd_cp").json()
+    statuses = {s["section"]: s["currency_statuses"] for s in decree["sections"]}
+    assert statuses == {"Điều 3": ["unverified"], "Điều 18": ["superseded_by_amendment"]}  # one row per article
     assert client.get("/api/documents/nope").status_code == 404

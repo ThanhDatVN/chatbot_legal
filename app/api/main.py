@@ -147,13 +147,17 @@ def create_app(runtime_factory: Callable[[], Runtime] = get_runtime, sessions: S
         doc = rt.catalog.documents.get(document_id)
         if doc is None:
             raise HTTPException(status_code=404, detail="document not found")
-        sections = []
+        sections: dict[str, dict] = {}
         for c in rt.catalog.chunks.values():
-            if c.document_id == document_id and c.ordinal == 0:
-                sections.append({"chunk_id": c.chunk_id, "section": c.section_label, "title": c.section_title,
-                                 "kind": c.section_kind.value, "page_start": c.page_start,
-                                 "currency_status": c.currency_status.value, "parts": c.part_count})
-        return {**vars(doc), "sections": sections}
+            if c.document_id != document_id:
+                continue
+            row = sections.setdefault(c.section_id, {
+                "chunk_id": c.chunk_id, "section": c.section_label, "title": c.section_title,
+                "kind": c.section_kind.value, "page_start": c.page_start, "parts": c.part_count,
+                "currency_status": c.currency_status.value, "currency_statuses": []})
+            if c.currency_status.value not in row["currency_statuses"]:  # clauses of one article can differ
+                row["currency_statuses"].append(c.currency_status.value)
+        return {**vars(doc), "sections": list(sections.values())}
 
     @app.post("/api/feedback", status_code=201)
     def feedback(req: FeedbackRequest) -> dict:

@@ -329,30 +329,36 @@ def _next_is_article(paragraphs: list[Paragraph], i: int) -> bool:
 def _attach_footnotes(layout: DocumentLayout, text: str, line_spans: list[tuple[int, int]],
                       paragraphs: list[Paragraph], sections: list[Section], structural: list[int]) -> list[Footnote]:
     raw = {fn.number: fn for fn in layout.footnotes}
-    out: list[Footnote] = []
+    # a form may repeat the marker of one footnote; keep one marker per footnote, preferring its own page
+    chosen: dict[str, tuple[int, int]] = {}
     for li, line in enumerate(layout.lines):
         for offset, number in line.markers:
             fn = raw.get(number)
             if fn is None:
                 continue
-            pos = line_spans[li][0] + offset
-            para_index = next(k for k, p in enumerate(paragraphs) if p.start <= pos <= p.end)
-            section = next((s for s in sections if s.start <= pos <= s.end), None)
-            target = None
-            if para_index in structural:
-                # note on a chapter heading: attach to the first section after it
-                section = next((s for s in sections if s.start > paragraphs[para_index].end), section)
-                target = section.path[0] if section and section.path and section.path[0].startswith(("Chương", "Mục")) \
-                    else paragraphs[para_index].text
-            elif section is not None and section.kind == SectionKind.MAIN_TEXT:
-                target = _provision_label(section, paragraphs, para_index)
-            elif section is not None:
-                target = section.label
-            change, instrument, effective = parse_footnote_text(fn.text)
-            out.append(Footnote(document_id=layout.document_id, number=number, page=fn.page, text=fn.text,
-                                marker_offset=pos, section_id=section.section_id if section else None,
-                                target_label=target, change_type=change, amending_instrument=instrument,
-                                effective_from=effective))
+            if number not in chosen or (layout.lines[chosen[number][0]].page != fn.page and line.page == fn.page):
+                chosen[number] = (li, offset)
+    out: list[Footnote] = []
+    for number, (li, offset) in sorted(chosen.items(), key=lambda kv: kv[1]):
+        fn = raw[number]
+        pos = line_spans[li][0] + offset
+        para_index = next(k for k, p in enumerate(paragraphs) if p.start <= pos <= p.end)
+        section = next((s for s in sections if s.start <= pos <= s.end), None)
+        target = None
+        if para_index in structural:
+            # note on a chapter heading: attach to the first section after it
+            section = next((s for s in sections if s.start > paragraphs[para_index].end), section)
+            target = section.path[0] if section and section.path and section.path[0].startswith(("Chương", "Mục")) \
+                else paragraphs[para_index].text
+        elif section is not None and section.kind == SectionKind.MAIN_TEXT:
+            target = _provision_label(section, paragraphs, para_index)
+        elif section is not None:
+            target = section.label
+        change, instrument, effective = parse_footnote_text(fn.text)
+        out.append(Footnote(document_id=layout.document_id, number=number, page=fn.page, text=fn.text,
+                            marker_offset=pos, section_id=section.section_id if section else None,
+                            target_label=target, change_type=change, amending_instrument=instrument,
+                            effective_from=effective))
     return out
 
 
