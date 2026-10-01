@@ -66,9 +66,18 @@ def scope_check(question: str) -> RefusalReason | None:
     return None
 
 
+FLAGGED = {CurrencyStatus.UNVERIFIED, CurrencyStatus.SUPERSEDED_BY_AMENDMENT}
+
+
 def unverified_but_current(item: ScoredChunk) -> bool:
     """In-scope evidence that may be in force but whose provisions are not verified yet."""
     return item.chunk.currency_status == CurrencyStatus.UNVERIFIED
+
+
+def flagged(item: ScoredChunk) -> bool:
+    """In-scope evidence that cannot support an answer but explains a refusal: provisions not verified,
+    or provisions the currency ledger records as expired, amended or displaced."""
+    return item.chunk.currency_status in FLAGGED
 
 
 @dataclass
@@ -83,7 +92,7 @@ class EvidenceAssessment:
 
 def assess(eligible: list[ScoredChunk], ineligible: list[ScoredChunk], cfg: PolicyConfig) -> EvidenceAssessment:
     best = eligible[0].score if eligible else 0.0
-    unverified = [s for s in ineligible if unverified_but_current(s)]
+    unverified = [s for s in ineligible if flagged(s)]
     best_unverified = max((s.score for s in unverified), default=0.0)
     if best >= cfg.answer_threshold:
         floor = max(cfg.answer_threshold, best * cfg.keep_ratio)
@@ -92,5 +101,9 @@ def assess(eligible: list[ScoredChunk], ineligible: list[ScoredChunk], cfg: Poli
                     and s.score >= cfg.unverified_threshold]
         return EvidenceAssessment(True, None, selected, stronger, best, best_unverified)
     if best_unverified >= cfg.unverified_threshold:
-        return EvidenceAssessment(False, RefusalReason.CURRENCY_UNVERIFIED, [], unverified, best, best_unverified)
+        top = max(unverified, key=lambda s: s.score)
+        reason = (RefusalReason.SUPERSEDED_BY_AMENDMENT
+                  if top.chunk.currency_status == CurrencyStatus.SUPERSEDED_BY_AMENDMENT
+                  else RefusalReason.CURRENCY_UNVERIFIED)
+        return EvidenceAssessment(False, reason, [], unverified, best, best_unverified)
     return EvidenceAssessment(False, RefusalReason.INSUFFICIENT_EVIDENCE, [], [], best, best_unverified)

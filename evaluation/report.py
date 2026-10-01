@@ -1,4 +1,4 @@
-"""Render reports/benchmark_v1.md from the JSON reports; no number is typed by hand.
+"""Render reports/benchmark_v2.md from the JSON reports; no number is typed by hand.
 
     python -m evaluation.report
 """
@@ -8,6 +8,8 @@ from __future__ import annotations
 import json
 
 from evaluation.common import REPORTS
+
+VERSION = "v2"
 
 SYSTEM_NAMES = {"A": "A — Dense + RAG đơn giản", "B": "B — Dense + BM25 + RRF", "C": "C — Hybrid + reranker",
                 "D": "D — Hybrid + reranker + từ chối + kiểm tra citation"}
@@ -31,7 +33,7 @@ def main() -> None:
     retrieval, answers = load("retrieval_all"), load("answers_test_extractive")
     tuning, security = load("policy_tuning"), load("security_extractive")
     meta = answers["meta"]
-    out = ["# Benchmark CiteAgent VN — v1", "",
+    out = [f"# Benchmark CiteAgent VN — {VERSION}", "",
            "_Tệp này được sinh tự động bởi `python -m evaluation.report` từ các báo cáo JSON trong `reports/`._", "",
            "## Điều kiện chạy", "",
            f"- Ngày chạy: {meta['date']} · commit `{meta['git_commit']}`",
@@ -52,7 +54,9 @@ def main() -> None:
         out.append(f"| {name} | {f3(r['hit@5'])} | {f3(r['mrr'])} | {f3(a.get('citation_precision_proxy'))} | "
                    f"{f3(a.get('correctness_proxy'))} | {f3((a.get('refusal') or {}).get('accuracy'))} | "
                    f"{ms((a.get('latency_ms') or {}).get('total_p95'))} |")
-    out += ["", "Hit@5/MRR đo ở tầng truy xuất trên toàn bộ 60 câu trả lời được (D dùng cùng bộ truy xuất với C). "
+    answerable = retrieval["systems"]["C_rerank"]["questions"]
+    out += ["", f"Hit@5/MRR đo ở tầng truy xuất trên toàn bộ {answerable} câu trả lời được (D dùng cùng bộ truy xuất "
+            "với C). "
             "Các cột còn lại đo đầu cuối trên split test. Correctness và citation precision là chỉ số tự động "
             "(proxy) — xem định nghĩa trong `docs/EVALUATION.md`.", "",
             "## Truy xuất", "",
@@ -99,8 +103,8 @@ def main() -> None:
                 "| --- | ---: | ---: |"]
         out += [f"| {k} | {v['cases']} | {v['passed']} |" for k, v in s["by_category"].items()]
         out.append("")
-    (REPORTS / "benchmark_v1.md").write_text("\n".join(out) + "\n", encoding="utf-8")
-    print("wrote reports/benchmark_v1.md")
+    (REPORTS / f"benchmark_{VERSION}.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+    print(f"wrote reports/benchmark_{VERSION}.md")
 
 
 if __name__ == "__main__":

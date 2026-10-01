@@ -2,7 +2,8 @@
 
 Only a named human reviewer can mark a provision `verified_current`
 (data/review/currency_reviews.json). Everything else is derived from the
-registry and the consolidated-text footnotes, and says so in `currency_basis`.
+registry, the consolidated-text footnotes and the provision-level currency
+ledger (data/corpus/currency_ledger.json), and says so in `currency_basis`.
 """
 
 from __future__ import annotations
@@ -13,6 +14,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict
 
+from ingestion.ledger import SUPERSEDING, ChangeType, Coverage, LedgerEntry
 from ingestion.models import Chunk, CorpusUse, CurrencyStatus, RegistryDocument, TextQualityStatus
 
 CONSOLIDATED_TYPE = "Văn bản hợp nhất"
@@ -40,8 +42,37 @@ def _consolidated_by(doc: RegistryDocument, registry: list[RegistryDocument]) ->
                 None)
 
 
+def _ledger_status(entries: list[LedgerEntry], as_of: date, section: str) -> tuple[CurrencyStatus, str] | None:
+    active = [e for e in entries if e.applies_on(as_of)]
+    superseding = [e for e in active if e.change in SUPERSEDING]
+    if superseding:
+        return CurrencyStatus.SUPERSEDED_BY_AMENDMENT, _sentences(superseding, section)
+    partial = [e for e in active if e.change == ChangeType.PARTIALLY_AFFECTED]
+    if partial:
+        return (CurrencyStatus.UNVERIFIED, _sentences(partial, section)
+                + " Chưa tách được phần còn hiệu lực; cần người duyệt.")
+    return None
+
+
+def _sentences(entries: list[LedgerEntry], section: str) -> str:
+    return " ".join(e.describe(section) + "." + (f" {e.note}" if e.note else "") for e in entries)
+
+
+def _ledger_notes(entries: list[LedgerEntry], as_of: date, section: str) -> str:
+    notes = [e for e in entries if e.applies_on(as_of) and e.change == ChangeType.ADDED]
+    upcoming = [e for e in entries if e.effective_from > as_of]
+    text = _sentences(notes, section)
+    if upcoming:
+        text += " Sắp thay đổi: " + _sentences(upcoming, section)
+    return f" {text.strip()}" if text.strip() else ""
+
+
 def assign_currency(chunk: Chunk, doc: RegistryDocument, registry: list[RegistryDocument], as_of: date,
-                    reviews: dict[str, Review]) -> tuple[CurrencyStatus, str]:
+                    reviews: dict[str, Review], entries: list[LedgerEntry] | None = None,
+                    coverage: Coverage | None = None) -> tuple[CurrencyStatus, str]:
+    """`entries` are the ledger entries whose target overlaps this chunk; `coverage` is set when the
+    ledger records which amending instruments were checked for this document."""
+    entries = entries or []
     review = reviews.get(chunk.section_id)
     if review is not None:
         return CurrencyStatus(review.status), f"Người duyệt {review.reviewer} ngày {review.reviewed_at}: {review.note}"
@@ -55,6 +86,10 @@ def assign_currency(chunk: Chunk, doc: RegistryDocument, registry: list[Registry
         return CurrencyStatus.HISTORICAL, doc.corpus_use_reason
     if doc.effective_date and doc.effective_date > as_of:
         return CurrencyStatus.PENDING_AMENDMENT, f"Văn bản chưa có hiệu lực tại {as_of}."
+    ledger = _ledger_status(entries, as_of, chunk.section_label)
+    if ledger is not None:
+        return ledger
+    notes = _ledger_notes(entries, as_of, chunk.section_label)
     if doc.document_type == CONSOLIDATED_TYPE:
         future = [n for n in chunk.amendment_notes
                   if n.change_type in ("amended", "added") and n.effective_from and n.effective_from > as_of]
@@ -68,7 +103,12 @@ def assign_currency(chunk: Chunk, doc: RegistryDocument, registry: list[Registry
         if applied:
             basis += " Đã phản ánh: " + "; ".join(
                 f"{n.target_label} ({n.amending_instrument}, hiệu lực {n.effective_from})" for n in applied) + "."
-        return CurrencyStatus.CONSOLIDATED_CURRENT, basis
+        return CurrencyStatus.CONSOLIDATED_CURRENT, basis + notes
+    if coverage is not None:
+        return (CurrencyStatus.PRESUMED_CURRENT,
+                f"Sổ theo dõi hiệu lực (kiểm tra {coverage.checked_on}) đã đối chiếu "
+                f"{', '.join(coverage.instruments_checked)}; không thấy văn bản nào sửa đổi, bãi bỏ phần này."
+                f"{notes} Giới hạn: {coverage.limitations}")
     lead = doc.legal_status_lead
     if lead and lead.status.startswith("listed_current"):
         return (CurrencyStatus.PRESUMED_CURRENT,

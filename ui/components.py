@@ -20,6 +20,7 @@ STATUS_LABEL = {
     "presumed_current": "được ghi nhận còn hiệu lực",
     "pending_amendment": "sửa đổi chưa có hiệu lực",
     "superseded_by_consolidation": "đã có bản hợp nhất mới hơn",
+    "superseded_by_amendment": "đã hết hiệu lực hoặc bị thay thế",
     "historical": "đã hết hiệu lực",
     "unverified": "chưa xác minh hiệu lực",
 }

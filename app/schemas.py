@@ -27,6 +27,7 @@ class RefusalReason(str, Enum):
     SOURCE_UNAVAILABLE = "source_unavailable"
     CURRENCY_UNVERIFIED = "currency_unverified"
     HISTORICAL_NOT_SUPPORTED = "historical_not_supported"
+    SUPERSEDED_BY_AMENDMENT = "superseded_by_amendment"
 
 
 class ScoredChunk(BaseModel):

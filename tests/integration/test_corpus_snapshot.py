@@ -6,14 +6,20 @@ from pathlib import Path
 import pytest
 
 from ingestion.build import ROOT, build
+from ingestion.ledger import load_ledger
 from ingestion.models import Registry
 
 REGISTRY = ROOT / "data" / "corpus" / "registry.json"
 
 
+LEDGER = ROOT / "data" / "corpus" / "currency_ledger.json"
+
+
 def _sources_present() -> bool:
     reg = Registry.model_validate_json(REGISTRY.read_text(encoding="utf-8"))
-    return all((ROOT / p.path).exists() for d in reg.documents for p in d.source_parts)
+    ledger = load_ledger(LEDGER)
+    paths = [p.path for d in reg.documents for p in d.source_parts] + [s.path for s in ledger.sources]
+    return all((ROOT / p).exists() for p in paths)
 
 
 pytestmark = pytest.mark.skipif(not _sources_present(), reason="source PDFs not downloaded")
@@ -23,7 +29,7 @@ pytestmark = pytest.mark.skipif(not _sources_present(), reason="source PDFs not 
 def snapshot(tmp_path_factory):
     out = tmp_path_factory.mktemp("snapshots")
     code = build(REGISTRY, "test-snapshot", out, ROOT / "data" / "review",
-                 ROOT / "data" / "corpus" / "regression_fixtures.json")
+                 ROOT / "data" / "corpus" / "regression_fixtures.json", LEDGER)
     base = out / "test-snapshot"
     chunks = [json.loads(line) for line in (base / "chunks.jsonl").open(encoding="utf-8")]
     report = json.loads((base / "quality_report.json").read_text(encoding="utf-8"))
@@ -33,7 +39,8 @@ def snapshot(tmp_path_factory):
 def test_all_quality_gates_pass(snapshot):
     code, _, report = snapshot
     failed = {d["document_id"]: [k for k, v in d["hard"].items() if not v] for d in report["documents"] if not d["passed"]}
-    assert code == 0 and report["passed"], failed
+    assert code == 0 and report["passed"], (failed, report["ledger_problems"])
+    assert report["ledger_problems"] == []  # every ledger quote occurs in its official PDF
 
 
 def test_no_gazette_artifacts_in_any_chunk(snapshot):
@@ -71,3 +78,32 @@ def test_wage_table_is_labelled(snapshot):
     art3 = next(c for c in chunks if c["document_id"] == "293_2025_nd_cp" and c["section_label"] == "Điều 3")
     assert "Vùng: Vùng I; Mức lương tối thiểu tháng (Đơn vị: đồng/tháng): 5.310.000" in art3["text"]
     assert art3["contains_table"]
+
+
+def _status(chunks, doc, section, needle=""):
+    hits = [c for c in chunks if c["document_id"] == doc and c["section_label"] == section and needle in c["text"]]
+    assert hits, (doc, section, needle)
+    return {c["currency_status"] for c in hits}
+
+
+def test_currency_ledger_is_applied_at_clause_level(snapshot):
+    _, chunks, _ = snapshot
+    # 158/2025 Điều 44(2)(c): only khoản 2 of 135/2020 Điều 3 expired, khoản 1 and 3 remain
+    assert _status(chunks, "135_2020_nd_cp", "Điều 3", "1. Thời điểm nghỉ hưu") == {"presumed_current"}
+    assert _status(chunks, "135_2020_nd_cp", "Điều 3", "2. Thời điểm hưởng") == {"superseded_by_amendment"}
+    assert _status(chunks, "135_2020_nd_cp", "Phụ lục III") == {"superseded_by_amendment"}
+    assert _status(chunks, "135_2020_nd_cp", "Điều 4") == {"presumed_current"}
+    # 219/2025 Điều 35(2): foreign-worker content of 152/2020 expired; Chương III stays
+    assert _status(chunks, "152_2020_nd_cp", "Điều 9") == {"superseded_by_amendment"}
+    assert _status(chunks, "152_2020_nd_cp", "Điều 24") == {"presumed_current"}
+    assert _status(chunks, "152_2020_nd_cp", "Điều 30") == {"unverified"}
+    # temporary resolutions: outsourcing licences (66.18/2026) and labour-mediator authority (129/2025)
+    assert _status(chunks, "145_2020_nd_cp", "Điều 21") == {"superseded_by_amendment"}
+    assert _status(chunks, "145_2020_nd_cp", "Điều 95") == {"superseded_by_amendment"}
+    assert _status(chunks, "145_2020_nd_cp", "Điều 4", "2. Định kỳ") == {"superseded_by_amendment"}
+    assert _status(chunks, "145_2020_nd_cp", "Điều 3") == {"presumed_current"}
+    assert _status(chunks, "219_2025_nd_cp", "Điều 27") == {"superseded_by_amendment"}
+    assert _status(chunks, "219_2025_nd_cp", "Điều 7") == {"presumed_current"}
+    amended = next(c for c in chunks if c["document_id"] == "152_2020_nd_cp" and c["section_label"] == "Điều 9")
+    assert amended["currency_entries"] == ["152-219-35-ch2"]
+    assert "Nghị định 219/2025/NĐ-CP" in amended["currency_basis"]

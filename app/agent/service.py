@@ -37,6 +37,9 @@ REFUSAL_TEXT = {
     RefusalReason.OUT_OF_SCOPE: ("Câu hỏi nằm ngoài phạm vi của CiteAgent VN: quan hệ lao động theo Bộ luật Lao động "
                                  "và các văn bản hướng dẫn trực tiếp."),
     RefusalReason.HISTORICAL_NOT_SUPPORTED: "Phiên bản hiện tại chỉ hỗ trợ quy định đang áp dụng tại ngày {as_of}.",
+    RefusalReason.SUPERSEDED_BY_AMENDMENT: ("Quy định liên quan tìm được trong kho đã hết hiệu lực hoặc đang được áp dụng "
+                                            "theo một văn bản khác chưa có trong kho, nên tôi không dùng nó để kết luận "
+                                            "về quy định tại ngày {as_of}."),
     RefusalReason.UNSUPPORTED_PREDICTION: "Tôi không dự đoán thay đổi của pháp luật; kho tài liệu chỉ chứa quy định đã ban hành.",
     RefusalReason.CONFLICTING_SOURCES: "Các nguồn tìm được mâu thuẫn nhau, nên tôi chưa thể kết luận.",
     RefusalReason.SOURCE_UNAVAILABLE: "Không thể mở nguồn gốc để kiểm tra căn cứ lúc này.",
@@ -145,7 +148,7 @@ class AnswerService:
         out_claims = [Claim(claim_id=f"c{i + 1}", text=c.text, citation_ids=[numbering[x] for x in c.chunk_ids])
                       for i, c in enumerate(claims)]
         answer = self._compose(decision, reason, out_claims, citations, draft)
-        notices = self._notices(citations, toolbox, dropped, decision)
+        notices = self._notices(citations, toolbox, dropped, decision, reason)
         related = []
         if decision != Decision.ANSWER:
             seen = set(numbering)
@@ -186,8 +189,14 @@ class AnswerService:
         return text
 
     def _notices(self, citations: list[Citation], toolbox: ToolBox, dropped: list[dict],
-                 decision: Decision) -> list[str]:
+                 decision: Decision, reason: RefusalReason | None = None) -> list[str]:
         notices: list[str] = []
+        if decision == Decision.REFUSE and reason == RefusalReason.SUPERSEDED_BY_AMENDMENT:
+            superseded = sorted((s for s in toolbox.retrieved.values()
+                                 if s.chunk.currency_status == CurrencyStatus.SUPERSEDED_BY_AMENDMENT),
+                                key=lambda s: -s.score)
+            for item in superseded[:2]:
+                notices.append(f"{item.chunk.section_label} {item.chunk.document_number}: {item.chunk.currency_basis}")
         seen_docs: set[str] = set()
         for cite in citations:
             src = toolbox.fetched[cite.chunk_id]

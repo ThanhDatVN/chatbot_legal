@@ -37,6 +37,12 @@ def test_assess_answer_refuse_and_currency():
     assert unverified.reason == RefusalReason.CURRENCY_UNVERIFIED
     superseded = assess([scored(0.3)], [scored(0.99, status="superseded_by_consolidation", eligible=False)], cfg)
     assert superseded.reason == RefusalReason.INSUFFICIENT_EVIDENCE
+    # a provision the currency ledger marks as expired explains the refusal better than "not found"
+    amended = assess([scored(0.3)], [scored(0.6, status="unverified", eligible=False, cid="d" * 24),
+                                     scored(0.97, status="superseded_by_amendment", eligible=False, cid="e" * 24)], cfg)
+    assert amended.reason == RefusalReason.SUPERSEDED_BY_AMENDMENT
+    noted = assess([scored(0.81)], [scored(0.99, status="superseded_by_amendment", eligible=False, cid="e" * 24)], cfg)
+    assert noted.sufficient and [s.chunk.chunk_id for s in noted.stronger_unverified] == ["e" * 24]
 
 
 def test_split_question_only_splits_two_asked_parts():

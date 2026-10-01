@@ -142,7 +142,8 @@ ADVERSARIAL = [
 ]
 
 
-def build() -> list[dict]:
+def build(direct=DIRECT, multi=MULTI, unanswerable=UNANSWERABLE, out_of_scope=OUT_OF_SCOPE, ambiguous=AMBIGUOUS,
+          adversarial=ADVERSARIAL, as_of_date: str = "2026-09-30") -> list[dict]:
     rows: list[dict] = []
 
     def add(kind: str, i: int, **row) -> None:
@@ -153,30 +154,36 @@ def build() -> list[dict]:
         row.setdefault("reference_answer", None)
         row.setdefault("expected_reason", None)
         rows.append({"id": f"{kind[:3]}_{i:02d}", "type": kind, "split": "dev" if i % 2 else "test", **row,
-                     "as_of_date": "2026-09-30", "annotator": "AI draft (Claude)", "reviewed": False})
+                     "as_of_date": as_of_date, "annotator": "AI draft (Claude)", "reviewed": False})
 
-    for i, (q, gold, facts, ref) in enumerate(DIRECT, 1):
+    for i, (q, gold, facts, ref) in enumerate(direct, 1):
         add("direct", i, question=q, should_refuse=False, acceptable_decisions=["ANSWER", "PARTIAL"], gold=gold,
             gold_required=gold, required_facts=facts, reference_answer=ref)
-    for i, (q, gold, facts, ref) in enumerate(MULTI, 1):
+    for i, (q, gold, facts, ref) in enumerate(multi, 1):
         add("multi", i, question=q, should_refuse=False, acceptable_decisions=["ANSWER", "PARTIAL"], gold=gold,
             gold_required=gold, required_facts=facts, reference_answer=ref)
-    for i, (q, reason) in enumerate(UNANSWERABLE, 1):
-        add("unanswerable", i, question=q, should_refuse=True, acceptable_decisions=["REFUSE"],
-            expected_reason=reason)
-    for i, q in enumerate(OUT_OF_SCOPE, 1):
+    for i, item in enumerate(unanswerable, 1):
+        q, reason = item[:2]
+        extra = item[2] if len(item) > 2 else {}
+        add("unanswerable", i, question=q, should_refuse=extra.get("should_refuse", True),
+            acceptable_decisions=extra.get("acceptable_decisions", ["REFUSE"]), expected_reason=reason,
+            must_not_contain=extra.get("must_not_contain", []))
+    for i, q in enumerate(out_of_scope, 1):
         add("out_of_scope", i, question=q, should_refuse=True, acceptable_decisions=["REFUSE"],
             expected_reason="out_of_scope")
-    for i, (q, gold) in enumerate(AMBIGUOUS, 1):
+    for i, (q, gold) in enumerate(ambiguous, 1):
         add("ambiguous", i, question=q, should_refuse=None, acceptable_decisions=["ANSWER", "PARTIAL", "REFUSE"],
             gold=gold)
-    for i, (q, ok, refuse, gold, forbidden, cite) in enumerate(ADVERSARIAL, 1):
+    for i, (q, ok, refuse, gold, forbidden, cite) in enumerate(adversarial, 1):
         add("adversarial", i, question=q, should_refuse=refuse, acceptable_decisions=ok, gold=gold,
             must_not_contain=forbidden, must_cite_if_answered=cite)
     return rows
 
 
-def validate(rows: list[dict], snapshot_dir: Path) -> list[str]:
+EXPECTED_COUNTS = {"direct": 40, "multi": 20, "unanswerable": 15, "out_of_scope": 10, "ambiguous": 5, "adversarial": 10}
+
+
+def validate(rows: list[dict], snapshot_dir: Path, expected: dict[str, int] = EXPECTED_COUNTS) -> list[str]:
     sections = set()
     with (snapshot_dir / "chunks.jsonl").open(encoding="utf-8") as fh:
         for line in fh:
@@ -189,7 +196,6 @@ def validate(rows: list[dict], snapshot_dir: Path) -> list[str]:
         for gd in r["gold"]:
             if (gd["document_id"], gd["section"]) not in sections:
                 problems.append(f"{r['id']}: gold {gd} not in snapshot")
-    expected = {"direct": 40, "multi": 20, "unanswerable": 15, "out_of_scope": 10, "ambiguous": 5, "adversarial": 10}
     if counts != expected:
         problems.append(f"type counts {counts} != {expected}")
     if len({r["question"] for r in rows}) != len(rows):

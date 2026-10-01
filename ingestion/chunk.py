@@ -4,6 +4,10 @@ An article that fits the token budget stays one chunk. Longer articles are split
 at clause (khoản) boundaries, then paragraph boundaries, and only as a last
 resort inside a paragraph, where consecutive pieces overlap by about
 OVERLAP_TOKENS. Every chunk's raw_text is an exact slice of the document text.
+
+`breaks` forces cuts at given clause starts, so that a clause the currency
+ledger marks as expired or amended never shares a chunk with clauses that are
+still in force.
 """
 
 from __future__ import annotations
@@ -22,7 +26,7 @@ OVERLAP_TOKENS = 100
 FORM_RE = re.compile(r"^Mẫu số\s+\S+")
 SENTENCE_BREAK_RE = re.compile(r"(?<=[.;:])\s+")
 DOT_LEADER_RE = re.compile(r"[.…]{4,}")
-CHUNKER_VERSION = "chunker-v3"
+CHUNKER_VERSION = "chunker-v4"
 
 
 @dataclass
@@ -47,10 +51,11 @@ def normalize_span(parsed: ParsedDocument, start: int, end: int, paragraphs: lis
     return "\n".join(out)
 
 
-def _clause_groups(section: Section, paras: list[Paragraph]) -> list[list[Paragraph]]:
+def _clause_groups(section: Section, paras: list[Paragraph],
+                   breaks: set[int] | frozenset[int] = frozenset()) -> list[list[Paragraph]]:
     groups: list[list[Paragraph]] = []
     for p in paras:
-        starts_group = not groups
+        starts_group = not groups or p.start in breaks
         if section.kind == SectionKind.MAIN_TEXT and CLAUSE_RE.match(p.text):
             starts_group = True
         if section.kind == SectionKind.ANNEX and FORM_RE.match(p.text):
@@ -106,14 +111,15 @@ def _split_words(parsed: ParsedDocument, start: int, end: int, counter: TokenCou
     return spans
 
 
-def section_spans(parsed: ParsedDocument, section: Section, counter: TokenCounter) -> list[Span]:
+def section_spans(parsed: ParsedDocument, section: Section, counter: TokenCounter,
+                  breaks: set[int] | frozenset[int] = frozenset()) -> list[Span]:
     paras = [p for p in parsed.paragraphs if p.start >= section.start and p.end <= section.end]
-    if counter.count(parsed.text[section.start:section.end]) <= MAX_TOKENS:
+    if not breaks and counter.count(parsed.text[section.start:section.end]) <= MAX_TOKENS:
         return [Span(section.start, section.end)]
     spans: list[Span] = []
-    for group in _clause_groups(section, paras):
+    for group in _clause_groups(section, paras, breaks):
         g_start, g_end = group[0].start, group[-1].end
-        if spans and counter.count(parsed.text[spans[-1].start:g_end]) <= MAX_TOKENS \
+        if spans and g_start not in breaks and counter.count(parsed.text[spans[-1].start:g_end]) <= MAX_TOKENS \
                 and not (section.kind == SectionKind.ANNEX and FORM_RE.match(group[0].text)):
             spans[-1] = Span(spans[-1].start, g_end)
             continue
@@ -150,7 +156,7 @@ def _form_label(parsed: ParsedDocument, section: Section, start: int) -> str | N
 
 
 def chunk_document(parsed: ParsedDocument, doc: RegistryDocument, snapshot_id: str,
-                   counter: TokenCounter) -> list[Chunk]:
+                   counter: TokenCounter, breaks: dict[str, set[int]] | None = None) -> list[Chunk]:
     chunks: list[Chunk] = []
     source_shas = [part.sha256 for part in doc.source_parts]
     base = f"{doc.short_title} ({doc.document_number})"
@@ -158,7 +164,7 @@ def chunk_document(parsed: ParsedDocument, doc: RegistryDocument, snapshot_id: s
         if section.kind not in INDEXABLE_KINDS:
             continue
         paras = [p for p in parsed.paragraphs if p.start >= section.start and p.end <= section.end]
-        spans = section_spans(parsed, section, counter)
+        spans = section_spans(parsed, section, counter, (breaks or {}).get(section.section_id, frozenset()))
         notes = [fn for fn in parsed.footnotes if fn.section_id == section.section_id]
         for ordinal, span in enumerate(spans):
             raw = parsed.text[span.start:span.end]

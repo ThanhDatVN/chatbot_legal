@@ -16,6 +16,9 @@ from app.agent.tools import ToolBox
 from app.generation.validator import DraftClaim
 from app.retrieval.models import Reranker
 from app.schemas import Decision, RefusalReason, SourceEvidence
+from ingestion.models import CurrencyStatus
+
+CURRENCY_REASONS = (RefusalReason.SUPERSEDED_BY_AMENDMENT, RefusalReason.CURRENCY_UNVERIFIED)
 
 HEADING_RE = re.compile(r"^Điều\s+\d+\.")
 CLAUSE_RE = re.compile(r"^\d+[a-z]?\.\s")
@@ -61,8 +64,7 @@ class ExtractiveAgent:
                 part_verdicts.append((part, self._search(part)))
             verdicts += part_verdicts
         if not any(v.sufficient for _, v in verdicts):
-            reason = next((v.reason for _, v in verdicts if v.reason == RefusalReason.CURRENCY_UNVERIFIED),
-                          whole.reason)
+            reason = next((v.reason for _, v in verdicts if v.reason in CURRENCY_REASONS), whole.reason)
             return Draft(Decision.REFUSE, reason, notes=[f"best_eligible={whole.best_eligible:.3f}",
                                                          f"best_unverified={whole.best_unverified:.3f}"])
         claims: list[DraftClaim] = []
@@ -83,10 +85,16 @@ class ExtractiveAgent:
         notes: list[str] = []
         if gaps:
             notes.append("Chưa tìm thấy căn cứ đủ mạnh cho phần: " + "; ".join(f"“{g}”" for g in gaps) + ".")
-        if stronger:
-            titles = sorted({s.chunk.short_title + f" ({s.chunk.document_number})" for s in stronger})
+        unverified = [s for s in stronger if s.chunk.currency_status == CurrencyStatus.UNVERIFIED]
+        superseded = [s for s in stronger if s.chunk.currency_status == CurrencyStatus.SUPERSEDED_BY_AMENDMENT]
+        if unverified:
+            titles = sorted({s.chunk.short_title + f" ({s.chunk.document_number})" for s in unverified})
             notes.append("Văn bản hướng dẫn chi tiết hơn có nội dung liên quan nhưng hiệu lực từng điều chưa được "
                          "xác minh nên chưa dùng làm căn cứ: " + "; ".join(titles) + ".")
+        if superseded:
+            labels = sorted({f"{s.chunk.section_label} {s.chunk.document_number}" for s in superseded})
+            notes.append("Quy định chi tiết liên quan (" + "; ".join(labels) + ") đã hết hiệu lực hoặc được thay thế "
+                         "bởi văn bản chưa có trong kho, nên chưa dùng làm căn cứ.")
         decision = Decision.PARTIAL if notes else Decision.ANSWER
         return Draft(decision, None, claims, unanswered=" ".join(notes) or None, layout="grouped")
 

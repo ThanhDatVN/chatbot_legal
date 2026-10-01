@@ -1,5 +1,5 @@
 PY ?= .venv/Scripts/python.exe
-SNAPSHOT ?= corpus-2026-09-30
+SNAPSHOT ?= corpus-2026-10-01
 
 .PHONY: setup sources ingest index index-docker run-api run-ui up test security-test eval screenshots
 
@@ -35,7 +35,7 @@ security-test:
 	$(PY) -m pytest tests/security && $(PY) -X utf8 -m evaluation.security_eval
 
 eval:             ## retrieval benchmark, threshold tuning (dev) and A-D answer benchmark (test)
-	$(PY) -X utf8 -m evaluation.dataset_v1
+	$(PY) -X utf8 -m evaluation.dataset_v2
 	$(PY) -X utf8 -m evaluation.retrieval_eval --split all
 	$(PY) -X utf8 -m evaluation.tune_policy
 	$(PY) -X utf8 -m evaluation.answer_eval --split test

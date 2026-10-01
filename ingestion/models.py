@@ -31,6 +31,7 @@ class CurrencyStatus(str, Enum):
     PRESUMED_CURRENT = "presumed_current"  # document listed in force, no provision-level change known
     PENDING_AMENDMENT = "pending_amendment"  # consolidated wording not yet in force at as_of_date
     SUPERSEDED_BY_CONSOLIDATION = "superseded_by_consolidation"
+    SUPERSEDED_BY_AMENDMENT = "superseded_by_amendment"  # a ledger entry expires, amends or displaces it
     HISTORICAL = "historical"
     UNVERIFIED = "unverified"
 
@@ -156,4 +157,5 @@ class Chunk(Strict):
     amendment_notes: list[Footnote] = Field(default_factory=list)
     currency_status: CurrencyStatus
     currency_basis: str
+    currency_entries: list[str] = Field(default_factory=list)  # currency_ledger.json entry ids
     text_quality_status: TextQualityStatus

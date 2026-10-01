@@ -1,6 +1,6 @@
 {
- "registry_version": "2026-09-30-v1",
- "as_of_date": "2026-09-30",
+ "registry_version": "2026-10-01-v2",
+ "as_of_date": "2026-10-01",
  "documents": [
   {
    "document_id": "45_2019_qh14",
@@ -105,13 +105,13 @@
    ],
    "scope": "in_scope",
    "corpus_use": "current",
-   "corpus_use_reason": "Văn bản hướng dẫn trực tiếp Bộ luật Lao động; hiệu lực từng điều cần xác minh vì đã bị sửa đổi một phần.",
+   "corpus_use_reason": "Văn bản hướng dẫn trực tiếp Bộ luật Lao động; hiệu lực từng điều theo sổ theo dõi hiệu lực (currency_ledger.json).",
    "consolidates": [],
    "legal_status_lead": {
     "status": "partially_expired",
     "source_url": "https://vbpl.vn/bocongthuong/Pages/vbpq-thuoctinh.aspx?ItemID=152668",
     "checked_on": "2026-09-25",
-    "note": "Map 129/2025, 10/2024 and 35/2022 amendments to individual articles."
+    "note": "Provision-level changes are recorded in data/corpus/currency_ledger.json (checked 2026-10-01)."
    },
    "expected_main_articles": 115,
    "downloaded_at": "2026-09-25T06:29:23.554889+00:00"
@@ -139,13 +139,13 @@
    ],
    "scope": "in_scope",
    "corpus_use": "current",
-   "corpus_use_reason": "Quy định chi tiết Điều 169 Bộ luật Lao động; hiệu lực từng điều cần xác minh.",
+   "corpus_use_reason": "Văn bản hướng dẫn trực tiếp Bộ luật Lao động; hiệu lực từng điều theo sổ theo dõi hiệu lực (currency_ledger.json).",
    "consolidates": [],
    "legal_status_lead": {
     "status": "partially_expired",
     "source_url": "https://vbpl.vn/hanoi/Pages/vbpq-thuoctinh.aspx?ItemID=152734",
     "checked_on": "2026-09-25",
-    "note": "Map the effect of 158/2025 Article 44(2)(c) at provision level."
+    "note": "Provision-level changes are recorded in data/corpus/currency_ledger.json (checked 2026-10-01)."
    },
    "expected_main_articles": 9,
    "downloaded_at": "2026-09-25T06:29:25.434299+00:00"
@@ -173,13 +173,13 @@
    ],
    "scope": "in_scope",
    "corpus_use": "current",
-   "corpus_use_reason": "Hướng dẫn Bộ luật Lao động về lao động nước ngoài; nhiều quy định bị thay thế bởi văn bản năm 2025 chưa có trong corpus.",
+   "corpus_use_reason": "Văn bản hướng dẫn trực tiếp Bộ luật Lao động; hiệu lực từng điều theo sổ theo dõi hiệu lực (currency_ledger.json).",
    "consolidates": [],
    "legal_status_lead": {
     "status": "partially_expired",
     "source_url": "https://vbpl.vn/TW/Pages/vbpq-thuoctinh.aspx?ItemID=152669&Keyword=&dvid=13",
     "checked_on": "2026-09-25",
-    "note": "Separate foreign-worker provisions affected by 219/2025 from remaining provisions and transitional rules."
+    "note": "Provision-level changes are recorded in data/corpus/currency_ledger.json (checked 2026-10-01)."
    },
    "expected_main_articles": 30,
    "downloaded_at": "2026-09-25T06:29:26.058701+00:00"
@@ -207,16 +207,50 @@
    ],
    "scope": "in_scope",
    "corpus_use": "current",
-   "corpus_use_reason": "Văn bản sửa đổi Nghị định 152/2020/NĐ-CP; hiệu lực từng điều cần xác minh.",
+   "corpus_use_reason": "Văn bản hướng dẫn trực tiếp Bộ luật Lao động; hiệu lực từng điều theo sổ theo dõi hiệu lực (currency_ledger.json).",
    "consolidates": [],
    "legal_status_lead": {
     "status": "partially_expired",
     "source_url": "https://vbpl.vn/phuyen/Pages/vbpq-thuoctinh.aspx?ItemID=162330&Keyword=",
     "checked_on": "2026-09-25",
-    "note": "Map amendments affected by 219/2025 and 128/2025; retain historical application dates."
+    "note": "Provision-level changes are recorded in data/corpus/currency_ledger.json (checked 2026-10-01)."
    },
    "expected_main_articles": 3,
    "downloaded_at": "2026-09-25T06:29:26.830491+00:00"
+  },
+  {
+   "document_id": "219_2025_nd_cp",
+   "document_number": "219/2025/NĐ-CP",
+   "title": "Nghị định quy định về người lao động nước ngoài làm việc tại Việt Nam",
+   "short_title": "Nghị định về người lao động nước ngoài làm việc tại Việt Nam",
+   "document_type": "Nghị định",
+   "issuer": "Chính phủ",
+   "issued_date": "2025-08-07",
+   "effective_date": "2025-08-07",
+   "source_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-219-2025-nd-cp-45798.htm",
+   "publisher": "Công báo điện tử – Văn phòng Chính phủ (congbao.chinhphu.vn)",
+   "license": "publicly_accessible_unknown_license",
+   "source_parts": [
+    {
+     "label": "2025_1073 + 1074_219-2025-NĐ-CP.pdf",
+     "download_url": "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2025/8/45798/58141-1-20251073-1074219-2025-nd-cp.pdf",
+     "path": "data/raw/congbao/219_2025_nd_cp.pdf",
+     "sha256": "3433595f6bf143ce3b4d602b2d49c8724b3276f789be4c79822f4b93f6124787",
+     "pages": 36
+    }
+   ],
+   "scope": "in_scope",
+   "corpus_use": "current",
+   "corpus_use_reason": "Thay thế phần lao động nước ngoài của Nghị định 152/2020/NĐ-CP (khoản 2 Điều 35); hiệu lực từng điều theo sổ theo dõi hiệu lực.",
+   "consolidates": [],
+   "legal_status_lead": {
+    "status": "congbao_record_no_expiry",
+    "source_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-219-2025-nd-cp-45798.htm",
+    "checked_on": "2026-10-01",
+    "note": "Công báo search record lists no expiry date. Provision-level changes are recorded in data/corpus/currency_ledger.json (checked 2026-10-01)."
+   },
+   "expected_main_articles": 36,
+   "downloaded_at": "2026-10-01T07:30:57.105662+00:00"
   },
   {
    "document_id": "293_2025_nd_cp",

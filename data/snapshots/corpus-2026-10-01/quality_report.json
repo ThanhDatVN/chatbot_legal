@@ -1,0 +1,555 @@
+{
+ "snapshot_id": "corpus-2026-10-01",
+ "passed": true,
+ "duplicate_chunk_ids": 0,
+ "ledger_version": "2026-10-01-v1",
+ "ledger_problems": [],
+ "documents": [
+  {
+   "document_id": "45_2019_qh14",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 93,
+    "main_articles": 220,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": [
+     {
+      "section": "Điều 113",
+      "kind": "hand_transcription",
+      "found": true
+     },
+     {
+      "section": "Điều 110",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 210",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 156",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 120",
+      "kind": "visual_window",
+      "found": true
+     }
+    ]
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 0,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "18_2026_vbhn_vpqh",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 88,
+    "main_articles": 220,
+    "uncovered_paragraphs": 0,
+    "footnotes": 6,
+    "fixtures": [
+     {
+      "section": "Điều 2",
+      "kind": "hand_transcription",
+      "found": true
+     },
+     {
+      "section": "Điều 175",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 117",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 18",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "footnote": "2",
+      "found": true
+     },
+     {
+      "footnote": "3",
+      "found": true
+     },
+     {
+      "footnote": "4",
+      "found": true
+     },
+     {
+      "footnote": "5",
+      "found": true
+     },
+     {
+      "footnote": "6",
+      "found": true
+     }
+    ]
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 0,
+    "tables_without_column_labels": []
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "145_2020_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 141,
+    "main_articles": 115,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": [
+     {
+      "section": "Điều 1",
+      "kind": "hand_transcription",
+      "found": true
+     },
+     {
+      "section": "Điều 93",
+      "kind": "visual_window",
+      "found": true
+     }
+    ]
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 12,
+    "tables_without_column_labels": [
+     109,
+     123,
+     124,
+     126,
+     130
+    ],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "135_2020_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true,
+    "retirement_schedule": true
+   },
+   "details": {
+    "pages": 17,
+    "main_articles": 9,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": [],
+    "retirement_schedule": {
+     "rows": 350,
+     "violations": 0
+    }
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 13,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "152_2020_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 61,
+    "main_articles": 30,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": [
+     {
+      "section": "Điều 2",
+      "kind": "hand_transcription",
+      "found": true
+     }
+    ]
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 11,
+    "tables_without_column_labels": [
+     39,
+     50,
+     57,
+     59,
+     59,
+     61
+    ],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "70_2023_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 24,
+    "main_articles": 3,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 5,
+    "tables_without_column_labels": [
+     12,
+     19,
+     21
+    ],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "219_2025_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 36,
+    "main_articles": 36,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 0,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "293_2025_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 17,
+    "main_articles": 5,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": [
+     {
+      "section": "Điều 1",
+      "kind": "hand_transcription",
+      "found": true
+     },
+     {
+      "section": "Điều 3",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 3",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 3",
+      "kind": "visual_window",
+      "found": true
+     },
+     {
+      "section": "Điều 3",
+      "kind": "visual_window",
+      "found": true
+     }
+    ]
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 1,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "74_2024_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 8,
+    "main_articles": 5,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 1,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "38_2022_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 9,
+    "main_articles": 5,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 1,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
+   "document_id": "12_2022_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 94,
+    "main_articles": 64,
+    "uncovered_paragraphs": 0,
+    "footnotes": 0,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.0,
+    "invalid_syllable_examples": [],
+    "tables": 0,
+    "tables_without_column_labels": [],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  }
+ ],
+ "chunk_status_counts": {
+  "consolidated_current/machine_checked": 225,
+  "historical/machine_checked": 18,
+  "presumed_current/machine_checked": 286,
+  "superseded_by_amendment/machine_checked": 128,
+  "superseded_by_consolidation/machine_checked": 225,
+  "unverified/machine_checked": 135
+ }
+}

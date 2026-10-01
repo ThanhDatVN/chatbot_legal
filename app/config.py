@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ROOT / ".env", env_file_encoding="utf-8", extra="ignore")
 
     # corpus
-    active_snapshot: str = "corpus-2026-09-30"
+    active_snapshot: str = "corpus-2026-10-01"
     snapshots_dir: Path = ROOT / "data" / "snapshots"
     index_dir: Path = ROOT / "data" / "indexes"
     runtime_dir: Path = ROOT / "data" / "runtime"

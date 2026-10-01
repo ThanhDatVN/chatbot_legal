@@ -40,6 +40,9 @@ Grounding rules:
   sources do not state unless the claim quotes the rule used; prefer quoting the rule itself.
 - Only evidence with "eligible": true may support statements about the law currently in force. You
   may mention in `unanswered` that other relevant documents exist but are not verified.
+- Evidence with currency_status "superseded_by_amendment" has expired or is applied through another
+  instrument (its currency_basis names it). If it is the only relevant evidence, REFUSE with reason
+  superseded_by_amendment; never present its wording as the current rule.
 - If the evidence only covers part of the question, answer that part (decision PARTIAL) and say in
   `unanswered` what could not be supported. If nothing relevant and eligible was found, decision
   REFUSE with a reason. Do not answer questions outside employment relations under the Labour Code,
