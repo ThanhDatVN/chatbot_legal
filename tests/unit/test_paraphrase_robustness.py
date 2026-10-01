@@ -32,3 +32,18 @@ def test_reorganised_bodies_are_detected():
     assert REORGANISED_BODY_RE.search("phải thông báo cho Sở Lao động - Thương binh và Xã hội tại các nơi sau")
     assert REORGANISED_BODY_RE.search("Ủy ban nhân dân cấp huyện")
     assert not REORGANISED_BODY_RE.search("Bộ luật Lao động quy định")
+
+
+def test_list_questions_on_an_annex_get_the_whole_list():
+    from app.schemas import SourceEvidence
+
+    rows = [f"STT: {i}; Công việc: Việc số {i}" for i in range(1, 21)]
+    source = SourceEvidence(chunk_id="x" * 24, corpus_snapshot_id="s", document_id="d", document_number="145/2020/NĐ-CP",
+                            title="t", short_title="t", document_type="Nghị định", section="Phụ lục II",
+                            section_path=["Phụ lục II"], page_start=1, page_end=1,
+                            text="Phụ lục II\nDANH MỤC CÔNG VIỆC\n" + "\n".join(rows), source_url="https://x",
+                            downloaded_at="2026-10-01", publisher="p", currency_status="presumed_current",
+                            currency_basis="b", text_quality_status="machine_checked", amendment_notes=[], eligible=True)
+    agent = ExtractiveAgent(toolbox=None, reranker=None, policy=None)
+    assert agent._best_units("Danh mục công việc được cho thuê lại gồm những công việc nào?", source) == rows
+    assert len(agent._best_units("Việc số 7 là gì?", source)) <= 3  # a pointed question still gets the best rows

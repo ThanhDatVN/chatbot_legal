@@ -29,6 +29,9 @@ QUESTION_CUE_RE = re.compile(r"\b(bao nhiêu|bao lâu|thế nào|ra sao|những 
                              r"mấy|có được|có phải)\b")
 MAX_UNITS_PER_SOURCE = 3
 MAX_LIST_POINTS = 8
+MAX_LIST_ROWS = 30
+# "danh mục … gồm những công việc nào?" asks for the whole list, not its three best-scoring rows
+LIST_QUESTION_RE = re.compile(r"\b(danh mục|liệt kê|gồm những|bao gồm những|những \w+( \w+){0,3} nào)\b")
 
 
 def split_question(question: str, max_parts: int = 2) -> list[str]:
@@ -132,6 +135,8 @@ class ExtractiveAgent:
 
     def _best_units(self, question: str, source: SourceEvidence) -> list[str]:
         body = self._body(source.text, source.section)
+        if source.section.startswith("Phụ lục") and LIST_QUESTION_RE.search(question.lower()):
+            return body[:MAX_LIST_ROWS]
         if len(body) <= MAX_UNITS_PER_SOURCE:
             return body
         scores = self._unit_scores(question, body)
