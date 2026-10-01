@@ -189,7 +189,8 @@ def create_app(runtime_factory: Callable[[], Runtime] = get_runtime, sessions: S
     def evaluation() -> dict:
         reports = {}
         for name in ("retrieval_all", "answers_test_extractive", "answers_test_anthropic", "policy_tuning",
-                     "security_extractive"):
+                     "security_extractive", "answers_heldout_extractive", "heldout_before_fixes_answers",
+                     "answers_pdev_extractive"):
             path = ROOT / "reports" / f"{name}.json"
             if path.exists():
                 data = json.loads(path.read_text(encoding="utf-8"))

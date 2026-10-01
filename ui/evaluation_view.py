@@ -16,7 +16,7 @@ SYSTEMS = [
     ("A", "Dense + RAG đơn giản", "A_dense"),
     ("B", "Dense + BM25 + RRF", "B_hybrid"),
     ("C", "Hybrid + reranker", "C_rerank"),
-    ("D", "Hybrid + reranker + từ chối + kiểm tra citation", "C_rerank"),
+    ("D", "Hybrid + reranker + từ chối + kiểm tra citation", "D_rerank_expanded"),
 ]
 PANELS = [("hit@5", "Hit@5"), ("mrr", "MRR"), ("correctness", "Correctness (proxy)"),
           ("refusal_accuracy", "Refusal accuracy")]
@@ -31,7 +31,7 @@ def _rows(reports: dict) -> list[dict]:
     answers = reports.get("answers_test_extractive", {}).get("systems", {})
     rows = []
     for key, desc, rkey in SYSTEMS:
-        r, a = retrieval.get(rkey, {}), answers.get(key, {})
+        r, a = retrieval.get(rkey) or retrieval.get("C_rerank", {}), answers.get(key, {})
         refusal = a.get("refusal", {})
         rows.append({"system": key, "desc": desc, "hit@5": r.get("hit@5"), "mrr": r.get("mrr"),
                      "citation_precision": a.get("citation_precision_proxy"), "correctness": a.get("correctness_proxy"),
@@ -66,6 +66,27 @@ def _small_multiples(rows: list[dict]) -> alt.HConcatChart:
         labels = base.mark_text(dy=-7, fontSize=11).encode(text=alt.Text("Giá trị:Q", format=".2f"))
         charts.append((bars + labels).properties(title=title, width=150, height=170))
     return alt.hconcat(*charts, spacing=16).configure_view(stroke=None).configure_axis(labelFontSize=12)
+
+
+def _paraphrase_section(reports: dict) -> None:
+    rows = []
+    for label, name, system in [("Held-out — D trước khi sửa", "heldout_before_fixes_answers", "D"),
+                                ("Held-out — A (RAG đơn giản)", "answers_heldout_extractive", "A"),
+                                ("Held-out — D hiện tại", "answers_heldout_extractive", "D"),
+                                ("Paraphrase dev — D (đã dùng để chỉnh)", "answers_pdev_extractive", "D")]:
+        rep = reports.get(name)
+        a = (rep or {}).get("systems", {}).get(system)
+        if not a:
+            continue
+        rows.append({"Bộ / hệ thống": label, "Commit": rep["meta"]["git_commit"], "Số câu": a["questions"],
+                     "Quyết định đúng": _fmt(a["decision_accuracy"]), "Trả lời sai": a["refusal"]["false_answers"],
+                     "Từ chối nhầm": a["refusal"]["false_refusals"], "Correctness": _fmt(a["correctness_proxy"]),
+                     "Citation precision": _fmt(a["citation_precision_proxy"])})
+    if rows:
+        st.subheader("Câu hỏi diễn đạt theo lối thông thường")
+        st.dataframe(rows, hide_index=True, width="stretch")
+        st.caption("Bộ held-out được viết và commit trước khi sửa, không dùng để chỉnh ngưỡng; đây là thước đo khách "
+                   "quan nhất. Bộ paraphrase dev dùng để chẩn đoán nên số của nó lạc quan hơn.")
 
 
 def evaluation_page() -> None:
@@ -116,7 +137,8 @@ def evaluation_page() -> None:
                    "Từ chối nhầm": r["false_refusals"],
                    "p95 (ms)": "—" if r["p95_ms"] is None else f"{r['p95_ms']:.0f}"} for r in rows],
                  hide_index=True, width="stretch")
-    st.caption("Hit@5 và MRR đo ở tầng truy xuất (D dùng cùng bộ truy xuất với C). Các cột còn lại đo đầu cuối trên "
+    st.caption("Hit@5 và MRR đo ở tầng truy xuất (D = truy xuất của C + mở rộng truy vấn bằng thuật ngữ pháp lý). "
+               "Các cột còn lại đo đầu cuối trên "
                "cùng tập test. A–C ghép câu trả lời từ đoạn đứng đầu, không có chính sách từ chối hay kiểm tra citation.")
     st.altair_chart(_small_multiples(rows), width="content")
 
@@ -128,6 +150,8 @@ def evaluation_page() -> None:
                      hide_index=True, width="stretch")
     else:
         st.success("Không có ca lỗi trong lần chạy gần nhất.", icon="✅")
+
+    _paraphrase_section(reports)
 
     security = reports.get("security_extractive")
     if security:
