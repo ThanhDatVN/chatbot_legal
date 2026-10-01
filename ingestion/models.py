@@ -158,4 +158,5 @@ class Chunk(Strict):
     currency_status: CurrencyStatus
     currency_basis: str
     currency_entries: list[str] = Field(default_factory=list)  # currency_ledger.json entry ids
+    successor_document_id: str | None = None  # corpus document that replaced a superseded provision
     text_quality_status: TextQualityStatus

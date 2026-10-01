@@ -27,6 +27,7 @@ GRID = {
     "answer_threshold": [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
     "unverified_threshold": [0.5, 0.7, 0.9],
     "stronger_margin": [0.05, 0.15, 0.3],
+    "superseded_margin": [None, 0.0, 0.02, 0.05],
 }
 
 
@@ -66,7 +67,8 @@ def main() -> None:
         params = dict(zip(GRID, values))
         cfg = PolicyConfig(**params)
         trials.append({"params": params, **score(cached, cfg)})
-    trials.sort(key=lambda t: (-t["objective"], t["false_answers"], -t["params"]["answer_threshold"]))
+    trials.sort(key=lambda t: (-t["objective"], t["false_answers"], -t["params"]["answer_threshold"],
+                               t["params"]["superseded_margin"] is None))
     best = trials[0]
     chosen = asdict(PolicyConfig())
     chosen_score = score(cached, PolicyConfig())
@@ -74,7 +76,9 @@ def main() -> None:
               "best": best, "top10": trials[:10], "questions": len(dev),
               "chosen": {**chosen, "dev_score": chosen_score,
                          "notes": ["chosen = PolicyConfig defaults used by the service; ties on stronger_margin are "
-                                   "broken towards the middle value", KEEP_RATIO_SWEEP_NOTE]},
+                                   "broken towards the middle value",
+                                   "superseded_margin added with dataset v2: None -> 3 false answers on dev, "
+                                   "0.0 -> 1 with no extra false refusal; 0.0 chosen", KEEP_RATIO_SWEEP_NOTE]},
               "per_question_best_scores": [
                   {"id": q["id"], "type": q["type"], "best_eligible": round(e[0].score, 4) if e else 0.0,
                    "best_ineligible": round(i[0].score, 4) if i else 0.0, "scope_rule": s.value if s else None}

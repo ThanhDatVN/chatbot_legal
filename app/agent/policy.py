@@ -22,6 +22,10 @@ class PolicyConfig:
     stronger_margin: float = 0.15  # unverified evidence this much stronger turns an answer into PARTIAL
     unverified_threshold: float = 0.5  # unverified evidence this strong explains a refusal
     max_sources: int = 3
+    # A provision that expired or is displaced, and whose replacement is not in the corpus, outranking the best
+    # eligible evidence by this margin means the eligible evidence only neighbours the question: refuse.
+    # None disables the rule; 0.0 was chosen on the dev split of dataset v2 (reports/policy_tuning.json).
+    superseded_margin: float | None = 0.0
 
 
 # Requests that ask the system to foresee or recommend rather than to state the law.
@@ -74,6 +78,12 @@ def unverified_but_current(item: ScoredChunk) -> bool:
     return item.chunk.currency_status == CurrencyStatus.UNVERIFIED
 
 
+def orphaned_superseded(item: ScoredChunk) -> bool:
+    """Expired or displaced provision whose applicable wording is not in the corpus."""
+    return (item.chunk.currency_status == CurrencyStatus.SUPERSEDED_BY_AMENDMENT
+            and item.chunk.successor_document_id is None)
+
+
 def flagged(item: ScoredChunk) -> bool:
     """In-scope evidence that cannot support an answer but explains a refusal: provisions not verified,
     or provisions the currency ledger records as expired, amended or displaced."""
@@ -94,6 +104,11 @@ def assess(eligible: list[ScoredChunk], ineligible: list[ScoredChunk], cfg: Poli
     best = eligible[0].score if eligible else 0.0
     unverified = [s for s in ineligible if flagged(s)]
     best_unverified = max((s.score for s in unverified), default=0.0)
+    orphaned = [s for s in unverified if orphaned_superseded(s)]
+    best_orphaned = max((s.score for s in orphaned), default=0.0)
+    if (cfg.superseded_margin is not None and orphaned and best_orphaned >= cfg.unverified_threshold
+            and best_orphaned >= best + cfg.superseded_margin):
+        return EvidenceAssessment(False, RefusalReason.SUPERSEDED_BY_AMENDMENT, [], orphaned, best, best_unverified)
     if best >= cfg.answer_threshold:
         floor = max(cfg.answer_threshold, best * cfg.keep_ratio)
         selected = [s for s in eligible if s.score >= floor][: cfg.max_sources]

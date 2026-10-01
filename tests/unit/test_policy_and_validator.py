@@ -41,7 +41,15 @@ def test_assess_answer_refuse_and_currency():
     amended = assess([scored(0.3)], [scored(0.6, status="unverified", eligible=False, cid="d" * 24),
                                      scored(0.97, status="superseded_by_amendment", eligible=False, cid="e" * 24)], cfg)
     assert amended.reason == RefusalReason.SUPERSEDED_BY_AMENDMENT
-    noted = assess([scored(0.81)], [scored(0.99, status="superseded_by_amendment", eligible=False, cid="e" * 24)], cfg)
+    # the expired provision outranks the eligible evidence and nothing in the corpus replaced it: refuse
+    orphan = scored(0.99, status="superseded_by_amendment", eligible=False, cid="e" * 24)
+    assert assess([scored(0.95)], [orphan], cfg).reason == RefusalReason.SUPERSEDED_BY_AMENDMENT
+    # ...but a provision replaced by a corpus document competes on its own and does not block the answer
+    replaced = scored(0.99, status="superseded_by_amendment", eligible=False, cid="f" * 24)
+    replaced.chunk.successor_document_id = "219_2025_nd_cp"
+    assert assess([scored(0.95)], [replaced], cfg).sufficient
+    off = PolicyConfig(answer_threshold=0.8, superseded_margin=None)
+    noted = assess([scored(0.81)], [orphan], off)
     assert noted.sufficient and [s.chunk.chunk_id for s in noted.stronger_unverified] == ["e" * 24]
 
 

@@ -16,7 +16,8 @@ from pathlib import Path
 from ingestion.chunk import CHUNKER_VERSION, MAX_TOKENS, chunk_document, sha
 from ingestion.currency import apply_text_reviews, assign_currency, load_reviews
 from ingestion.html_parser import read_html_layout
-from ingestion.ledger import chunk_breaks, entries_for_chunk, load_ledger, resolve_targets, verify_evidence
+from ingestion.ledger import (chunk_breaks, entries_for_chunk, load_ledger, resolve_targets, successor_for,
+                             verify_evidence)
 from ingestion.layout import read_layout
 from ingestion.models import Registry
 from ingestion.quality import check_document, chunk_problems
@@ -46,6 +47,10 @@ def build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Pat
     registry = Registry.model_validate_json(registry_path.read_text(encoding="utf-8"))
     ledger = load_ledger(ledger_path)
     ledger_problems = verify_evidence(ledger, ROOT) if ledger else []
+    known_docs = {d.document_id for d in registry.documents}
+    if ledger:
+        ledger_problems += [f"{e.entry_id}: successor {e.successor_document_id} is not in the registry"
+                            for e in ledger.entries if e.successor_document_id not in (None, *known_docs)]
     for problem in ledger_problems:
         print(f"[LEDGER] {problem}")
     fixtures = json.loads(fixtures_path.read_text(encoding="utf-8")) if fixtures_path.exists() else {}
@@ -86,6 +91,7 @@ def build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Pat
             final.append(chunk.model_copy(update={
                 "currency_status": status, "currency_basis": basis,
                 "currency_entries": [e.entry_id for e in hits],
+                "successor_document_id": successor_for(hits, registry.as_of_date),
                 "text_quality_status": apply_text_reviews(chunk, text_reviews, machine_ok)}))
         all_chunks.extend(final)
         all_sections.extend(s.model_dump(mode="json") for s in parsed.sections)

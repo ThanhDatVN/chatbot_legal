@@ -83,6 +83,7 @@ class LedgerEntry(Strict):
     effective_from: date
     effective_until: date | None = None  # first day the change no longer applies
     replacement: str | None = None  # where the applicable wording now lives
+    successor_document_id: str | None = None  # corpus document holding that wording, if it is in the corpus
     evidence_quote: str
     note: str = ""
     extracted_by: str
@@ -198,6 +199,14 @@ def chunk_breaks(parsed: ParsedDocument, entries: list[LedgerEntry]) -> dict[str
                 if end < section.end:
                     cuts.add(end)
     return breaks
+
+
+def successor_for(entries: list[LedgerEntry], day: date) -> str | None:
+    """Corpus document that now carries the rule, when every change superseding the chunk names one."""
+    superseding = [e for e in entries if e.applies_on(day) and e.change in SUPERSEDING]
+    if not superseding or any(e.successor_document_id is None for e in superseding):
+        return None
+    return superseding[0].successor_document_id
 
 
 def entries_for_chunk(chunk: Chunk, entries: list[LedgerEntry],
