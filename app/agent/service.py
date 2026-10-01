@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import time
 import uuid
 from datetime import datetime, timezone
@@ -46,6 +47,12 @@ REFUSAL_TEXT = {
 }
 REFUSAL_TIPS = ("Bạn có thể:\n• diễn đạt lại câu hỏi;\n• giới hạn vào một văn bản cụ thể;\n"
                 "• kiểm tra các nguồn gần nhất bên dưới.")
+# Bodies renamed or abolished in the 2025 reorganisation; old guiding decrees still name them.
+REORGANISED_BODY_RE = re.compile(r"Lao động\s*-\s*Thương binh và Xã hội|cấp huyện|Phòng Lao động")
+REORGANISED_NOTICE = ("Nguồn được trích nêu Bộ/Sở/Phòng Lao động - Thương binh và Xã hội hoặc chính quyền cấp huyện. "
+                      "Sau sắp xếp bộ máy năm 2025, nhiều nhiệm vụ này do cơ quan nội vụ và chính quyền địa phương "
+                      "hai cấp thực hiện (ví dụ Điều 71 Nghị định 129/2025/NĐ-CP giao Sở Nội vụ nhận báo cáo sử dụng "
+                      "lao động); hãy kiểm tra cơ quan có thẩm quyền hiện hành.")
 FOLLOW_UPS = ["Quy định này nằm ở Điều nào?", "Có trường hợp ngoại lệ không?", "Cho tôi xem nguyên văn nguồn."]
 
 
@@ -220,6 +227,8 @@ class AnswerService:
                 flag = "Nguồn chưa được chuyên gia pháp lý duyệt; hãy đối chiếu văn bản gốc trước khi áp dụng."
                 if flag not in notices:
                     notices.append(flag)
+        if any(REORGANISED_BODY_RE.search(c.quote) for c in citations):
+            notices.append(REORGANISED_NOTICE)
         if dropped:
             notices.append(f"Đã loại {len(dropped)} nhận định không kiểm chứng được với nguồn.")
         return notices

@@ -1,8 +1,10 @@
-"""Tune the evidence-sufficiency thresholds on the development split only.
+"""Tune the evidence-sufficiency thresholds on development data only.
 
     python -m evaluation.tune_policy
 
-Retrieval runs once per dev question; each threshold combination is then replayed
+Development data = the dev split of dataset v2 plus the paraphrase development set
+(questions_paraphrase_dev_v1.jsonl, everyday wording). The held-out paraphrase set and the test split are
+never read here. Retrieval runs once per question; each threshold combination is then replayed
 through app.agent.policy.assess. The objective is decision accuracy against the
 acceptable decisions, with false answers (answering when the question should be
 refused) weighted twice as heavily as false refusals.
@@ -13,9 +15,12 @@ from __future__ import annotations
 import itertools
 from dataclasses import asdict
 
+from app.agent.lexicon import expand_query
 from app.agent.policy import PolicyConfig, assess, retrieval_query, scope_check
 from app.runtime import build_runtime
-from evaluation.common import REPORTS, load_dataset, run_metadata, write_json
+from evaluation.common import DATASET, REPORTS, ROOT, load_dataset, run_metadata, write_json
+
+PARAPHRASE_DEV = ROOT / "data" / "eval" / "questions_paraphrase_dev_v1.jsonl"
 
 # keep_ratio only changes which sources are quoted, not the decision, so it was swept separately with the
 # full answer pipeline on the dev split (python -m evaluation.answer_eval --split dev with PolicyConfig overrides).
@@ -56,11 +61,11 @@ def score(cached: list[tuple[dict, object, list, list]], cfg: PolicyConfig) -> d
 
 def main() -> None:
     runtime = build_runtime()
-    dev = load_dataset("dev")
+    dev = load_dataset("dev") + (load_dataset("pdev", PARAPHRASE_DEV) if PARAPHRASE_DEV.exists() else [])
     cached = []
     for q in dev:
         scope = scope_check(q["question"])
-        res = runtime.retrieval.search(retrieval_query(q["question"]), top_k=5, mode="rerank")
+        res = runtime.retrieval.search(expand_query(retrieval_query(q["question"])), top_k=5, mode="rerank")
         cached.append((q, scope, res.eligible, res.ineligible))
     trials = []
     for values in itertools.product(*GRID.values()):
@@ -72,9 +77,11 @@ def main() -> None:
     best = trials[0]
     chosen = asdict(PolicyConfig())
     chosen_score = score(cached, PolicyConfig())
-    report = {"meta": run_metadata(runtime.settings, split="dev", objective="(correct - false_answers) / n"),
+    by_set = {name: score([c for c in cached if c[0]["split"] == name], PolicyConfig()) for name in ("dev", "pdev")}
+    report = {"meta": run_metadata(runtime.settings, DATASET, split="dev+pdev",
+                                   extra_dataset=PARAPHRASE_DEV.name, objective="(correct - false_answers) / n"),
               "best": best, "top10": trials[:10], "questions": len(dev),
-              "chosen": {**chosen, "dev_score": chosen_score,
+              "chosen": {**chosen, "dev_score": chosen_score, "dev_score_by_set": by_set,
                          "notes": ["chosen = PolicyConfig defaults used by the service; ties on stronger_margin are "
                                    "broken towards the middle value",
                                    "superseded_margin added with dataset v2: None -> 3 false answers on dev, "
@@ -85,7 +92,7 @@ def main() -> None:
                   for q, s, e, i in cached]}
     write_json(REPORTS / "policy_tuning.json", report)
     print("best:", best)
-    print("chosen:", chosen, chosen_score)
+    print("chosen:", chosen, chosen_score, by_set)
     for t in trials[1:6]:
         print("     ", t)
 

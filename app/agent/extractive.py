@@ -11,6 +11,7 @@ from __future__ import annotations
 import re
 
 from app.agent.draft import Draft
+from app.agent.lexicon import expand_query
 from app.agent.policy import EvidenceAssessment, PolicyConfig, assess, retrieval_query, scope_check
 from app.agent.tools import ToolBox
 from app.generation.validator import DraftClaim
@@ -21,6 +22,7 @@ from ingestion.models import CurrencyStatus
 CURRENCY_REASONS = (RefusalReason.SUPERSEDED_BY_AMENDMENT, RefusalReason.CURRENCY_UNVERIFIED)
 
 HEADING_RE = re.compile(r"^Điều\s+\d+\.")
+ANNEX_TITLE_RE = re.compile(r"^(Phụ lục\b|PHỤ LỤC\b|\(Kèm theo\b)")
 CLAUSE_RE = re.compile(r"^\d+[a-z]?\.\s")
 POINT_RE = re.compile(r"^[a-zđ]\)\s")
 QUESTION_CUE_RE = re.compile(r"\b(bao nhiêu|bao lâu|thế nào|ra sao|những gì|là gì|là ai|gì|nào|không|khi nào|ở đâu|"
@@ -46,7 +48,7 @@ class ExtractiveAgent:
         self.policy = policy
 
     def _search(self, query: str) -> EvidenceAssessment:
-        self.toolbox.search_evidence({"query": query, "top_k": 5})
+        self.toolbox.search_evidence({"query": expand_query(query), "top_k": 5})
         result = self.toolbox.last_result
         return assess(result.eligible, result.ineligible, self.policy)
 
@@ -73,12 +75,14 @@ class ExtractiveAgent:
         ordered = part_verdicts + [(question, whole)]
         cap = self.policy.max_sources + max(0, len(part_verdicts) - 1)
         for query, verdict in ordered:
-            for item in verdict.selected:
+            for rank, item in enumerate(verdict.selected):
                 if item.chunk.chunk_id in used or len(used) >= cap:
+                    continue
+                if rank > 0 and not self._supports(expand_query(query), item.chunk.text, item.chunk.section_label):
                     continue
                 used.add(item.chunk.chunk_id)
                 source = self.toolbox.get_source({"chunk_id": item.chunk.chunk_id})
-                for unit in self._best_units(query, source):
+                for unit in self._best_units(expand_query(query), source):
                     claims.append(DraftClaim(text=unit, chunk_ids=[source.chunk_id], quote=unit))
         gaps = [part for part, v in part_verdicts if not v.sufficient]
         stronger = [s for _, v in verdicts for s in v.stronger_unverified]
@@ -98,16 +102,39 @@ class ExtractiveAgent:
         decision = Decision.PARTIAL if notes else Decision.ANSWER
         return Draft(decision, None, claims, unanswered=" ".join(notes) or None, layout="grouped")
 
+    @staticmethod
+    def _body(text: str, section: str) -> list[str]:
+        """Quotable units of a chunk: lines without the article heading or an annex title block."""
+        units = [u.strip() for u in text.split("\n") if u.strip()]
+        body = [u for u in units if not HEADING_RE.match(u)]
+        if section.startswith("Phụ lục"):
+            start, in_note = 0, False
+            for u in body:  # "Phụ lục II" / "DANH MỤC …" / "(Kèm theo … của Chính phủ)" precede the content
+                if in_note or ANNEX_TITLE_RE.match(u) or (u.upper() == u and any(c.isalpha() for c in u)):
+                    in_note = (in_note or u.startswith("(")) and not u.endswith(")")
+                    start += 1
+                    continue
+                break
+            body = body[start:]
+        return body or units
+
+    def _unit_scores(self, question: str, body: list[str]) -> list[float]:
+        if self.reranker is not None:
+            return self.reranker.score(question, body)
+        q = set(re.findall(r"[^\W_]+", question.lower()))
+        return [len(q & set(re.findall(r"[^\W_]+", u.lower()))) / (len(u.split()) ** 0.5 + 1) for u in body]
+
+    def _supports(self, question: str, text: str, section: str) -> bool:
+        """A supplementary source is quoted only if one of its units, not just the whole article, matches."""
+        if self.policy.unit_threshold is None or self.reranker is None:
+            return True
+        return max(self._unit_scores(question, self._body(text, section))) >= self.policy.unit_threshold
+
     def _best_units(self, question: str, source: SourceEvidence) -> list[str]:
-        units = [u.strip() for u in source.text.split("\n") if u.strip()]
-        body = [u for u in units if not HEADING_RE.match(u)] or units
+        body = self._body(source.text, source.section)
         if len(body) <= MAX_UNITS_PER_SOURCE:
             return body
-        if self.reranker is not None:
-            scores = self.reranker.score(question, body)
-        else:
-            q = set(re.findall(r"[^\W_]+", question.lower()))
-            scores = [len(q & set(re.findall(r"[^\W_]+", u.lower()))) / (len(u.split()) ** 0.5 + 1) for u in body]
+        scores = self._unit_scores(question, body)
         best = max(scores)
         chosen = sorted(i for i, s in sorted(enumerate(scores), key=lambda x: -x[1])[:MAX_UNITS_PER_SOURCE]
                         if s >= best * 0.5)

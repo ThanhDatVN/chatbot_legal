@@ -26,6 +26,10 @@ class PolicyConfig:
     # eligible evidence by this margin means the eligible evidence only neighbours the question: refuse.
     # None disables the rule; 0.0 was chosen on the dev split of dataset v2 (reports/policy_tuning.json).
     superseded_margin: float | None = 0.0
+    # A source other than the best one is quoted only if one of its clauses/points (not just the whole article)
+    # scores at least this much against the question. None disables the check; 0.2 was the smallest value with
+    # the best citation precision on dev + paraphrase dev (no change in decisions or correctness).
+    unit_threshold: float | None = 0.2
 
 
 # Requests that ask the system to foresee or recommend rather than to state the law.
