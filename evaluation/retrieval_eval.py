@@ -14,10 +14,12 @@ import argparse
 import time
 from pathlib import Path
 
+from app.agent.lexicon import expand_query
 from app.runtime import build_runtime
 from evaluation.common import DATASET, REPORTS, load_dataset, percentile, run_metadata, section_key, write_json
 
-SYSTEMS = {"A_dense": "dense", "B_hybrid": "hybrid", "C_rerank": "rerank"}
+# D searches like C but with the statutory query expansion of app/agent/lexicon.py
+SYSTEMS = {"A_dense": "dense", "B_hybrid": "hybrid", "C_rerank": "rerank", "D_rerank_expanded": "rerank"}
 
 
 def metrics_for(ranked: list[tuple[str, str]], gold: set[tuple[str, str]], required: set[tuple[str, str]]) -> dict:
@@ -44,7 +46,8 @@ def main() -> None:
             gold = {(g["document_id"], g["section"]) for g in q["gold"]}
             required = {(g["document_id"], g["section"]) for g in q["gold_required"]}
             started = time.perf_counter()
-            res = runtime.retrieval.search(q["question"], top_k=10, mode=mode, include_ineligible=False)
+            query = expand_query(q["question"]) if name.startswith("D_") else q["question"]
+            res = runtime.retrieval.search(query, top_k=10, mode=mode, include_ineligible=False)
             latencies.append((time.perf_counter() - started) * 1000)
             ranked = [section_key(s) for s in res.eligible]
             m = metrics_for(ranked, gold, required)

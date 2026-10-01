@@ -9,11 +9,11 @@ import json
 
 from evaluation.common import REPORTS
 
-VERSION = "v2"
+VERSION = "v3"
 
 SYSTEM_NAMES = {"A": "A — Dense + RAG đơn giản", "B": "B — Dense + BM25 + RRF", "C": "C — Hybrid + reranker",
                 "D": "D — Hybrid + reranker + từ chối + kiểm tra citation"}
-RETRIEVAL_KEY = {"A": "A_dense", "B": "B_hybrid", "C": "C_rerank", "D": "C_rerank"}
+RETRIEVAL_KEY = {"A": "A_dense", "B": "B_hybrid", "C": "C_rerank", "D": "D_rerank_expanded"}
 
 
 def load(name: str) -> dict | None:
@@ -27,6 +27,38 @@ def f3(v) -> str:
 
 def ms(v) -> str:
     return "—" if v is None else f"{v:,.0f}"
+
+
+def _answer_row(label: str, report: dict | None, system: str = "D") -> str | None:
+    if not report or system not in report["systems"]:
+        return None
+    a, r = report["systems"][system], report["systems"][system]["refusal"]
+    return (f"| {label} | {report['meta']['git_commit']} | {a['questions']} | {f3(a['decision_accuracy'])} | "
+            f"{r['false_answers']} | {r['false_refusals']} | {f3(a['correctness_proxy'])} | "
+            f"{f3(a['citation_precision_proxy'])} |")
+
+
+def paraphrase_section() -> list[str]:
+    """Everyday-wording questions: the held-out set before/after the fixes and the paraphrase dev set."""
+    before, after = load("heldout_before_fixes_answers"), load("answers_heldout_extractive")
+    pdev = load("answers_pdev_extractive")
+    rows = [_answer_row("Held-out — D trước khi sửa", before), _answer_row("Held-out — A (RAG đơn giản)", after, "A"),
+            _answer_row("Held-out — D hiện tại", after), _answer_row("Paraphrase dev — D hiện tại (đã dùng để chỉnh)", pdev)]
+    rows = [r for r in rows if r]
+    if not rows:
+        return []
+    out = ["## Câu hỏi diễn đạt theo lối thông thường", "",
+           "Bộ held-out (`questions_heldout_v1.jsonl`) được viết và commit trước khi sửa, không dùng để chỉnh; bộ "
+           "paraphrase dev dùng để chẩn đoán và chọn ngưỡng.", "",
+           "| Bộ / hệ thống | Commit | Số câu | Quyết định đúng | Trả lời sai | Từ chối nhầm | Correctness | "
+           "Citation precision |", "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |"] + rows
+    ret_before, ret_after = load("heldout_before_fixes_retrieval"), load("retrieval_heldout")
+    if ret_before and ret_after:
+        c0 = ret_before["systems"]["C_rerank"]
+        d1 = ret_after["systems"].get("D_rerank_expanded", ret_after["systems"]["C_rerank"])
+        out += ["", f"Truy xuất trên held-out: Hit@5 / MRR {f3(c0['hit@5'])} / {f3(c0['mrr'])} trước khi sửa (C) → "
+                f"{f3(d1['hit@5'])} / {f3(d1['mrr'])} với mở rộng truy vấn (D)."]
+    return out + [""]
 
 
 def main() -> None:
@@ -55,8 +87,8 @@ def main() -> None:
                    f"{f3(a.get('correctness_proxy'))} | {f3((a.get('refusal') or {}).get('accuracy'))} | "
                    f"{ms((a.get('latency_ms') or {}).get('total_p95'))} |")
     answerable = retrieval["systems"]["C_rerank"]["questions"]
-    out += ["", f"Hit@5/MRR đo ở tầng truy xuất trên toàn bộ {answerable} câu trả lời được (D dùng cùng bộ truy xuất "
-            "với C). "
+    out += ["", f"Hit@5/MRR đo ở tầng truy xuất trên toàn bộ {answerable} câu trả lời được (D = truy xuất của C cộng "
+            "mở rộng truy vấn bằng thuật ngữ pháp lý). "
             "Các cột còn lại đo đầu cuối trên split test. Correctness và citation precision là chỉ số tự động "
             "(proxy) — xem định nghĩa trong `docs/EVALUATION.md`.", "",
             "## Truy xuất", "",
@@ -88,11 +120,13 @@ def main() -> None:
             "Tỷ lệ quyết định đúng theo loại câu hỏi (D): " + ", ".join(
                 f"{k} {v['acceptable']}/{v['n']}" for k, v in d["by_type"].items()) + ".", "",
             "Ca lỗi của D: " + (", ".join(d["failures"]) or "không có") + ".", ""]
+    out += paraphrase_section()
     if tuning:
         chosen = tuning.get("chosen", tuning["best"]["params"])
-        out += ["## Hiệu chỉnh ngưỡng (chỉ trên split dev)", "",
+        out += ["## Hiệu chỉnh ngưỡng (chỉ trên dữ liệu phát triển: dev v2 + paraphrase dev)", "",
                 f"- Tham số chọn: `{json.dumps({k: v for k, v in chosen.items() if k not in ('notes', 'dev_score')})}`",
-                f"- Điểm của tham số chọn trên dev: `{json.dumps(chosen.get('dev_score'))}`",
+                f"- Điểm của tham số chọn trên dev: `{json.dumps(chosen.get('dev_score'))}`"
+                + (f" (theo bộ: `{json.dumps(chosen['dev_score_by_set'])}`)" if chosen.get("dev_score_by_set") else ""),
                 f"- Kết quả tốt nhất trên dev: độ chính xác {f3(tuning['best']['accuracy'])}, "
                 f"trả lời sai {tuning['best']['false_answers']}, từ chối nhầm {tuning['best']['false_refusals']}"]
         out += [f"- {n}" for n in chosen.get("notes", [])]

@@ -34,12 +34,8 @@ test:             ## unit, integration and security tests
 security-test:
 	$(PY) -m pytest tests/security && $(PY) -X utf8 -m evaluation.security_eval
 
-eval:             ## retrieval benchmark, threshold tuning (dev) and A-D answer benchmark (test)
-	$(PY) -X utf8 -m evaluation.dataset_v2
-	$(PY) -X utf8 -m evaluation.retrieval_eval --split all
-	$(PY) -X utf8 -m evaluation.tune_policy
-	$(PY) -X utf8 -m evaluation.answer_eval --split test
-	$(PY) -X utf8 -m evaluation.report
+eval:             ## full benchmark: datasets, retrieval, tuning on dev data, A-D on test, paraphrase sets, security
+	$(PY) scripts/run_benchmark.py
 
 screenshots:      ## needs the API and UI running
 	node scripts/screenshot.mjs assets/screenshots
