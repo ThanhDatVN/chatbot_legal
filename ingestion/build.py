@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -43,7 +44,32 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
 
 
 def build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Path, fixtures_path: Path,
-          ledger_path: Path) -> int:
+          ledger_path: Path, overwrite: bool = False) -> int:
+    """Snapshots are immutable: rebuilding an existing id must reproduce its chunks byte for byte."""
+    final_out = out_root / snapshot_id
+    existing = final_out / "snapshot.json"
+    published_sha = None
+    if existing.exists() and not overwrite:
+        published_sha = json.loads(existing.read_text(encoding="utf-8")).get("chunks_sha256")
+    code = _build(registry_path, snapshot_id, out_root, review_dir, fixtures_path, ledger_path,
+                  out_root / f".staging-{snapshot_id}" if published_sha else final_out)
+    if not published_sha:
+        return code
+    staging = out_root / f".staging-{snapshot_id}"
+    new_sha = file_sha256(staging / "chunks.jsonl") if (staging / "chunks.jsonl").exists() else None
+    if new_sha != published_sha:
+        shutil.rmtree(staging, ignore_errors=True)
+        print(f"REFUSED: snapshot {snapshot_id} already exists with chunks_sha256 {published_sha[:12]}… and this build "
+              f"differs ({(new_sha or 'none')[:12]}…). Use a new --snapshot-id (or --overwrite for an unpublished one).")
+        return 3
+    shutil.rmtree(final_out)
+    staging.rename(final_out)
+    print(f"reproduced snapshot {snapshot_id} (chunks_sha256 unchanged)")
+    return code
+
+
+def _build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Path, fixtures_path: Path,
+           ledger_path: Path, out: Path) -> int:
     registry = Registry.model_validate_json(registry_path.read_text(encoding="utf-8"))
     ledger = load_ledger(ledger_path)
     ledger_problems = verify_evidence(ledger, ROOT) if ledger else []
@@ -57,7 +83,6 @@ def build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Pat
     currency_reviews = load_reviews(review_dir / "currency_reviews.json")
     text_reviews = load_reviews(review_dir / "text_reviews.json")
     counter = TokenCounter()
-    out = out_root / snapshot_id
     (out / "texts").mkdir(parents=True, exist_ok=True)
 
     all_chunks, all_sections, all_notes, doc_rows, quality_rows = [], [], [], [], []
@@ -148,8 +173,9 @@ def main() -> None:
     parser.add_argument("--reviews", type=Path, default=ROOT / "data" / "review")
     parser.add_argument("--fixtures", type=Path, default=ROOT / "data" / "corpus" / "regression_fixtures.json")
     parser.add_argument("--ledger", type=Path, default=ROOT / "data" / "corpus" / "currency_ledger.json")
+    parser.add_argument("--overwrite", action="store_true", help="replace an existing snapshot (unpublished only)")
     args = parser.parse_args()
-    sys.exit(build(args.registry, args.snapshot_id, args.out, args.reviews, args.fixtures, args.ledger))
+    sys.exit(build(args.registry, args.snapshot_id, args.out, args.reviews, args.fixtures, args.ledger, args.overwrite))
 
 
 if __name__ == "__main__":
