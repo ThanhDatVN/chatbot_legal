@@ -15,6 +15,7 @@ from pathlib import Path
 
 from ingestion.chunk import CHUNKER_VERSION, MAX_TOKENS, chunk_document, sha
 from ingestion.currency import apply_text_reviews, assign_currency, load_reviews
+from ingestion.html_parser import read_html_layout
 from ingestion.layout import read_layout
 from ingestion.models import Registry
 from ingestion.quality import check_document, chunk_problems
@@ -56,7 +57,10 @@ def build(registry_path: Path, snapshot_id: str, out_root: Path, review_dir: Pat
             print(f"[{doc.document_id}] missing source files: {missing}. Run scripts/download_sources.py first.")
             return 2
         hashes_ok = all(file_sha256(p) == part.sha256 for p, part in zip(paths, doc.source_parts))
-        layout = read_layout(doc.document_id, paths)
+        if all(p.suffix.lower() in (".html", ".htm") for p in paths):
+            layout = read_html_layout(doc.document_id, paths[0])
+        else:
+            layout = read_layout(doc.document_id, paths)
         parsed = parse_document(layout)
         chunks = chunk_document(parsed, doc, snapshot_id, counter)
         quality = check_document(doc, layout, parsed, chunks, hashes_ok, fixtures)

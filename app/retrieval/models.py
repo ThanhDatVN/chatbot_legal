@@ -33,6 +33,7 @@ def _device(preference: str):
 
     if preference == "cuda" or (preference == "auto" and torch.cuda.is_available()):
         return torch.device("cuda"), torch.float16
+    torch.set_num_threads(int(os.environ.get("TORCH_NUM_THREADS", os.cpu_count() or 1)))
     return torch.device("cpu"), torch.float32
 
 
@@ -81,6 +82,10 @@ class BgeM3Encoder(_Lazy):
 
 
 class BgeReranker(_Lazy):
+    def __init__(self, model_name: str, device: str, offline: bool, max_length: int = 1024) -> None:
+        super().__init__(model_name, device, offline)
+        self.max_length = max_length
+
     def _build(self):
         import torch
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
@@ -99,7 +104,8 @@ class BgeReranker(_Lazy):
         with torch.inference_mode():
             for i in range(0, len(passages), batch_size):
                 pairs = [[query, p] for p in passages[i:i + batch_size]]
-                batch = tok(pairs, padding=True, truncation=True, max_length=1024, return_tensors="pt").to(device)
+                batch = tok(pairs, padding=True, truncation=True, max_length=self.max_length,
+                            return_tensors="pt").to(device)
                 logits = model(**batch).logits.float().view(-1)
                 scores.extend(torch.sigmoid(logits).cpu().tolist())
         return scores

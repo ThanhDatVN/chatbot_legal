@@ -192,7 +192,35 @@ def create_app(runtime_factory: Callable[[], Runtime] = get_runtime, sessions: S
                 data.pop("per_query", None)
                 reports[name] = data
         rt = runtime()
-        return {"reports": reports, "feedback": store().feedback_summary(), "corpus": rt.catalog.stats()}
+        return {"reports": reports, "failed_cases": _failed_cases(), "feedback": store().feedback_summary(),
+                "corpus": rt.catalog.stats()}
+
+    def _failed_cases(limit: int = 30) -> list[dict]:
+        traces = ROOT / "reports" / "answers_test_extractive_traces.jsonl"
+        dataset = ROOT / "data" / "eval" / "questions_v1.jsonl"
+        if not traces.exists() or not dataset.exists():
+            return []
+        questions = {}
+        for line in dataset.open(encoding="utf-8"):
+            q = json.loads(line)
+            questions[q["id"]] = q
+        out = []
+        for line in traces.open(encoding="utf-8"):
+            t = json.loads(line)
+            if t["system"] != "D":
+                continue
+            q = questions.get(t["id"], {})
+            answer = " ".join(t["answer"].lower().split())
+            missing = [f for f in q.get("required_facts", []) if " ".join(f.lower().split()) not in answer]
+            issue = None
+            if t["decision"] not in t["acceptable"]:
+                issue = f"quyết định {t['decision']}, kỳ vọng {'/'.join(t['acceptable'])}"
+            elif missing and t["decision"] != "REFUSE":
+                issue = "thiếu dữ kiện: " + ", ".join(missing)
+            if issue:
+                out.append({"id": t["id"], "type": t["type"], "question": t["question"], "decision": t["decision"],
+                            "issue": issue, "citations": [" ".join(c) for c in t["citations"]]})
+        return out[:limit]
 
     @app.exception_handler(HTTPException)
     async def http_error(_: Request, exc: HTTPException):

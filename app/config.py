@@ -39,6 +39,10 @@ class Settings(BaseSettings):
     sparse_top_k: int = Field(20, ge=1, le=100)
     rrf_k: int = 60
     rerank_top_k: int = Field(5, ge=1, le=20)
+    # cross-encoder cost control: candidates scored per search and their max length in tokens
+    rerank_candidates: int = Field(20, ge=1, le=60)
+    ineligible_rerank_candidates: int = Field(10, ge=0, le=30)
+    reranker_max_length: int = Field(1024, ge=128, le=8192)
 
     # answering
     llm_provider: Literal["extractive", "anthropic"] = "extractive"

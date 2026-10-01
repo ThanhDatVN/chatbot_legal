@@ -37,13 +37,16 @@ class SearchResult:
 
 class RetrievalService:
     def __init__(self, catalog: CorpusCatalog, store: VectorStore, sparse: SparseIndex, encoder: Encoder,
-                 reranker: Reranker | None, dense_k: int = 20, sparse_k: int = 20, rrf_k: int = 60) -> None:
+                 reranker: Reranker | None, dense_k: int = 20, sparse_k: int = 20, rrf_k: int = 60,
+                 rerank_candidates: int = 20, ineligible_rerank_candidates: int = 10) -> None:
         self.catalog = catalog
         self.store = store
         self.sparse = sparse
         self.encoder = encoder
         self.reranker = reranker
         self.dense_k, self.sparse_k, self.rrf_k = dense_k, sparse_k, rrf_k
+        self.rerank_candidates = rerank_candidates
+        self.ineligible_rerank_candidates = ineligible_rerank_candidates
 
     def embed(self, query: str) -> np.ndarray:
         return self.encoder.encode([query], batch_size=1, max_length=256)[0]
@@ -92,7 +95,8 @@ class RetrievalService:
 
         if mode == "rerank":
             started = time.perf_counter()
-            eligible = self._rerank(query, eligible)
-            other = self._rerank(query, other[: max(ineligible_k * 3, 10)])
+            # the fused list is cut to the top RRF candidates before the cross-encoder (hybrid top 20 → rerank)
+            eligible = self._rerank(query, eligible[: max(top_k, self.rerank_candidates)])
+            other = self._rerank(query, other[: max(ineligible_k, self.ineligible_rerank_candidates)])
             timings["rerank_ms"] = (time.perf_counter() - started) * 1000
         return SearchResult(eligible=eligible[:top_k], ineligible=other[:ineligible_k], timings_ms=timings)

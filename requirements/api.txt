@@ -1,0 +1,17 @@
+# API, ingestion and evaluation (torch is installed separately: CPU wheel in Docker, CUDA wheel locally)
+pydantic==2.13.5
+pydantic-settings==2.15.0
+pymupdf==1.28.2
+tokenizers==0.23.2
+transformers==5.17.0
+safetensors==0.8.0
+numpy==2.4.6
+rank-bm25==0.2.2
+qdrant-client==1.19.1
+fastapi==0.141.1
+uvicorn==0.52.4
+httpx==0.28.1
+anthropic==1.9.0
+requests==2.34.2
+beautifulsoup4==4.15.0
+truststore==0.10.4

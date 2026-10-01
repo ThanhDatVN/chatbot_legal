@@ -112,7 +112,7 @@ def build_paragraphs(lines: list[Line]) -> tuple[str, list[tuple[int, int]], lis
         margin = margins.get(line.page, line.x0)
         # justified text: a line that stops well short of the right margin ends its paragraph
         prev_short = prev is not None and prev.x1 < rights.get(prev.page, prev.x1) - SHORT_LINE
-        new = (prev is None or line.is_table or prev.is_table
+        new = (prev is None or line.is_table or prev.is_table or line.force_break
                or line.x0 - margin > INDENT or prev_short
                or (prev.page == line.page and abs(prev.y0 - line.y0) < 2))
         if new and current:

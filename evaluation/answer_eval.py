@@ -1,4 +1,7 @@
-"""End-to-end answer benchmark: System A (naive dense RAG) vs System D (final agent).
+"""End-to-end answer benchmark for Systems A–D.
+
+A: dense top-5 naive RAG · B: hybrid (dense + BM25 + RRF) naive RAG · C: B + reranker naive RAG ·
+D: final agent (hybrid + reranker + refusal policy + citation validation).
 
     python -m evaluation.answer_eval [--split test|dev|all] [--provider extractive|anthropic]
 
@@ -109,7 +112,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", default="test")
     parser.add_argument("--provider", default=None)
-    parser.add_argument("--systems", default="A,D")
+    parser.add_argument("--systems", default="A,B,C,D")
     args = parser.parse_args()
     runtime = build_runtime()
     service = AnswerService(runtime)
@@ -123,8 +126,7 @@ def main() -> None:
     for system in args.systems.split(","):
         results = []
         for q in questions:
-            r = service.answer(q["question"], system="baseline" if system == "A" else "final",
-                               provider=args.provider)
+            r = service.answer(q["question"], system=system, provider=args.provider)
             results.append((q, r))
             traces.append({"system": system, "id": q["id"], "type": q["type"], "question": q["question"],
                            "acceptable": q["acceptable_decisions"], "decision": r.decision.value,

@@ -50,9 +50,11 @@ def build_runtime(settings: Settings | None = None) -> Runtime:
                         path=settings.index_dir / "qdrant")
     sparse = SparseIndex.load(index_dir / "bm25.json")
     encoder = BgeM3Encoder(settings.embedding_model, settings.model_device, settings.hf_offline)
-    reranker = BgeReranker(settings.reranker_model, settings.model_device, settings.hf_offline)
+    reranker = BgeReranker(settings.reranker_model, settings.model_device, settings.hf_offline,
+                           settings.reranker_max_length)
     retrieval = RetrievalService(catalog, store, sparse, encoder, reranker, settings.dense_top_k,
-                                 settings.sparse_top_k, settings.rrf_k)
+                                 settings.sparse_top_k, settings.rrf_k, settings.rerank_candidates,
+                                 settings.ineligible_rerank_candidates)
     return Runtime(settings=settings, catalog=catalog, store=store, retrieval=retrieval, index_manifest=manifest)
 
 

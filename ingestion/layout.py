@@ -42,6 +42,7 @@ class Line:
     table_row: int | None = None
     table: TableBlock | None = None
     markers: list[tuple[int, str]] = field(default_factory=list)  # (offset in text, footnote number)
+    force_break: bool = False  # HTML blocks: the line always starts a new paragraph
 
 
 @dataclass

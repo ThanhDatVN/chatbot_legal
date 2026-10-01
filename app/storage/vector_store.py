@@ -23,7 +23,9 @@ class VectorStore:
 
         self.collection = collection
         try:
-            self.client = QdrantClient(url=url, api_key=api_key, timeout=10) if url else QdrantClient(path=str(path))
+            # query_points needs server >= 1.10; skip the client's minor-version warning
+            self.client = QdrantClient(url=url, api_key=api_key, timeout=10, check_compatibility=False) if url \
+                else QdrantClient(path=str(path))
         except Exception as exc:  # noqa: BLE001
             raise VectorStoreUnavailable() from exc
 

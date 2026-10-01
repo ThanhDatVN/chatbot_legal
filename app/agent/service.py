@@ -1,10 +1,12 @@
 """Answer orchestration: agent → citation validation → structured AnswerResult.
 
 `system` selects the benchmark variant for answers:
-    baseline — System A: dense top-5 retrieval, answer from the top passages, no
-               BM25, reranker, refusal policy or citation validation
-    final    — System D: hybrid + reranker, two-tool agent, evidence policy,
-               citation validation (extractive or Claude, per settings)
+    A / baseline — dense top-5 retrieval, answer from the top passages; no BM25,
+                   reranker, refusal policy or citation validation
+    B            — as A with hybrid dense + BM25 + RRF retrieval
+    C            — as B with cross-encoder reranking
+    D / final    — hybrid + reranker, two-tool agent, evidence policy and
+                   citation validation (extractive or Claude, per settings)
 """
 
 from __future__ import annotations
@@ -54,19 +56,20 @@ class AnswerService:
 
     # ------------------------------------------------------------------------------------------
     def answer(self, question: str, session_id: str | None = None,
-               system: Literal["final", "baseline"] = "final", provider: str | None = None) -> AnswerResult:
+               system: Literal["final", "baseline", "A", "B", "C", "D"] = "final",
+               provider: str | None = None) -> AnswerResult:
         query_id = "q_" + uuid.uuid4().hex[:16]
         started = time.perf_counter()
         provider = provider or self.settings.llm_provider
-        toolbox = ToolBox(self.runtime.catalog, self.runtime.retrieval,
-                          mode="dense" if system == "baseline" else "rerank",
+        naive_mode = {"baseline": "dense", "A": "dense", "B": "hybrid", "C": "rerank"}.get(system)
+        toolbox = ToolBox(self.runtime.catalog, self.runtime.retrieval, mode=naive_mode or "rerank",
                           max_search_calls=self.settings.max_search_calls,
                           max_source_calls=self.settings.max_source_calls)
         error = None
         try:
-            if system == "baseline":
-                draft = self._baseline(question, toolbox)
-                mode = "baseline-dense-extractive"
+            if naive_mode is not None:
+                draft = self._baseline(question, toolbox, naive_mode)
+                mode = f"naive-{naive_mode}-extractive"
             elif provider == "anthropic":
                 draft = ClaudeAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
                 mode = f"agent-{self.settings.llm_model}"
@@ -78,7 +81,7 @@ class AnswerService:
             error = exc
             draft = Draft(Decision.REFUSE, RefusalReason.SOURCE_UNAVAILABLE, notes=[exc.code])
             mode = f"error:{exc.code}"
-        result = self._finalize(query_id, session_id, question, draft, toolbox, mode, validate=system == "final")
+        result = self._finalize(query_id, session_id, question, draft, toolbox, mode, validate=naive_mode is None)
         result.metrics = StageMetrics(
             total_ms=round((time.perf_counter() - started) * 1000, 1), retrieval_ms=round(toolbox.retrieval_ms, 1),
             rerank_ms=round(toolbox.rerank_ms, 1),
@@ -91,11 +94,12 @@ class AnswerService:
         return result
 
     # ------------------------------------------------------------------------------------------
-    def _baseline(self, question: str, toolbox: ToolBox) -> Draft:
-        """Naive RAG: dense top-5, answer from the top passages, no refusal or checks."""
-        result = self.runtime.retrieval.search(question, top_k=5, mode="dense", subset="in_scope",
+    def _baseline(self, question: str, toolbox: ToolBox, mode: str = "dense") -> Draft:
+        """Naive RAG: top-5 retrieval, answer from the top passages, no refusal or checks."""
+        result = self.runtime.retrieval.search(question, top_k=5, mode=mode, subset="in_scope",
                                                include_ineligible=False)
         toolbox.retrieval_ms += result.timings_ms.get("retrieval_ms", 0.0)
+        toolbox.rerank_ms += result.timings_ms.get("rerank_ms", 0.0)
         toolbox.search_calls += 1
         claims = []
         for item in result.eligible[:2]:
