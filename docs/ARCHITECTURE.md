@@ -1,6 +1,6 @@
 # CiteAgent VN — thiết kế kiến trúc
 
-Trạng thái: cập nhật sau [pilot 10 văn bản](PILOT_10_DOCUMENTS.md) · 2026-09-24. Nguồn yêu cầu: [`../details.md`](../details.md), [`../data.md`](../data.md). Các quyết định có thể đổi khi có số đo hoặc kiểm thử; ghi thay đổi vào phần ADR ở cuối tài liệu.
+Trạng thái: **đã triển khai MVP** · cập nhật 2026-10-01 (ADR-007 → ADR-011 ở mục 5). Trước đó: [pilot 10 văn bản](PILOT_10_DOCUMENTS.md) · 2026-09-24. Nguồn yêu cầu: [`../details.md`](../details.md), [`../data.md`](../data.md). Các quyết định có thể đổi khi có số đo hoặc kiểm thử; ghi thay đổi vào phần ADR ở cuối tài liệu.
 
 ## 1. Mục tiêu và ranh giới
 
@@ -127,6 +127,36 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 
 **Lý do:** OCR thử nghiệm đã đọc sai từ, khoảng trắng và một số ký hiệu năm; parser heading đơn giản cũng nhận nhầm dẫn chiếu/phụ lục thành Điều chính. **Hệ quả:** MVP cần thêm công đoạn review và có thể thu hẹp số điều khoản đủ điều kiện trả lời. Số đo và ví dụ ở [`PILOT_10_DOCUMENTS.md`](PILOT_10_DOCUMENTS.md).
 
+### ADR-007 — Công báo có lớp chữ thay OCR; đọc PDF theo bố cục
+
+**Quyết định:** nguồn chính là PDF Công báo điện tử có lớp chữ (11 tệp, khóa SHA-256 trong `data/corpus/registry.json`); nhánh OCR chỉ còn là thí nghiệm pilot. Parser phân loại từng dòng trước khi ghép: header Công báo, tem chữ ký số, dải chuyên mục và khối nối giữa hai số Công báo bị loại; footnote của văn bản hợp nhất (chữ nhỏ, ký hiệu chỉ số) thành ghi chú sửa đổi gắn đúng Điều/khoản; bảng có đường kẻ dọc được viết lại theo dòng có nhãn cột, ô gộp vắt qua trang được nối lại.
+
+**Lý do:** 5/5 đoạn chép tay và 8/8 đoạn lấy ngẫu nhiên khớp nguyên văn với lớp chữ, trong khi OCR có WER ~16% và đọc sai số hiệu. Ghép text trước rồi lọc bằng regex đã làm 49% chunk dính header và 3/4 footnote gắn nhầm Điều. **Hệ quả:** build chạy ~1 phút cho 10 văn bản, tất định (cùng hash chunk qua các lần chạy) và thất bại nếu một cổng chất lượng bắt buộc không đạt.
+
+### ADR-008 — Trạng thái hiệu lực theo từng chunk và hai chính sách trả lời
+
+**Quyết định:** mỗi chunk mang `currency_status` (`verified_current`, `consolidated_current`, `presumed_current`, `pending_amendment`, `superseded_by_consolidation`, `historical`, `unverified`) và `currency_basis` bằng văn bản. Chính sách `strict` chỉ cho phép `verified_current` + text `verified` (cần người duyệt qua `data/review/*.json`); chính sách `pilot` (mặc định demo) thêm văn bản hợp nhất chính thức và văn bản được ghi nhận còn hiệu lực, với text đã qua mọi cổng tự động. Bản gốc 45/2019 được giữ nhưng chỉ để đối chiếu vì bản hợp nhất 18/VBHN-VPQH chứa nội dung hiện hành.
+
+**Lý do:** cổng chặt của kế hoạch ban đầu chặn 100% corpus cho đến khi có chuyên gia duyệt; chế độ `pilot` cho phép demo trung thực vì mọi câu trả lời hiển thị căn cứ hiệu lực và cảnh báo "chưa được chuyên gia duyệt". **Hệ quả:** 242/926 chunk dùng được; văn bản hết hiệu lực một phần chưa có ánh xạ điều khoản chỉ dùng để giải thích lý do từ chối (`currency_unverified`).
+
+### ADR-009 — Hai chế độ trả lời dùng chung tool, chính sách và bộ kiểm tra
+
+**Quyết định:** chế độ `extractive` (mặc định, offline) trả lời bằng các khoản/điểm nguyên văn do cross-encoder chọn; chế độ `anthropic` dùng agent Claude (`claude-opus-5-5`, vòng lặp tool thủ công, đầu ra JSON theo schema, fallback phía server). Cả hai chỉ có `search_evidence` và `get_source`; số trích dẫn, URL và trang do code gắn từ snapshot; mọi nhận định qua `app/generation/validator.py`.
+
+**Lý do:** dự án phải chạy và đánh giá được khi không có API key, và an toàn nguồn không được phụ thuộc vào việc model tuân thủ prompt. **Hệ quả:** groundedness của chế độ extractive bằng 1 theo cấu trúc; chế độ Claude cần benchmark riêng khi có key.
+
+### ADR-010 — Qdrant nhúng khi phát triển, Qdrant server trong Docker
+
+**Quyết định:** `QDRANT_URL` trống thì dùng Qdrant nhúng trong `data/indexes/qdrant` (test và dev không cần container); Docker Compose dùng Qdrant server. Embedding được cache theo `sha256(embedding_text)` và tên model nên index lại không phải mã hóa lại.
+
+**Lý do:** chạy test/benchmark nhanh, không phụ thuộc Docker; vẫn giữ mục tiêu `docker compose up`. **Hệ quả:** `/ready` kiểm tra hash snapshot trong manifest index khớp snapshot đang phục vụ.
+
+### ADR-011 — Giới hạn chi phí cross-encoder
+
+**Quyết định:** rerank đúng *hybrid top 20* ứng viên đủ điều kiện (+10 ứng viên chưa đủ điều kiện để giải thích từ chối), độ dài 1024 token trên GPU; profile CPU trong Docker dùng 8/4 ứng viên và 512 token.
+
+**Lý do:** reranker chiếm >90% độ trễ; trên CPU (container 12 vCPU) một câu đơn mất ~100 s khi chấm toàn bộ ứng viên. **Hệ quả:** p95 GPU ~5 s; CPU ~15–20 s/câu đơn — được công bố trong README.
+
 ## 6. Yêu cầu phi chức năng
 
 - **Tin cậy:** không có citation ngoài evidence của request; không tự tạo URL/trang/Điều; source lỗi thì `REFUSE` hoặc lỗi phụ thuộc rõ ràng.
@@ -153,6 +183,11 @@ Manifest và source snapshot là nguồn chuẩn cho provenance. Qdrant và BM25
 | ID | Ngày | Quyết định | Trạng thái |
 | --- | --- | --- | --- |
 | ADR-001..005 | 2026-09-24 | Các quyết định ban đầu ở mục 5 | Proposed; xác nhận bằng implementation và benchmark |
-| ADR-006 | 2026-09-24 | Nhánh scan/OCR và QA sau pilot 10 văn bản | Accepted cho kế hoạch MVP; ngưỡng cần validation thêm |
+| ADR-006 | 2026-09-24 | Nhánh scan/OCR và QA sau pilot 10 văn bản | Superseded một phần bởi ADR-007 (OCR chỉ còn là thí nghiệm) |
+| ADR-007 | 2026-09-30 | Công báo có lớp chữ, parser theo bố cục, cổng chất lượng chặn build | Accepted, đã triển khai |
+| ADR-008 | 2026-09-30 | Hiệu lực theo chunk, chính sách `strict`/`pilot` | Accepted; `pilot` là mặc định demo |
+| ADR-009 | 2026-10-01 | Chế độ extractive và Claude dùng chung tool/kiểm tra | Accepted; Claude chưa benchmark (thiếu key) |
+| ADR-010 | 2026-10-01 | Qdrant nhúng khi dev, server trong Docker | Accepted |
+| ADR-011 | 2026-10-01 | Giới hạn ứng viên rerank, profile CPU | Accepted |
 
 Các trang tham khảo kỹ thuật: [Qdrant payload và filtering](https://qdrant.tech/documentation/concepts/payload/), [FastAPI trong Docker](https://fastapi.tiangolo.com/deployment/docker/), [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat), [PyMuPDF text extraction](https://pymupdf.readthedocs.io/en/latest/recipes-text.html).

@@ -1,7 +1,7 @@
 {
  "meta": {
-  "date": "2026-09-30T19:20:45+00:00",
-  "git_commit": "8beb2ae-dirty",
+  "date": "2026-10-01T02:38:28+00:00",
+  "git_commit": "ecfeb14-dirty",
   "snapshot": "corpus-2026-09-30",
   "currency_policy": "pilot",
   "embedding_model": "BAAI/bge-m3",
@@ -29,8 +29,8 @@
    "recall@5": 0.9667,
    "recall@10": 0.9917,
    "all_evidence@5_multi": 0.9,
-   "latency_ms_p50": 35.3,
-   "latency_ms_p95": 42.4,
+   "latency_ms_p50": 74.5,
+   "latency_ms_p95": 91.2,
    "misses": [
     "dir_34"
    ]
@@ -42,8 +42,8 @@
    "recall@5": 0.9833,
    "recall@10": 1.0,
    "all_evidence@5_multi": 0.9,
-   "latency_ms_p50": 43.5,
-   "latency_ms_p95": 47.8,
+   "latency_ms_p50": 85.6,
+   "latency_ms_p95": 106.5,
    "misses": []
   },
   "C_rerank": {
@@ -53,8 +53,8 @@
    "recall@5": 0.9917,
    "recall@10": 1.0,
    "all_evidence@5_multi": 0.95,
-   "latency_ms_p50": 1184.2,
-   "latency_ms_p95": 1458.9,
+   "latency_ms_p50": 894.4,
+   "latency_ms_p95": 1003.1,
    "misses": []
   }
  },
@@ -5162,7 +5162,7 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 26"
+     "Điều 97"
     ]
    ],
    "hit@5": 1,
@@ -5591,7 +5591,7 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 188"
+     "Điều 35"
     ]
    ],
    "hit@5": 1,
@@ -5942,7 +5942,7 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 219"
+     "Điều 101"
     ]
    ],
    "hit@5": 1,
@@ -6215,7 +6215,7 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 165"
+     "Điều 154"
     ]
    ],
    "hit@5": 1,
@@ -6488,11 +6488,11 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 29"
+     "Điều 27"
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 27"
+     "Điều 219"
     ]
    ],
    "hit@5": 1,
@@ -6836,7 +6836,7 @@
     ],
     [
      "18_2026_vbhn_vpqh",
-     "Điều 107"
+     "Điều 145"
     ]
    ],
    "hit@5": 1,

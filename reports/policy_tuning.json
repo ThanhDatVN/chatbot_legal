@@ -1,7 +1,7 @@
 {
  "meta": {
-  "date": "2026-09-30T19:26:04+00:00",
-  "git_commit": "8beb2ae-dirty",
+  "date": "2026-10-01T02:40:11+00:00",
+  "git_commit": "ecfeb14-dirty",
   "snapshot": "corpus-2026-09-30",
   "currency_policy": "pilot",
   "embedding_model": "BAAI/bge-m3",
@@ -144,6 +144,23 @@
   }
  ],
  "questions": 51,
+ "chosen": {
+  "answer_threshold": 0.8,
+  "keep_ratio": 0.85,
+  "stronger_margin": 0.15,
+  "unverified_threshold": 0.5,
+  "max_sources": 3,
+  "dev_score": {
+   "accuracy": 0.9608,
+   "false_answers": 1,
+   "false_refusals": 1,
+   "objective": 0.9412
+  },
+  "notes": [
+   "chosen = PolicyConfig defaults used by the service; ties on stronger_margin are broken towards the middle value",
+   "keep_ratio swept on dev with the full answer pipeline: 0.5/0.7 -> citation precision 0.818, correctness 0.917; 0.85 -> 0.844 / 0.917; 0.95 -> 0.891 / 0.883 (correctness drops). Chose 0.85."
+  ]
+ },
  "per_question_best_scores": [
   {
    "id": "dir_01",
@@ -491,7 +508,7 @@
   {
    "id": "adv_07",
    "type": "adversarial",
-   "best_eligible": 0.001,
+   "best_eligible": 0.0007,
    "best_ineligible": 0.0018,
    "scope_rule": null
   },
@@ -502,15 +519,5 @@
    "best_ineligible": 0.9968,
    "scope_rule": null
   }
- ],
- "chosen": {
-  "answer_threshold": 0.8,
-  "unverified_threshold": 0.5,
-  "stronger_margin": 0.15,
-  "keep_ratio": 0.85,
-  "notes": [
-   "stronger_margin 0.05/0.15/0.3 tie on dev; kept the middle value",
-   "keep_ratio swept on dev with the full answer pipeline: 0.5/0.7 -> citation precision 0.818, correctness 0.917; 0.85 -> 0.844 / 0.917; 0.95 -> 0.891 / 0.883 (correctness drops). Chose 0.85."
-  ]
- }
+ ]
 }

@@ -21,10 +21,10 @@ căn cứ không đủ, mâu thuẫn hoặc chưa xác minh hiệu lực thì h�
 
 | Hệ thống | Hit@5 | MRR | Citation precision | Correctness | Refusal accuracy | Trả lời sai | p95 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| A — Dense + RAG đơn giản | 0.983 | 0.968 | 0.541 | 0.617 | 0.667 | 15 | 0.07 s |
-| B — Dense + BM25 + RRF | 1.000 | 0.983 | 0.561 | 0.583 | 0.667 | 15 | 0.08 s |
-| C — Hybrid + reranker | 1.000 | 1.000 | 0.582 | 0.600 | 0.667 | 15 | 1.7 s |
-| **D — C + từ chối + kiểm tra citation** | **1.000** | **1.000** | **0.708** | **0.917** | **0.978** | **0** | 5.2 s |
+| A — Dense + RAG đơn giản | 0.983 | 0.968 | 0.541 | 0.617 | 0.667 | 15 | 0.15 s |
+| B — Dense + BM25 + RRF | 1.000 | 0.983 | 0.561 | 0.583 | 0.667 | 15 | 0.16 s |
+| C — Hybrid + reranker | 1.000 | 1.000 | 0.582 | 0.600 | 0.667 | 15 | 1.0 s |
+| **D — C + từ chối + kiểm tra citation** | **1.000** | **1.000** | **0.708** | **0.917** | **0.978** | **0** | 4.3 s |
 
 - Groundedness 1.000 (mọi nhận định là trích nguyên văn nguồn được trích dẫn), refusal F1 0.968, 0 vi phạm đối kháng.
 - Bộ kiểm thử bảo mật: **30/30** ca đạt (prompt injection, bịa trích dẫn, lạm dụng tool, chèn lệnh qua tài liệu…).
@@ -123,8 +123,10 @@ docker compose run --rm api python -m app.indexing   # index vào Qdrant server,
 docker compose up --build                            # UI: http://localhost:8501 · API: http://localhost:8000
 ```
 
-Container API chạy model trên CPU (đặt `MODEL_DEVICE` nếu có GPU) và đọc cache model của máy chủ qua
-`HF_CACHE` (mặc định `~/.cache/huggingface`).
+Container API chạy model trên CPU với profile nhẹ hơn (8 ứng viên rerank, 512 token) và đọc cache model của máy
+chủ qua `HF_CACHE` (mặc định `~/.cache/huggingface`). Trên máy phát triển (Docker 12 vCPU) một câu đơn mất
+~15–20 s, câu nhiều vế ~55 s; chạy cục bộ trên GPU nhanh hơn nhiều (p95 4.3 s trên tập test). Số liệu benchmark
+dùng cấu hình GPU với 20 ứng viên rerank.
 
 **Dùng Claude thay vì chế độ extractive**: đặt `LLM_PROVIDER=anthropic` và `ANTHROPIC_API_KEY` trong `.env`.
 Agent dùng `claude-opus-5-5` với vòng lặp tool thủ công, đầu ra JSON theo schema và fallback phía server; mọi
@@ -162,7 +164,7 @@ cố định dev/test. Mỗi báo cáo ghi commit, snapshot, model, tham số v�
 ## Kiểm thử
 
 ```powershell
-python -m pytest tests            # 82 test: unit, integration (PDF thật, API), security, UI headless
+python -m pytest tests            # 86 test: unit, integration (PDF thật, API), security, UI headless
 ```
 
 Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy hoặc PDF nguồn.
@@ -188,7 +190,7 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
   không có API key.
 - **Chế độ extractive** trả lời bằng trích dẫn nguyên văn, không diễn giải hay tính toán (ví dụ cộng ngày phép
   theo thâm niên); câu hỏi dùng từ khác xa văn bản luật có thể bị từ chối nhầm.
-- **Độ trễ**: reranker chiếm phần lớn p95 (câu hỏi nhiều vế cần nhiều lượt rerank).
+- **Độ trễ**: reranker chiếm phần lớn p95 (3.8/4.3 s; câu hỏi nhiều vế cần nhiều lượt rerank); trên CPU chậm hơn ~5–10 lần.
 - **Giấy phép**: văn bản quy phạm pháp luật không thuộc đối tượng bảo hộ quyền tác giả, nhưng dự án vẫn không
   phân phối lại tệp PDF/text trích xuất; PyMuPDF dùng giấy phép AGPL.
 
@@ -197,7 +199,7 @@ Test UI và test snapshot thật tự bỏ qua khi thiếu API đang chạy ho�
 | # | Yêu cầu | Bằng chứng |
 | --- | --- | --- |
 | 1 | Corpus manifest | [`registry.json`](data/corpus/registry.json), [`snapshot.json`](data/snapshots/corpus-2026-09-30/snapshot.json) |
-| 2 | PDF + HTML ingestion | PDF: [`ingestion/`](ingestion); HTML metadata đã thu trong pilot ([`pilot/collect.py`](pilot/collect.py)) |
+| 2 | PDF + HTML ingestion | PDF: [`ingestion/layout.py`](ingestion/layout.py); HTML: [`ingestion/html_parser.py`](ingestion/html_parser.py) + test fixture (snapshot hiện tại chỉ có nguồn PDF) |
 | 3 | Metadata-aware chunking | [`ingestion/chunk.py`](ingestion/chunk.py), test [`tests/unit`](tests/unit) |
 | 4 | Dense baseline | System A trong [`reports/benchmark_v1.md`](reports/benchmark_v1.md) |
 | 5 | Hybrid retrieval | [`app/retrieval/`](app/retrieval), System B |

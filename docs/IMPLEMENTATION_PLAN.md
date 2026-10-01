@@ -1,6 +1,29 @@
 # CiteAgent VN — kế hoạch triển khai chi tiết
 
-Trạng thái: cập nhật sau [pilot 10 văn bản](PILOT_10_DOCUMENTS.md) · 2026-09-24. Nguồn yêu cầu: [`../details.md`](../details.md), [`../data.md`](../data.md). Thiết kế: [`ARCHITECTURE.md`](ARCHITECTURE.md), [`TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md), [`METHODOLOGY.md`](METHODOLOGY.md). **Pilot ingestion đã chạy; chưa có ứng dụng/benchmark RAG vận hành**. Mọi tiêu chí bên dưới là việc phải chứng minh bằng test/report tương ứng.
+Trạng thái: kế hoạch lập 2026-09-24 sau [pilot 10 văn bản](PILOT_10_DOCUMENTS.md); trạng thái thực hiện ở mục 0 (2026-10-01). Nguồn yêu cầu: [`../details.md`](../details.md), [`../data.md`](../data.md). Thiết kế: [`ARCHITECTURE.md`](ARCHITECTURE.md), [`TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md), [`METHODOLOGY.md`](METHODOLOGY.md). **Pilot ingestion đã chạy; chưa có ứng dụng/benchmark RAG vận hành**. Mọi tiêu chí bên dưới là việc phải chứng minh bằng test/report tương ứng.
+
+## 0. Trạng thái triển khai (2026-10-01)
+
+Các phase 1–12 đã có mã, test và bằng chứng chạy thật; số liệu ở [`../reports/benchmark_v1.md`](../reports/benchmark_v1.md). Những điểm còn mở được ghi ở cột cuối, không coi là "xong" khi chưa có bằng chứng.
+
+| Task | Trạng thái | Bằng chứng | Còn mở |
+| --- | --- | --- | --- |
+| INF-001/002 | Xong | `pyproject.toml`, `requirements/`, `docker-compose.yml`, `/health`, `/ready` | Lockfile đầy đủ (hiện pin phiên bản trực tiếp) |
+| COR-000/001 | Một phần | VBPL trả 403 → nguồn Công báo; quan hệ văn bản lập thủ công trong registry (`discovery_mode` thủ công) | Crawler quan hệ BFS khi có endpoint truy cập được |
+| COR-002/003 | Xong cho 10 văn bản | `data/corpus/registry.json`, snapshot bất biến + `quality_report.json`, `scripts/download_sources.py` | Mở rộng 20–50 văn bản, văn bản sửa đổi năm 2025 |
+| ING-001 | Xong | Parser PDF theo bố cục + parser HTML, test fixture | — |
+| OCR-001 | Thay thế | Không cần cho corpus hiện tại (ADR-007); mã pilot giữ trong `pilot/` | — |
+| ING-002/003 | Xong | `ingestion/chunk.py`, `app/indexing.py`, cổng chất lượng chặn build | Duyệt người (`text_reviews.json`) |
+| BASE-001/002 | Xong | System A, `/api/sources`, UI | — |
+| EVAL-001/002 | Xong | 100 câu (`data/eval/questions_v1.jsonl`), dev/test cố định, `reports/retrieval_all.json` | Người duyệt nhãn gold |
+| RET-001/002 | Xong | System B, `/api/search` | — |
+| RRK-001 | Xong | System C, rerank hybrid top 20 | — |
+| AGT-001 | Xong | Hai tool, agent extractive + agent Claude | Benchmark chế độ Claude khi có API key |
+| GND-001/002 | Xong | `app/generation/validator.py`, `app/agent/policy.py`, ngưỡng hiệu chỉnh trên dev | — |
+| UI-001/002 | Xong | `ui/`, ảnh trong `assets/screenshots/`, test UI headless | — |
+| SEC-001 | Xong | 30/30 ca (`reports/security_extractive.json`) | — |
+| BEN-001 | Xong (chế độ extractive) | `reports/benchmark_v1.md`, `docs/EVALUATION.md` | Chạy chế độ Claude |
+| DOC-001 | Xong | `README.md`, DoD 12/12 kèm bằng chứng | Video demo |
 
 ## 1. Nguyên tắc triển khai
 

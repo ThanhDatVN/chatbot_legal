@@ -1,6 +1,6 @@
 # Đánh giá chất lượng dữ liệu pilot 10 văn bản
 
-Ngày đánh giá: 2026-09-25 · Snapshot thu thập: 2026-09-24 · Quyết định: **chưa đủ điều kiện đưa vào current QA index**. Số liệu ở các mục 1–4 mô tả snapshot OCR ban đầu; kết quả ứng viên Công báo mới nằm ở mục 5. Phương án xử lý: [nghiên cứu khắc phục](REMEDIATION_RESEARCH.md).
+Ngày đánh giá: 2026-09-25 · Snapshot thu thập: 2026-09-24 · Quyết định ban đầu: **chưa đủ điều kiện đưa vào current QA index**; cập nhật 2026-09-30: luồng xử lý v3 qua mọi cổng tự động (mục 6), hiệu lực vẫn chưa được chuyên gia xác minh. Số liệu ở các mục 1–4 mô tả snapshot OCR ban đầu; kết quả ứng viên Công báo mới nằm ở mục 5. Phương án xử lý: [nghiên cứu khắc phục](REMEDIATION_RESEARCH.md).
 
 Đầu vào và cách chạy lại: [`manifest.jsonl`](../data/pilot/2026-09-24/manifest.jsonl), [`data_quality_metrics.json`](../data/pilot/2026-09-24/data_quality_metrics.json), [`data_quality_summary.json`](../data/pilot/2026-09-24/data_quality_summary.json), [`quality_audit.jsonl`](../data/pilot/2026-09-24/quality_audit.jsonl), [`pilot/README.md`](../pilot/README.md). Các số đếm trong báo cáo do `pilot.assess_quality` tạo từ snapshot; các nhận định về OCR cụ thể đã đối chiếu ảnh PDF. Đây là đánh giá **khả năng dùng dữ liệu**, chưa phải chứng nhận nội dung pháp luật hiện hành.
 
@@ -82,3 +82,28 @@ Thử Tesseract trên cùng năm đoạn: `fast_200` WER 16,17%; `best_200` 14,8
 **Trạng thái phát hành vẫn là 0/10.** Tất cả chunk ứng viên mang `text_quality_status=unreviewed`, `currency_status=unverified`. Cần kiểm tra các vùng bảng/phụ lục, tạo mẫu đánh giá đại diện, rà soát hiệu lực tại thời điểm sử dụng đến cấp Điều/khoản, và kiểm tra citation ngược về đúng phần PDF. Công báo chứa văn bản đã đăng, không tự chứng minh nội dung đó còn hiệu lực ngày 2026-09-25. Đã tải lại cả 11 phần PDF bằng TLS xác minh qua kho chứng chỉ Windows; SHA-256 khớp với bản đã lưu.
 
 Tra cứu phân luồng hiệu lực sơ bộ được lưu tại [`legal_status_leads.json`](../data/pilot/2026-09-24/legal_status_leads.json): VBPL ghi [38/2022/NĐ-CP](https://vbpl.vn/bolaodong/Pages/ivbpq-thuoctinh.aspx?ItemID=154245) hết hiệu lực từ 01/07/2024 và [74/2024/NĐ-CP](https://vbpl.vn/bolaodong/Pages/ivbpq-lichsu.aspx?ItemID=168670&Keyword=) hết hiệu lực từ 01/01/2026; [45/2019/QH14](https://vbpl.vn/bolaodong/Pages/ivbpq-thuoctinh.aspx?ItemID=139264), [145/2020/NĐ-CP](https://vbpl.vn/bocongthuong/Pages/vbpq-thuoctinh.aspx?ItemID=152668), [135/2020/NĐ-CP](https://vbpl.vn/hanoi/Pages/vbpq-thuoctinh.aspx?ItemID=152734), [152/2020/NĐ-CP](https://vbpl.vn/TW/Pages/vbpq-thuoctinh.aspx?ItemID=152669&Keyword=&dvid=13) và [70/2023/NĐ-CP](https://vbpl.vn/phuyen/Pages/vbpq-thuoctinh.aspx?ItemID=162330&Keyword=) có dấu hiệu hết hiệu lực một phần. Các trang VBPL được công cụ tìm kiếm lập chỉ mục trước ngày đánh giá nên đây là **đầu mối review**, chưa phải xác nhận hiệu lực đến từng Điều/khoản tại ngày sử dụng. Hai văn bản hết hiệu lực toàn bộ vẫn có giá trị cho truy vấn lịch sử đúng khoảng thời gian.
+
+## 6. Luồng xử lý v3 và cổng chất lượng tự động (2026-09-30)
+
+Kiểm tra độc lập ngày 2026-09-30 trên bản ứng viên Công báo cho thấy lớp chữ chính xác (8/8 đoạn lấy ngẫu nhiên khớp nguyên văn ảnh trang; 0 ký tự lỗi; tỷ lệ âm tiết không hợp lệ ≤ 0,07% ở các văn bản chính) nhưng **khâu xử lý** có lỗi: 437/895 chunk (49%) dính header `CÔNG BÁO/Số…`, khối chữ ký số lọt vào chunk đầu, 3/4 footnote sửa đổi của 18/VBHN-VPQH bị gắn sang Điều kế tiếp và ký hiệu chú thích dính vào số (`1.44 Lao động nữ…`), bảng bị dàn phẳng mất nhãn cột, và khối nối giữa hai số Công báo chen giữa Điều 101 của 145/2020/NĐ-CP.
+
+Package [`ingestion/`](../ingestion) thay các script pilot (ADR-007): đọc từng dòng theo cỡ chữ, vị trí và đường kẻ trước khi ghép text; dựng cây Chương/Mục/Điều chỉ chấp nhận Điều tăng liên tục và ngoài vùng trích dẫn; tách phần mở đầu, khối chữ ký, phụ lục; chia chunk theo Điều → khoản → đoạn với offset chính xác. Build ([`ingestion/build.py`](../ingestion/build.py)) dừng nếu một cổng bắt buộc không đạt:
+
+| Cổng bắt buộc | Kết quả snapshot `corpus-2026-09-30` |
+| --- | --- |
+| SHA-256 và số trang của 11 tệp nguồn | 11/11 khớp |
+| Điều chính liên tục, đúng số Điều kỳ vọng | 10/10 văn bản (45 và 18: 1–220; 145: 1–115; …) |
+| Mỗi đoạn thuộc đúng một section hoặc là tiêu đề Chương/Mục | đạt |
+| Mọi đoạn có thể trả lời được nằm trong ít nhất một chunk | đạt |
+| `raw_text` của chunk = lát cắt chính xác của text văn bản | 926/926 |
+| Không header/tem chữ ký/dải chuyên mục/khối nối trong chunk | 0 vi phạm |
+| Footnote tách khỏi thân và gắn Điều/khoản | 6/6 (18/VBHN-VPQH), đối chiếu text PDF thô |
+| Fixture hồi quy (5 đoạn chép tay, 8 đoạn đối chiếu ảnh, 4 dòng bảng lương, 5 footnote) | 22/22 |
+| Lộ trình tuổi nghỉ hưu 135/2020 (Phụ lục I–II): tháng hưởng lương hưu = tháng sinh + tuổi + 1 | 350/350 dòng, khớp bộ dòng đã kiểm chứng của pilot |
+| Tỷ lệ âm tiết tiếng Việt không hợp lệ ≤ 1% (thân văn bản) | 0,0% |
+
+Đoạn có dạng chỉ thị ("bỏ qua mọi hướng dẫn", "system prompt"…) bị cách ly (không bao giờ `machine_checked`); snapshot hiện tại có 0 đoạn bị cách ly. Kết quả chi tiết: [`quality_report.json`](../data/snapshots/corpus-2026-09-30/quality_report.json).
+
+**Trạng thái sử dụng:** 926 chunk đều `machine_checked` (chưa `verified` bởi người). Hiệu lực theo chunk (ADR-008): 225 `consolidated_current` (18/VBHN-VPQH), 19 `presumed_current` (293/2025/NĐ-CP), 225 `superseded_by_consolidation` (45/2019/QH14), 18 `historical` (38/2022, 74/2024), 439 `unverified` (145/2020, 135/2020, 152/2020, 70/2023 hết hiệu lực một phần chưa ánh xạ điều khoản; 12/2022 ngoài phạm vi). Ở chính sách `pilot`, 242 chunk dùng được cho câu hỏi về quy định hiện hành; ở `strict`, 0 chunk cho đến khi có người duyệt.
+
+Việc còn lại trước khi coi dữ liệu là "đã xác minh": người duyệt đối chiếu text các Điều dùng trong bộ câu hỏi; lập ánh xạ sửa đổi cấp điều khoản cho 145/2020 (129/2025, 10/2024, 35/2022), 135/2020 (158/2025), 152/2020 và 70/2023 (219/2025); kiểm tra văn bản sửa đổi Bộ luật Lao động ban hành sau 12/02/2026.
