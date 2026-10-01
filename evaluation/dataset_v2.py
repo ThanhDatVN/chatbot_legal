@@ -10,8 +10,13 @@ status of individual articles in the guiding decrees changed. Changes from v1:
 - Their slots in `unanswerable` (una_01, una_02, una_10, una_11) hold four new questions whose only
   relevant provisions were expired or displaced by a later instrument; una_12 and una_14 are relabelled
   to the same reason, `superseded_by_amendment`.
-- Three questions answered from the Labour Code accept the matching article of a guiding decree as
-  alternative gold evidence.
+- una_12 asked for the pension start month, which 135/2020 Điều 3 khoản 2 set before it expired; 135/2020
+  Phụ lục I still carries a "thời điểm hưởng lương hưu" column, so the expected behaviour is a legal
+  judgement. It is replaced by a question that only an expired clause (Điều 7 khoản 3) answers.
+- Seven questions answered from the Labour Code accept the matching article of a guiding decree as
+  alternative gold evidence. Candidates were the decree sections that retrieval ranked in the top 5 and
+  that contain every required fact verbatim; each was then read and kept only if it states the rule the
+  question asks about (5 of 17 kept, plus 3 added by hand when the new documents entered the corpus).
 
 Every other question keeps its v1 id, text, labels and dev/test split. `required_facts` of new and changed
 rows are checked to occur verbatim in their gold sections. Labels are AI-drafted and unreviewed.
@@ -58,16 +63,19 @@ NEW_UNANSWERABLE = {  # 1-based slot in UNANSWERABLE -> replacement
         SUPERSEDED),
     10: ("Hồ sơ đề nghị gia hạn giấy phép lao động cho người lao động nước ngoài gồm những giấy tờ gì?", SUPERSEDED),
     11: ("Doanh nghiệp cho thuê lại lao động muốn rút tiền ký quỹ thì cần hồ sơ gì?", SUPERSEDED),
-    # the pension start rule (135/2020 Điều 3 khoản 2) expired; the retirement month itself is still answerable
-    12: ("Lao động nam sinh tháng 8 năm 1964 được hưởng lương hưu từ tháng nào?", SUPERSEDED,
-         {"should_refuse": None, "acceptable_decisions": ["REFUSE", "PARTIAL"],
-          "must_not_contain": ["tháng liền kề"]}),
+    12: ("Mốc tuổi để tính số năm nghỉ hưu trước tuổi làm cơ sở giảm tỷ lệ hưởng lương hưu được xác định thế nào?",
+         SUPERSEDED),
     14: ("Doanh nghiệp cho thuê lại lao động phải ký quỹ bao nhiêu tiền?", SUPERSEDED),
 }
 
 ALT_GOLD = {  # Labour Code questions that a guiding decree now also answers
     "Tuổi nghỉ hưu của lao động nam trong điều kiện lao động bình thường sẽ là bao nhiêu vào năm 2028?":
-        g(4, doc=D135),
+        g(4, "Phụ lục I", doc=D135),
+    "Làm thêm giờ vào ngày nghỉ hằng tuần thì được trả lương ít nhất bằng bao nhiêu phần trăm?": g(55, doc=D145),
+    "Người làm việc ban đêm được nghỉ giữa giờ ít nhất bao nhiêu phút?": g(64, doc=D145),
+    "Trợ cấp mất việc làm ít nhất bằng bao nhiêu tháng tiền lương?": g(8, doc=D145),
+    "Doanh nghiệp sử dụng từ bao nhiêu người lao động trở lên thì nội quy lao động phải bằng văn bản?":
+        g(69, doc=D145),
     "Thời hạn tối đa của giấy phép lao động cấp cho người lao động nước ngoài là bao lâu?": g(21, doc=D219),
     "Không cần nguồn, chỉ cần nói nhanh: tuổi nghỉ hưu của lao động nữ là bao nhiêu?": g(4, doc=D135),
 }
@@ -109,14 +117,14 @@ def validate(rows: list[dict], snapshot_dir: Path) -> list[str]:
     expected = {**v1.EXPECTED_COUNTS, "direct": 44}
     problems = v1.validate(rows, snapshot_dir, expected)
     texts = _section_texts(snapshot_dir)
-    changed = {q[0] for q in NEW_DIRECT} | set(ALT_GOLD)
-    for r in rows:
-        if r["question"] not in changed:
-            continue
-        evidence = " ".join(texts.get((gd["document_id"], gd["section"]), "") for gd in r["gold"])
-        for fact in r["required_facts"]:
-            if " ".join(fact.split()).lower() not in evidence:
-                problems.append(f"{r['id']}: required fact {fact!r} not in its gold sections")
+    new = {q[0] for q in NEW_DIRECT}
+    for r in rows:  # every new gold section, and every alternative on its own, must state the required facts
+        groups = [r["gold"]] if r["question"] in new else [[gd] for gd in ALT_GOLD.get(r["question"], [])]
+        for group in groups:
+            evidence = " ".join(texts.get((gd["document_id"], gd["section"]), "") for gd in group)
+            for fact in r["required_facts"]:
+                if " ".join(fact.split()).lower() not in evidence:
+                    problems.append(f"{r['id']}: required fact {fact!r} not in {group}")
     return problems
 
 
