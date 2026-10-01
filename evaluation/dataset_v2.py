@@ -31,7 +31,7 @@ from evaluation import dataset_v1 as v1
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "eval" / "questions_v2.jsonl"
-SNAPSHOT = ROOT / "data" / "snapshots" / "corpus-2026-10-01"
+SNAPSHOT = ROOT / "data" / "snapshots" / "corpus-2026-10-01-r2"  # superset of corpus-2026-10-01
 AS_OF = "2026-10-01"
 D145, D135, D219 = "145_2020_nd_cp", "135_2020_nd_cp", "219_2025_nd_cp"
 g = v1.g

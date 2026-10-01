@@ -1,5 +1,5 @@
 PY ?= .venv/Scripts/python.exe
-SNAPSHOT ?= corpus-2026-10-01
+SNAPSHOT ?= corpus-2026-10-01-r2
 
 .PHONY: setup sources ingest index index-docker run-api run-ui up test security-test eval screenshots
 

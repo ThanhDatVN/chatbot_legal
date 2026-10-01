@@ -1,13 +1,13 @@
 {
- "snapshot_id": "corpus-2026-10-01",
+ "snapshot_id": "corpus-2026-10-01-r2",
  "as_of_date": "2026-10-01",
- "registry_version": "2026-10-01-v2",
+ "registry_version": "2026-10-01-v3",
  "parser_version": "layout-structure-v3",
  "chunker_version": "chunker-v4",
  "max_tokens": 700,
  "tokenizer": "BAAI/bge-m3:tokenizer",
- "ledger_version": "2026-10-01-v1",
- "ledger_sha256": "44443e4bbdb9ddcdf29d87928ebcfcbf082d7ba66fe0b846902eac99af31b331",
+ "ledger_version": "2026-10-01-v2",
+ "ledger_sha256": "96445c496234a22ac4a351ad619865f48d09f323f16f1d4aea755e7237ea9454",
  "documents": [
   {
    "document_id": "45_2019_qh14",
@@ -67,6 +67,14 @@
    ]
   },
   {
+   "document_id": "129_2025_nd_cp",
+   "chunks": 12,
+   "text_sha256": "7ffa8c0fcaacc1e90edf75d2ecb2dcec53ace37c1b8fde89c6be4e38c329e302",
+   "source_sha256": [
+    "da8cd753ae5876b73e20ede8ffa045a74b73ebce10a9481ae54449ef5bc4b4e3"
+   ]
+  },
+  {
    "document_id": "293_2025_nd_cp",
    "chunks": 19,
    "text_sha256": "1411c6c5dfe948275a203b80192b96263a2c974f40649a926795ff72b4e3217a",
@@ -99,7 +107,7 @@
    ]
   }
  ],
- "chunk_count": 1017,
- "chunks_sha256": "9ae4b0b911693f3e15b22490cfc0baa8624f4ff32df39e09c0cbc219729e61a5",
+ "chunk_count": 1029,
+ "chunks_sha256": "3eb5a3638c31a4398142f10a731f330758f77d2f3cc94d9cf0651d662809af7c",
  "quality_passed": true
 }

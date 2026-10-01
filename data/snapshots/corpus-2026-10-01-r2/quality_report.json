@@ -1,8 +1,8 @@
 {
- "snapshot_id": "corpus-2026-10-01",
+ "snapshot_id": "corpus-2026-10-01-r2",
  "passed": true,
  "duplicate_chunk_ids": 0,
- "ledger_version": "2026-10-01-v1",
+ "ledger_version": "2026-10-01-v2",
  "ledger_problems": [],
  "documents": [
   {
@@ -370,6 +370,47 @@
    "chunk_failures": {}
   },
   {
+   "document_id": "129_2025_nd_cp",
+   "passed": true,
+   "hard": {
+    "source_hashes": true,
+    "page_count": true,
+    "article_sequence": true,
+    "paragraph_ownership": true,
+    "chunk_coverage": true,
+    "exact_offsets": true,
+    "page_bounds": true,
+    "document_number_in_text": true,
+    "footnotes_attached": true,
+    "no_header_lines_in_body": true,
+    "chunk_checks": true,
+    "syllable_validity": true,
+    "regression_fixtures": true
+   },
+   "details": {
+    "pages": 60,
+    "main_articles": 81,
+    "uncovered_paragraphs": 0,
+    "footnotes": 1,
+    "fixtures": []
+   },
+   "soft": {
+    "structure_warnings": [],
+    "quarantined_instruction_like_chunks": [],
+    "chunks_over_token_budget": 0,
+    "invalid_syllable_rate": 0.00043,
+    "invalid_syllable_examples": [
+     "xãcó"
+    ],
+    "tables": 1,
+    "tables_without_column_labels": [
+     52
+    ],
+    "effective_date_in_text": true
+   },
+   "chunk_failures": {}
+  },
+  {
    "document_id": "293_2025_nd_cp",
    "passed": true,
    "hard": {
@@ -547,7 +588,7 @@
  "chunk_status_counts": {
   "consolidated_current/machine_checked": 225,
   "historical/machine_checked": 18,
-  "presumed_current/machine_checked": 286,
+  "presumed_current/machine_checked": 298,
   "superseded_by_amendment/machine_checked": 128,
   "superseded_by_consolidation/machine_checked": 225,
   "unverified/machine_checked": 135

@@ -1,6 +1,6 @@
 """Build an immutable corpus snapshot from the registry.
 
-    python -m ingestion.build --snapshot-id corpus-2026-10-01
+    python -m ingestion.build --snapshot-id corpus-2026-10-01-r2
 
 Writes data/snapshots/<id>/ and exits non-zero when any hard quality gate fails.
 """
