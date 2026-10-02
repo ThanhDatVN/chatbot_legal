@@ -42,8 +42,11 @@ def test_gray_zone_answer_is_rescued_with_the_verified_unit(runtime):
     result = AnswerService(runtime, policy=policy, verifier=verifier).answer(GRAY_QUESTION)
     assert result.decision == Decision.ANSWER
     assert [c.chunk_id for c in result.citations] == [C1]
-    picked_unit = verifier.seen[0][2][1]
-    assert [c.text for c in result.claims] == [picked_unit]  # the quote is the unit, not model text
+    units = verifier.seen[0][2]
+    picked_unit = units[1]
+    texts = [c.text for c in result.claims]
+    assert picked_unit in texts and all(t in units for t in texts)  # verbatim units only, never model text
+    assert "(phần" not in verifier.seen[0][1] and "Nghỉ hằng năm" in verifier.seen[0][1]  # heading in the title
     assert any("fake/verifier" in n for n in result.notices)
 
 

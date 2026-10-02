@@ -55,7 +55,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--verifier", default="ollama", choices=["ollama", "openai"])
     parser.add_argument("--model", default=None, help="defaults to OLLAMA_MODEL / OPENAI_MODEL")
+    parser.add_argument("--floors", default=",".join("none" if f is None else str(f) for f in FLOORS),
+                        help="comma-separated verifier_floor values; 'none' disables the rescue")
     args = parser.parse_args()
+    floors = [None if f == "none" else float(f) for f in args.floors.split(",")]
     runtime = build_runtime()
     runtime.settings.llm_verifier = args.verifier
     if args.model:
@@ -66,7 +69,7 @@ def main() -> None:
     verifier = CachedVerifier(inner)
     sets = {"dev": load_dataset("dev"), "pdev": load_dataset("pdev", PARAPHRASE_DEV)}
     trials = []
-    for floor, veto in itertools.product(FLOORS, VETO):
+    for floor, veto in itertools.product(floors, VETO):
         policy = replace(PolicyConfig(), verifier_floor=floor, verifier_veto=veto)
         service = AnswerService(runtime, policy=policy, verifier=verifier if (floor is not None or veto) else None)
         started = time.perf_counter()

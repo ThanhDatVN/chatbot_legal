@@ -63,7 +63,10 @@ class ExtractiveAgent:
 
     def _verify(self, query: str, item: ScoredChunk) -> bool:
         units = self._body(item.chunk.text, item.chunk.section_label)
-        picked = self.verifier.check(query, f"{item.chunk.section_label} {item.chunk.document_number}", units)
+        title = item.chunk.section_label + (f". {item.chunk.section_title}" if item.chunk.section_title else "")
+        if item.chunk.part_count > 1:  # a later part of a long article does not repeat its heading
+            title += f" (phần {item.chunk.ordinal + 1}/{item.chunk.part_count})"
+        picked = self.verifier.check(query, f"{title} — {item.chunk.document_number}", units)
         if picked:
             self.verified[item.chunk.chunk_id] = [units[i] for i in picked]
         return bool(picked)
@@ -125,9 +128,11 @@ class ExtractiveAgent:
                     continue
                 used.add(item.chunk.chunk_id)
                 source = self.toolbox.get_source({"chunk_id": item.chunk.chunk_id})
-                verified = self.verified.get(source.chunk_id)
-                list_answer = source.section.startswith("Phụ lục") and LIST_QUESTION_RE.search(query.lower())
-                units = verified if verified and not list_answer else self._best_units(expand_query(query), source)
+                units = self._best_units(expand_query(query), source)
+                # the verifier is a gate; its picks only add units the cross-encoder did not already choose
+                extra = [u for u in self.verified.get(source.chunk_id, []) if u not in units]
+                body = self._body(source.text, source.section)
+                units = sorted(units + extra, key=lambda u: body.index(u) if u in body else len(body))
                 for unit in units:
                     claims.append(DraftClaim(text=unit, chunk_ids=[source.chunk_id], quote=unit))
         gaps = [part for part, v in part_verdicts if not v.sufficient]
