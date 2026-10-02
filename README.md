@@ -166,6 +166,13 @@ chọn **phủ quyết** (bỏ câu trả lời mà model không xác nhận) v�
 [`docs/EVALUATION.md`](docs/EVALUATION.md#4c-model-nhỏ-trên-máy-bộ-xác-minh-vùng-xám-2026-10-02)). Để thử model
 8B–14B, làm theo [`kaggle/README.md`](kaggle/README.md): notebook và script chạy toàn bộ trên GPU Kaggle, không cần API key.
 
+**Tinh chỉnh reranker (đang thử nghiệm).** Hướng thứ hai không thêm LLM vào đường trả lời: tinh chỉnh chính
+cross-encoder trên câu hỏi đời thường do model cục bộ sinh từ từng chunk, huấn luyện trên Kaggle T4, suy luận vẫn
+trên laptop ([`training/README.md`](training/README.md), notebook
+[`kaggle/citeagent_reranker_finetune.ipynb`](kaggle/citeagent_reranker_finetune.ipynb)). Giao thức đo trên bộ
+held-out v3 mới được ghi trước ở [`docs/EVALUATION.md` §4d](docs/EVALUATION.md#4d-held-out-v3-và-thí-nghiệm-tinh-chỉnh-reranker-ghi-trước-khi-chạy-2026-10-02);
+model chỉ thành mặc định nếu cải thiện mà không tăng câu trả lời sai.
+
 **Agent LLM đầy đủ** (model tự gọi `search_evidence`/`get_source`), đặt `LLM_PROVIDER` trong `.env`:
 
 - `ollama`: model trên máy, hai pha (vòng gọi tool rồi một lượt JSON không có tool). Với `qwen3:4b` trên GPU 4 GB

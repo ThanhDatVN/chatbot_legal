@@ -34,6 +34,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", default="all")
     parser.add_argument("--dataset", type=Path, default=DATASET)
+    parser.add_argument("--tag", default="", help="suffix for the report name, e.g. _ft for a fine-tuned reranker")
     args = parser.parse_args()
     runtime = build_runtime()
     questions = [q for q in load_dataset(args.split, args.dataset) if q["type"] in ("direct", "multi")]
@@ -68,8 +69,8 @@ def main() -> None:
     report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split, candidate_set="eligible chunks",
                                    relevance="article-level (document_id, section)"),
               "systems": results, "per_query": per_query}
-    write_json(REPORTS / f"retrieval_{args.split}.json", report)
-    print(f"wrote reports/retrieval_{args.split}.json")
+    write_json(REPORTS / f"retrieval_{args.split}{args.tag}.json", report)
+    print(f"wrote reports/retrieval_{args.split}{args.tag}.json")
 
 
 if __name__ == "__main__":

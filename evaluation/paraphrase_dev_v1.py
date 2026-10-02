@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 from evaluation.dataset_v2 import SNAPSHOT
-from evaluation.heldout_v1 import D135, D145, V, W, g, validate
+from evaluation.heldout_v1 import D135, D145, W, g, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "eval" / "questions_paraphrase_dev_v1.jsonl"

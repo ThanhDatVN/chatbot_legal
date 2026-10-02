@@ -32,4 +32,4 @@ addopts = "-q"
 markers = ["slow: loads embedding or reranker models"]
 
 [tool.setuptools]
-packages = ["app", "ingestion", "evaluation"]
+packages = ["app", "ingestion", "evaluation", "training"]

@@ -97,7 +97,7 @@ def main() -> None:
     for key, r in retrieval["systems"].items():
         out.append(f"| {key} | {f3(r['hit@5'])} | {f3(r['mrr'])} | {f3(r['recall@5'])} | {f3(r['recall@10'])} | "
                    f"{f3(r['all_evidence@5_multi'])} | {ms(r['latency_ms_p50'])} | {ms(r['latency_ms_p95'])} |")
-    out += ["", f"Câu bị trượt Hit@5: " + "; ".join(f"{k}: {', '.join(v['misses']) or 'không'}"
+    out += ["", "Câu bị trượt Hit@5: " + "; ".join(f"{k}: {', '.join(v['misses']) or 'không'}"
                                                    for k, v in retrieval["systems"].items()), "",
             "## Trả lời đầu cuối", "",
             "| Hệ thống | Quyết định đúng | Refusal P / R / F1 | Trả lời sai | Từ chối nhầm | Correctness (0/1/2) | "

@@ -129,6 +129,9 @@ def main() -> None:
     parser.add_argument("--verifier-floor", type=float, default=None)
     parser.add_argument("--verifier-veto", action="store_true")
     parser.add_argument("--tag", default="", help="suffix for the report name, e.g. a model label")
+    parser.add_argument("--policy", type=Path, default=None,
+                        help="tuning report (its best.params) or a JSON of PolicyConfig fields, e.g. "
+                             "reports/policy_tuning_rr_ft.json for a fine-tuned reranker")
     args = parser.parse_args()
     runtime = build_runtime()
     if args.verifier:
@@ -136,6 +139,9 @@ def main() -> None:
     if args.verifier_model:
         runtime.settings.verifier_model = args.verifier_model
     policy = PolicyConfig(answer_threshold=runtime.settings.refusal_threshold)
+    if args.policy:
+        data = json.loads(args.policy.read_text(encoding="utf-8"))
+        policy = replace(policy, **(data["best"]["params"] if "best" in data else data))
     if args.verifier_floor is not None or args.verifier_veto:
         policy = replace(policy, verifier_floor=args.verifier_floor, verifier_veto=args.verifier_veto)
     service = AnswerService(runtime, policy=policy)
@@ -144,6 +150,7 @@ def main() -> None:
     report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split,
                                    provider=args.provider or runtime.settings.llm_provider,
                                    llm_model=_model_name(runtime.settings, args.provider), policy=vars(service.policy),
+                                   policy_source=str(args.policy) if args.policy else "defaults",
                                    verifier=service.verifier.name if service.verifier else None),
               "systems": {}}
     traces = []

@@ -31,7 +31,9 @@ Notebook chỉ gọi [`run_on_kaggle.sh`](run_on_kaggle.sh), có thể chạy tr
 VERIFIER_MODEL=qwen3:8b SOURCES_ZIP=/kaggle/input/<dataset>/citeagent_sources.zip bash kaggle/run_on_kaggle.sh
 ```
 
-## Script làm gì
+## Script làm gì (thí nghiệm 1: bộ xác minh)
+
+Bước 1–5 nằm trong [`setup.sh`](setup.sh), dùng chung cho cả hai thí nghiệm.
 
 | Bước | Lệnh | Ghi chú |
 | --- | --- | --- |
@@ -45,6 +47,27 @@ VERIFIER_MODEL=qwen3:8b SOURCES_ZIP=/kaggle/input/<dataset>/citeagent_sources.zi
 
 Kết quả nằm ở `reports/verifier_tuning_ollama_<model>.json` và `reports/answers_<split>_extractive_verifier_<model>.json`.
 Báo cáo ghi commit, snapshot, model và phần cứng của lần chạy.
+
+## Thí nghiệm 2: tinh chỉnh reranker
+
+Notebook [`citeagent_reranker_finetune.ipynb`](citeagent_reranker_finetune.ipynb) gọi
+[`finetune_reranker.sh`](finetune_reranker.sh). Cùng chuẩn bị như trên (GPU T4 x2, Internet, dataset
+`citeagent_sources.zip`); ô cấu hình có `GEN_MODEL` (`qwen3:8b` mặc định, `qwen3:14b` tốt hơn nhưng chậm gấp đôi),
+`EPOCHS`, `LR`. Tổng thời gian ước tính 3–5 giờ, trong giới hạn 12 giờ một phiên.
+
+| Bước | Lệnh | Ghi chú |
+| --- | --- | --- |
+| 1 | `measure _rr_base` | reranker gốc: `tune_policy` trên dev + paraphrase dev, retrieval trên dataset v2 và held-out v3, trả lời (D) trên test v2 và held-out v3; thêm held-out v3 với ngưỡng mặc định |
+| 2 | `training.generate_queries --workers 4` | Ollama chạy 4 yêu cầu song song (`OLLAMA_NUM_PARALLEL=4`); bỏ qua nếu có input `queries.jsonl` |
+| 3 | `training.mine_negatives --check-backend ollama` | model kiểm tra tối đa 3 negative đáng ngờ mỗi câu |
+| 4 | `training.train_reranker` | tắt Ollama để giải phóng GPU; ~1 giờ cho 1 epoch trên T4 |
+| 5 | `measure _rr_ft` | như bước 1 với `RERANKER_MODEL=models/reranker-ft` |
+| 6 | `training.compare` | `reports/reranker_experiment.md`; nén báo cáo, dữ liệu huấn luyện và model |
+
+Tải ba file ở mục *Output*: `citeagent_reranker_results.zip` (giải nén vào gốc repo, tạo `reports/…`),
+`citeagent_training_data.zip` (vào `data/`), `citeagent_reranker_ft.zip` (vào `models/`, ~1,1 GB). Muốn sinh câu
+hỏi bằng `gpt-4o-mini` (~0,3 USD): thêm secret `OPENAI_API_KEY` trong *Add-ons → Secrets* và đặt
+`GEN_BACKEND=openai`, `GEN_MODEL=gpt-4o-mini`.
 
 ## Sự cố thường gặp
 

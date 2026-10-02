@@ -171,6 +171,32 @@ Hai hướng tiếp theo, đều cần GPU lớn hơn laptop: (1) chạy bộ x�
 chỉnh reranker trên cặp câu hỏi đời thường – Điều luật để điểm liên quan không phụ thuộc cách nói. Held-out v2 nay
 đã được dùng để đo; vòng sau cần held-out v3.
 
+## 4d. Held-out v3 và thí nghiệm tinh chỉnh reranker (ghi trước khi chạy, 2026-10-02)
+
+**Held-out v3** ([`evaluation/heldout_v3.py`](../evaluation/heldout_v3.py), commit `9f46146`): 54 câu mới viết bằng
+lời thường từ văn bản nguồn — 40 câu trả lời được (đa số hỏi các Điều chưa bộ nào hỏi: thử việc kết thúc, tạm ứng
+lương, nghỉ bù, xóa kỷ luật, cai thầu, đình công, phòng vắt sữa…) và 14 câu phải từ chối (3 điều khoản đã bị thay
+thế, 7 câu ngoài kho như mức đóng BHYT, mức phạt, trợ cấp thai sản, 1 lịch sử, 1 dự đoán, 2 ngoài phạm vi). Viết
+trước khi có pipeline [`training/`](../training), AI soạn, chưa duyệt.
+
+**Thí nghiệm** ([`kaggle/finetune_reranker.sh`](../kaggle/finetune_reranker.sh)): tinh chỉnh `bge-reranker-v2-m3`
+trên câu hỏi đời thường do `qwen3:8b` sinh từ từng chunk ([`training/README.md`](../training/README.md)). Giao thức,
+cố định trước khi xem kết quả:
+
+1. Mỗi reranker (gốc, đã tinh chỉnh) lấy ngưỡng từ `evaluation.tune_policy` trên dev v2 + paraphrase dev, cùng lưới
+   (đã mở rộng `answer_threshold` tới 0.95).
+2. Đo **một lần** mỗi cấu hình trên test v2 và held-out v3, hệ thống D, không bộ xác minh: gốc + ngưỡng tinh
+   chỉnh, gốc + ngưỡng mặc định hiện tại, đã tinh chỉnh + ngưỡng tinh chỉnh. Thêm retrieval (Hit@5, MRR) trên dataset
+   v2 và held-out v3.
+3. Chấp nhận reranker mới làm mặc định nếu trên held-out v3: quyết định đúng tăng, **số câu trả lời sai không tăng**,
+   correctness không giảm. Nếu không, giữ reranker gốc và ghi lại kết quả âm.
+4. Sau lần đo, held-out v3 được coi là đã dùng (như v1, v2).
+
+**Ghi nhận khi chuẩn bị:** mở rộng lưới tới 0.95, bộ chỉnh trên dev + paraphrase dev chọn `answer_threshold = 0.9`
+cho reranker gốc (objective 0.938: 0 trả lời sai, 5 từ chối nhầm; mặc định 0.8: 0.900, 2 trả lời sai, 4 từ chối
+nhầm). Chưa đổi mặc định: trên test v2 ngưỡng 0.9 cho 0.961 so với 0.980 (thêm `dir_34` từ chối nhầm). Lần đo
+held-out v3 ở bước 2 so sánh trực tiếp hai ngưỡng này.
+
 ## 5. Phân tích lỗi
 
 Các ca dưới đây lấy từ `reports/answers_test_extractive_traces.jsonl` (test), `answers_heldout_extractive_traces.jsonl`

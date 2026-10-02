@@ -1,6 +1,6 @@
 """Tune the evidence-sufficiency thresholds on development data only.
 
-    python -m evaluation.tune_policy
+    python -m evaluation.tune_policy [--tag _rr_ft]      # a tag writes reports/policy_tuning<tag>.json
 
 Development data = the dev split of dataset v2 plus the paraphrase development set
 (questions_paraphrase_dev_v1.jsonl, everyday wording). The held-out paraphrase set and the test split are
@@ -12,6 +12,7 @@ refused) weighted twice as heavily as false refusals.
 
 from __future__ import annotations
 
+import argparse
 import itertools
 from dataclasses import asdict
 
@@ -29,7 +30,7 @@ KEEP_RATIO_SWEEP_NOTE = ("keep_ratio swept on dev with the full answer pipeline:
                          "Chose 0.85.")
 
 GRID = {
-    "answer_threshold": [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+    "answer_threshold": [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
     "unverified_threshold": [0.5, 0.7, 0.9],
     "stronger_margin": [0.05, 0.15, 0.3],
     "superseded_margin": [None, 0.0, 0.02, 0.05],
@@ -60,6 +61,11 @@ def score(cached: list[tuple[dict, object, list, list]], cfg: PolicyConfig) -> d
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tag", default="",
+                        help="suffix for the report name; a tagged run (e.g. _ft for a fine-tuned reranker) never "
+                             "overwrites reports/policy_tuning.json, whose 'chosen' block documents the defaults")
+    args = parser.parse_args()
     runtime = build_runtime()
     dev = load_dataset("dev") + (load_dataset("pdev", PARAPHRASE_DEV) if PARAPHRASE_DEV.exists() else [])
     cached = []
@@ -90,7 +96,7 @@ def main() -> None:
                   {"id": q["id"], "type": q["type"], "best_eligible": round(e[0].score, 4) if e else 0.0,
                    "best_ineligible": round(i[0].score, 4) if i else 0.0, "scope_rule": s.value if s else None}
                   for q, s, e, i in cached]}
-    write_json(REPORTS / "policy_tuning.json", report)
+    write_json(REPORTS / f"policy_tuning{args.tag}.json", report)
     print("best:", best)
     print("chosen:", chosen, chosen_score, by_set)
     for t in trials[1:6]:

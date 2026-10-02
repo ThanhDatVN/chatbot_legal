@@ -197,6 +197,20 @@ chạy tinh chỉnh + đo với model 8B–14B trên GPU Kaggle, không cần AP
 lời vô dụng. **Hệ quả:** trên held-out v2, phủ quyết loại 1 câu trả lời sai và thêm 1 câu từ chối nhầm (hòa vốn);
 cứu câu từ chối nhầm cần model mạnh hơn hoặc reranker tốt hơn với câu hỏi đời thường.
 
+### ADR-015 — Tinh chỉnh reranker trên câu hỏi tổng hợp đời thường (đang thử nghiệm)
+
+**Quyết định:** thay vì thêm LLM vào đường trả lời, tinh chỉnh chính cross-encoder `bge-reranker-v2-m3` để câu hỏi
+đời thường nhận điểm liên quan cao như câu hỏi sát văn luật ([`training/`](../training)). Dữ liệu sinh tự động:
+model cục bộ viết câu hỏi cho từng chunk, negative khó từ retriever hybrid, loại negative giả bằng dẫn chiếu giữa
+Điều và bộ xác minh. Hàm mất mát BCE + softmax CE giữ điểm sigmoid hiệu chỉnh vì chính sách dùng ngưỡng tuyệt đối;
+câu "gần đúng" (cùng chủ đề, không trả lời) dạy model hạ điểm cho Điều chỉ cùng chủ đề. Huấn luyện trên Kaggle T4,
+suy luận vẫn trên laptop với cùng chi phí như reranker gốc. Ngưỡng chọn lại trên dữ liệu phát triển cho từng reranker.
+
+**Lý do:** lỗi 1 và 4 ở `docs/EVALUATION.md` §5 cùng một gốc — điểm cross-encoder phụ thuộc cách nói và không phân
+biệt "liên quan" với "trả lời được". Từ điển thuật ngữ thủ công đã đạt giới hạn và do chính người soạn bộ đánh giá
+viết; bộ xác minh 4B chỉ hòa vốn và thêm ~2 s/câu. **Trạng thái:** chờ kết quả theo giao thức ghi trước ở
+`docs/EVALUATION.md` §4d; chỉ thành mặc định nếu held-out v3 cải thiện mà không tăng câu trả lời sai.
+
 ## 6. Yêu cầu phi chức năng
 
 - **Tin cậy:** không có citation ngoài evidence của request; không tự tạo URL/trang/Điều; source lỗi thì `REFUSE` hoặc lỗi phụ thuộc rõ ràng.
@@ -233,5 +247,6 @@ cứu câu từ chối nhầm cần model mạnh hơn hoặc reranker tốt hơn
 | ADR-012 | 2026-10-01 | Sổ theo dõi hiệu lực cấp điều khoản, từ chối khi điều liên quan nhất đã bị thay thế | Accepted; sổ chưa có người duyệt |
 | ADR-013 | 2026-10-01 | Mở rộng truy vấn bằng thuật ngữ pháp lý, kiểm tra nguồn bổ sung theo khoản, `section_scope`, chốt chặn snapshot bất biến | Accepted |
 | ADR-014 | 2026-10-02 | Model nhỏ (Ollama) làm bộ xác minh vùng xám; agent LLM đầy đủ và Kaggle cho model lớn hơn | Accepted; cứu vùng xám chờ model mạnh hơn |
+| ADR-015 | 2026-10-02 | Tinh chỉnh reranker trên câu hỏi tổng hợp đời thường, huấn luyện trên Kaggle | Proposed; chờ đo trên held-out v3 |
 
 Các trang tham khảo kỹ thuật: [Qdrant payload và filtering](https://qdrant.tech/documentation/concepts/payload/), [FastAPI trong Docker](https://fastapi.tiangolo.com/deployment/docker/), [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat), [PyMuPDF text extraction](https://pymupdf.readthedocs.io/en/latest/recipes-text.html).
