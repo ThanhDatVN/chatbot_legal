@@ -3,7 +3,7 @@
 A: dense top-5 naive RAG · B: hybrid (dense + BM25 + RRF) naive RAG · C: B + reranker naive RAG ·
 D: final agent (hybrid + reranker + refusal policy + citation validation).
 
-    python -m evaluation.answer_eval [--split test|dev|all] [--provider extractive|anthropic]
+    python -m evaluation.answer_eval [--split test|dev|all] [--provider extractive|anthropic|openai]
 
 Metrics (all automatic; see docs/EVALUATION.md for what each proxy can and cannot show):
 - decision accuracy: decision is one of the question's acceptable decisions
@@ -122,7 +122,8 @@ def main() -> None:
     runtime.retrieval.search("khởi động mô hình", top_k=1)  # warm models so latency excludes loading
     report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split,
                                    provider=args.provider or runtime.settings.llm_provider,
-                                   llm_model=runtime.settings.llm_model, policy=vars(service.policy)),
+                                   llm_model=(runtime.settings.openai_model if (args.provider or runtime.settings.llm_provider) == "openai"
+                                              else runtime.settings.llm_model), policy=vars(service.policy)),
               "systems": {}}
     traces = []
     for system in args.systems.split(","):

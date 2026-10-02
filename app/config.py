@@ -45,12 +45,15 @@ class Settings(BaseSettings):
     reranker_max_length: int = Field(1024, ge=128, le=8192)
 
     # answering
-    llm_provider: Literal["extractive", "anthropic"] = "extractive"
+    llm_provider: Literal["extractive", "anthropic", "openai"] = "extractive"
     llm_model: str = "claude-opus-5-5"
     # Claude Opus 5.5 defaults to medium; grounded QA over short sources rarely needs more, and latency counts
     llm_effort: Literal["low", "medium", "high", "xhigh", "max"] = "medium"
     llm_server_fallback: bool = True
     anthropic_api_key: str | None = None
+    # OpenAI agent (LLM_PROVIDER=openai): same tools, prompt and validator as the Claude agent
+    openai_api_key: str | None = None
+    openai_model: str = "gpt-4o-mini"
     llm_timeout_s: float = 60.0
     max_search_calls: int = 3
     max_source_calls: int = 8

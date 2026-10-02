@@ -20,6 +20,7 @@ from datetime import datetime, timezone
 from typing import Literal
 
 from app.agent.claude_agent import ClaudeAgent
+from app.agent.openai_agent import OpenAIAgent
 from app.agent.draft import Draft
 from app.agent.extractive import ExtractiveAgent
 from app.agent.policy import PolicyConfig
@@ -83,6 +84,9 @@ class AnswerService:
             elif provider == "anthropic":
                 draft = ClaudeAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
                 mode = f"agent-{self.settings.llm_model}"
+            elif provider == "openai":
+                draft = OpenAIAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
+                mode = f"agent-{self.settings.openai_model}"
             else:
                 draft = ExtractiveAgent(toolbox, self.runtime.retrieval.reranker, self.policy).run(
                     question, self.runtime.catalog.as_of_date)

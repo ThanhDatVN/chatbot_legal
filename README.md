@@ -148,9 +148,16 @@ chủ qua `HF_CACHE` (mặc định `~/.cache/huggingface`). Trên máy phát tr
 ~15–20 s, câu nhiều vế ~55 s; chạy cục bộ trên GPU nhanh hơn nhiều (p95 4.4 s trên tập test). Số liệu benchmark
 dùng cấu hình GPU với 20 ứng viên rerank.
 
-**Dùng Claude thay vì chế độ extractive**: đặt `LLM_PROVIDER=anthropic` và `ANTHROPIC_API_KEY` trong `.env`.
-Agent dùng `claude-opus-5-5` với vòng lặp tool thủ công, đầu ra JSON theo schema và fallback phía server; mọi
-nhận định vẫn qua cùng bộ kiểm tra citation.
+**Dùng LLM thay vì chế độ extractive** (đặt trong `.env`, tệp này không được commit):
+
+- OpenAI: `LLM_PROVIDER=openai`, `OPENAI_API_KEY=...`, `OPENAI_MODEL=gpt-4o-mini` (mặc định).
+- Claude: `LLM_PROVIDER=anthropic`, `ANTHROPIC_API_KEY=...`, `LLM_MODEL=claude-opus-5-5`.
+
+Hai agent dùng cùng hai tool, cùng prompt và cùng hợp đồng JSON ([`app/agent/llm_common.py`](app/agent/llm_common.py)):
+gọi tool có schema nghiêm ngặt, kết quả tool được bọc như dữ liệu không đáng tin, và mọi nhận định vẫn qua cùng bộ
+kiểm tra citation. Thiếu key thì API trả lỗi có kiểu, không rơi về câu trả lời không kiểm chứng. Đo riêng bằng
+`python -m evaluation.answer_eval --split test --provider openai --systems D` (tốn phí API);
+`scripts/run_benchmark.py` luôn chạy chế độ extractive.
 
 ## Biến môi trường chính
 
@@ -161,7 +168,8 @@ nhận định vẫn qua cùng bộ kiểm tra citation.
 | `QDRANT_URL` | trống | trống = Qdrant nhúng trong `data/indexes/qdrant` |
 | `MODEL_DEVICE` | `auto` | `cuda` (fp16) / `cpu` (fp32) |
 | `REFUSAL_THRESHOLD` | `0.8` | ngưỡng điểm reranker, hiệu chỉnh trên split dev |
-| `LLM_PROVIDER` | `extractive` | `extractive` (offline) hoặc `anthropic` |
+| `LLM_PROVIDER` | `extractive` | `extractive` (offline), `openai` hoặc `anthropic` |
+| `OPENAI_MODEL` | `gpt-4o-mini` | model của agent OpenAI |
 | `LLM_MODEL` / `LLM_EFFORT` | `claude-opus-5-5` / `medium` | cấu hình agent Claude |
 | `LOG_QUESTIONS` | `hash` | log lưu hash câu hỏi, không lưu nguyên văn |
 

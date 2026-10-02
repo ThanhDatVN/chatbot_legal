@@ -23,9 +23,11 @@ STEPS = [
     ["evaluation.retrieval_eval", "--split", "all"],
     ["evaluation.retrieval_eval", "--split", "heldout", "--dataset", HELDOUT],
     ["evaluation.tune_policy"],  # dev split + paraphrase dev only
-    ["evaluation.answer_eval", "--split", "test"],
-    ["evaluation.answer_eval", "--split", "pdev", "--dataset", PDEV, "--systems", "D"],
-    ["evaluation.answer_eval", "--split", "heldout", "--dataset", HELDOUT, "--systems", "A,D"],
+    # always the offline extractive mode here, whatever LLM_PROVIDER says in .env: paid LLM runs are explicit
+    ["evaluation.answer_eval", "--split", "test", "--provider", "extractive"],
+    ["evaluation.answer_eval", "--split", "pdev", "--dataset", PDEV, "--systems", "D", "--provider", "extractive"],
+    ["evaluation.answer_eval", "--split", "heldout", "--dataset", HELDOUT, "--systems", "A,D", "--provider",
+     "extractive"],
     ["evaluation.security_eval"],
     ["evaluation.report"],
 ]
