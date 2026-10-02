@@ -45,7 +45,7 @@ class Settings(BaseSettings):
     reranker_max_length: int = Field(1024, ge=128, le=8192)
 
     # answering
-    llm_provider: Literal["extractive", "anthropic", "openai"] = "extractive"
+    llm_provider: Literal["extractive", "ollama", "openai", "anthropic"] = "extractive"
     llm_model: str = "claude-opus-5-5"
     # Claude Opus 5.5 defaults to medium; grounded QA over short sources rarely needs more, and latency counts
     llm_effort: Literal["low", "medium", "high", "xhigh", "max"] = "medium"
@@ -54,6 +54,16 @@ class Settings(BaseSettings):
     # OpenAI agent (LLM_PROVIDER=openai): same tools, prompt and validator as the Claude agent
     openai_api_key: str | None = None
     openai_model: str = "gpt-4o-mini"
+    # local Ollama agent (LLM_PROVIDER=ollama): no API cost; num_ctx must hold the prompt plus fetched sources
+    ollama_url: str = "http://127.0.0.1:11434"
+    ollama_model: str = "qwen3:4b"
+    ollama_num_ctx: int = Field(12288, ge=2048, le=131072)
+    ollama_think: bool = False
+    ollama_timeout_s: float = 600.0
+    # gray-zone verifier for the extractive agent (app/agent/verifier.py): none | ollama | openai
+    llm_verifier: Literal["none", "ollama", "openai"] = "none"
+    verifier_model: str | None = None  # defaults to OLLAMA_MODEL / OPENAI_MODEL
+    verifier_num_ctx: int = Field(4096, ge=1024, le=32768)
     llm_timeout_s: float = 60.0
     max_search_calls: int = 3
     max_source_calls: int = 8

@@ -30,6 +30,12 @@ class PolicyConfig:
     # scores at least this much against the question. None disables the check; 0.2 was the smallest value with
     # the best citation precision on dev + paraphrase dev (no change in decisions or correctness).
     unit_threshold: float | None = 0.2
+    # Gray-zone verifier (only with LLM_VERIFIER set): eligible candidates scoring at least verifier_floor but
+    # below answer_threshold are shown to a small LLM, which may confirm the units that answer. verifier_veto
+    # also asks it to confirm the best source of an answer that passed the threshold. None/False = off.
+    verifier_floor: float | None = None
+    verifier_candidates: int = 2
+    verifier_veto: bool = False
 
 
 # Requests that ask the system to foresee or recommend rather than to state the law.

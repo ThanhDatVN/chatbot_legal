@@ -20,7 +20,9 @@ from datetime import datetime, timezone
 from typing import Literal
 
 from app.agent.claude_agent import ClaudeAgent
+from app.agent.ollama_agent import OllamaAgent
 from app.agent.openai_agent import OpenAIAgent
+from app.agent.verifier import Verifier, make_verifier
 from app.agent.draft import Draft
 from app.agent.extractive import ExtractiveAgent
 from app.agent.policy import PolicyConfig
@@ -58,11 +60,13 @@ FOLLOW_UPS = ["Quy định này nằm ở Điều nào?", "Có trường hợp n
 
 
 class AnswerService:
-    def __init__(self, runtime: Runtime, policy: PolicyConfig | None = None, llm_client=None) -> None:
+    def __init__(self, runtime: Runtime, policy: PolicyConfig | None = None, llm_client=None,
+                 verifier: Verifier | None = None) -> None:
         self.runtime = runtime
         self.settings: Settings = runtime.settings
         self.policy = policy or PolicyConfig(answer_threshold=self.settings.refusal_threshold)
         self.llm_client = llm_client
+        self.verifier = verifier if verifier is not None else make_verifier(self.settings)
         self.log_path = self.settings.runtime_dir / "query_log.jsonl"
 
     # ------------------------------------------------------------------------------------------
@@ -84,13 +88,16 @@ class AnswerService:
             elif provider == "anthropic":
                 draft = ClaudeAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
                 mode = f"agent-{self.settings.llm_model}"
+            elif provider == "ollama":
+                draft = OllamaAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
+                mode = f"agent-ollama-{self.settings.ollama_model}"
             elif provider == "openai":
                 draft = OpenAIAgent(toolbox, self.settings, self.llm_client).run(question, self.runtime.catalog.as_of_date)
                 mode = f"agent-{self.settings.openai_model}"
             else:
-                draft = ExtractiveAgent(toolbox, self.runtime.retrieval.reranker, self.policy).run(
+                draft = ExtractiveAgent(toolbox, self.runtime.retrieval.reranker, self.policy, self.verifier).run(
                     question, self.runtime.catalog.as_of_date)
-                mode = "agent-extractive"
+                mode = "agent-extractive" + (f"+verifier-{self.verifier.name}" if self.verifier else "")
         except CiteAgentError as exc:
             error = exc
             draft = Draft(Decision.REFUSE, RefusalReason.SOURCE_UNAVAILABLE, notes=[exc.code])
@@ -132,6 +139,8 @@ class AnswerService:
         decision, reason = draft.decision, draft.reason
         if validate and decision != Decision.REFUSE:
             scores = {cid: toolbox.score_of(cid) for cid in toolbox.fetched}
+            for cid in draft.verified_chunks:  # confirmed by the gray-zone verifier: low score, right article
+                scores[cid] = max(scores.get(cid, 0.0), self.policy.answer_threshold)
             report = validate_claims(claims, toolbox.fetched, scores, self.policy.answer_threshold)
             claims, dropped = report.kept, report.dropped
             if not claims:
@@ -160,6 +169,11 @@ class AnswerService:
                       for i, c in enumerate(claims)]
         answer = self._compose(decision, reason, out_claims, citations, draft)
         notices = self._notices(citations, toolbox, dropped, decision, reason)
+        verified = [c for c in citations if c.chunk_id in set(draft.verified_chunks)]
+        if verified and self.verifier is not None:
+            labels = ", ".join(sorted({f"{c.section} {c.document_number}" for c in verified}))
+            notices.insert(0, f"Điểm liên quan tự động của {labels} thấp hơn ngưỡng; mô hình {self.verifier.name} "
+                              "xác nhận đoạn được trích trả lời đúng câu hỏi. Câu trả lời vẫn là trích nguyên văn.")
         related = []
         if decision != Decision.ANSWER:
             seen = set(numbering)

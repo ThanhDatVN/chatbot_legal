@@ -28,3 +28,4 @@ class Draft:
     layout: str = "grouped"  # grouped: framing line per source; prose: claims as sentences
     usage: Usage = field(default_factory=Usage)
     notes: list[str] = field(default_factory=list)
+    verified_chunks: list[str] = field(default_factory=list)  # sources a gray-zone verifier confirmed

@@ -189,6 +189,7 @@ def create_app(runtime_factory: Callable[[], Runtime] = get_runtime, sessions: S
     def evaluation() -> dict:
         reports = {}
         for name in ("retrieval_all", "answers_test_extractive", "answers_test_anthropic", "answers_test_openai",
+                     "answers_test_ollama",
                      "policy_tuning",
                      "security_extractive", "answers_heldout_extractive", "heldout_before_fixes_answers",
                      "answers_pdev_extractive"):

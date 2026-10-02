@@ -16,7 +16,8 @@ from app.agent.policy import EvidenceAssessment, PolicyConfig, assess, retrieval
 from app.agent.tools import ToolBox
 from app.generation.validator import DraftClaim
 from app.retrieval.models import Reranker
-from app.schemas import Decision, RefusalReason, SourceEvidence
+from app.agent.verifier import Verifier
+from app.schemas import Decision, RefusalReason, ScoredChunk, SourceEvidence
 from ingestion.models import CurrencyStatus
 
 CURRENCY_REASONS = (RefusalReason.SUPERSEDED_BY_AMENDMENT, RefusalReason.CURRENCY_UNVERIFIED)
@@ -45,15 +46,48 @@ def split_question(question: str, max_parts: int = 2) -> list[str]:
 
 
 class ExtractiveAgent:
-    def __init__(self, toolbox: ToolBox, reranker: Reranker | None, policy: PolicyConfig) -> None:
+    def __init__(self, toolbox: ToolBox, reranker: Reranker | None, policy: PolicyConfig,
+                 verifier: Verifier | None = None) -> None:
         self.toolbox = toolbox
         self.reranker = reranker
         self.policy = policy
+        self.verifier = verifier
+        self._eligible: dict[str, list[ScoredChunk]] = {}
+        self.verified: dict[str, list[str]] = {}  # chunk_id -> units the verifier picked
 
     def _search(self, query: str) -> EvidenceAssessment:
         self.toolbox.search_evidence({"query": expand_query(query), "top_k": 5})
         result = self.toolbox.last_result
+        self._eligible[query] = list(result.eligible)
         return assess(result.eligible, result.ineligible, self.policy)
+
+    def _verify(self, query: str, item: ScoredChunk) -> bool:
+        units = self._body(item.chunk.text, item.chunk.section_label)
+        picked = self.verifier.check(query, f"{item.chunk.section_label} {item.chunk.document_number}", units)
+        if picked:
+            self.verified[item.chunk.chunk_id] = [units[i] for i in picked]
+        return bool(picked)
+
+    def _rescue(self, query: str, verdict: EvidenceAssessment) -> EvidenceAssessment:
+        """Below the threshold only for lack of score: let the verifier confirm a gray-zone candidate."""
+        if verdict.sufficient or verdict.reason != RefusalReason.INSUFFICIENT_EVIDENCE:
+            return verdict
+        floor = self.policy.verifier_floor
+        candidates = [s for s in self._eligible.get(query, []) if s.score >= floor][: self.policy.verifier_candidates]
+        for item in candidates:
+            if self._verify(query, item):
+                return EvidenceAssessment(True, None, [item], [], verdict.best_eligible, verdict.best_unverified)
+        return verdict
+
+    def _veto(self, query: str, verdict: EvidenceAssessment) -> EvidenceAssessment:
+        """Relevant is not the same as answering: keep an answer only if the verifier confirms a source."""
+        if not verdict.sufficient:
+            return verdict
+        for item in verdict.selected[: self.policy.verifier_candidates]:
+            if self._verify(query, item):
+                return verdict
+        return EvidenceAssessment(False, RefusalReason.INSUFFICIENT_EVIDENCE, [], verdict.stronger_unverified,
+                                  verdict.best_eligible, verdict.best_unverified)
 
     def run(self, question: str, as_of_date: str) -> Draft:
         blocked = scope_check(question)
@@ -68,6 +102,12 @@ class ExtractiveAgent:
             for part in parts[: self.toolbox.max_search_calls - 1]:
                 part_verdicts.append((part, self._search(part)))
             verdicts += part_verdicts
+        if self.verifier is not None:
+            if self.policy.verifier_veto:
+                verdicts = [(q, self._veto(q, v)) for q, v in verdicts]
+            if self.policy.verifier_floor is not None:
+                verdicts = [(q, self._rescue(q, v)) for q, v in verdicts]
+            whole, part_verdicts = verdicts[0][1], verdicts[1:]
         if not any(v.sufficient for _, v in verdicts):
             reason = next((v.reason for _, v in verdicts if v.reason in CURRENCY_REASONS), whole.reason)
             return Draft(Decision.REFUSE, reason, notes=[f"best_eligible={whole.best_eligible:.3f}",
@@ -85,7 +125,10 @@ class ExtractiveAgent:
                     continue
                 used.add(item.chunk.chunk_id)
                 source = self.toolbox.get_source({"chunk_id": item.chunk.chunk_id})
-                for unit in self._best_units(expand_query(query), source):
+                verified = self.verified.get(source.chunk_id)
+                list_answer = source.section.startswith("Phụ lục") and LIST_QUESTION_RE.search(query.lower())
+                units = verified if verified and not list_answer else self._best_units(expand_query(query), source)
+                for unit in units:
                     claims.append(DraftClaim(text=unit, chunk_ids=[source.chunk_id], quote=unit))
         gaps = [part for part, v in part_verdicts if not v.sufficient]
         stronger = [s for _, v in verdicts for s in v.stronger_unverified]
@@ -103,7 +146,10 @@ class ExtractiveAgent:
             notes.append("Quy định chi tiết liên quan (" + "; ".join(labels) + ") đã hết hiệu lực hoặc được thay thế "
                          "bởi văn bản chưa có trong kho, nên chưa dùng làm căn cứ.")
         decision = Decision.PARTIAL if notes else Decision.ANSWER
-        return Draft(decision, None, claims, unanswered=" ".join(notes) or None, layout="grouped")
+        cited = {c for claim in claims for c in claim.chunk_ids}
+        return Draft(decision, None, claims, unanswered=" ".join(notes) or None, layout="grouped",
+                     verified_chunks=sorted(cid for cid in self.verified if cid in cited),
+                     notes=[f"verifier={self.verifier.name}"] if self.verifier else [])
 
     @staticmethod
     def _body(text: str, section: str) -> list[str]:
