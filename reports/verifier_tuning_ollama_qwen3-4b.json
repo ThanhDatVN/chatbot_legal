@@ -1,0 +1,370 @@
+{
+ "meta": {
+  "date": "2026-10-02T02:33:21+00:00",
+  "git_commit": "65ddc1a",
+  "snapshot": "corpus-2026-10-01-r2",
+  "currency_policy": "pilot",
+  "embedding_model": "BAAI/bge-m3",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "dense_top_k": 20,
+  "sparse_top_k": 20,
+  "rrf_k": 60,
+  "dataset": "questions_v2.jsonl",
+  "hardware": {
+   "platform": "Windows-10-10.0.26300-SP0",
+   "python": "3.11.9",
+   "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+   "torch": "2.14.0+cu126",
+   "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "split": "dev+pdev",
+  "verifier": "ollama/qwen3:4b",
+  "objective": "(correct - false_answers) / n"
+ },
+ "base_policy": {
+  "answer_threshold": 0.8,
+  "keep_ratio": 0.85,
+  "stronger_margin": 0.15,
+  "unverified_threshold": 0.5,
+  "max_sources": 3,
+  "superseded_margin": 0.0,
+  "unit_threshold": 0.2,
+  "verifier_floor": null,
+  "verifier_candidates": 2,
+  "verifier_veto": false
+ },
+ "best": {
+  "verifier_floor": null,
+  "verifier_veto": true,
+  "accuracy": 0.9125,
+  "objective": 0.9,
+  "by_set": {
+   "dev": {
+    "accuracy": 0.9811,
+    "false_answers": 0,
+    "false_refusals": 1,
+    "correctness": 0.8438,
+    "citation_precision": 0.8046,
+    "objective": 0.9811
+   },
+   "pdev": {
+    "accuracy": 0.7778,
+    "false_answers": 1,
+    "false_refusals": 5,
+    "correctness": 0.6818,
+    "citation_precision": 0.5641,
+    "objective": 0.7407
+   }
+  },
+  "seconds": 368.7
+ },
+ "trials": [
+  {
+   "verifier_floor": null,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.8875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9811,
+     "false_answers": 1,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.7826,
+     "objective": 0.9623
+    },
+    "pdev": {
+     "accuracy": 0.8148,
+     "false_answers": 2,
+     "false_refusals": 3,
+     "correctness": 0.7727,
+     "citation_precision": 0.5476,
+     "objective": 0.7407
+    }
+   },
+   "seconds": 188.6
+  },
+  {
+   "verifier_floor": null,
+   "verifier_veto": true,
+   "accuracy": 0.9125,
+   "objective": 0.9,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9811,
+     "false_answers": 0,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.8046,
+     "objective": 0.9811
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 1,
+     "false_refusals": 5,
+     "correctness": 0.6818,
+     "citation_precision": 0.5641,
+     "objective": 0.7407
+    }
+   },
+   "seconds": 368.7
+  },
+  {
+   "verifier_floor": 0.02,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 2,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.766,
+     "objective": 0.9245
+    },
+    "pdev": {
+     "accuracy": 0.8519,
+     "false_answers": 2,
+     "false_refusals": 2,
+     "correctness": 0.8182,
+     "citation_precision": 0.5581,
+     "objective": 0.7778
+    }
+   },
+   "seconds": 213.6
+  },
+  {
+   "verifier_floor": 0.02,
+   "verifier_veto": true,
+   "accuracy": 0.9,
+   "objective": 0.8625,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 1,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.7865,
+     "objective": 0.9434
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 2,
+     "false_refusals": 4,
+     "correctness": 0.7273,
+     "citation_precision": 0.561,
+     "objective": 0.7037
+    }
+   },
+   "seconds": 176.8
+  },
+  {
+   "verifier_floor": 0.05,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 2,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.766,
+     "objective": 0.9245
+    },
+    "pdev": {
+     "accuracy": 0.8519,
+     "false_answers": 2,
+     "false_refusals": 2,
+     "correctness": 0.8182,
+     "citation_precision": 0.5581,
+     "objective": 0.7778
+    }
+   },
+   "seconds": 168.1
+  },
+  {
+   "verifier_floor": 0.05,
+   "verifier_veto": true,
+   "accuracy": 0.9,
+   "objective": 0.8625,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 1,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.7865,
+     "objective": 0.9434
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 2,
+     "false_refusals": 4,
+     "correctness": 0.7273,
+     "citation_precision": 0.561,
+     "objective": 0.7037
+    }
+   },
+   "seconds": 163.9
+  },
+  {
+   "verifier_floor": 0.1,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 2,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.766,
+     "objective": 0.9245
+    },
+    "pdev": {
+     "accuracy": 0.8519,
+     "false_answers": 2,
+     "false_refusals": 2,
+     "correctness": 0.8182,
+     "citation_precision": 0.5581,
+     "objective": 0.7778
+    }
+   },
+   "seconds": 167.1
+  },
+  {
+   "verifier_floor": 0.1,
+   "verifier_veto": true,
+   "accuracy": 0.9,
+   "objective": 0.8625,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 1,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.7865,
+     "objective": 0.9434
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 2,
+     "false_refusals": 4,
+     "correctness": 0.7273,
+     "citation_precision": 0.561,
+     "objective": 0.7037
+    }
+   },
+   "seconds": 163.6
+  },
+  {
+   "verifier_floor": 0.2,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 2,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.766,
+     "objective": 0.9245
+    },
+    "pdev": {
+     "accuracy": 0.8519,
+     "false_answers": 2,
+     "false_refusals": 2,
+     "correctness": 0.8182,
+     "citation_precision": 0.5581,
+     "objective": 0.7778
+    }
+   },
+   "seconds": 166.6
+  },
+  {
+   "verifier_floor": 0.2,
+   "verifier_veto": true,
+   "accuracy": 0.9,
+   "objective": 0.8625,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 1,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.7865,
+     "objective": 0.9434
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 2,
+     "false_refusals": 4,
+     "correctness": 0.7273,
+     "citation_precision": 0.561,
+     "objective": 0.7037
+    }
+   },
+   "seconds": 163.9
+  },
+  {
+   "verifier_floor": 0.4,
+   "verifier_veto": false,
+   "accuracy": 0.925,
+   "objective": 0.875,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 2,
+     "false_refusals": 0,
+     "correctness": 0.9375,
+     "citation_precision": 0.7742,
+     "objective": 0.9245
+    },
+    "pdev": {
+     "accuracy": 0.8519,
+     "false_answers": 2,
+     "false_refusals": 2,
+     "correctness": 0.8182,
+     "citation_precision": 0.5581,
+     "objective": 0.7778
+    }
+   },
+   "seconds": 167.0
+  },
+  {
+   "verifier_floor": 0.4,
+   "verifier_veto": true,
+   "accuracy": 0.9,
+   "objective": 0.8625,
+   "by_set": {
+    "dev": {
+     "accuracy": 0.9623,
+     "false_answers": 1,
+     "false_refusals": 1,
+     "correctness": 0.8438,
+     "citation_precision": 0.7955,
+     "objective": 0.9434
+    },
+    "pdev": {
+     "accuracy": 0.7778,
+     "false_answers": 2,
+     "false_refusals": 4,
+     "correctness": 0.7273,
+     "citation_precision": 0.561,
+     "objective": 0.7037
+    }
+   },
+   "seconds": 163.5
+  }
+ ],
+ "verifier_calls": 107,
+ "verifier_seconds": 194.2,
+ "verifier_tokens": {
+  "input": 59763,
+  "output": 1968
+ },
+ "verifier_errors": []
+}
