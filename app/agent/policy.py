@@ -33,9 +33,11 @@ class PolicyConfig:
     # Gray-zone verifier (only with LLM_VERIFIER set): eligible candidates scoring at least verifier_floor but
     # below answer_threshold are shown to a small LLM, which may confirm the units that answer. verifier_veto
     # also asks it to confirm the best source of an answer that passed the threshold. None/False = off.
+    # Chosen on dev v2 + paraphrase dev with qwen3:4b (reports/verifier_tuning_ollama_qwen3-4b.json): the veto
+    # removed false answers; every rescue floor added more false answers than it fixed, so the rescue stays off.
     verifier_floor: float | None = None
     verifier_candidates: int = 2
-    verifier_veto: bool = False
+    verifier_veto: bool = True
 
 
 # Requests that ask the system to foresee or recommend rather than to state the law.
