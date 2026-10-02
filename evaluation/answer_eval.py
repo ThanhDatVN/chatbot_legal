@@ -22,8 +22,10 @@ from __future__ import annotations
 import argparse
 import json
 import unicodedata
+from dataclasses import replace
 from pathlib import Path
 
+from app.agent.policy import PolicyConfig
 from app.agent.service import AnswerService
 from app.runtime import build_runtime
 from evaluation.common import DATASET, REPORTS, load_dataset, percentile, run_metadata, write_json
@@ -121,14 +123,28 @@ def main() -> None:
     parser.add_argument("--provider", default=None)
     parser.add_argument("--systems", default="A,B,C,D")
     parser.add_argument("--dataset", type=Path, default=DATASET, help="e.g. data/eval/questions_heldout_v1.jsonl")
+    parser.add_argument("--verifier", choices=["none", "ollama", "openai"], default=None,
+                        help="gray-zone verifier for the extractive agent (overrides LLM_VERIFIER)")
+    parser.add_argument("--verifier-model", default=None)
+    parser.add_argument("--verifier-floor", type=float, default=None)
+    parser.add_argument("--verifier-veto", action="store_true")
+    parser.add_argument("--tag", default="", help="suffix for the report name, e.g. a model label")
     args = parser.parse_args()
     runtime = build_runtime()
-    service = AnswerService(runtime)
+    if args.verifier:
+        runtime.settings.llm_verifier = args.verifier
+    if args.verifier_model:
+        runtime.settings.verifier_model = args.verifier_model
+    policy = PolicyConfig(answer_threshold=runtime.settings.refusal_threshold)
+    if args.verifier_floor is not None or args.verifier_veto:
+        policy = replace(policy, verifier_floor=args.verifier_floor, verifier_veto=args.verifier_veto)
+    service = AnswerService(runtime, policy=policy)
     questions = load_dataset(args.split, args.dataset)
     runtime.retrieval.search("khởi động mô hình", top_k=1)  # warm models so latency excludes loading
     report = {"meta": run_metadata(runtime.settings, args.dataset, split=args.split,
                                    provider=args.provider or runtime.settings.llm_provider,
-                                   llm_model=_model_name(runtime.settings, args.provider), policy=vars(service.policy)),
+                                   llm_model=_model_name(runtime.settings, args.provider), policy=vars(service.policy),
+                                   verifier=service.verifier.name if service.verifier else None),
               "systems": {}}
     traces = []
     for system in args.systems.split(","):
@@ -146,7 +162,9 @@ def main() -> None:
                                and t["decision"] not in t["acceptable"]]
         report["systems"][system] = metrics
         print(system, json.dumps({k: v for k, v in metrics.items() if k not in ("by_type",)}, ensure_ascii=False))
-    name = f"answers_{args.split}_{args.provider or runtime.settings.llm_provider}"
+    name = f"answers_{args.split}_{args.provider or runtime.settings.llm_provider}{args.tag}"
+    if service.verifier:
+        report["meta"]["verifier_stats"] = vars(service.verifier.stats)
     write_json(REPORTS / f"{name}.json", report)
     with (REPORTS / f"{name}_traces.jsonl").open("w", encoding="utf-8") as fh:
         for t in traces:
