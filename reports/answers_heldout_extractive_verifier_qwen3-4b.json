@@ -1,0 +1,106 @@
+{
+ "meta": {
+  "date": "2026-10-02T06:26:46+00:00",
+  "git_commit": "762f773",
+  "snapshot": "corpus-2026-10-01-r2",
+  "currency_policy": "pilot",
+  "embedding_model": "BAAI/bge-m3",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "dense_top_k": 20,
+  "sparse_top_k": 20,
+  "rrf_k": 60,
+  "dataset": "questions_heldout_v1.jsonl",
+  "hardware": {
+   "platform": "Windows-10-10.0.26300-SP0",
+   "python": "3.11.9",
+   "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+   "torch": "2.14.0+cu126",
+   "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "split": "heldout",
+  "provider": "extractive",
+  "llm_model": "none (extractive)",
+  "policy": {
+   "answer_threshold": 0.8,
+   "keep_ratio": 0.85,
+   "stronger_margin": 0.15,
+   "unverified_threshold": 0.5,
+   "max_sources": 3,
+   "superseded_margin": 0.0,
+   "unit_threshold": 0.2,
+   "verifier_floor": null,
+   "verifier_candidates": 2,
+   "verifier_veto": true
+  },
+  "verifier": "ollama/qwen3:4b",
+  "verifier_stats": {
+   "calls": 25,
+   "seconds": 48.5344770000047,
+   "input_tokens": 15002,
+   "output_tokens": 553,
+   "errors": []
+  }
+ },
+ "systems": {
+  "D": {
+   "questions": 40,
+   "decision_accuracy": 0.825,
+   "refusal": {
+    "labelled": 40,
+    "accuracy": 0.825,
+    "precision": 0.6471,
+    "recall": 0.9167,
+    "f1": 0.7586,
+    "false_answers": 1,
+    "false_refusals": 6
+   },
+   "correctness_proxy": 0.7143,
+   "correctness_distribution": {
+    "0": 8,
+    "1": 0,
+    "2": 20
+   },
+   "citation_precision_proxy": 0.6875,
+   "citations": 48,
+   "groundedness": 1.0,
+   "adversarial_violations": [],
+   "latency_ms": {
+    "total_p50": 4230.0,
+    "total_p95": 6270.6,
+    "retrieval_p50": 110.0,
+    "retrieval_p95": 292.7,
+    "rerank_p50": 3046.6,
+    "rerank_p95": 3261.7,
+    "generation_p50": 1909.6,
+    "generation_p95": 4140.8
+   },
+   "llm_cost_usd_per_100": 0.0,
+   "by_type": {
+    "direct": {
+     "n": 28,
+     "acceptable": 22,
+     "rate": 0.7857
+    },
+    "out_of_scope": {
+     "n": 1,
+     "acceptable": 1,
+     "rate": 1.0
+    },
+    "unanswerable": {
+     "n": 11,
+     "acceptable": 10,
+     "rate": 0.9091
+    }
+   },
+   "failures": [
+    "hp_01",
+    "hp_02",
+    "hp_10",
+    "hp_20",
+    "hp_25",
+    "hp_26",
+    "hp_30"
+   ]
+  }
+ }
+}

@@ -134,6 +134,43 @@ trước đây trả lời được nay bị từ chối (`hp_25`), 1 câu phả
 precision giảm vì có thêm câu được trả lời với nhiều nguồn hơn. Hệ thống vẫn từ chối nhầm 6/28 câu hỏi đời thường.
 Từ nay held-out v1 đã được dùng để đo; sửa đổi tiếp theo cần một bộ held-out mới.
 
+## 4c. Model nhỏ trên máy: bộ xác minh vùng xám (2026-10-02)
+
+Định hướng: cải thiện bằng model nhỏ chạy trên laptop (RTX 3050 4 GB) trước khi dùng model lớn hơn hay API. Bộ
+xác minh ([`app/agent/verifier.py`](../app/agent/verifier.py)) cho một model qua Ollama xem câu hỏi và Điều được
+truy xuất (chia thành đoạn đánh số) và chỉ trả `{"answers", "units"}`; câu trả lời vẫn là đoạn nguyên văn. Hai công
+tắc: **cứu** (Điều dưới ngưỡng 0.8 nhưng trên `verifier_floor` được trả lời nếu model xác nhận) và **phủ quyết**
+(câu trả lời vượt ngưỡng chỉ được giữ nếu model xác nhận một nguồn).
+
+Thử agent LLM đầy đủ bằng `qwen3:4b` trước: mỗi câu ~10 phút (model tràn sang CPU vì VRAM 4 GB còn giữ bge-m3 và
+reranker) và từ chối sai cả hai câu thử — không dùng được trên laptop.
+
+**Chỉnh trên dev v2 + paraphrase dev** ([`reports/verifier_tuning_ollama_qwen3-4b.json`](../reports/verifier_tuning_ollama_qwen3-4b.json),
+103 lượt gọi, ~2,3 s/lượt): lần 1 trích đúng đoạn model chọn làm giảm correctness (model 4B thường chọn một đoạn,
+đôi khi sai); lần 2 dùng model như cổng chặn và trích đoạn do cross-encoder chọn. Phủ quyết đạt objective 0.925
+(không xác minh: 0.8875); mọi ngưỡng cứu (0.05–0.4) cho 0.85–0.875 vì model 4B xác nhận cả Điều chỉ cùng chủ đề
+(ví dụ trả lời câu "làm việc từ xa ở nước ngoài có áp dụng lương tối thiểu vùng I" bằng Điều 3 Nghị định 293/2025).
+Chọn: **phủ quyết bật, cứu tắt** (mặc định khi `LLM_VERIFIER=ollama`).
+
+**Đo một lần** (commit `762f773`):
+
+| Bộ | Hệ thống | Quyết định đúng | Trả lời sai | Từ chối nhầm | Correctness | Citation precision |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Held-out v2 (40, mới) | A — RAG đơn giản | 0.700 | 12 | 0 | 0.429 | 0.438 |
+| Held-out v2 | D | 0.725 | 1 | 10 | 0.643 | 0.758 |
+| Held-out v2 | D + phủ quyết `qwen3:4b` | 0.725 | **0** | 11 | 0.607 | 0.774 |
+| Held-out v1 | D + phủ quyết `qwen3:4b` | 0.825 | 1 | 6 | 0.714 | 0.688 |
+| Test v2 | D + phủ quyết `qwen3:4b` | 0.961 | 1 | 1 | 0.922 | 0.658 |
+
+**Kết luận:** với model 4B, bộ xác minh **gần như hòa vốn trên dữ liệu mới**: loại 1 câu trả lời sai (`h2_33`) nhưng
+từ chối nhầm thêm 1 câu (`h2_18`; trên test là `dir_42`, câu danh sách 20 dòng). Chi phí: ~2 s mỗi lượt gọi, 0 USD.
+Điểm yếu lớn nhất vẫn nguyên: **từ chối nhầm 10/28 câu hỏi đời thường trên held-out v2** — D trên held-out v2 (0.725) thấp hơn trên held-out v1 (0.825); có thể một phần vì từ điển thuật ngữ được viết
+bởi chính người soạn held-out v1, nên v2 là thước đo đáng tin hơn.
+Hai hướng tiếp theo, đều cần GPU lớn hơn laptop: (1) chạy bộ xác minh với `qwen3:8b`/`qwen3:14b` trên Kaggle
+([`kaggle/`](../kaggle)) để xem model lớn hơn có cứu được câu từ chối nhầm mà không thêm câu trả lời sai; (2) tinh
+chỉnh reranker trên cặp câu hỏi đời thường – Điều luật để điểm liên quan không phụ thuộc cách nói. Held-out v2 nay
+đã được dùng để đo; vòng sau cần held-out v3.
+
 ## 5. Phân tích lỗi
 
 Các ca dưới đây lấy từ `reports/answers_test_extractive_traces.jsonl` (test), `answers_heldout_extractive_traces.jsonl`

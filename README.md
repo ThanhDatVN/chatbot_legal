@@ -36,6 +36,8 @@ căn cứ không đủ, mâu thuẫn hoặc chưa xác minh hiệu lực thì h�
 | D trước khi bổ sung thuật ngữ | 0.775 | 0 | 9 | 0.643 |
 | **D hiện tại** | **0.825** | **1** | **6** | **0.714** |
 
+Bộ held-out v2 (40 câu mới, viết trước khi có bộ xác minh): A 0.700 (12 trả lời sai), D 0.725 (1 trả lời sai, 10 từ chối nhầm), D + bộ xác minh `qwen3:4b` 0.725 (0 trả lời sai, 11 từ chối nhầm).
+
 - D: groundedness 1.000 (mọi nhận định là trích nguyên văn nguồn được trích dẫn), 0 vi phạm đối kháng; câu hỏi về
   điều khoản đã hết hiệu lực/bị thay thế được từ chối kèm tên văn bản thay thế, hoặc trả lời từ văn bản thay thế khi
   nó có trong kho (ví dụ Nghị định 129/2025 cho hòa giải viên, đình công).
@@ -46,8 +48,8 @@ căn cứ không đủ, mâu thuẫn hoặc chưa xác minh hiệu lực thì h�
   [`docs/EVALUATION.md`](docs/EVALUATION.md).
 
 Correctness và citation precision là **chỉ số tự động (proxy)**; nhãn do AI soạn từ nguyên văn và chưa được người
-duyệt. Điểm yếu lớn nhất hiện tại là **từ chối nhầm câu hỏi đời thường** (6/28 câu trả lời được trên held-out): chế
-độ extractive dựa vào điểm cross-encoder tuyệt đối. Hai lỗi của lần đo trước được phát hiện trên split test nên mức
+duyệt. Điểm yếu lớn nhất hiện tại là **từ chối nhầm câu hỏi đời thường** (6/28 câu trả lời được trên held-out v1, 10/28
+trên held-out v2): chế độ extractive dựa vào điểm cross-encoder tuyệt đối. Hai lỗi của lần đo trước được phát hiện trên split test nên mức
 tăng trên test không hoàn toàn khách quan; bộ held-out là thước đo khách quan.
 
 ## Kiến trúc
@@ -148,16 +150,32 @@ chủ qua `HF_CACHE` (mặc định `~/.cache/huggingface`). Trên máy phát tr
 ~15–20 s, câu nhiều vế ~55 s; chạy cục bộ trên GPU nhanh hơn nhiều (p95 4.4 s trên tập test). Số liệu benchmark
 dùng cấu hình GPU với 20 ứng viên rerank.
 
-**Dùng LLM thay vì chế độ extractive** (đặt trong `.env`, tệp này không được commit):
+**Model nhỏ chạy trên máy (khuyến nghị) — bộ xác minh vùng xám.** Chế độ extractive vẫn trả lời bằng trích dẫn
+nguyên văn; khi Điều đúng đứng đầu nhưng điểm liên quan tự động thấp (câu hỏi đời thường), một model nhỏ qua
+[Ollama](https://ollama.com) chỉ được hỏi "đoạn nào của Điều này trả lời câu hỏi?" và trả về số thứ tự đoạn
+([`app/agent/verifier.py`](app/agent/verifier.py)). Prompt ~300 token, chạy được `qwen3:4b` trên GPU 4 GB.
 
-- OpenAI: `LLM_PROVIDER=openai`, `OPENAI_API_KEY=...`, `OPENAI_MODEL=gpt-4o-mini` (mặc định).
-- Claude: `LLM_PROVIDER=anthropic`, `ANTHROPIC_API_KEY=...`, `LLM_MODEL=claude-opus-5-5`.
+```powershell
+ollama pull qwen3:4b
+python scripts/run_verifier_eval.py --model qwen3:4b    # chỉnh trên dữ liệu phát triển, đo một lần trên test/held-out
+```
 
-Hai agent dùng cùng hai tool, cùng prompt và cùng hợp đồng JSON ([`app/agent/llm_common.py`](app/agent/llm_common.py)):
-gọi tool có schema nghiêm ngặt, kết quả tool được bọc như dữ liệu không đáng tin, và mọi nhận định vẫn qua cùng bộ
-kiểm tra citation. Thiếu key thì API trả lỗi có kiểu, không rơi về câu trả lời không kiểm chứng. Đo riêng bằng
-`python -m evaluation.answer_eval --split test --provider openai --systems D` (tốn phí API);
-`scripts/run_benchmark.py` luôn chạy chế độ extractive.
+Bật trong `.env`: `LLM_VERIFIER=ollama`, `OLLAMA_MODEL=qwen3:4b`. Với `qwen3:4b`, chỉnh trên dữ liệu phát triển
+chọn **phủ quyết** (bỏ câu trả lời mà model không xác nhận) và tắt **cứu** (model 4B xác nhận cả Điều chỉ cùng chủ
+đề). Trên bộ held-out v2 mới, kết quả hòa vốn: 0 thay vì 1 câu trả lời sai, nhưng thêm 1 câu từ chối nhầm (chi tiết:
+[`docs/EVALUATION.md`](docs/EVALUATION.md#4c-model-nhỏ-trên-máy-bộ-xác-minh-vùng-xám-2026-10-02)). Để thử model
+8B–14B, làm theo [`kaggle/README.md`](kaggle/README.md): notebook và script chạy toàn bộ trên GPU Kaggle, không cần API key.
+
+**Agent LLM đầy đủ** (model tự gọi `search_evidence`/`get_source`), đặt `LLM_PROVIDER` trong `.env`:
+
+- `ollama`: model trên máy, hai pha (vòng gọi tool rồi một lượt JSON không có tool). Với `qwen3:4b` trên GPU 4 GB
+  mỗi câu mất ~10 phút và chưa đạt chất lượng — chỉ để thử với model lớn hơn.
+- `openai`: `OPENAI_API_KEY`, `OPENAI_MODEL=gpt-4o-mini` (~0,002 USD/câu).
+- `anthropic`: còn trong mã nhưng không dùng (chi phí).
+
+Mọi chế độ dùng cùng hai tool, cùng prompt và hợp đồng JSON ([`app/agent/llm_common.py`](app/agent/llm_common.py)),
+và mọi nhận định qua cùng bộ kiểm tra citation; thiếu model/key thì API trả lỗi có kiểu.
+`scripts/run_benchmark.py` luôn chạy chế độ extractive không có LLM.
 
 ## Biến môi trường chính
 
@@ -168,7 +186,9 @@ kiểm tra citation. Thiếu key thì API trả lỗi có kiểu, không rơi v�
 | `QDRANT_URL` | trống | trống = Qdrant nhúng trong `data/indexes/qdrant` |
 | `MODEL_DEVICE` | `auto` | `cuda` (fp16) / `cpu` (fp32) |
 | `REFUSAL_THRESHOLD` | `0.8` | ngưỡng điểm reranker, hiệu chỉnh trên split dev |
-| `LLM_PROVIDER` | `extractive` | `extractive` (offline), `openai` hoặc `anthropic` |
+| `LLM_PROVIDER` | `extractive` | `extractive` (offline), `ollama`, `openai` (hoặc `anthropic`, không dùng) |
+| `LLM_VERIFIER` | `none` | bộ xác minh vùng xám cho chế độ extractive: `ollama` hoặc `openai` |
+| `OLLAMA_MODEL` / `OLLAMA_NUM_CTX` | `qwen3:4b` / `12288` | model Ollama trên máy |
 | `OPENAI_MODEL` | `gpt-4o-mini` | model của agent OpenAI |
 | `LLM_MODEL` / `LLM_EFFORT` | `claude-opus-5-5` / `medium` | cấu hình agent Claude |
 | `LOG_QUESTIONS` | `hash` | log lưu hash câu hỏi, không lưu nguyên văn |

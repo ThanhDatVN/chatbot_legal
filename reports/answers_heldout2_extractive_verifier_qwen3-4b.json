@@ -1,0 +1,110 @@
+{
+ "meta": {
+  "date": "2026-10-02T06:23:49+00:00",
+  "git_commit": "762f773",
+  "snapshot": "corpus-2026-10-01-r2",
+  "currency_policy": "pilot",
+  "embedding_model": "BAAI/bge-m3",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "dense_top_k": 20,
+  "sparse_top_k": 20,
+  "rrf_k": 60,
+  "dataset": "questions_heldout_v2.jsonl",
+  "hardware": {
+   "platform": "Windows-10-10.0.26300-SP0",
+   "python": "3.11.9",
+   "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+   "torch": "2.14.0+cu126",
+   "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "split": "heldout2",
+  "provider": "extractive",
+  "llm_model": "none (extractive)",
+  "policy": {
+   "answer_threshold": 0.8,
+   "keep_ratio": 0.85,
+   "stronger_margin": 0.15,
+   "unverified_threshold": 0.5,
+   "max_sources": 3,
+   "superseded_margin": 0.0,
+   "unit_threshold": 0.2,
+   "verifier_floor": null,
+   "verifier_candidates": 2,
+   "verifier_veto": true
+  },
+  "verifier": "ollama/qwen3:4b",
+  "verifier_stats": {
+   "calls": 19,
+   "seconds": 36.47507400000177,
+   "input_tokens": 11024,
+   "output_tokens": 389,
+   "errors": []
+  }
+ },
+ "systems": {
+  "D": {
+   "questions": 40,
+   "decision_accuracy": 0.725,
+   "refusal": {
+    "labelled": 40,
+    "accuracy": 0.725,
+    "precision": 0.5217,
+    "recall": 1.0,
+    "f1": 0.6857,
+    "false_answers": 0,
+    "false_refusals": 11
+   },
+   "correctness_proxy": 0.6071,
+   "correctness_distribution": {
+    "0": 11,
+    "1": 0,
+    "2": 17
+   },
+   "citation_precision_proxy": 0.7742,
+   "citations": 31,
+   "groundedness": 1.0,
+   "adversarial_violations": [],
+   "latency_ms": {
+    "total_p50": 3366.4,
+    "total_p95": 6639.3,
+    "retrieval_p50": 104.7,
+    "retrieval_p95": 542.7,
+    "rerank_p50": 2923.4,
+    "rerank_p95": 3259.2,
+    "generation_p50": 1.6,
+    "generation_p95": 3769.5
+   },
+   "llm_cost_usd_per_100": 0.0,
+   "by_type": {
+    "direct": {
+     "n": 28,
+     "acceptable": 17,
+     "rate": 0.6071
+    },
+    "out_of_scope": {
+     "n": 2,
+     "acceptable": 2,
+     "rate": 1.0
+    },
+    "unanswerable": {
+     "n": 10,
+     "acceptable": 10,
+     "rate": 1.0
+    }
+   },
+   "failures": [
+    "h2_02",
+    "h2_04",
+    "h2_05",
+    "h2_07",
+    "h2_09",
+    "h2_10",
+    "h2_11",
+    "h2_16",
+    "h2_18",
+    "h2_25",
+    "h2_26"
+   ]
+  }
+ }
+}

@@ -1,0 +1,168 @@
+{
+ "meta": {
+  "date": "2026-10-02T06:29:59+00:00",
+  "git_commit": "762f773",
+  "snapshot": "corpus-2026-10-01-r2",
+  "currency_policy": "pilot",
+  "embedding_model": "BAAI/bge-m3",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "dense_top_k": 20,
+  "sparse_top_k": 20,
+  "rrf_k": 60,
+  "dataset": "questions_heldout_v2.jsonl",
+  "hardware": {
+   "platform": "Windows-10-10.0.26300-SP0",
+   "python": "3.11.9",
+   "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+   "torch": "2.14.0+cu126",
+   "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "split": "heldout2",
+  "provider": "extractive",
+  "llm_model": "none (extractive)",
+  "policy": {
+   "answer_threshold": 0.8,
+   "keep_ratio": 0.85,
+   "stronger_margin": 0.15,
+   "unverified_threshold": 0.5,
+   "max_sources": 3,
+   "superseded_margin": 0.0,
+   "unit_threshold": 0.2,
+   "verifier_floor": null,
+   "verifier_candidates": 2,
+   "verifier_veto": true
+  },
+  "verifier": null
+ },
+ "systems": {
+  "A": {
+   "questions": 40,
+   "decision_accuracy": 0.7,
+   "refusal": {
+    "labelled": 40,
+    "accuracy": 0.7,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "false_answers": 12,
+    "false_refusals": 0
+   },
+   "correctness_proxy": 0.4286,
+   "correctness_distribution": {
+    "0": 16,
+    "1": 0,
+    "2": 12
+   },
+   "citation_precision_proxy": 0.4375,
+   "citations": 80,
+   "groundedness": 1.0,
+   "adversarial_violations": [],
+   "latency_ms": {
+    "total_p50": 72.8,
+    "total_p95": 81.8,
+    "retrieval_p50": 71.7,
+    "retrieval_p95": 81.2,
+    "rerank_p50": null,
+    "rerank_p95": null,
+    "generation_p50": 0.6,
+    "generation_p95": 0.9
+   },
+   "llm_cost_usd_per_100": 0.0,
+   "by_type": {
+    "direct": {
+     "n": 28,
+     "acceptable": 28,
+     "rate": 1.0
+    },
+    "out_of_scope": {
+     "n": 2,
+     "acceptable": 0,
+     "rate": 0.0
+    },
+    "unanswerable": {
+     "n": 10,
+     "acceptable": 0,
+     "rate": 0.0
+    }
+   },
+   "failures": [
+    "h2_29",
+    "h2_30",
+    "h2_31",
+    "h2_32",
+    "h2_33",
+    "h2_34",
+    "h2_35",
+    "h2_36",
+    "h2_37",
+    "h2_38",
+    "h2_39",
+    "h2_40"
+   ]
+  },
+  "D": {
+   "questions": 40,
+   "decision_accuracy": 0.725,
+   "refusal": {
+    "labelled": 40,
+    "accuracy": 0.725,
+    "precision": 0.5238,
+    "recall": 0.9167,
+    "f1": 0.6667,
+    "false_answers": 1,
+    "false_refusals": 10
+   },
+   "correctness_proxy": 0.6429,
+   "correctness_distribution": {
+    "0": 10,
+    "1": 0,
+    "2": 18
+   },
+   "citation_precision_proxy": 0.7576,
+   "citations": 33,
+   "groundedness": 1.0,
+   "adversarial_violations": [],
+   "latency_ms": {
+    "total_p50": 3211.6,
+    "total_p95": 3451.3,
+    "retrieval_p50": 104.0,
+    "retrieval_p95": 115.9,
+    "rerank_p50": 3100.3,
+    "rerank_p95": 3214.3,
+    "generation_p50": 1.5,
+    "generation_p95": 375.2
+   },
+   "llm_cost_usd_per_100": 0.0,
+   "by_type": {
+    "direct": {
+     "n": 28,
+     "acceptable": 18,
+     "rate": 0.6429
+    },
+    "out_of_scope": {
+     "n": 2,
+     "acceptable": 2,
+     "rate": 1.0
+    },
+    "unanswerable": {
+     "n": 10,
+     "acceptable": 9,
+     "rate": 0.9
+    }
+   },
+   "failures": [
+    "h2_02",
+    "h2_04",
+    "h2_05",
+    "h2_07",
+    "h2_09",
+    "h2_10",
+    "h2_11",
+    "h2_16",
+    "h2_25",
+    "h2_26",
+    "h2_33"
+   ]
+  }
+ }
+}

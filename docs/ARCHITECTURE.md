@@ -183,6 +183,20 @@ sai. Ngưỡng và từ điển được chỉnh trên dev v2 + bộ paraphrase 
 `corpus-2026-10-01-r2`. **Hệ quả:** độ chính xác quyết định trên paraphrase dev 0.556 → 0.815, dev v2 không đổi; từ
 điển là danh sách thủ công cần mở rộng theo phản hồi người dùng.
 
+### ADR-014 — Model nhỏ trên máy làm bộ xác minh, không làm agent; Kaggle cho model lớn hơn
+
+**Quyết định:** với ràng buộc chỉ dùng model chạy trên máy (Ollama) hoặc API rẻ, LLM không điều khiển vòng tool mà
+chỉ làm **bộ xác minh vùng xám** cho chế độ extractive: thấy câu hỏi và Điều đã truy xuất, trả về số thứ tự đoạn trả
+lời (hoặc "không"). Model được dùng như cổng chặn: đoạn trích vẫn do cross-encoder chọn, nên model không thể đưa
+chữ của nó vào câu trả lời. Phủ quyết bật, cứu tắt với `qwen3:4b` (chọn trên dữ liệu phát triển). Agent LLM đầy đủ
+(Ollama hai pha, OpenAI) vẫn có trong mã cho model lớn hơn. Gói [`kaggle/`](../kaggle) tái tạo snapshot, index và
+chạy tinh chỉnh + đo với model 8B–14B trên GPU Kaggle, không cần API key.
+
+**Lý do:** trên GPU 4 GB, agent `qwen3:4b` mất ~10 phút/câu và không gọi tool đúng; prompt xác minh ~300 token chạy
+~2 s. Model 4B ép JSON kèm tool thì bỏ qua tool và bịa `chunk_id` — bộ kiểm tra citation chặn được, nhưng câu trả
+lời vô dụng. **Hệ quả:** trên held-out v2, phủ quyết loại 1 câu trả lời sai và thêm 1 câu từ chối nhầm (hòa vốn);
+cứu câu từ chối nhầm cần model mạnh hơn hoặc reranker tốt hơn với câu hỏi đời thường.
+
 ## 6. Yêu cầu phi chức năng
 
 - **Tin cậy:** không có citation ngoài evidence của request; không tự tạo URL/trang/Điều; source lỗi thì `REFUSE` hoặc lỗi phụ thuộc rõ ràng.
@@ -218,5 +232,6 @@ sai. Ngưỡng và từ điển được chỉnh trên dev v2 + bộ paraphrase 
 | ADR-011 | 2026-10-01 | Giới hạn ứng viên rerank, profile CPU | Accepted |
 | ADR-012 | 2026-10-01 | Sổ theo dõi hiệu lực cấp điều khoản, từ chối khi điều liên quan nhất đã bị thay thế | Accepted; sổ chưa có người duyệt |
 | ADR-013 | 2026-10-01 | Mở rộng truy vấn bằng thuật ngữ pháp lý, kiểm tra nguồn bổ sung theo khoản, `section_scope`, chốt chặn snapshot bất biến | Accepted |
+| ADR-014 | 2026-10-02 | Model nhỏ (Ollama) làm bộ xác minh vùng xám; agent LLM đầy đủ và Kaggle cho model lớn hơn | Accepted; cứu vùng xám chờ model mạnh hơn |
 
 Các trang tham khảo kỹ thuật: [Qdrant payload và filtering](https://qdrant.tech/documentation/concepts/payload/), [FastAPI trong Docker](https://fastapi.tiangolo.com/deployment/docker/), [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat), [PyMuPDF text extraction](https://pymupdf.readthedocs.io/en/latest/recipes-text.html).
